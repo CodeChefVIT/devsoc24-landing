@@ -4,7 +4,7 @@ import dotgrid from "@/assets/images/dot_grid.svg";
 
 const About = () => {
   return (
-    <div className="overlay font-disket relative h-fit  bg-[#020202] px-10 text-center  text-[40px] font-black text-[#9CE79ACC] md:text-[100px]">
+    <div className="overlay w-screen overflow-hidden font-disket relative h-fit  bg-[#020202] md:px-10 px-2 text-center  text-[35px] font-black text-[#9CE79ACC] md:text-[100px]">
       <span className="relative">
         <span>DEVSOC’24</span>
         <Image
