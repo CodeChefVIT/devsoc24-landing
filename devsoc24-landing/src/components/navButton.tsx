@@ -1,6 +1,6 @@
 import styles from "@/styles/navButton.module.css"
 import Link from "next/link";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import arrow from "@/assets/images/arrow_icon.svg"
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
