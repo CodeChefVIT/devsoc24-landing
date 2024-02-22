@@ -6,7 +6,6 @@
     margin: 0;
     padding: 0;
 
-    overflow: hidden;
 }
 
 .navBtn::after
@@ -21,6 +20,23 @@
     transform: translateX(-100%);
     transition: transform 300ms;
 }
+
+#HighBox,#LowBox,#Arrow
+{
+    transform: scale3d(1,1,1);
+    transition: all 300ms ease;
+}
+
+.navLink:hover #HighBox
+{
+    transform: scale3d(1.1,1.1,1) translate3d(0.5px,-5px,0);
+}
+
+.navLink:hover #Arrow
+{
+    transform: translate3d(5px,-5px,0);
+}
+
 
 .navBtn:hover::after
 {

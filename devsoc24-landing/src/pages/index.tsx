@@ -5,7 +5,6 @@ import NavButton from "@/components/navButton";
 export default function Home() {
   return (
     <>
-      <NavButton link={"/"} name={"ABC"}/>
       <Main />
       <About />
     </>
