@@ -23,15 +23,6 @@ function Main() {
 
   return (
     <>
-      <div>
-          <NavButton link="/" name="About"></NavButton>
-          <NavButton link="/" name="Discord"></NavButton>
-          <Image
-            src={title as StaticImport}
-            alt="title"
-          />
-        </div>
-      
       <div className={className}>
       {/* <div className="flex flex-col items-center justify-center"> */}
         <Image src={glitch as StaticImport} alt="glitch" layout="fill" />
@@ -42,6 +33,17 @@ function Main() {
           width={800}
           className="absolute bottom-0"
         />
+      </div>
+
+      <div className=" w-full absolute top-2 m-0 p-0">
+          <div className="flex justify-evenly items-center">
+          <NavButton link="/" name="About"/>
+          <NavButton link="/" name="Discord"/>
+          <Image
+            src={title as StaticImport}
+            alt="title"
+          />
+          </div>
       </div>
     </>
   );
