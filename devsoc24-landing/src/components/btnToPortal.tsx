@@ -8,12 +8,11 @@ import DSLogo from "@/assets/images/DSLogo.svg";
 const BtnToPortal = (props:{link: string}) => {
     return (
         <>
-
             <motion.a 
                 href={props.link}
-                className={`${styles.btn} font-disket text-xl px-3 py-1 border-solid border-black border-2`}
+                className={`${styles.btn} font-disket text-xl px-3 py-1 tracking-tighter`}
                 whileHover={{backgroundPosition:"-100%,100%",}}>
-                    <Image src={DSLogo as StaticImport} alt="DSLogo" className="inline mr-3"/>
+                    <Image src={DSLogo as StaticImport} alt="DSLogo" className="inline-block mr-3"/>
                     Go to Portal
             </motion.a>
         </>

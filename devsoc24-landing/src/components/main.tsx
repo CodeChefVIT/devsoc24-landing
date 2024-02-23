@@ -36,7 +36,7 @@ function Main() {
         />
       </div>
 
-      <div className=" w-full absolute top-2 m-0 p-0">
+      <div className=" w-full absolute top-6 m-0 p-0">
           <div className="flex justify-evenly items-center">
           <NavButton link="/" name="About"/>
           <NavButton link="/" name="Discord"/>
