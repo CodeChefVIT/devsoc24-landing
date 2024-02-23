@@ -5,6 +5,7 @@ import glitch from "@/assets/images/startglitch.svg";
 import title from "@/assets/images/title.svg";
 import type { StaticImport } from "next/dist/shared/lib/get-img-props";
 import NavButton from "@/components/navButton";
+import BtnToPortal from "@/components/btnToPortal";
 
 function Main() {
   const [className, setClassName] = useState(
@@ -43,6 +44,7 @@ function Main() {
             src={title as StaticImport}
             alt="title"
           />
+          <BtnToPortal link="/"/>
           </div>
       </div>
     </>
