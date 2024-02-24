@@ -5,6 +5,7 @@ import glitch from "@/assets/images/startglitch.svg";
 import title from "@/assets/images/title.svg";
 import type { StaticImport } from "next/dist/shared/lib/get-img-props";
 import NavButton from "@/components/navButton";
+import BtnToPortal from "@/components/btnToPortal";
 
 function Main() {
   const [className, setClassName] = useState(
@@ -23,15 +24,6 @@ function Main() {
 
   return (
     <>
-      <div>
-          <NavButton link="/" name="About"></NavButton>
-          <NavButton link="/" name="Discord"></NavButton>
-          <Image
-            src={title as StaticImport}
-            alt="title"
-          />
-        </div>
-      
       <div className={className}>
       {/* <div className="flex flex-col items-center justify-center"> */}
         <Image src={glitch as StaticImport} alt="glitch" layout="fill" />
@@ -42,6 +34,18 @@ function Main() {
           width={800}
           className="absolute bottom-0"
         />
+      </div>
+
+      <div className=" w-full absolute top-6 m-0 p-0">
+          <div className="flex justify-evenly items-center">
+          <NavButton link="/" name="About"/>
+          <NavButton link="/" name="Discord"/>
+          <Image
+            src={title as StaticImport}
+            alt="title"
+          />
+          <BtnToPortal link="/"/>
+          </div>
       </div>
     </>
   );
