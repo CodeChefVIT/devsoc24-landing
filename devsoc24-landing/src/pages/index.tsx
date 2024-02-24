@@ -1,3 +1,4 @@
+import Timeline from "@/components/Timeline";
 import About from "@/components/about";
 import Main from "@/components/main";
 
@@ -5,6 +6,7 @@ export default function Home() {
   return (
     <>
       <Main />
+      <Timeline />
       <About />
     </>
   );
