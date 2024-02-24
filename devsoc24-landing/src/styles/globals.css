@@ -7,6 +7,13 @@
   src: url("../../public/font/Disket-Mono-Regular.ttf");
 }
 
+.bg-span {
+  background-image: url('../assets/images/bluespanbg.svg');
+  background-size: contain; /* Adjust to 'cover' or specific dimensions as needed */
+  background-repeat: no-repeat; /* Prevent image from repeating */
+  background-position:bottom;
+}
+
 @font-face {
   font-family: disket-bold;
   src: url("../../public/font/Disket-Mono-Bold.ttf");
