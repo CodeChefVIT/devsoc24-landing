@@ -38,7 +38,7 @@ jobs:
 
     - name: Check for build errors
       run: |
-        if [ -d "devsoc24-landing/build" ]; then
+        if [ -d "devsoc24-landing/.next" ]; then
           echo "Build successful"
         else
           echo "Build failed"
