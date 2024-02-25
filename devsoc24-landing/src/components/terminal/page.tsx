@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 // import ProgressBar from "../_components/progressbar";
+
 interface Command {
   command: string;
   output: string[];
@@ -12,11 +13,11 @@ const Terminal = () => {
   const [redProgress, setRedProgress] = useState(0);
   const [greenProgress, setGreenProgress] = useState(0);
   const [blueProgress, setBlueProgress] = useState(0);
+  const endRef = useRef<HTMLDivElement>(null)
 
   // const endOfMessagesRef = useRef(null);
 
-type CommandOutputs = Record<string, string[]>;
-
+  type CommandOutputs = Record<string, string[]>;
 
   const commandOutputs: CommandOutputs = {
     whatisdevsoc: [
@@ -37,7 +38,7 @@ type CommandOutputs = Record<string, string[]>;
     ],
     adityabhaiya: ["Hello"],
     help: [
-      '<span class="command" style="margin-right: 50px;">whatisdevsoc</span>          What is Devsoc?',
+      '<span class="command">whatisdevsoc</span>          What is Devsoc?',
       '<span class="command">whoisdevsoc</span>           Who is devsoc?',
       '<span class="command">whyisdevsoc</span>           Why is devsoc',
       '<span class="command">aditansh</span>              Aditansh',
@@ -70,6 +71,7 @@ type CommandOutputs = Record<string, string[]>;
           `Command not found: ${trimmedInput}`,
         ];
         setCommands([...commands, { command: trimmedInput, output }]);
+        console.log(output);
       }
       setInputValue("");
     }
@@ -103,6 +105,14 @@ type CommandOutputs = Record<string, string[]>;
     return () => clearInterval(interval);
   }, [redProgress, greenProgress, blueProgress]);
   // var currentdate = new Date();
+
+  const scrollToBottom = () => {
+endRef.current?.scrollIntoView({ behavior: "smooth" })
+}
+
+useEffect(() => {
+scrollToBottom()
+},[inputValue]);
   return (
     <div className="font-diatype h-[400px] bg-[#757575] text-sm md:h-[100%] md:text-xs ">
       <div id="terminal" className="overflow-y-auto bg-[#757575] pt-2">
@@ -150,6 +160,7 @@ type CommandOutputs = Record<string, string[]>;
           <div id="liner" className="ml-[15px] flex-1">
             <span>devsoc@2024.com:~${inputValue}</span>
             <b className="cursor">█</b>
+            <div style={{ marginBottom: 100 }} ref={endRef} />
           </div>
         </div>
         <textarea
@@ -164,15 +175,15 @@ type CommandOutputs = Record<string, string[]>;
 
       <style jsx>{`
         .command-output {
-          margin-left: 25px;
+          margin-left: 5px;
         }
         .command-line {
-          margin-bottom: 15px;
-          margin-left: 15px;
+          margin-bottom: 10px;
+          margin-left: 5px;
         }
         .command {
-          margin-bottom: 15px;
-          margin-left: 15px;
+          margin-bottom: 10px;
+          margin-left: 5px;
         }
       `}</style>
     </div>
