@@ -45,7 +45,9 @@ function Main() {
   }, [currentTitleIndex, titles.length]);
 
   useEffect(() => {
-    PowerGlitch.glitch(".glitcheffect");
+    setTimeout(() => {
+      PowerGlitch.glitch(".glitcheffect");
+    }, 0);
   }, []);
 
   return (
@@ -62,7 +64,7 @@ function Main() {
 
       <div className="absolute top-6 m-0 w-full p-0">
         <div className="flex items-center justify-center">
-          <div className="relative flex w-[33%] items-center justify-evenly">
+          <div className="relative hidden lg:flex w-[33%] items-center justify-evenly">
             <div>
               <Image
                 src={dotgrid as HTMLImageElement}
@@ -85,7 +87,7 @@ function Main() {
             </div>
           </div>
           <Image src={titles[currentTitleIndex] as string} alt="title" />
-          <div className="flex w-[33%] justify-center">
+          <div className="hidden lg:flex w-[33%] justify-center">
             <div>
               <Image
                 src={dotgrid as HTMLImageElement}
@@ -98,8 +100,9 @@ function Main() {
             </div>
           </div>
         </div>
-        <div className="flex h-screen justify-between overflow-hidden 2xl:mt-12">
+        <div className="flex h-screen justify-center lg:justify-between overflow-hidden 2xl:mt-12">
           <motion.div
+          className="hidden lg:block"
             style={{ willChange: "transform" }}
             animate={{
               x: [
@@ -137,10 +140,11 @@ function Main() {
               className="glitcheffect rotate-[45deg]"
             />
           </motion.div>
-          <div>
+          <div className="my-20 sm:my-0">
             <Screen text="Hack Time" />
           </div>
           <motion.div
+          className="hidden lg:block"
             style={{ willChange: "transform" }}
             animate={{
               x: [
