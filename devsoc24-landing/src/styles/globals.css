@@ -20,6 +20,10 @@
       format("svg");
 }
 
+.font-wreckside{
+  font-family: wreckside;
+}
+
 @font-face {
   font-family: disket-bold;
   src: url("../../public/font/Disket-Mono-Bold.ttf");
