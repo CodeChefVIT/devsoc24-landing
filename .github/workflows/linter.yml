@@ -26,15 +26,19 @@ jobs:
     - name: Install pnpm
       run: npm install -g pnpm
 
-    - name: Install dependencies
-      run: pnpm install
+    name: Install dependencies
+      run: |
+        cd devsoc24-landing
+        pnpm install
 
     - name: Build project
-      run: pnpm run build
+      run: |
+        cd devsoc24-landing
+        pnpm run build
 
     - name: Check for build errors
       run: |
-        if [ -d "build" ]; then
+        if [ -d "devsoc24-landing/build" ]; then
           echo "Build successful"
         else
           echo "Build failed"
