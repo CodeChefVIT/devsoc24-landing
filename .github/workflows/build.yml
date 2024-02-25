@@ -1,0 +1,46 @@
+name: Build Check
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20.1'
+
+    - name: Install pnpm
+      run: npm install -g pnpm
+
+    - name: Install dependencies
+      run: |
+        cd devsoc24-landing
+        pnpm install
+
+    - name: Build project
+      run: |
+        cd devsoc24-landing
+        pnpm run build
+
+    - name: Check for build errors
+      run: |
+        if [ -d "devsoc24-landing/.next" ]; then
+          echo "Build successful"
+        else
+          echo "Build failed"
+          exit 1
+        fi
