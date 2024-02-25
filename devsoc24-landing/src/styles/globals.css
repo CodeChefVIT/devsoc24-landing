@@ -7,6 +7,16 @@
   src: url("../../public/font/Disket-Mono-Regular.ttf");
 }
 
+@font-face {
+  font-family: disket-bold;
+  src: url("../../public/font/Disket-Mono-Bold.ttf");
+}
+
+@font-face {
+  font-family: wreckside;
+  src: url("../../public/font/Wreckside.otf");
+}
+
 .bg-span {
   background-image: url('../assets/images/bluespanbg.svg');
   background-size: contain; /* Adjust to 'cover' or specific dimensions as needed */
@@ -14,13 +24,13 @@
   background-position:bottom;
 }
 
-@font-face {
-  font-family: disket-bold;
-  src: url("../../public/font/Disket-Mono-Bold.ttf");
-}
-
 .font-disket {
   font-family: disket-bold;
+}
+
+.font-wreckside
+{
+  font-family: wreckside;
 }
 
 .overlay {

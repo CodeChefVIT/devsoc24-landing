@@ -1,0 +1,15 @@
+.flicker
+{
+    color: #9CE79A;
+    animation: glowFlicker 1s ease infinite;
+}
+
+@keyframes glowFlicker {
+    0% { filter: drop-shadow(0px 0px 10px #c8ffc6); opacity: 25%;}
+    20% { filter: drop-shadow(0px 0px 5px #d2ffd1); opacity: 55%;}
+    40% { filter: drop-shadow(0px 0px 10px #c8ffc6); opacity: 25%;}
+    50% { filter: drop-shadow(0px 0px 10px #c8ffc6); opacity: 25%;}
+    60% { filter: drop-shadow(0px 0px 5px #d2ffd1); opacity: 55%;}
+    80% { filter: drop-shadow(0px 0px 10px #c8ffc6); opacity: 25%;}
+    100% { filter: drop-shadow(0px 0px 5px #d2ffd1); opacity: 55%;}
+  } 

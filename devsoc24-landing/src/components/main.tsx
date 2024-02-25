@@ -6,10 +6,11 @@ import title from "@/assets/images/title.svg";
 import title2 from "@/assets/images/glitchtitle1.svg";
 import title3 from "@/assets/images/glitchtitle2.svg";
 import title4 from "@/assets/images/glitchtitle3.svg";
+import dotgrid from "@/assets/images/dot_grid.svg";
 import type { StaticImport } from "next/dist/shared/lib/get-img-props";
 import NavButton from "@/components/navButton";
 import BtnToPortal from "@/components/btnToPortal";
-import dotgrid from "@/assets/images/dot_grid.svg";
+import Screen from "@/components/screen";
 
 function Main() {
   const [className, setClassName] = useState(
@@ -87,6 +88,10 @@ function Main() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="absolute top-[15vh] right-[32vw]">
+        <Screen text="Hack Time"/>
       </div>
     </>
   );
