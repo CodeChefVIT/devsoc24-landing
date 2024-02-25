@@ -35,7 +35,12 @@
 .font-disket {
   font-family: disket-bold;
 }
+.font-vcr {
+  font-family: vcr;
+}
 
+/* Remove it not required */
+/* ****************************************************** */
 .overlay {
   width: 100%;
   height: 100%;
@@ -48,6 +53,7 @@
   filter: blur(0.5px) drop-shadow(0 0 0 #c9c7c7);
   background-color: #000000;
 }
+/* ****************************************************** */
 
 /* Hero Section */
 .overlay_hero {
@@ -66,6 +72,51 @@
   height: calc(100% + 20rem);
   opacity: 0.8;
   background-image: url(/images/hero_noise.jpeg);
+  image-rendering: pixelated;
+  pointer-events: none;
+  animation: GrainOverlay_noise__MsKWx 5s steps(4) infinite;
+}
+
+/* About Section */
+.overlay_about {
+  width: 100%;
+  filter: blur(0.5px) drop-shadow(0 0 0 #c9c7c7);
+  background-color: #030303f8;
+}
+
+.overlay_about:before {
+  content: "";
+  position: fixed;
+  left: -10rem;
+  top: -10rem;
+  width: calc(100% + 20rem);
+  height: calc(100% + 20rem);
+  opacity: 0.8;
+  background-image: url(/images/noise_big.webp);
+  image-rendering: pixelated;
+  pointer-events: none;
+  animation: GrainOverlay_noise__MsKWx 5s steps(4) infinite;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  height: 100%;
+  filter: blur(0.5px) drop-shadow(0 0 0 #c9c7c7);
+  background-color: #fffffff8;
+}
+
+/* <canvas data-engine="three.js r156" width="1790" height="1672" style="position: absolute;top: 0px;left: 0px;width: 895px;height: 836px;z-index: 0;" class> */
+
+.footer:before {
+  content: "";
+  position: fixed;
+  left: -10rem;
+  top: -10rem;
+  width: calc(100% + 20rem);
+  height: calc(100% + 20rem);
+  opacity: 0.8;
+  background-image: url(/images/footer2.png);
   image-rendering: pixelated;
   pointer-events: none;
   animation: GrainOverlay_noise__MsKWx 5s steps(4) infinite;
@@ -156,122 +207,18 @@
   background-position: center;
 }
 
-textarea {
-  left: -1000px;
-  position: absolute;
-}
-b {
-  font-weight: bold;
-  text-decoration: underline;
-}
-/* Cursor Start */
-.cursor {
-  /* font-size: 12px; */
-  color: #211d1b;
-  background-color: #211d1b;
-  position: relative;
-  opacity: 1;
-  height: 1.5em;
-  width: 10px;
-  max-width: 10px;
-  transform: translateY(4px);
-  overflow: hidden;
-  text-indent: -5px;
-  display: inline-block;
-  text-decoration: blink;
-  animation: blinker 1s linear infinite;
-}
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}
-#command {
-  cursor: text;
-  height: 50px;
-  color: #211d1b;
-}
-#liner {
-  line-height: 1.3em;
-  margin-top: -2px;
-  animation: show 0.5s ease forwards;
-  animation-delay: 1.2s;
-  opacity: 0;
-}
-#liner::before {
-  color: #211d1b;
-  /* content: "devsoc@2024.com:~$"; */
-}
-#liner.password::before {
-  content: "Password:";
-}
-@keyframes show {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+@font-face {
+  font-family: courier;
+  src: url("../../public/font/cour.ttf");
 }
 
-p {
-  display: block;
-  line-height: 1.3em;
-  margin: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  margin: 0;
-  letter-spacing: 0.05em;
-  animation: typing 0.5s steps(30, end);
-}
-.no-animation {
-  animation: typing 0 steps(30, end);
-}
-.margin {
-  margin-left: 20px;
-}
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-.index {
-  color: #313030;
-}
-.color2 {
-  color: #1e1b18;
-}
-.command {
-  color: #211d1b;
-  text-shadow: 0 0 1px #211d1b;
-}
-.error {
-  color: #211d1b;
-}
-.white {
-  color: #fff;
-}
-.inherit,
-a {
-  color: #211d1b;
-}
-a {
-  text-decoration: inherit;
-}
-a:hover {
-  background: #73abad;
-  color: #211830;
-}
-a:focus {
-  outline: 0;
+@font-face {
+  font-family: vcr;
+  src: url("../../public/font/vcr.ttf");
 }
 
-.butt:hover {
-  box-shadow: -3px 4px 0px #232222;
-  transition: 0.01s;
-  height: 43px;
-  width: 100px;
+.block-text {
+  font-family: courier, monospace;
+  font-size: 12px;
+  line-height: 1.2; /* Adjust as needed */
 }
