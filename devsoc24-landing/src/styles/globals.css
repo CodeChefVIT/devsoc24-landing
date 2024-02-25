@@ -8,10 +8,10 @@
 }
 
 .bg-span {
-  background-image: url('../assets/images/bluespanbg.svg');
+  background-image: url("../assets/images/bluespanbg.svg");
   background-size: contain; /* Adjust to 'cover' or specific dimensions as needed */
   background-repeat: no-repeat; /* Prevent image from repeating */
-  background-position:bottom;
+  background-position: bottom;
 }
 
 @font-face {
@@ -22,7 +22,12 @@
 .font-disket {
   font-family: disket-bold;
 }
+.font-vcr {
+  font-family: vcr;
+}
 
+/* Remove it not required */
+/* ****************************************************** */
 .overlay {
   width: 100%;
   height: 100%;
@@ -35,6 +40,7 @@
   filter: blur(0.5px) drop-shadow(0 0 0 #c9c7c7);
   background-color: #000000;
 }
+/* ****************************************************** */
 
 /* Hero Section */
 .overlay_hero {
@@ -53,6 +59,52 @@
   height: calc(100% + 20rem);
   opacity: 0.8;
   background-image: url(/images/hero_noise.jpeg);
+  image-rendering: pixelated;
+  pointer-events: none;
+  animation: GrainOverlay_noise__MsKWx 5s steps(4) infinite;
+}
+
+
+/* About Section */
+.overlay_about {
+  width: 100%;
+  filter: blur(0.5px) drop-shadow(0 0 0 #c9c7c7);
+  background-color: #030303f8;
+}
+
+.overlay_about:before {
+  content: "";
+  position: fixed;
+  left: -10rem;
+  top: -10rem;
+  width: calc(100% + 20rem);
+  height: calc(100% + 20rem);
+  opacity: 0.8;
+  background-image: url(/images/noise_big.webp);
+  image-rendering: pixelated;
+  pointer-events: none;
+  animation: GrainOverlay_noise__MsKWx 5s steps(4) infinite;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  height: 100%;
+  filter: blur(0.5px) drop-shadow(0 0 0 #c9c7c7);
+  background-color: #fffffff8;
+}
+
+/* <canvas data-engine="three.js r156" width="1790" height="1672" style="position: absolute;top: 0px;left: 0px;width: 895px;height: 836px;z-index: 0;" class> */
+
+.footer:before {
+  content: "";
+  position: fixed;
+  left: -10rem;
+  top: -10rem;
+  width: calc(100% + 20rem);
+  height: calc(100% + 20rem);
+  opacity: 0.8;
+  background-image: url(/images/footer2.png);
   image-rendering: pixelated;
   pointer-events: none;
   animation: GrainOverlay_noise__MsKWx 5s steps(4) infinite;
@@ -122,7 +174,6 @@
   /* Rounded corners */
 }
 
-
 /* Define the style for the scrollbar track */
 ::-webkit-scrollbar-track {
   background-color: #020202;
@@ -138,8 +189,24 @@
   /* Rounded corners */
 }
 .bg-logo {
-  background-image: url('../assets/images/DEVSOCLOGOBIG.svg');
+  background-image: url("../assets/images/DEVSOCLOGOBIG.svg");
   background-size: 80%;
-  background-repeat: no-repeat; 
-  background-position:center;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@font-face {
+  font-family: courier;
+  src: url("../../public/font/cour.ttf");
+}
+
+@font-face {
+  font-family: vcr;
+  src: url("../../public/font/vcr.ttf");
+}
+
+.block-text {
+  font-family: courier, monospace;
+  font-size: 12px;
+  line-height: 1.2; /* Adjust as needed */
 }
