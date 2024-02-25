@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import pattern from "@/assets/images/pattern.svg";
+import Link from "next/link";
 const Footer = () => {
   return (
     <>
@@ -23,7 +24,7 @@ const Footer = () => {
                 width={0}
                 className="w-[100%]"
               />
-              <div className="absolute right-0 h-[100%] w-fit bg-[#7F32DA] flex items-center justify-center p-1 border-l-2 border-black hover:bg-black hover:text-white font-vcr hover:cursor-pointer">
+              <div className="font-vcr absolute right-0 flex h-[100%] w-fit items-center justify-center border-l-2 border-black bg-[#7F32DA] p-1 hover:cursor-pointer hover:bg-black hover:text-white">
                 X
               </div>
             </div>
@@ -49,13 +50,16 @@ const Footer = () => {
                 </p>
               </div>
 
-              <p className="font-vcr my-2">
+              <p className="font-vcr my-2 whitespace-pre-wrap text-sm font-light">
                 Trying to Learn More? We can help you. Top Secret Information is
                 right at your finger tips. To take the leap is what you choose.
               </p>
-              <div className="font-vcr my-2 flex h-[40px] w-[100px] items-center justify-center self-start border-2 border-black bg-white hover:cursor-pointer hover:bg-black hover:text-white">
+              <Link
+                href="./terminal"
+                className="font-vcr my-2 flex h-[40px] w-[100px] items-center justify-center self-start border-2 border-black bg-white hover:cursor-pointer hover:bg-black hover:text-white"
+              >
                 Enter
-              </div>
+              </Link>
             </div>
           </div>
         </div>
