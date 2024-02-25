@@ -11,7 +11,6 @@ export default function Home() {
         <Main />
         <Timeline />
         <About />
-        <Footer />
       </SmoothScrolling>
     </>
   );
