@@ -72,9 +72,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-row justify-between w-full absolute bottom-0">
-        <div className="font-disket mx-10 my-5 flex flex-col gap-2 self-end text-white">
-          <div className="flex flex-row gap-10">
+      <div className="absolute bottom-0 flex w-full flex-col md:flex-row justify-between text-[10px] md:text-[15px]">
+        <div className="font-disket mx-10 my-5 flex flex-col gap-2 md:self-end self-center text-white">
+          <div className="flex flex-row  gap-0 md:gap-10 md:justify-start justify-between">
             <div className="bg-black px-1 uppercase hover:bg-[#CFCFCF] hover:text-black">
               instagram
             </div>
