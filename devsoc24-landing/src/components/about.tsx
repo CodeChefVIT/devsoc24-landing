@@ -10,7 +10,7 @@ const About = () => {
   const y = useTransform(scrollYProgress, [0, 1], [0, -1250]);
 
   return (
-    <div className="overlay_about font-disket min-w-screen relative h-fit overflow-hidden bg-[#020202] px-2 text-center text-[35px] font-black text-[#9CE79ACC] md:px-10 md:text-[100px]">
+    <div className="overlay_about font-disket min-w-screen relative h-fit overflow-hidden bg-[#020202] px-2 text-center text-[35px] font-black text-[#9CE79ACC] md:px-10 md:text-[72px]">
       <span className="relative block">DEVSOC’24</span>
       &nbsp; ignites the tech scene with a blaze of innovation, where yesterday
       <motion.span style={{ y: y }} className="relative block">

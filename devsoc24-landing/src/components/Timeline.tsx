@@ -6,7 +6,7 @@ import dotgrid from "@/assets/images/dot_grid.svg";
 
 const Timeline = () => {
   return (
-    <div className="bg-logo font-disket overflow-hidden bg-[#020202]">
+    <div className="bg-logo font-disket overflow-hidden bg-[#020202] h-[120vh]">
       <Image
         className="absolute left-60 top-[1100px]"
         src={dotgrid as HTMLImageElement}

@@ -40,7 +40,7 @@ function Main() {
   return (
     <>
       <div className={className}>
-        <Image src={glitch as StaticImport} alt="glitch" layout="fill" />
+        <Image src={glitch as StaticImport} alt="glitch" fill />
         <Image
           src={logo as StaticImport}
           alt="logo"

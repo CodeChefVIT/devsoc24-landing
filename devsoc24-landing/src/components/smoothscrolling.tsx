@@ -1,6 +1,6 @@
 "use client";
-import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
-import { ReactNode } from "react";
+import { ReactLenis } from "@studio-freight/react-lenis";
+import { type ReactNode } from "react";
 
 interface SmoothScrollingProps {
   children: ReactNode;
