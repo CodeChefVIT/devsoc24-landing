@@ -87,7 +87,7 @@ function Main() {
           </div>
           <div className="flex flex-col lg:block">
             <Image src={titles[currentTitleIndex] as string} alt="title" />
-            <div className="flex justify-between mt-6 lg:hidden">
+            <div className="flex justify-evenly mx-auto mt-6 lg:hidden">
               <NavButton link="/" name="About" />
               <NavButton link="/" name="Discord" />
               
