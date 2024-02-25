@@ -2,52 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: disket;
-  src: url("../../public/font/Disket-Mono-Regular.ttf");
-  font-family: "ABC Diatype Mono";
-  src: url("https://db.onlinewebfonts.com/t/fbee28f49e99c472f1f569c6ddc24ebe.eot");
-  src:
-    url("https://db.onlinewebfonts.com/t/fbee28f49e99c472f1f569c6ddc24ebe.eot?#iefix")
-      format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/fbee28f49e99c472f1f569c6ddc24ebe.woff2")
-      format("woff2"),
-    url("https://db.onlinewebfonts.com/t/fbee28f49e99c472f1f569c6ddc24ebe.woff")
-      format("woff"),
-    url("https://db.onlinewebfonts.com/t/fbee28f49e99c472f1f569c6ddc24ebe.ttf")
-      format("truetype"),
-    url("https://db.onlinewebfonts.com/t/fbee28f49e99c472f1f569c6ddc24ebe.svg#ABC Diatype Mono")
-      format("svg");
-}
-
-.font-wreckside{
-  font-family: wreckside;
-}
-
+/* Font Setup */
+/* **************************************************************** */
 @font-face {
   font-family: disket-bold;
   src: url("../../public/font/Disket-Mono-Bold.ttf");
+}
+.font-disket {
+  font-family: disket-bold;
 }
 
 @font-face {
   font-family: wreckside;
   src: url("../../public/font/Wreckside.otf");
 }
-
-.bg-span {
-  background-image: url("../assets/images/bluespanbg.svg");
-  background-size: contain; /* Adjust to 'cover' or specific dimensions as needed */
-  background-repeat: no-repeat; /* Prevent image from repeating */
-  background-position: bottom;
+.font-wreckside {
+  font-family: wreckside;
 }
 
-.font-disket {
-  font-family: disket-bold;
+@font-face {
+  font-family: vcr;
+  src: url("../../public/font/vcr.ttf");
 }
 .font-vcr {
   font-family: vcr;
 }
 
+@font-face {
+  font-family: courier;
+  src: url("../../public/font/cour.ttf");
+}
+.block-text {
+  font-family: courier, monospace;
+  font-size: 12px;
+  line-height: 1.2; /* Adjust as needed */
+}
+/* **************************************************************** */
+
+/* Check if Required */
+/* **************************************************************** */
 .overlay {
   width: 100%;
   height: 100%;
@@ -60,9 +53,10 @@
   filter: blur(0.5px) drop-shadow(0 0 0 #c9c7c7);
   background-color: #000000;
 }
-/* ****************************************************** */
+/* **************************************************************** */
 
 /* Hero Section */
+/* **************************************************************** */
 .overlay_hero {
   width: 100%;
   height: 100%;
@@ -83,8 +77,10 @@
   pointer-events: none;
   animation: GrainOverlay_noise__MsKWx 5s steps(4) infinite;
 }
+/* **************************************************************** */
 
 /* About Section */
+/* **************************************************************** */
 .overlay_about {
   width: 100%;
   filter: blur(0.5px) drop-shadow(0 0 0 #030303f8);
@@ -104,31 +100,10 @@
   pointer-events: none;
   animation: GrainOverlay_noise__MsKWx 5s steps(4) infinite;
 }
+/* **************************************************************** */
 
-/* Footer */
-.footer {
-  width: 100%;
-  height: 100%;
-  filter: blur(0.5px) drop-shadow(0 0 0 #c9c7c7);
-  background-color: #fffffff8;
-}
-
-/* <canvas data-engine="three.js r156" width="1790" height="1672" style="position: absolute;top: 0px;left: 0px;width: 895px;height: 836px;z-index: 0;" class> */
-
-.footer:before {
-  content: "";
-  position: fixed;
-  left: -10rem;
-  top: -10rem;
-  width: calc(100% + 20rem);
-  height: calc(100% + 20rem);
-  opacity: 0.8;
-  background-image: url(/images/footer2.png);
-  image-rendering: pixelated;
-  pointer-events: none;
-  animation: GrainOverlay_noise__MsKWx 5s steps(4) infinite;
-}
-
+/* Glitch Effect Keyframes */
+/* **************************************************************** */
 @keyframes GrainOverlay_noise__MsKWx {
   0% {
     transform: translate3d(0, 9rem, 0);
@@ -174,7 +149,10 @@
     transform: translate3d(-7rem, 0, 0);
   }
 }
+/* **************************************************************** */
 
+/* Webkit Configuration */
+/* **************************************************************** */
 /* Define the style for the scrollbar track */
 ::-webkit-scrollbar {
   width: 2.5px;
@@ -207,27 +185,41 @@
 
   /* Rounded corners */
 }
+/* **************************************************************** */
+
+/* Lenis Config */
+/* **************************************************************** */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+/* **************************************************************** */
+
 .bg-logo {
   background-image: url("../assets/images/DEVSOCLOGOBIG.svg");
   background-size: 80%;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-@font-face {
-  font-family: courier;
-  src: url("../../public/font/cour.ttf");
-}
-
-@font-face {
-  font-family: vcr;
-  src: url("../../public/font/vcr.ttf");
-}
-
-.block-text {
-  font-family: courier, monospace;
-  font-size: 12px;
-  line-height: 1.2; /* Adjust as needed */
 }
 
 /* textarea {
@@ -351,28 +343,9 @@ a:focus {
   width: 100px;
 }
 
-/* Lenis Config */
-html.lenis {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
-}
-
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
+.bg-span {
+  background-image: url("../assets/images/bluespanbg.svg");
+  background-size: contain; /* Adjust to 'cover' or specific dimensions as needed */
+  background-repeat: no-repeat; /* Prevent image from repeating */
+  background-position: bottom;
 }
