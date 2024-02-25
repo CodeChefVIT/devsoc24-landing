@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import devsoc2k24 from "@/assets/images/DEVSOC2k24.svg";
 import dotgrid from "@/assets/images/dot_grid.svg";
-import LearnMoreBtn from "./learnMoreBtn";
+import LearnMoreBtn from "./LearnMoreBtn";
 
 const Timeline = () => {
   return (
