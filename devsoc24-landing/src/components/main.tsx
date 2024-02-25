@@ -90,7 +90,7 @@ function Main() {
         </div>
       </div>
 
-      <div className="absolute top-[15vh] right-[32vw]">
+      <div className="absolute top-[15vh] left-[32vw]">
         <Screen text="Hack Time"/>
       </div>
     </>
