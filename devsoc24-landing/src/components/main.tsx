@@ -25,7 +25,6 @@ function Main() {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
   const titles = [title, title2, title3, title4];
 
-
   useEffect(() => {
     const intervals = [2000, 400, 600, 400];
     const timer = setTimeout(() => {
@@ -45,7 +44,9 @@ function Main() {
   }, [currentTitleIndex, titles.length]);
 
   useEffect(() => {
-    PowerGlitch.glitch(".glitcheffect");
+    setTimeout(() => {
+      PowerGlitch.glitch(".glitcheffect");
+    }, 0);
   }, []);
 
   return (
@@ -62,7 +63,7 @@ function Main() {
 
       <div className="absolute top-6 m-0 w-full p-0">
         <div className="flex items-center justify-center">
-          <div className="relative flex w-[33%] items-center justify-evenly">
+          <div className="relative hidden w-[33%] items-center justify-evenly lg:flex">
             <div>
               <Image
                 src={dotgrid as HTMLImageElement}
@@ -84,8 +85,16 @@ function Main() {
               <NavButton link="/" name="Discord" />
             </div>
           </div>
-          <Image src={titles[currentTitleIndex] as string} alt="title" />
-          <div className="flex w-[33%] justify-center">
+          <div className="flex flex-col lg:block">
+            <Image src={titles[currentTitleIndex] as string} alt="title" />
+            <div className="flex justify-between mt-6 lg:hidden">
+              <NavButton link="/" name="About" />
+              <NavButton link="/" name="Discord" />
+              
+            </div>
+          </div>
+
+          <div className="hidden w-[33%] justify-center lg:flex">
             <div>
               <Image
                 src={dotgrid as HTMLImageElement}
@@ -98,8 +107,9 @@ function Main() {
             </div>
           </div>
         </div>
-        <div className="flex h-screen justify-between overflow-hidden 2xl:mt-12">
+        <div className="flex h-screen justify-center overflow-hidden lg:justify-between 2xl:mt-12">
           <motion.div
+            className="hidden lg:block"
             style={{ willChange: "transform" }}
             animate={{
               x: [
@@ -137,10 +147,11 @@ function Main() {
               className="glitcheffect rotate-[45deg]"
             />
           </motion.div>
-          <div>
+          <div className="my-12 sm:my-0">
             <Screen text="Hack Time" />
           </div>
           <motion.div
+            className="hidden lg:block"
             style={{ willChange: "transform" }}
             animate={{
               x: [
