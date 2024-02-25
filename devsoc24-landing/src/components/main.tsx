@@ -124,7 +124,7 @@ function Main() {
               ],
               opacity: [0, 0.8, 0, 0.8, 0],
               transition: {
-                duration: 20,
+                duration: 15,
                 repeat: Infinity,
                 ease: "linear",
               },
@@ -165,7 +165,7 @@ function Main() {
               ],
               opacity: [0.8, 0, 0.8, 0, 0.8],
               transition: {
-                duration: 20,
+                duration: 15,
                 repeat: Infinity,
                 ease: "linear",
               },
