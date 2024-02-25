@@ -1,9 +1,12 @@
 "use client"
 import { useState } from "react";
-
+import { PiNotepadLight } from "react-icons/pi";
 // import Image from "next/image";
-import Card from "../components/card";
-import Terminal from "../components/terminal/page";
+// import Card from "../../components/card";
+import Terminal from "../../components/terminal/page";
+import { MdMinimize } from "react-icons/md";
+import { IoMdClose } from "react-icons/io";
+import { BiWindow } from "react-icons/bi";
 
 
 export default function Home() {
@@ -55,11 +58,22 @@ const handleClick = (cardName: string) => {
               )
             })}
           </div>
-          <div className="flex justify-center w-full h-full ">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4 pt-[65px] place-items-center ">
-              {cardTypes.map((card, index) => (
-                <Card key={card} card={card} cardImage={cardImage[index]??"hello"} onClick={() => handleClick(card)} />
-              ))}
+          <div className="flex justify- w-full h-full  md:pl-[100px] pl-[30px] pt-[100px]">
+            <div className="">
+                <div className="w-[50vw] min-w-[500px] h-[75%] bg-[#b2b2b2] border-2">
+                    <div className="w-[100%] h-[25px] bg-gradient-to-r from-blue-800 to-blue-600 border-b-2 flex justify-between items-center ">
+                        <span className="flex items-center pl-4 text-white text-xs"><PiNotepadLight className="text-2xl pr-2"/> About-DEVSOC’24</span>
+                        <section className="flex">
+
+                        <span className="bg-[#757575] mr-1 border-r-[2px] border-b-[2px] border-[#1e1e1e]"><MdMinimize /></span>
+                        <span className="bg-[#757575] mr-1 border-r-[2px] border-b-[2px] border-[#1e1e1e]"><BiWindow /></span>
+                        <span className="bg-[#757575] mr-1 border-r-[2px] border-b-[2px] border-[#1e1e1e]"><IoMdClose /></span>
+                        </section>
+                    </div>
+                <p className=" w-[90%] pt-8 pl-6">DEVSOC is CodeChef-VIT’s annual flagship event hoping to empower young minds by bringing enthusiastic technocrats and thinkers under one roof. This year, the second iteration of the hackathon is being held with a goal to create a sprint like event, where participants create, hack, innovate to solve problems while adhering to the spirit of creativity and teamwork. The event is spread over three days, with the hackathon lasting 48 hours consisting of amazing swags, prizes, food and drinks!</p>
+                <p className=" w-[90%] pt-4 pl-6">Devsoc Is going to be held at Anna Auditorium, Vellore Institute of Technology, Vellore</p>
+                <p className=" w-[90%] pt-4 pl-6">Devsoc is going to be held on the 15th and 16th of March 2024</p>
+                </div>
             </div>
           </div>
         </div>
