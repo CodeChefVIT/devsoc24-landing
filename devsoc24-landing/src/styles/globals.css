@@ -44,8 +44,7 @@
   font-family: vcr;
 }
 
-.font-wreckside
-{
+.font-wreckside {
   font-family: wreckside;
 }
 
@@ -231,14 +230,14 @@
   line-height: 1.2; /* Adjust as needed */
 }
 
-textarea {
+/* textarea {
   left: -1000px;
   position: absolute;
 }
 b {
   font-weight: bold;
   text-decoration: underline;
-}
+} */
 /* Cursor Start */
 .cursor {
   /* font-size: 12px; */
@@ -289,7 +288,7 @@ b {
   }
 }
 
-p {
+/* p {
   display: block;
   line-height: 1.3em;
   margin: 0;
@@ -298,7 +297,7 @@ p {
   margin: 0;
   letter-spacing: 0.05em;
   animation: typing 0.5s steps(30, end);
-}
+} */
 .no-animation {
   animation: typing 0 steps(30, end);
 }
@@ -330,7 +329,7 @@ p {
   color: #fff;
 }
 .inherit,
-a {
+/* a {
   color: #211d1b;
 }
 a {
@@ -342,7 +341,7 @@ a:hover {
 }
 a:focus {
   outline: 0;
-}
+} */
 
 .butt:hover {
   box-shadow: -3px 4px 0px #232222;
