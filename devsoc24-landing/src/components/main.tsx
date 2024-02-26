@@ -130,27 +130,12 @@ function Main() {
                 className="hidden lg:block"
                 style={{ willChange: "transform" }}
                 animate={{
-                  x: [
-                    0,
-                    Math.random() * 300 - 150,
-                    0,
-                    Math.random() * 300 - 150,
-                    Math.random() * 300 - 150,
-                    Math.random() * 300 - 150,
-                    Math.random() * 300 - 150,
-                    0,
-                  ],
                   y: [
                     0,
-                    Math.random() * 300 - 150,
-                    0,
-                    Math.random() * 300 - 150,
-                    Math.random() * 300 - 150,
-                    Math.random() * 300 - 150,
-                    Math.random() * 300 - 150,
+                    300, // Move 300 units vertically downwards
                     0,
                   ],
-                  opacity: [0, 0.8, 0, 0.8, 0],
+                  opacity: [0, 0.8, 0],
                   transition: {
                     duration: 15,
                     repeat: Infinity,
@@ -172,27 +157,8 @@ function Main() {
                 className="hidden lg:block"
                 style={{ willChange: "transform" }}
                 animate={{
-                  x: [
-                    0,
-                    Math.random() * 300 - 150,
-                    0,
-                    Math.random() * 300 - 150,
-                    Math.random() * 300 - 150,
-                    Math.random() * 300 - 150,
-                    Math.random() * 300 - 150,
-                    0,
-                  ],
-                  y: [
-                    0,
-                    Math.random() * 300 - 150,
-                    0,
-                    Math.random() * 300 - 150,
-                    Math.random() * 300 - 150,
-                    Math.random() * 300 - 150,
-                    Math.random() * 300 - 150,
-                    0,
-                  ],
-                  opacity: [0.8, 0, 0.8, 0, 0.8],
+                  y: [0, 300, 0],
+                  opacity: [0.8, 0, 0.8],
                   transition: {
                     duration: 15,
                     repeat: Infinity,
