@@ -60,7 +60,7 @@ const handleClick = (cardName: string) => {
     //       </div>
           <div className="flex justify- w-full h-full  md:pl-[100px] pl-[30px] pt-[100px]">
             <div className="">
-                <div className="w-[50vw] min-w-[500px] h-[75%] bg-[#b2b2b2] border-2">
+                <div className="md:w-[50vw]   md:h-[75%]  bg-[#b2b2b2] border-2">
                     <div className="w-[100%] h-[25px] bg-gradient-to-r from-blue-800 to-blue-600 border-b-2 flex justify-between items-center ">
                         <span className="flex items-center pl-4 text-white text-xs"><PiNotepadLight className="text-2xl pr-2"/> About-DEVSOC’24</span>
                         <section className="flex">

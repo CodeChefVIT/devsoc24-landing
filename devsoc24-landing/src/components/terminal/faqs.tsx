@@ -67,19 +67,22 @@ const handleClick = (cardName: string) => {
                               className="fixed inset-0 transition-opacity"
                               onClick={closeUserModal}
                             >
-                              <div className="absolute inset-0 bg-gray-500 opacity-80"></div>
+                              <div className="absolute inset-0 bg-[#757575] opacity-90"></div>
                             </div>
-
+                            
                             <span
                               className="hidden sm:inline-block sm:h-screen sm:align-middle"
                               aria-hidden="true"
                             >
                               &#8203;
                             </span>
+                            
 
-                            <div className="inline-block transform overflow-hidden rounded-lg bg-white text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6 sm:align-middle">
+                            <div className="inline-block transform overflow-hidden rounded-lg bg-[#acabab] text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6 sm:align-middle">
+                                
                               <div>
                                 <div className="mt-5 md:col-span-2 md:mt-0">
+                                    
                                   <li>Is the hackathon free to attend?</li>
                                   <div className="block text-sm font-medium text-gray-700">
                                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt quae et earum nostrum odit vel non temporibus voluptates sequi sunt mollitia sapiente enim deleniti ad sint, excepturi iusto asperiores obcaecati dolore! Ullam asperiores reiciendis fugit autem tempora, consectetur a! Repudiandae soluta quia veritatis accusamus qui doloribus id explicabo enim aspernatur!
