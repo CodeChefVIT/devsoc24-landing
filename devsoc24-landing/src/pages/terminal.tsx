@@ -1,28 +1,37 @@
 "use client"
 import { useState } from "react";
+import React from 'react';
 
 // import Image from "next/image";
 import Card from "../components/card";
 import Terminal from "../components/terminal/page";
+import About from "../components/terminal/about";
+import FAQs from "../components/terminal/faqs";
+import { IoMdClose } from "react-icons/io";
 
 
 export default function Home() {
   const cardTypes = ["About", "Timeline", "Tracks", "Prizepool", "Sponsors", "Portal", "FAQs"]
   const cardImage = ["personabout 2.svg", "Frame 13.svg", "Frame 13 2.svg", "Frame 13 3.svg", "Frame 13 4.svg", "Frame 13 5.svg","Frame 13 6.svg"]
 
-const [activeCard, setActiveCard] = useState<string[]>(["DEVSOC 2024"]); 
+  type CardKey = 'About' | 'FAQs';
 
-const handleClick = (cardName: string) => { 
-  setActiveCard(currentActiveCard => {
-    if (currentActiveCard.includes(cardName)) {
-      console.log("activecard",activeCard)
-      return currentActiveCard.filter(card => card !== cardName);
-    } else {
-      console.log(activeCard)
-      return [...currentActiveCard, cardName];
-    }
-  });
+  const cardComponents: {
+    [K in CardKey]: () => JSX.Element;
+} = {
+    About, 
+    FAQs,
 };
+
+const [activeCard, setActiveCard] = React.useState<CardKey | ''>('');
+
+
+
+const handleClick = (cardName: CardKey) => {
+    setActiveCard(cardName);
+};
+
+  const SelectedComponent = activeCard ? cardComponents[activeCard] : null;
   return (
     <main className="font-diatype">
       <div className="w-full bg-[#494848] h-[2.8%] fixed font-diatype flex justify-center z-30">
@@ -47,21 +56,30 @@ const handleClick = (cardName: string) => {
           <Terminal/>
         </div>
         <div className="md:pl-[25%] md:fixed overflow-y-auto w-full bg-[#232323] md:h-[100%] pr-[20px]  h-[900px]">
-          <div className="mt-[1.3%] md:flex fixed hidden bg-[#d2d1d1] top-0  left-[22%] h-[20px] z-10">
-            {activeCard.map((card)=>{
-              return (
-
-                <div key={card} className="border-r-2 border-[#000000] w-[140px] h-full  flex justify-center items-center text-xs font-semibold">{card}</div>
-              )
-            })}
+          <div className="mt-[1.3%] md:flex justify-center items-center fixed hidden bg-[#d2d1d1] top-0  left-[22%] h-[20px] z-10">
+            <div className="border-r-2 border-[#000000] w-[120px] h-full flex justify-center items-center text-xs font-semibold">DEVSOC 24</div>
+            {activeCard && (
+              <>
+          <div className="border- border-[#000000] w-[120px] h-full flex justify-center items-center text-xs font-semibold">{activeCard}</div><button onClick={() => setActiveCard('')}><IoMdClose className="text-sm font-bold"/></button>
+          </>
+        )}
           </div>
           <div className="flex justify-center w-full h-full ">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4 pt-[65px] place-items-center ">
-              {cardTypes.map((card, index) => (
-                <Card key={card} card={card} cardImage={cardImage[index]??"hello"} onClick={() => handleClick(card)} />
-              ))}
-            </div>
+        {SelectedComponent ? (
+        <SelectedComponent />
+      ): (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4 pt-[65px] place-items-center">
+            {cardTypes.map((card, index) => (
+  <Card 
+    key={card} 
+    card={card} 
+    cardImage={cardImage[index] ?? "hello"} 
+    onClick={() => handleClick(card as CardKey)} 
+  />
+))}
           </div>
+        )}
+      </div>
         </div>
       </div>
       <div className="w-full bg-[#494848] h-[2.8%] fixed bottom-0 z-40 font-diatype flex justify-center">
