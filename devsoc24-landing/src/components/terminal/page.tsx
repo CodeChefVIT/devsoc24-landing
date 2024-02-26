@@ -113,7 +113,7 @@ const triggerTypewriterEffect = (commandIndex: number) => {
             if (newCommands[commandIndex]) {
               const newDisplayOutput = [...newCommands[commandIndex]?.displayOutput ?? []];
               newDisplayOutput[currentLineIndex] = line.substr(0, nextCharIndex + 1);
-              newCommands[commandIndex].displayOutput = newDisplayOutput;
+              newCommands[commandIndex]!.displayOutput = newDisplayOutput;
             }
             return newCommands;
           });
