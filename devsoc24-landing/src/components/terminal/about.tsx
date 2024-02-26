@@ -27,37 +27,37 @@ const handleClick = (cardName: string) => {
   });
 };
   return (
-    <main className="font-diatype">
-      <div className="w-full bg-[#494848] h-[2.8%] fixed font-diatype flex justify-center z-30">
-        <div style={{
-        backgroundImage: `url('/Topborder.svg')`,
-        backgroundSize: 'cover', 
-        backgroundPosition: 'center',
-        width: '100%', 
-        height: '100%', 
+    // <main className="font-diatype">
+    //   <div className="w-full bg-[#494848] h-[2.8%] fixed font-diatype flex justify-center z-30">
+    //     <div style={{
+    //     backgroundImage: `url('/Topborder.svg')`,
+    //     backgroundSize: 'cover', 
+    //     backgroundPosition: 'center',
+    //     width: '100%', 
+    //     height: '100%', 
         
-      }}></div>
+    //   }}></div>
 
-      {/* <Image src="/Topborder.svg"
-        alt="Description of the image"
-        width={2200} 
-        height={200} 
-        className=""
-      /> */}
-      </div>
-    <div className="flex md:flex-row flex-col-reverse justify-between items-start h-[96%] ">
-        <div className="md:fixed fixed md:top-0 bottom-0  md:w-[22%] md:h-[100%] md:pt-[1.3%] w-[100%] h-[250px] z-10 overflow-y-auto">
-          <Terminal/>
-        </div>
-        <div className="md:pl-[25%] md:fixed overflow-y-auto w-full bg-[#232323] md:h-[100%] pr-[20px]  h-[900px]">
-          <div className="mt-[1.3%] md:flex fixed hidden bg-[#d2d1d1] top-0  left-[22%] h-[20px] z-10">
-            {activeCard.map((card)=>{
-              return (
+    //   {/* <Image src="/Topborder.svg"
+    //     alt="Description of the image"
+    //     width={2200} 
+    //     height={200} 
+    //     className=""
+    //   /> */}
+    //   </div>
+    // <div className="flex md:flex-row flex-col-reverse justify-between items-start h-[96%] ">
+    //     <div className="md:fixed fixed md:top-0 bottom-0  md:w-[22%] md:h-[100%] md:pt-[1.3%] w-[100%] h-[250px] z-10 overflow-y-auto">
+    //       <Terminal/>
+    //     </div>
+    //     <div className="md:pl-[25%] md:fixed overflow-y-auto w-full bg-[#232323] md:h-[100%] pr-[20px]  h-[900px]">
+    //       <div className="mt-[1.3%] md:flex fixed hidden bg-[#d2d1d1] top-0  left-[22%] h-[20px] z-10">
+    //         {activeCard.map((card)=>{
+    //           return (
 
-                <div key={card} className="border-r-2 border-[#000000] w-[140px] h-full  flex justify-center items-center text-xs font-semibold">{card}</div>
-              )
-            })}
-          </div>
+    //             <div key={card} className="border-r-2 border-[#000000] w-[140px] h-full  flex justify-center items-center text-xs font-semibold">{card}</div>
+    //           )
+    //         })}
+    //       </div>
           <div className="flex justify- w-full h-full  md:pl-[100px] pl-[30px] pt-[100px]">
             <div className="">
                 <div className="w-[50vw] min-w-[500px] h-[75%] bg-[#b2b2b2] border-2">
@@ -76,24 +76,24 @@ const handleClick = (cardName: string) => {
                 </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="w-full bg-[#494848] h-[2.8%] fixed bottom-0 z-40 font-diatype flex justify-center">
-        <div style={{
-        backgroundImage: `url('/Topborder.svg')`,
-        backgroundSize: 'cover', 
-        backgroundPosition: 'center',
-        width: '100%', 
-        height: '100%',
-      }}></div>
+    //     </div>
+    //   </div>
+    //   <div className="w-full bg-[#494848] h-[2.8%] fixed bottom-0 z-40 font-diatype flex justify-center">
+    //     <div style={{
+    //     backgroundImage: `url('/Topborder.svg')`,
+    //     backgroundSize: 'cover', 
+    //     backgroundPosition: 'center',
+    //     width: '100%', 
+    //     height: '100%',
+    //   }}></div>
 
-      {/* <Image src="/Topborder.svg"
-        alt="Description of the image"
-        width={2200} 
-        height={200} 
-        className=""
-      /> */}
-      </div>
-    </main>
+    //   {/* <Image src="/Topborder.svg"
+    //     alt="Description of the image"
+    //     width={2200} 
+    //     height={200} 
+    //     className=""
+    //   /> */}
+    //   </div>
+    // </main>
   );
 }
