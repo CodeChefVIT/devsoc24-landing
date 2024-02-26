@@ -3,8 +3,13 @@ import Image from "next/image";
 import pattern from "@/assets/images/pattern.svg";
 import glitch from "@/assets/images/footer_glitch.gif";
 import Link from "next/link";
+import { useLenis } from "@studio-freight/react-lenis";
 
 const Footer = () => {
+  const lenis = useLenis(({ scroll }) => {
+    // console.log(scroll);
+  });
+  
   return (
     <>
       <Image
@@ -33,7 +38,12 @@ const Footer = () => {
                 width={0}
                 className="w-[100%]"
               />
-              <div className="font-vcr absolute right-0 flex h-[100%] w-fit items-center justify-center border-l-2 border-black bg-[#7F32DA] p-1 hover:cursor-pointer hover:bg-black hover:text-white">
+              <div
+                className="font-vcr absolute right-0 flex h-[100%] w-fit items-center justify-center border-l-2 border-black bg-[#7F32DA] p-1 hover:cursor-pointer hover:bg-black hover:text-white"
+                onClick={() =>
+                  lenis?.scrollTo("#Main", { lerp: 0.1, duration: 1 })
+                }
+              >
                 X
               </div>
             </div>

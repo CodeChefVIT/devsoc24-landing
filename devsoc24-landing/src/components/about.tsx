@@ -48,7 +48,6 @@ const About = () => {
   return (
     <>
       {showOriginal && (
-        <div className={`overlay_about overflow-hidden`}>
           <div className=" font-disket min-w-screen relative h-fit overflow-hidden bg-[#020202] px-2 text-center text-[35px] font-black text-[#9CE79ACC] md:px-10 md:text-[100px]">
             <span className="relative block">DEVSOC’24</span>
             &nbsp; ignites the tech scene with a blaze of innovation, where
@@ -92,7 +91,6 @@ const About = () => {
             Join the fray as we smash barriers and redefine what&apos;s
             possible.
           </div>
-        </div>
       )}
       {showGlitchImage && (
         <Image
@@ -100,7 +98,7 @@ const About = () => {
           alt="glitch"
           height={0}
           width={0}
-          className="absolute -z-10 min-h-screen w-screen"
+          className="absolute z-50 min-h-screen w-screen"
         />
       )}
       {showGlitch && (

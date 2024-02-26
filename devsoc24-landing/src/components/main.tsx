@@ -68,7 +68,7 @@ function Main() {
   }, []);
   return (
     <>
-      <motion.div style={{ y: -y }}>
+      <motion.div style={{ y: -y }} className="">
         <div style={{ opacity: scrollOpacity }}>
           <div className={className}>
             <Image src={glitch as StaticImageData} alt="glitch" fill />
@@ -177,7 +177,7 @@ function Main() {
           </div>
         </div>
       </motion.div>
-      <motion.div style={{ y: y }} className="relative z-50">
+      <motion.div style={{ y: y }} className="relative z-30">
         <div className="flex h-[1000px] items-center justify-center overflow-hidden bg-[#020202]">
           <div className="bg-logo font-disket overflow-hidden bg-[#020202]">
             <motion.span style={{ y: y }} className="relative block">
