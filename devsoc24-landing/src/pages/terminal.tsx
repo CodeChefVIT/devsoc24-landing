@@ -1,6 +1,7 @@
 "use client"
 import { useState } from "react";
 import React from 'react';
+import TypewriterEffect from '../components/terminal/typewriter'
 
 // import Image from "next/image";
 import Card from "../components/card";
@@ -13,9 +14,37 @@ import Timeline from "../components/terminal/timeline";
 import { IoMdClose } from "react-icons/io";
 
 
+const help = [
+  '<span class="">WDWKJDCNWKJC</span>',
+  '<span class="">WUDC GWUDYGC WQUYDCG WQUODCG </span>',
+  '<span class="">WIDCHWCW</span>',
+  '<span class="">JQSCHNJ  CIHQIE WQCNWIKCJNWKCWNDCKJW DN</span> ',
+  '<span class="">OKOEWKCWJDIOCJWI CWCJWQJDCJWC.........</span> ',
+  '<span class="">WDKNCWDKJ</span> ',
+  '<span class="">WDOCOWQCJQDWODC</span> ',
+  '<span class="">IBC QICUDH QINCQWIC UHDWCIUWDCHIWUDHCWDCJIWDCMWD W</span> ',
+  '<span class="">NJDJCDCNDJCND..................</span> ',
+  '<span class="">DCNQW CIQWC WQODC WDC Q</span>',
+  '<span class="">WDCQN WD QC</span> ',
+  '<span class="">WJDCN QWINCQJWCNQWCKJN DWCNWD CKNWDC.........</span> ',
+  '<span class="">QWIJNCI WDUHCIWDCN WIDCKJNW DICKJQWDDNCQW</span> ',
+  '<span class="">WQDCN WDKCNJWQLKDCJQWNDCKJLQWN CKLDNCQWKDC WJDCNQKLW DNCQWJK</span>',
+  '<span class="">WKDNCW KJDCNWKDNCWJKCWKDJCNWDLKJC</span> ',
+  '<span class="">WQDJCNIUWQHCUWHDCIUHWQUDCHUIWHDCW</span> ',
+  '<span class="">WDCIHWDCIUHWIUDCHIUWQHCQWHCU.........</span> ',
+  '<span class="">JWD N28DH  92NJK IWCJIJDWCNW</span> ',
+  '<span class="">WQINJC IUWCINWCD</span> ',
+  '<span class="">JIWEIUCIUWHCIU</span> ',
+  '<span class="">LOADING....................................</span>  ',
+  
+  "<br>",
+];
+
 export default function Home() {
   const cardTypes = ["About", "Timeline", "Tracks", "Prizepool", "Sponsors", "Portal", "FAQs"]
   const cardImage = ["personabout 2.svg", "Frame 13.svg", "Frame 13 2.svg", "Frame 13 3.svg", "Frame 13 4.svg", "Frame 13 5.svg","Frame 13 6.svg"]
+
+  const [typingCompleted, setTypingCompleted] = useState(false);
 
   type CardKey = 'About' | 'FAQs' | 'Prizepool' | 'Tracks' | 'Timeline';
 
@@ -36,11 +65,21 @@ const [activeCard, setActiveCard] = React.useState<CardKey | ''>('');
 const handleClick = (cardName: CardKey) => {
     setActiveCard(cardName);
 };
+const handleTypingComplete = () => {
+    setTypingCompleted(true);
+  };
 
   const SelectedComponent = activeCard ? cardComponents[activeCard] : null;
   return (
-    <main className="font-diatype">
-      <div className="w-full bg-[#494848] h-[2.4%] fixed font-diatype flex justify-center z-30">
+    <main className="font-diatype bg-[#232323] h-[100vh]">
+      {!typingCompleted ? (
+        <div className="pl-3">
+          <TypewriterEffect textLines={help} onTypingComplete={handleTypingComplete}/>
+
+        </div>
+      ) : (
+        <>
+        <div className="content-after-typing w-full bg-[#494848] h-[2.4%] fixed font-diatype flex justify-center z-30">
         <div style={{
         backgroundImage: `url('/Topborder.svg')`,
         backgroundSize: 'cover', 
@@ -104,6 +143,9 @@ const handleClick = (cardName: CardKey) => {
         className=""
       /> */}
       </div>
+      </>
+      )}
+      
     </main>
   );
 }

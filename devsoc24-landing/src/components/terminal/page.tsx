@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from "react";
 interface Command {
   command: string;
   output: string[];
+  displayOutput: string[];
 }
 const Terminal = () => {
   const [inputValue, setInputValue] = useState("");
@@ -21,30 +22,37 @@ const Terminal = () => {
 
   const commandOutputs: CommandOutputs = {
     whatisdevsoc: [
-      "Hey, hjdsbc ADFH Ga dsfhLA a",
-      "hasbfdsf DIF KJa dfiu AIF ahidf UADHFIpdfhIAFafnFa",
+      '<span class="command">whatisdevsoc</span>What is Devsoc?',
+      '<span class="command">whoisdevsoc</span>Who is devsoc?',
     ],
     whoisdevsoc: [
-      "The paradox of “Who am I?” is: we never know, but, we constantly find out.",
+      '<span class="command">whatisdevsoc</span>What is Devsoc?',
+      '<span class="command">whoisdevsoc</span>Who is devsoc?',
     ],
     whyisdevsoc: [
-      "Because exploring the unknown and innovating is at the heart of human nature.",
+      '<span class="command">whatisdevsoc</span>What is Devsoc?',
+      '<span class="command">whoisdevsoc</span>Who is devsoc?',
     ],
     secret: [
-      '<span class="command">sudo</span>           Only use if you\'re admin',
+      '<span class="command">whatisdevsoc</span>What is Devsoc?',
+      '<span class="command">whoisdevsoc</span>Who is devsoc?',
     ],
     aditansh: [
-      "Still curating... most projects are offline, on GitHub, or confidential.",
+      '<span class="command">whatisdevsoc</span>What is Devsoc?',
+      '<span class="command">whoisdevsoc</span>Who is devsoc?',
     ],
-    adityabhaiya: ["Hello"],
+    adityabhaiya: [
+      '<span class="command">whatisdevsoc</span>What is Devsoc?',
+      '<span class="command">whoisdevsoc</span>Who is devsoc?',
+    ],
     help: [
-      '<span class="command">whatisdevsoc</span>          What is Devsoc?',
-      '<span class="command">whoisdevsoc</span>           Who is devsoc?',
-      '<span class="command">whyisdevsoc</span>           Why is devsoc',
-      '<span class="command">aditansh</span>              Aditansh',
-      '<span class="command">adityabhaiya</span>          Adityabhaiya',
-      '<span class="command">help</span>                  Help',
-      '<span class="command">clear</span>                 Clear terminal',
+      '<span class="command">whatisdevsoc</span>What is Devsoc?',
+      '<span class="command">whoisdevsoc</span>Who is devsoc?',
+      '<span class="command">whyisdevsoc</span>Why is devsoc',
+      '<span class="command">aditansh</span>Aditansh',
+      '<span class="command">adityabhaiya</span>Adityabhaiya',
+      '<span class="command">help</span>Help',
+      '<span class="command">clear</span>Clear terminal',
       "<br>",
     ],
     clear: [],
@@ -60,22 +68,72 @@ const Terminal = () => {
     ],
   };
 
+  const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+
   const handleKeyPress = (event: React.KeyboardEvent) => {
     if (event.key === "Enter") {
       event.preventDefault();
       const trimmedInput = inputValue.trim();
       if (trimmedInput === "clear") {
-        setCommands([]);
-      } else {
-        const output = commandOutputs[trimmedInput] ?? [
-          `Command not found: ${trimmedInput}`,
-        ];
-        setCommands([...commands, { command: trimmedInput, output }]);
-        console.log(output);
-      }
+  setCommands([]);
+} else {
+  const output = commandOutputs[trimmedInput] ?? [`Command not found: ${trimmedInput}`];
+  const displayOutput = output.map(() => ""); 
+  setCommands((prevCommands) => [...prevCommands, { command: trimmedInput, output, displayOutput }]);
+}
+
       setInputValue("");
     }
   };
+
+  useEffect(() => {
+  if (commands.length > 0) {
+    triggerTypewriterEffect(commands.length - 1);
+  }
+}, [commands]);
+
+const triggerTypewriterEffect = (commandIndex: number) => {
+  let currentLineIndex = 0;
+  
+  if (commandIndex >= 0 && commandIndex < commands.length) {
+    const command = commands[commandIndex];
+    if (!command) return; 
+    const outputLines = command.output;
+
+    const typeNextChar = () => {
+      if (currentLineIndex < outputLines.length) {
+        const line = outputLines[currentLineIndex]??'';
+        const currentDisplayLine = command.displayOutput[currentLineIndex] ?? '';
+        const nextCharIndex = currentDisplayLine.length;
+
+        if (nextCharIndex < line.length) {
+          setCommands((prevCommands) => {
+            const newCommands = [...prevCommands];
+            if (newCommands[commandIndex]) {
+              const newDisplayOutput = [...newCommands[commandIndex]?.displayOutput ?? []];
+              newDisplayOutput[currentLineIndex] = line.substr(0, nextCharIndex + 1);
+              newCommands[commandIndex].displayOutput = newDisplayOutput;
+            }
+            return newCommands;
+          });
+          setTimeout(typeNextChar, 50); 
+        } else {
+          
+          currentLineIndex++;
+          setTimeout(typeNextChar, 0);
+        }
+      }
+    };
+
+    typeNextChar();
+  }
+};
+
+
+
+
+
 
   const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInputValue(event.target.value);
@@ -143,21 +201,22 @@ scrollToBottom()
         {/* <span className="color2 ml-[15px]">Welcome to Devsoc web terminal.</span> */}
         {/* <span className="color2 ml-[15px]">For a list of available commands, type</span> <span className="command">'help'</span><span className="color2">.</span> */}
         {commands.map((cmdObj, index) => (
-          <div key={index}>
-            <div className="command-line">
-              <span>devsoc@2024.com:~${cmdObj.command}</span>
-            </div>
-            {cmdObj.output.map((line, lineIndex) => (
-              <div
-                key={lineIndex}
-                className="command-output"
-                dangerouslySetInnerHTML={{ __html: line }}
-              ></div>
-            ))}
-          </div>
-        ))}
+  <div key={index}>
+    <div className="command-line">
+      <span>devsoc@2024.com:~${cmdObj.command}</span>
+    </div>
+    {cmdObj.displayOutput.map((line, lineIndex) => (
+      <div
+        key={lineIndex}
+        className="command-output"
+        dangerouslySetInnerHTML={{ __html: line }}
+      ></div>
+    ))}
+  </div>
+))}
+
         <div id="command" className="flex">
-          <div id="liner" className="ml-[15px] flex-1">
+          <div id="liner" className="ml-[10px] flex-1">
             <span>devsoc@2024.com:~${inputValue}</span>
             <b className="cursor">█</b>
             <div style={{ marginBottom: 100 }} ref={endRef} />
@@ -175,15 +234,15 @@ scrollToBottom()
 
       <style jsx>{`
         .command-output {
-          margin-left: 5px;
+          margin-left: 10px;
         }
         .command-line {
           margin-bottom: 10px;
-          margin-left: 5px;
+          margin-left: 10px;
         }
         .command {
           margin-bottom: 10px;
-          margin-left: 5px;
+          margin-left: 10px;
         }
       `}</style>
     </div>
