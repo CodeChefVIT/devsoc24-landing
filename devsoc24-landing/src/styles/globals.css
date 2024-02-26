@@ -37,6 +37,14 @@
   font-size: 12px;
   line-height: 1.2; /* Adjust as needed */
 }
+
+@media (max-width: 360px) {
+  .block-text {
+    font-size: 8px;
+    line-height: 1.2;
+    font-family: courier, monospace;
+  }
+}
 /* **************************************************************** */
 
 /* Check if Required */
