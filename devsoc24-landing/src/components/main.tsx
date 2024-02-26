@@ -18,7 +18,7 @@ import Screen from "@/components/screen";
 import { PowerGlitch } from "powerglitch";
 import devsoc2k24 from "@/assets/images/DEVSOC24.svg";
 import LearnMoreBtn from "./LearnMoreBtn";
-
+import TypewriterEffect from "./terminal/typewriter";
 import { useTransform, motion, useScroll } from "framer-motion";
 
 function Main() {
