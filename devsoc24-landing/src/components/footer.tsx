@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import pattern from "@/assets/images/pattern.svg";
 import glitch from "@/assets/images/footer_glitch.gif";
 import Link from "next/link";
+
 const Footer = () => {
   return (
     <>
       <Image
         src={glitch}
-        alt="glitch"
+        alt="glitch glitcheffect"
         height={0}
         width={0}
         className="absolute -z-10 h-screen w-screen"
       />
-      <div className="flex h-screen items-center justify-center overflow-hidden">
+      <div className="glitcheffect flex h-screen items-center justify-center overflow-hidden">
         <div className="h-fit w-fit border-2 border-black bg-[#7F32DA] p-[1px]">
           <div className=" h-fit w-[400px] flex-row overflow-hidden border-2 border-black bg-[#7F32DA]">
             <div className="relative flex justify-center border-b-2 border-black">
@@ -72,9 +73,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 flex w-full flex-col md:flex-row justify-between text-[10px] md:text-[15px]">
-        <div className="font-disket mx-10 my-5 flex flex-col gap-2 md:self-end self-center text-white">
-          <div className="flex flex-row  gap-0 md:gap-10 md:justify-start justify-between">
+      <div className="absolute bottom-0 flex w-full flex-col justify-between text-[10px] md:flex-row md:text-[15px]">
+        <div className="font-disket mx-10 my-5 flex flex-col gap-2 self-center text-white md:self-end">
+          <div className="flex flex-row  justify-between gap-0 md:justify-start md:gap-10">
             <div className="bg-black px-1 uppercase hover:bg-[#CFCFCF] hover:text-black">
               instagram
             </div>
@@ -84,12 +85,12 @@ const Footer = () => {
           </div>
           <div className="flex flex-col">
             <div className="bg-black px-1 uppercase">
-              © Copyright 2024 codechef-vitAll rights reserved.
+              © Copyright 2024 codechef-vit
             </div>
             <div className="bg-black px-1 uppercase">All rights reserved.</div>
           </div>
         </div>
-        <div className="flex flex-row font-disket mx-10 my-5  gap-2 self-end text-white">
+        <div className="font-disket mx-10 my-5 flex flex-row  gap-2 self-end text-white">
           <div className="bg-black px-1 uppercase hover:bg-[#CFCFCF] hover:text-black">
             privacy policy
           </div>
