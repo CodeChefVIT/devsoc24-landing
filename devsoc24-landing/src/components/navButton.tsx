@@ -4,7 +4,7 @@ import Link from "next/link";
 const NavButton = (props: {link: string; name: string}) => {
     return (
         <>
-            <div className={`${styles.navLink} inline-block float-left text-center overflow-hidden`}>
+            <div className={`${styles.navLink} float-left text-center overflow-hidden`}>
                 <Link
                     href={props.link}
                     className= {`${styles.navBtn} font-disket text-2xl`}
