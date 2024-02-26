@@ -44,9 +44,7 @@ function Main() {
   }, [currentTitleIndex, titles.length]);
 
   useEffect(() => {
-    setTimeout(() => {
       PowerGlitch.glitch(".glitcheffect");
-    }, 0);
   }, []);
 
   return (
