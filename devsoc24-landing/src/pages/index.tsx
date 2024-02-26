@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <SmoothScrolling>
         <Main />
-        <Timeline />
+
         <About />
       </SmoothScrolling>
     </>
