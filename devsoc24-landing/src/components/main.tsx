@@ -241,7 +241,7 @@ function Main() {
               <div className="mt-14 max-sm:mt-3 flex w-full justify-center ">
                 <LearnMoreBtn link={""} />
               </div>
-              <div className="container flex flex-wrap items-center justify-center gap-10 pt-32 max-sm:pt-3 text-center" id="timeline-section">
+              <div className="container h-fit flex flex-wrap items-center justify-center gap-10 pt-32 max-sm:pt-3 text-center" id="timeline-section">
                 {showBoxes && Array.from({ length: 6 }).map((_, index) => (
                   <motion.div
                     key={index}

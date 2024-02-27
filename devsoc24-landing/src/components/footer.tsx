@@ -9,7 +9,7 @@ const Footer = () => {
   const lenis = useLenis(({ scroll }) => {
     // console.log(scroll);
   });
-  
+
   return (
     <>
       <Image
@@ -86,10 +86,10 @@ const Footer = () => {
       <div className="absolute bottom-0 flex w-full flex-col justify-between items-center text-[10px] md:flex-row md:text-[15px]">
         <div className="font-disket mx-10 my-5 flex flex-col gap-2 self-center text-white md:self-end">
           <div className="flex flex-row  justify-between gap-0 md:justify-start md:gap-10">
-            <div className="bg-black px-1 uppercase hover:bg-[#CFCFCF] hover:text-black">
+            <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
               instagram
             </div>
-            <div className="bg-black px-1 uppercase hover:bg-[#CFCFCF] hover:text-black">
+            <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
               linkedin
             </div>
           </div>
@@ -100,14 +100,14 @@ const Footer = () => {
             <div className="bg-black px-1 uppercase">All rights reserved.</div>
           </div>
         </div>
-        <div className="font-disket mx-10 my-5 flex gap-2 self-center md:self-end text-white">
-          <div className="bg-black px-1 uppercase hover:bg-[#CFCFCF] hover:text-black">
+        <div className="font-disket mx-10 my-5 flex flex-row  gap-2 self-end text-white">
+          <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
             privacy policy
           </div>
-          <div className="bg-black px-1 uppercase hover:bg-[#CFCFCF] hover:text-black">
+          <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
             cookie policy
           </div>
-          <div className="bg-black px-1 uppercase hover:bg-[#CFCFCF] hover:text-black">
+          <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
             terms of service
           </div>
         </div>
