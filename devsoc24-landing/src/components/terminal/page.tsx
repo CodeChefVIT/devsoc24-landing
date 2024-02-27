@@ -16,8 +16,7 @@ const Terminal = () => {
   const [greenProgress, setGreenProgress] = useState(0);
   const [blueProgress, setBlueProgress] = useState(0);
   const endRef = useRef<HTMLDivElement>(null);
-   const [currentTime, setCurrentTime] = useState(new Date());
-
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   // const endOfMessagesRef = useRef(null);
 
@@ -70,9 +69,9 @@ const Terminal = () => {
       "|_______/ |________/    \\_/     \\______/ \\ ______/ \\ ______/",
     ],
     roll: [],
-    initial:[
+    initial: [
       '<span class="">$User id set to 8y14e9f8</span>',
-      '<span class="">User validated and online...</span>',
+      '<span class="">User vakidated and online...</span>',
       '<span class="">[[init]]</span>',
       '<span class="">Retriving command data...</span>',
       '<span class="">[complete]</span>',
@@ -86,7 +85,7 @@ const Terminal = () => {
       '<span class="">[complete]</span>',
       '<span class="">to start with, type <b>help</b> to get all commands</span>',
       // "<br>",
-    ]
+    ],
   };
 
   const sleep = (ms: number) =>
@@ -170,23 +169,22 @@ const Terminal = () => {
   };
 
   useEffect(() => {
-  const tick = () => {
-    setCurrentTime(new Date()); // This updates the state every second
-  };
+    const tick = () => {
+      setCurrentTime(new Date()); // This updates the state every second
+    };
 
-  const timerID = setInterval(tick, 1000); // Sets up the interval
+    const timerID = setInterval(tick, 1000); // Sets up the interval
 
-  return () => {
-    clearInterval(timerID); // Clears the interval on component unmount
-  };
-}, []);
+    return () => {
+      clearInterval(timerID); // Clears the interval on component unmount
+    };
+  }, []);
 
-
-  const day = currentTime.toLocaleString('default', { weekday: 'long' });
+  const day = currentTime.toLocaleString("default", { weekday: "long" });
   const date = `${currentTime.getDate()}-${currentTime.getMonth() + 1}-${currentTime.getFullYear()}`;
   const time = `${currentTime.getHours()}:${currentTime.getMinutes()}:${currentTime.getSeconds()}`;
 
-    useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       if (redProgress < 40) {
         setRedProgress(redProgress + 0.5);
@@ -204,7 +202,7 @@ const Terminal = () => {
     return () => clearInterval(interval);
   }, [redProgress, greenProgress, blueProgress]);
 
-   useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       if (redProgress < 40) {
         setRedProgress(redProgress + 1);
@@ -223,8 +221,6 @@ const Terminal = () => {
   }, [redProgress, greenProgress, blueProgress]);
   // var currentdate = new Date();
 
-  
-
   const scrollToBottom = () => {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -232,9 +228,9 @@ const Terminal = () => {
   useEffect(() => {
     const helpOutput = commandOutputs.initial ?? [];
 
-    const displayOutput = helpOutput.map(() => ""); 
+    const displayOutput = helpOutput.map(() => "");
     setCommands([{ command: "initial", output: helpOutput, displayOutput }]);
-  }, []); 
+  }, []);
 
   useEffect(() => {
     if (commands.length > 0) {
@@ -246,36 +242,34 @@ const Terminal = () => {
     scrollToBottom();
   }, [inputValue]);
 
-  
   return (
     <div className="h-[400px] bg-[#757575] font-diatype text-sm md:h-[100%] md:text-[13.3px] md:leading-[13.5px] ">
-      <div id="terminal" className="overflow-y-auto bg-[#757575] md:pt-2 pt-0">
-       
-
-           
-        <div className="flex  h-[110px] flex-col items-start border-b-[1px] border-black md:text-[13px] md:leading-[13.5px] ">
-           <div
-              style={{
-                backgroundImage: `url('/Topborder.svg')`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                width: "100%",
-                height: "13px",
-              }}
-              className="md:hidden flex fixed"
-            ></div>
-          <span className="pb-1 pl-2 md:pt-1 pt-3">
+      <div id="terminal" className="overflow-y-auto bg-[#757575] pt-0 md:pt-2">
+        <div className="flex  md:h-[110px] h-[140px] flex-col items-start border-b-[1px] border-black md:text-[13px] md:leading-[13.5px] ">
+          <div
+            style={{
+              backgroundImage: `url('/Topborder.svg')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              width: "100%",
+              height: "13px",
+            }}
+            className="fixed flex md:hidden"
+          ></div>
+          <span className="pb-1 pl-2 pt-3 md:pt-1">
             [Network&nbsp;&nbsp;&nbsp;] DotMid://19.22.10.14
           </span>
-          
+
           <span className="pb-1 pl-2 ">[ID&nbsp;&nbsp;&nbsp;] #ag58aycs</span>
-          <span className="pb-1 pl-2 mt-2">NEXT XRØ UPGRADE: 100%</span>
-          
-          <span className="pb-1 pl-2 ">[DATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] {date}  {time}</span>
+          <span className="mt-2 pb-1 pl-2">NEXT XRØ UPGRADE: 100%</span>
+
+          <span className="pb-1 pl-2 ">
+            [DATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] {date} {time}
+          </span>
           {/* <span className="pb-1 pl-2 ">{formatDate(currentTime)}</span>
           <span className="pb-1 pl-2 ">{formatTime(currentTime)}</span> */}
           <span className="pb-1 pl-2 ">DotMid ALERT LEVEL: 0%</span>
-          
+
           {/* <span className="pb-1 pl-2 ">{"[Date     ] " + currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
                 + currentdate.getFullYear() + " @ "  
@@ -283,19 +277,20 @@ const Terminal = () => {
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds()}</span> */}
         </div>
-        <div className="mt-2 max-w-[60%] ml-3">
-
-        <ProgressBar redProgress={redProgress}
-        greenProgress={greenProgress}
-        blueProgress={blueProgress}/>
+        <div className="ml-3 mt-2 max-w-[60%]">
+          <ProgressBar
+            redProgress={redProgress}
+            greenProgress={greenProgress}
+            blueProgress={blueProgress}
+          />
         </div>
         <div className="mt-3 pl-[6px]"></div>
         {/* <span className="color2 ml-[15px]">Welcome to Devsoc web terminal.</span> */}
         {/* <span className="color2 ml-[15px]">For a list of available commands, type</span> <span className="command">'help'</span><span className="color2">.</span> */}
-        
+
         {commands.map((cmdObj, index) => (
           <div key={index}>
-            <div className="command-line font-semibold font-diatype">
+            <div className="command-line font-diatype font-semibold">
               <span>devsoc@2024.com:~${cmdObj.command}</span>
             </div>
             {cmdObj.displayOutput.map((line, lineIndex) => (
@@ -307,11 +302,12 @@ const Terminal = () => {
             ))}
           </div>
         ))}
-        
 
         <div id="command" className="flex">
           <div id="liner" className="ml-[10px] flex-1">
-            <span className="font-semibold font-diatype">devsoc@2024.com:~${inputValue}</span>
+            <span className="font-diatype font-semibold">
+              devsoc@2024.com:~${inputValue}
+            </span>
             <b className="cursor">█</b>
             <div style={{ marginBottom: 100 }} ref={endRef} />
           </div>

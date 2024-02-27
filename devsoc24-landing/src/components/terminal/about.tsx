@@ -17,7 +17,7 @@ export default function Home() {
   };
 
   return (
-    <div className="justify- flex h-full w-full  pl-[30px] pt-[100px] font-diatype text-sm md:pl-[100px]">
+    <div className="justify- flex h-full w-[80%] md:w-[100%]  pt-[100px] font-diatype text-sm md:pl-[100px]">
       <div className={`${minimise ? "hidden" : ""}`}>
         <div className="border-2   bg-[#b2b2b2]  md:h-[55%] md:w-[50vw]">
           <div className="flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600 ">
