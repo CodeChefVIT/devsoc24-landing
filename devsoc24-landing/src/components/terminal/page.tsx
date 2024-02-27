@@ -72,7 +72,7 @@ const Terminal = () => {
     roll: [],
     initial:[
       '<span class="">$User id set to 8y14e9f8</span>',
-      '<span class="">User vakidated and online...</span>',
+      '<span class="">User validated and online...</span>',
       '<span class="">[[init]]</span>',
       '<span class="">Retriving command data...</span>',
       '<span class="">[complete]</span>',
