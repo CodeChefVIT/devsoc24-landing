@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import ProgressBar from "../progressbar";
 // import ProgressBar from "../_components/progressbar";
 
 interface Command {
@@ -15,6 +16,8 @@ const Terminal = () => {
   const [greenProgress, setGreenProgress] = useState(0);
   const [blueProgress, setBlueProgress] = useState(0);
   const endRef = useRef<HTMLDivElement>(null);
+   const [currentTime, setCurrentTime] = useState(new Date());
+
 
   // const endOfMessagesRef = useRef(null);
 
@@ -67,6 +70,22 @@ const Terminal = () => {
       "|_______/ |________/    \\_/     \\______/ \\ ______/ \\ ______/",
     ],
     roll: [],
+    initial:[
+      '<span class="">$User id set to 8y14e9f8</span>',
+      '<span class="">User vakidated and online...</span>',
+      '<span class="">[[init]]</span>',
+      '<span class="">Retriving command data...</span>',
+      '<span class="">[complete]</span>',
+      '<span class="">User ip found and indexed:</span>',
+      '<span class="">[found] == 1 online & accessible</span>',
+      '<span class="">[anomalies] == 3 detected</span>',
+      '<span class="">Approximated commands reloaded with </span>',
+      '<span class="">enhanced network analysis and indexed ip.</span>',
+      '<span class="">Ready for realtime monitoring</span>',
+      '<span class="">Loading welcome...</span>',
+      '<span class="">[complete]</span>',
+      // "<br>",
+    ]
   };
 
   const sleep = (ms: number) =>
@@ -149,24 +168,53 @@ const Terminal = () => {
     setInputValue(event.target.value);
   };
 
-  // const scrollToBottom = () => {
-  //   endOfMessagesRef.current?.scrollIntoView({ behavior: "smooth" });
-  // };
-
-  // useEffect(() => {
-  //   scrollToBottom();
-  // }, [commands]);
-
   useEffect(() => {
+  const tick = () => {
+    setCurrentTime(new Date()); // This updates the state every second
+  };
+
+  const timerID = setInterval(tick, 1000); // Sets up the interval
+
+  return () => {
+    clearInterval(timerID); // Clears the interval on component unmount
+  };
+}, []);
+
+
+  const day = currentTime.toLocaleString('default', { weekday: 'long' });
+  const date = `${currentTime.getDate()}-${currentTime.getMonth() + 1}-${currentTime.getFullYear()}`;
+  const time = `${currentTime.getHours()}:${currentTime.getMinutes()}:${currentTime.getSeconds()}`;
+
+    useEffect(() => {
+    const interval = setInterval(() => {
+      if (redProgress < 40) {
+        setRedProgress(redProgress + 0.5);
+      } else if (greenProgress < 40) {
+        setGreenProgress(greenProgress + 1);
+      } else if (blueProgress < 20) {
+        setBlueProgress(blueProgress + 1);
+      } else {
+        setRedProgress(0);
+        setGreenProgress(0);
+        setBlueProgress(0);
+      }
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, [redProgress, greenProgress, blueProgress]);
+
+   useEffect(() => {
     const interval = setInterval(() => {
       if (redProgress < 40) {
         setRedProgress(redProgress + 1);
-      } else if (greenProgress < 30) {
-        setGreenProgress(greenProgress + 1);
-      } else if (blueProgress < 30) {
-        setBlueProgress(blueProgress + 1);
+      } else if (greenProgress < 40) {
+        setGreenProgress(greenProgress + 1.56);
+      } else if (blueProgress < 10) {
+        setBlueProgress(blueProgress + 1.8);
       } else {
-        clearInterval(interval);
+        setRedProgress(0);
+        setGreenProgress(0);
+        setBlueProgress(0);
       }
     }, 100);
 
@@ -179,12 +227,11 @@ const Terminal = () => {
   };
 
   useEffect(() => {
-    // Simulate entering the 'help' command as the initial command
-    const helpOutput = commandOutputs.help ?? [];
+    const helpOutput = commandOutputs.initial ?? [];
 
-    const displayOutput = helpOutput.map(() => ""); // Prepare displayOutput with empty strings for typewriter effect
-    setCommands([{ command: "help", output: helpOutput, displayOutput }]);
-  }, []); // Empty dependency array ensures this effect runs only once on mount
+    const displayOutput = helpOutput.map(() => ""); 
+    setCommands([{ command: "initial", output: helpOutput, displayOutput }]);
+  }, []); 
 
   useEffect(() => {
     if (commands.length > 0) {
@@ -195,13 +242,15 @@ const Terminal = () => {
   useEffect(() => {
     scrollToBottom();
   }, [inputValue]);
+
+  
   return (
-    <div className="h-[400px] bg-[#757575] font-diatype text-sm md:h-[100%] md:text-xs ">
+    <div className="h-[400px] bg-[#757575] font-diatype text-sm md:h-[100%] md:text-[13.3px] md:leading-[13.5px] ">
       <div id="terminal" className="overflow-y-auto bg-[#757575] md:pt-2 pt-0">
        
 
            
-        <div className="flex  h-[110px] flex-col items-start border-b-[1px] border-black font-semibold">
+        <div className="flex  h-[110px] flex-col items-start border-b-[1px] border-black md:text-[13px] md:leading-[13.5px] ">
            <div
               style={{
                 backgroundImage: `url('/Topborder.svg')`,
@@ -213,9 +262,17 @@ const Terminal = () => {
               className="md:hidden flex fixed"
             ></div>
           <span className="pb-1 pl-2 md:pt-1 pt-3">
-            [Network ] DotMid://19.22.10.14
+            [Network&nbsp;&nbsp;&nbsp;] DotMid://19.22.10.14
           </span>
-          <span className="pb-1 pl-2 ">[ID ] #ag58aycs</span>
+          
+          <span className="pb-1 pl-2 ">[ID&nbsp;&nbsp;&nbsp;] #ag58aycs</span>
+          <span className="pb-1 pl-2 mt-2">NEXT XRØ UPGRADE: 100%</span>
+          
+          <span className="pb-1 pl-2 ">[DATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] {date}  {time}</span>
+          {/* <span className="pb-1 pl-2 ">{formatDate(currentTime)}</span>
+          <span className="pb-1 pl-2 ">{formatTime(currentTime)}</span> */}
+          <span className="pb-1 pl-2 ">DotMid ALERT LEVEL: 0%</span>
+          
           {/* <span className="pb-1 pl-2 ">{"[Date     ] " + currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
                 + currentdate.getFullYear() + " @ "  
@@ -223,12 +280,19 @@ const Terminal = () => {
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds()}</span> */}
         </div>
+        <div className="mt-2 max-w-[60%] ml-3">
+
+        <ProgressBar redProgress={redProgress}
+        greenProgress={greenProgress}
+        blueProgress={blueProgress}/>
+        </div>
         <div className="mt-3 pl-[6px]"></div>
         {/* <span className="color2 ml-[15px]">Welcome to Devsoc web terminal.</span> */}
         {/* <span className="color2 ml-[15px]">For a list of available commands, type</span> <span className="command">'help'</span><span className="color2">.</span> */}
+        
         {commands.map((cmdObj, index) => (
           <div key={index}>
-            <div className="command-line">
+            <div className="command-line font-bold font-diatype">
               <span>devsoc@2024.com:~${cmdObj.command}</span>
             </div>
             {cmdObj.displayOutput.map((line, lineIndex) => (
@@ -240,10 +304,11 @@ const Terminal = () => {
             ))}
           </div>
         ))}
+        
 
         <div id="command" className="flex">
           <div id="liner" className="ml-[10px] flex-1">
-            <span>devsoc@2024.com:~${inputValue}</span>
+            <span className="font-bold">devsoc@2024.com:~${inputValue}</span>
             <b className="cursor">█</b>
             <div style={{ marginBottom: 100 }} ref={endRef} />
           </div>
