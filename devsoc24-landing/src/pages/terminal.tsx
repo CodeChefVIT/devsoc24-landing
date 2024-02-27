@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import TypewriterEffect from "../components/terminal/typewriter";
 
@@ -80,6 +80,30 @@ export default function Home() {
     setTypingCompleted(true);
   };
 
+  const [dynamicHeight, setDynamicHeight] = useState("h-[900px]");
+
+  // Effect hook to update height on mount and window resize
+  useEffect(() => {
+    function updateHeight() {
+      if (window.innerHeight < 800) {
+        setDynamicHeight("h-[600px]");
+      } else if(window.innerHeight < 1021 && window.innerHeight >800){
+        setDynamicHeight("h-[720px]");
+      }else {
+        setDynamicHeight("h-[900px]");
+      }
+    }
+
+    // Update height on mount
+    updateHeight();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", updateHeight);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
+
   const SelectedComponent = activeCard ? cardComponents[activeCard] : null;
   return (
     <main className="h-[100vh] bg-[#232323] font-diatype md:text-[13.3px] md:leading-[13.5px]">
@@ -117,7 +141,7 @@ export default function Home() {
             <div className="fixed bottom-0 z-10 h-[250px]  w-[100%] overflow-y-auto md:fixed md:top-0 md:h-[100%] md:w-[22%] md:pt-[1.14%]">
               <Terminal />
             </div>
-            <div className="h-[900px] w-full overflow-y-auto bgImg  md:fixed md:h-[100%]  md:pl-[25%]  ">
+            <div className={`${dynamicHeight} w-full overflow-y-auto bgImg md:fixed md:h-[100%] md:pl-[25%]`}>
               <div className="fixed left-[22%] top-0 z-10 mt-[1.14%] hidden h-[20px] items-center  justify-center bg-[#d2d1d1] md:flex">
                 <div className="flex h-full w-[120px] items-center justify-center border-r-2 border-[#000000] text-xs font-semibold ">
                   DEVSOC 24
@@ -137,7 +161,7 @@ export default function Home() {
                 {SelectedComponent ? (
                   <SelectedComponent />
                 ) : (
-                  <div className="grid grid-cols-1 place-items-center gap-x-4 gap-y-8 pt-[65px] sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 bg-gray h-full w-full overflow-y-auto pb-10">
+                  <div className="grid grid-cols-1 place-items-center gap-x-4 gap-y-8 pt-[65px] sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 bg-gray h-full w-full overflow-y-auto pb-10 bg-slate-300">
                     {cardTypes.map((card, index) => (
                       <Card
                         key={card}
