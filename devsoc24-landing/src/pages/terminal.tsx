@@ -11,6 +11,8 @@ import FAQs from "../components/terminal/faqs";
 import Prizepool from "../components/terminal/prizepool";
 import Tracks from "../components/terminal/tracks";
 import Timeline from "../components/terminal/timeline";
+import Sponsors from "../components/terminal/sponsors";
+import Portal from "../components/terminal/sponsors";
 import { IoMdClose } from "react-icons/io";
 import Router, { useRouter } from "next/router";
 
@@ -61,7 +63,7 @@ export default function Home() {
 
   const [typingCompleted, setTypingCompleted] = useState(false);
 
-  type CardKey = "About" | "FAQs" | "Prizepool" | "Tracks" | "Timeline";
+  type CardKey = "About" | "FAQs" | "Prizepool" | "Tracks" | "Timeline" | "Sponsors" | "Portal";
 
   const cardComponents: {
     [K in CardKey]: () => JSX.Element;
@@ -71,6 +73,8 @@ export default function Home() {
     Prizepool,
     Tracks,
     Timeline,
+    Sponsors,
+    Portal,
   };
 
   const [activeCard, setActiveCard] = React.useState<CardKey | "">("");
@@ -108,7 +112,7 @@ export default function Home() {
 
   const SelectedComponent = activeCard ? cardComponents[activeCard] : null;
   return (
-    <main className="h-fit bg-[#232323] font-diatype md:text-[13.3px] md:leading-[13.5px]">
+    <main className="min-h-screen h-fit bg-[#232323] font-diatype md:text-[13.3px] md:leading-[13.5px]">
       {!typingCompleted ? (
         <div className="pl-3 font-diatype md:text-[13.3px] md:leading-[13.5px]">
           <TypewriterEffect
@@ -136,12 +140,12 @@ export default function Home() {
               </button>
             </div>
             <div className="flex flex-row">
-              <div className=" min-h-screen w-[20vw]">
+              <div className=" min-h-[96vh] w-[20vw]">
                 <Terminal />
               </div>
-              <div className="flex flex-col">
-                <div className="z-10 hidden h-[20px]  md:flex">
-                  <div className="flex h-full w-[120px] items-center justify-center border-r-2 border-[#000000] bg-[#d2d1d1] text-xs font-semibold">
+              <div className="flex h-min flex-col">
+                <div className="z-10 hidden h-min md:flex">
+                  <div className="flex w-[120px] items-center justify-center border-r-2 border-[#000000] bg-[#d2d1d1] py-1 text-xs font-semibold">
                     DEVSOC 24
                   </div>
                   {activeCard && (
@@ -158,7 +162,7 @@ export default function Home() {
                   )}
                 </div>
 
-                <div className="my-8 flex w-full justify-center">
+                <div className="mb-8 flex w-full justify-center">
                   {" "}
                   {/* Adjusted width to 'w-full' */}
                   {SelectedComponent ? (
