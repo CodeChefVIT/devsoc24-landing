@@ -10,7 +10,7 @@ const Timeline: React.FC = () => {
   const y = useTransform(scrollYProgress, [0, 1], [0, -3250]);
   return (
     <div className="flex h-[1000px] items-center justify-center bg-[#020202]">
-      <div className="bg-logo font-disket overflow-hidden bg-[#020202]">
+      <div className="font-disket overflow-hidden bg-[#020202]">
         <motion.span style={{ y: y }} className="relative block">
           <Image
             className="absolute left-60 top-[1100px]"
