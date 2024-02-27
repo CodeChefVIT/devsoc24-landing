@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import ProgressBar from "../progressbar";
 // import ProgressBar from "../_components/progressbar";
 
 interface Command {
@@ -14,7 +15,9 @@ const Terminal = () => {
   const [redProgress, setRedProgress] = useState(0);
   const [greenProgress, setGreenProgress] = useState(0);
   const [blueProgress, setBlueProgress] = useState(0);
-  const endRef = useRef<HTMLDivElement>(null)
+  const endRef = useRef<HTMLDivElement>(null);
+   const [currentTime, setCurrentTime] = useState(new Date());
+
 
   // const endOfMessagesRef = useRef(null);
 
@@ -66,97 +69,152 @@ const Terminal = () => {
       "| $$$$$$$/| $$$$$$$$   \\  $/   |  $$$$$$/|  $$$$$$/| | $$$$$$/",
       "|_______/ |________/    \\_/     \\______/ \\ ______/ \\ ______/",
     ],
+    roll: [],
+    initial:[
+      '<span class="">$User id set to 8y14e9f8</span>',
+      '<span class="">User vakidated and online...</span>',
+      '<span class="">[[init]]</span>',
+      '<span class="">Retriving command data...</span>',
+      '<span class="">[complete]</span>',
+      '<span class="">User ip found and indexed:</span>',
+      '<span class="">[found] == 1 online & accessible</span>',
+      '<span class="">[anomalies] == 3 detected</span>',
+      '<span class="">Approximated commands reloaded with </span>',
+      '<span class="">enhanced network analysis and indexed ip.</span>',
+      '<span class="">Ready for realtime monitoring</span>',
+      '<span class="">Loading welcome...</span>',
+      '<span class="">[complete]</span>',
+      // "<br>",
+    ]
   };
 
-  const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
-
+  const sleep = (ms: number) =>
+    new Promise((resolve) => setTimeout(resolve, ms));
 
   const handleKeyPress = (event: React.KeyboardEvent) => {
     if (event.key === "Enter") {
       event.preventDefault();
       const trimmedInput = inputValue.trim();
       if (trimmedInput === "clear") {
-  setCommands([]);
-} else {
-  const output = commandOutputs[trimmedInput] ?? [`Command not found: ${trimmedInput}`];
-  const displayOutput = output.map(() => ""); 
-  setCommands((prevCommands) => [...prevCommands, { command: trimmedInput, output, displayOutput }]);
-}
+        setCommands([]);
+      } else if (trimmedInput === "roll") {
+        setTimeout(() => {
+          window.open("https://www.youtube.com/watch?v=xvFZjo5PgG0", "_blank");
+        }, 500);
+      } else {
+        const output = commandOutputs[trimmedInput] ?? [
+          `Command not found: ${trimmedInput}`,
+        ];
+        const displayOutput = output.map(() => "");
+        setCommands((prevCommands) => [
+          ...prevCommands,
+          { command: trimmedInput, output, displayOutput },
+        ]);
+      }
 
       setInputValue("");
     }
   };
 
   useEffect(() => {
-  if (commands.length > 0) {
-    triggerTypewriterEffect(commands.length - 1);
-  }
-}, [commands]);
+    if (commands.length > 0) {
+      triggerTypewriterEffect(commands.length - 1);
+    }
+  }, [commands]);
 
-const triggerTypewriterEffect = (commandIndex: number) => {
-  let currentLineIndex = 0;
-  
-  if (commandIndex >= 0 && commandIndex < commands.length) {
-    const command = commands[commandIndex];
-    if (!command) return; 
-    const outputLines = command.output;
+  const triggerTypewriterEffect = (commandIndex: number) => {
+    let currentLineIndex = 0;
 
-    const typeNextChar = () => {
-      if (currentLineIndex < outputLines.length) {
-        const line = outputLines[currentLineIndex]??'';
-        const currentDisplayLine = command.displayOutput[currentLineIndex] ?? '';
-        const nextCharIndex = currentDisplayLine.length;
+    if (commandIndex >= 0 && commandIndex < commands.length) {
+      const command = commands[commandIndex];
+      if (!command) return;
+      const outputLines = command.output;
 
-        if (nextCharIndex < line.length) {
-          setCommands((prevCommands) => {
-            const newCommands = [...prevCommands];
-            if (newCommands[commandIndex]) {
-              const newDisplayOutput = [...newCommands[commandIndex]?.displayOutput ?? []];
-              newDisplayOutput[currentLineIndex] = line.substr(0, nextCharIndex + 1);
-              newCommands[commandIndex]!.displayOutput = newDisplayOutput;
-            }
-            return newCommands;
-          });
-          setTimeout(typeNextChar, 50); 
-        } else {
-          
-          currentLineIndex++;
-          setTimeout(typeNextChar, 0);
+      const typeNextChar = () => {
+        if (currentLineIndex < outputLines.length) {
+          const line = outputLines[currentLineIndex] ?? "";
+          const currentDisplayLine =
+            command.displayOutput[currentLineIndex] ?? "";
+          const nextCharIndex = currentDisplayLine.length;
+
+          if (nextCharIndex < line.length) {
+            setCommands((prevCommands) => {
+              const newCommands = [...prevCommands];
+              if (newCommands[commandIndex]) {
+                const newDisplayOutput = [
+                  ...(newCommands[commandIndex]?.displayOutput ?? []),
+                ];
+                newDisplayOutput[currentLineIndex] = line.substr(
+                  0,
+                  nextCharIndex + 1,
+                );
+                newCommands[commandIndex]!.displayOutput = newDisplayOutput;
+              }
+              return newCommands;
+            });
+            setTimeout(typeNextChar, 50);
+          } else {
+            currentLineIndex++;
+            setTimeout(typeNextChar, 0);
+          }
         }
-      }
-    };
+      };
 
-    typeNextChar();
-  }
-};
-
-
-
-
-
+      typeNextChar();
+    }
+  };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInputValue(event.target.value);
   };
 
-  // const scrollToBottom = () => {
-  //   endOfMessagesRef.current?.scrollIntoView({ behavior: "smooth" });
-  // };
-
-  // useEffect(() => {
-  //   scrollToBottom();
-  // }, [commands]);
-
   useEffect(() => {
+  const tick = () => {
+    setCurrentTime(new Date()); // This updates the state every second
+  };
+
+  const timerID = setInterval(tick, 1000); // Sets up the interval
+
+  return () => {
+    clearInterval(timerID); // Clears the interval on component unmount
+  };
+}, []);
+
+
+  const day = currentTime.toLocaleString('default', { weekday: 'long' });
+  const date = `${currentTime.getDate()}-${currentTime.getMonth() + 1}-${currentTime.getFullYear()}`;
+  const time = `${currentTime.getHours()}:${currentTime.getMinutes()}:${currentTime.getSeconds()}`;
+
+    useEffect(() => {
+    const interval = setInterval(() => {
+      if (redProgress < 40) {
+        setRedProgress(redProgress + 0.5);
+      } else if (greenProgress < 40) {
+        setGreenProgress(greenProgress + 1);
+      } else if (blueProgress < 20) {
+        setBlueProgress(blueProgress + 1);
+      } else {
+        setRedProgress(0);
+        setGreenProgress(0);
+        setBlueProgress(0);
+      }
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, [redProgress, greenProgress, blueProgress]);
+
+   useEffect(() => {
     const interval = setInterval(() => {
       if (redProgress < 40) {
         setRedProgress(redProgress + 1);
-      } else if (greenProgress < 30) {
-        setGreenProgress(greenProgress + 1);
-      } else if (blueProgress < 30) {
-        setBlueProgress(blueProgress + 1);
+      } else if (greenProgress < 40) {
+        setGreenProgress(greenProgress + 1.56);
+      } else if (blueProgress < 10) {
+        setBlueProgress(blueProgress + 1.8);
       } else {
-        clearInterval(interval);
+        setRedProgress(0);
+        setGreenProgress(0);
+        setBlueProgress(0);
       }
     }, 100);
 
@@ -165,25 +223,56 @@ const triggerTypewriterEffect = (commandIndex: number) => {
   // var currentdate = new Date();
 
   const scrollToBottom = () => {
-endRef.current?.scrollIntoView({ behavior: "smooth" })
-}
+    endRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
-useEffect(() => {
-scrollToBottom()
-},[inputValue]);
+  useEffect(() => {
+    const helpOutput = commandOutputs.initial ?? [];
+
+    const displayOutput = helpOutput.map(() => ""); 
+    setCommands([{ command: "initial", output: helpOutput, displayOutput }]);
+  }, []); 
+
+  useEffect(() => {
+    if (commands.length > 0) {
+      triggerTypewriterEffect(commands.length - 1);
+    }
+  }, [commands]);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [inputValue]);
+
+  
   return (
-    <div className="font-diatype h-[400px] bg-[#757575] text-sm md:h-[100%] md:text-xs ">
-      <div id="terminal" className="overflow-y-auto bg-[#757575] pt-2">
-        {/* <ProgressBar
-          redProgress={redProgress}
-          greenProgress={greenProgress}
-          blueProgress={blueProgress}
-        /> */}
-        <div className="flex  h-[110px] flex-col items-start border-b-[1px] border-black font-semibold">
-          <span className="pb-1 pl-2 pt-1">
-            [Network ] DotMid://19.22.10.14
+    <div className="h-[400px] bg-[#757575] font-diatype text-sm md:h-[100%] md:text-[13.3px] md:leading-[13.5px] ">
+      <div id="terminal" className="overflow-y-auto bg-[#757575] md:pt-2 pt-0">
+       
+
+           
+        <div className="flex  h-[110px] flex-col items-start border-b-[1px] border-black md:text-[13px] md:leading-[13.5px] ">
+           <div
+              style={{
+                backgroundImage: `url('/Topborder.svg')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                width: "100%",
+                height: "13px",
+              }}
+              className="md:hidden flex fixed"
+            ></div>
+          <span className="pb-1 pl-2 md:pt-1 pt-3">
+            [Network&nbsp;&nbsp;&nbsp;] DotMid://19.22.10.14
           </span>
-          <span className="pb-1 pl-2 ">[ID ] #ag58aycs</span>
+          
+          <span className="pb-1 pl-2 ">[ID&nbsp;&nbsp;&nbsp;] #ag58aycs</span>
+          <span className="pb-1 pl-2 mt-2">NEXT XRØ UPGRADE: 100%</span>
+          
+          <span className="pb-1 pl-2 ">[DATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] {date}  {time}</span>
+          {/* <span className="pb-1 pl-2 ">{formatDate(currentTime)}</span>
+          <span className="pb-1 pl-2 ">{formatTime(currentTime)}</span> */}
+          <span className="pb-1 pl-2 ">DotMid ALERT LEVEL: 0%</span>
+          
           {/* <span className="pb-1 pl-2 ">{"[Date     ] " + currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
                 + currentdate.getFullYear() + " @ "  
@@ -191,33 +280,35 @@ scrollToBottom()
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds()}</span> */}
         </div>
-        <div className="mt-3 pl-[6px]">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam
-          blanditiis temporibus voluptate ipsam repellendus doloremque. Porro
-          quidem soluta eaque reiciendis, tenetur maiores facere neque eos nihil
-          iste quis! Sequi modi fugit officiis nesciunt esse inventore magnam
-          harum provident, sed dolore explicabo! pariatur!
+        <div className="mt-2 max-w-[60%] ml-3">
+
+        <ProgressBar redProgress={redProgress}
+        greenProgress={greenProgress}
+        blueProgress={blueProgress}/>
         </div>
+        <div className="mt-3 pl-[6px]"></div>
         {/* <span className="color2 ml-[15px]">Welcome to Devsoc web terminal.</span> */}
         {/* <span className="color2 ml-[15px]">For a list of available commands, type</span> <span className="command">'help'</span><span className="color2">.</span> */}
+        
         {commands.map((cmdObj, index) => (
-  <div key={index}>
-    <div className="command-line">
-      <span>devsoc@2024.com:~${cmdObj.command}</span>
-    </div>
-    {cmdObj.displayOutput.map((line, lineIndex) => (
-      <div
-        key={lineIndex}
-        className="command-output"
-        dangerouslySetInnerHTML={{ __html: line }}
-      ></div>
-    ))}
-  </div>
-))}
+          <div key={index}>
+            <div className="command-line font-bold font-diatype">
+              <span>devsoc@2024.com:~${cmdObj.command}</span>
+            </div>
+            {cmdObj.displayOutput.map((line, lineIndex) => (
+              <div
+                key={lineIndex}
+                className="command-output"
+                dangerouslySetInnerHTML={{ __html: line }}
+              ></div>
+            ))}
+          </div>
+        ))}
+        
 
         <div id="command" className="flex">
           <div id="liner" className="ml-[10px] flex-1">
-            <span>devsoc@2024.com:~${inputValue}</span>
+            <span className="font-bold">devsoc@2024.com:~${inputValue}</span>
             <b className="cursor">█</b>
             <div style={{ marginBottom: 100 }} ref={endRef} />
           </div>
