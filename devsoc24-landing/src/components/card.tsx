@@ -38,17 +38,17 @@ const Card = ({ card, cardImage, onClick }: CardProps) => {
     <div
       className={`font-diatype md:h-[401px]  md:w-[240px] ${bg} mb-5 flex h-[240px] w-[90%] max-w-[400px] items-center justify-center border-2 border-[#0d0d0d] md:flex-col`}
       onMouseEnter={() => {
-        setBg("bg-[#3134cd]"), setBtBg("bg-black  text-white");
+        setBg("bg-[#0C00FF]"), setBtBg("bg-black  text-white");
       }}
       onMouseLeave={() => {
         setBg("bg-[#757575]"), setBtBg("bg-white");
       }}
     >
-      <div className="font-diatype flex h-[89%] w-[53%] items-center justify-center border-2 border-[#0d0d0d] bg-[#1c1c1c] md:h-[56%] md:w-[92%]">
+      <div className="font-diatype flex h-[90%] w-[53%] items-center justify-center border-2 border-[#0d0d0d] bg-[#1c1c1c] md:h-[56%] md:w-[92%]">
         <Image
           src={`/${cardImage}`}
           alt="Description of the image"
-          width={220}
+          width={500}
           height={100}
         />
       </div>
