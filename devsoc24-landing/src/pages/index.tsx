@@ -61,11 +61,13 @@ export default function Home() {
                 <Image src={bgimage as HTMLImageElement} alt="bg" />
               </div>
               <div className="z-50">
-                <Main />
+                <section id="Main">
+                  <Main />
+                </section>
               </div>
-              <div className="">
+              <section id="About">
                 <About />
-              </div>
+              </section>
             </>
           )}
         </SmoothScrolling>

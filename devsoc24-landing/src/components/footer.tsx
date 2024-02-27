@@ -16,12 +16,12 @@ const Footer = () => {
     <>
       <Image
         src={glitch}
-        alt="glitch glitcheffect"
+        alt=""
         height={0}
         width={0}
         className="absolute -z-10 h-screen w-screen"
       />
-      <div className="glitcheffect flex h-screen select-none items-center justify-center overflow-hidden">
+      <div className=" flex h-screen select-none items-center justify-center overflow-hidden">
         <div className="h-fit w-fit border-2 border-black bg-[#7F32DA] p-[1px]">
           <div className=" h-fit w-[320px] flex-row overflow-hidden border-2 border-black bg-[#7F32DA] min-[420px]:w-[400px]">
             <div className="relative flex justify-center border-b-2 border-black">
@@ -42,7 +42,10 @@ const Footer = () => {
               />
               <div
                 className="font-vcr absolute right-0 flex h-[100%] w-fit items-center justify-center border-l-2 border-black bg-[#7F32DA] p-1 hover:cursor-pointer hover:bg-black hover:text-white"
-                onClick={() => setGlitch(false)}
+                onClick={() => {
+                  lenis?.scrollTo("#Main", { lerp: 0.1, duration: 1 });
+                  setGlitch(false);
+                }}
               >
                 X
               </div>
