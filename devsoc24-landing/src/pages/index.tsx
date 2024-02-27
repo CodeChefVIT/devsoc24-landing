@@ -46,7 +46,7 @@ export default function Home() {
         </div>
       ) : (
         <SmoothScrolling>
-          {/* <Main /> */}
+          <Main />
           <About />
           <div className="fixed bottom-0 z-40 mb-10 flex w-full justify-center">
             <ActionButton body="Kuch toh" link="/" />
