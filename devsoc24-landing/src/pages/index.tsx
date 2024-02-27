@@ -58,7 +58,7 @@ export default function Home() {
           ) : (
             <>
               <div className="fixed z-40 flex h-screen items-center justify-center">
-                <Image src={bgimage} alt="bg" />
+                <Image src={bgimage as HTMLImageElement} alt="bg" />
               </div>
               <div className="z-50">
                 <Main />
