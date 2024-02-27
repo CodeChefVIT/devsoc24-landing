@@ -12,6 +12,7 @@ import Prizepool from "../components/terminal/prizepool";
 import Tracks from "../components/terminal/tracks";
 import Timeline from "../components/terminal/timeline";
 import { IoMdClose } from "react-icons/io";
+import Router, { useRouter } from "next/router";
 
 const help = [
   '<span class="">Initiating quantum decryption sequence...</span>',
@@ -38,6 +39,7 @@ const help = [
 ];
 
 export default function Home() {
+  const router = useRouter();
   const cardTypes = [
     "About",
     "Timeline",
@@ -87,9 +89,9 @@ export default function Home() {
     function updateHeight() {
       if (window.innerHeight < 800) {
         setDynamicHeight("h-[600px]");
-      } else if(window.innerHeight < 1021 && window.innerHeight >800){
+      } else if (window.innerHeight < 1021 && window.innerHeight > 800) {
         setDynamicHeight("h-[720px]");
-      }else {
+      } else {
         setDynamicHeight("h-[900px]");
       }
     }
@@ -116,7 +118,7 @@ export default function Home() {
         </div>
       ) : (
         <>
-          <div className="content-after-typing fixed z-30 flex h-[2.4%] w-full justify-center items-center bg-[#494848] font-diatype">
+          <div className="content-after-typing fixed z-30 flex h-[2.4%] w-full items-center justify-center bg-[#494848] font-diatype">
             <div
               style={{
                 backgroundImage: `url('/Topborder.svg')`,
@@ -125,23 +127,29 @@ export default function Home() {
                 width: "100%",
                 height: "100%",
               }}
-              
-            ><button onClick={() => setActiveCard("")} className="bg-[#757575]">
-                      <IoMdClose className="text-sm font-bold" />
-                    </button></div>
+            >
+              <button
+                onClick={() => router.push("/")}
+                className="fixed right-0 flex h-[2.4%] w-[2.4vh] items-center justify-center bg-[#757575] hover:bg-[#606060]"
+              >
+                <IoMdClose className="text-lg font-bold" />
+              </button>
+            </div>
 
             {/* <Image src="/Topborder.svg"
-        alt="Description of the image"
-        width={2200} 
-        height={200} 
-        className=""
-      /> */}
+                  alt="Description of the image"
+                  width={2200} 
+                  height={200} 
+                  className=""
+                /> */}
           </div>
           <div className="flex h-[%] flex-col-reverse items-start justify-between md:flex-row ">
             <div className="fixed bottom-0 z-10 h-[250px]  w-[100%] overflow-y-auto md:fixed md:top-0 md:h-[100%] md:w-[22%] md:pt-[1.14%]">
               <Terminal />
             </div>
-            <div className={`${dynamicHeight} w-full overflow-y-auto bgImg md:fixed md:h-[100%] md:pl-[25%]`}>
+            <div
+              className={`${dynamicHeight} bgImg w-full overflow-y-auto md:fixed md:h-[100%] md:pl-[25%]`}
+            >
               <div className="fixed left-[22%] top-0 z-10 mt-[1.14%] hidden h-[20px] items-center  justify-center bg-[#d2d1d1] md:flex">
                 <div className="flex h-full w-[120px] items-center justify-center border-r-2 border-[#000000] text-xs font-semibold ">
                   DEVSOC 24
@@ -161,7 +169,7 @@ export default function Home() {
                 {SelectedComponent ? (
                   <SelectedComponent />
                 ) : (
-                  <div className="grid grid-cols-1 place-items-center gap-x-4 gap-y-8 pt-[65px] sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 bg-gray h-full w-full overflow-y-auto pb-10 ">
+                  <div className="bg-gray grid h-full w-full grid-cols-1 place-items-center gap-x-4 gap-y-8 overflow-y-auto pb-10 pt-[65px] sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 ">
                     {cardTypes.map((card, index) => (
                       <Card
                         key={card}
