@@ -178,7 +178,7 @@ function Main() {
         </div>
       </motion.div>
       <motion.div style={{ y: y }} className="relative z-30">
-        <div className="flex h-[1000px] items-center justify-center overflow-hidden bg-[#020202]">
+        <div className="flex h-[1000px]  items-center justify-center overflow-hidden bg-[#020202]">
           <div className="bg-logo font-disket overflow-hidden bg-[#020202]">
             <motion.span style={{ y: y }} className="relative block">
               <Image
@@ -199,7 +199,7 @@ function Main() {
               />
             </motion.span>
             <div className="h-[1080px] w-full flex-wrap overflow-x-auto">
-              <div className="mt-48 flex w-full justify-center">
+              <div className="mt-48 max-sm:mt-10 flex w-full justify-center">
                 <Image
                   className="mx-20 w-[300px] md:w-[35%]"
                   src={devsoc2k24 as HTMLImageElement}
@@ -209,7 +209,7 @@ function Main() {
               </div>
               <div className="flex w-full justify-center">
                 {" "}
-                <div className="mx-10 mt-10 w-[500px] text-center text-xs text-[#bbbbbb] md:text-[12px] lg:w-[600px]">
+                <div className="mx-10 mt-10 w-[500px] text-center text-xs text-[#bbbbbb] md:text-[12px] lg:w-[600px] max-sm:text-justify">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -217,16 +217,16 @@ function Main() {
                   irure dolor in reprehenderit in voluptate velit esse cillum
                   dolore eu fugiat nulla pariatur. Excepteur sint occaecat
                   cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
+                  mollit anim id est laborum.d
                 </div>
               </div>
-              <div className="mt-14 flex w-full justify-center ">
+              <div className="mt-14 max-sm:mt-3 flex w-full justify-center ">
                 <LearnMoreBtn link={""} />
               </div>
-              <div className="container flex flex-wrap items-center justify-center gap-10 pt-32 text-center">
+              <div className="container flex flex-wrap items-center justify-center gap-10 pt-32 max-sm:pt-3 text-center">
                 {Array.from({ length: 6 }).map((_, index) => (
                   <div key={index} className="flex flex-col justify-start">
-                    <div className="h-24 w-[12vw] border-2 border-[#9CE79A]"></div>
+                    <div className="h-24 w-[12vw] border-2 max-lg:w-[15vw] max-[850px]:w-[17vw] max-sm:w-[35vw] border-[#9CE79A]"></div>
                     <div className="below h-6 w-[4vw] bg-[#9CE79A]">
                       <div className="ml-2 h-6 w-[8vw] -skew-x-[30deg] bg-[#9CE79A]"></div>
                     </div>
