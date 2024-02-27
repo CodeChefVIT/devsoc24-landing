@@ -320,7 +320,8 @@ b {
 }
 .command {
   color: #211d1b;
-  text-shadow: 0 0 1px #211d1b;
+  line-height: 13.5px;
+  font-size: 13.3px;
 }
 .error {
   color: #211d1b;
@@ -360,4 +361,8 @@ a:focus {
 .initial {
   font-size: 13px;
   line-height: 13px;
+}
+
+.bgImg {
+  background-image: url("../../public/Rectangle\ 2.svg");
 }
