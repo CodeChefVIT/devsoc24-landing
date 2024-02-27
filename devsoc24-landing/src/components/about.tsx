@@ -51,7 +51,7 @@ const About = () => {
               alt="Image 2"
               height={380}
               width={380}
-              className="hidden md:content absolute bottom-[-400px] right-[10px] h-auto w-[250px] right-[65px] md:h-min md:w-min"
+              className="hidden md:contents absolute bottom-[-400px] right-[10px] h-auto w-[250px] right-[65px] md:h-min md:w-min"
             />
           </motion.span>
           <motion.span style={{ y: y }} className="relative block">
@@ -60,7 +60,7 @@ const About = () => {
               alt="Image 3"
               height={380}
               width={380}
-              className="hidden md:content absolute bottom-[-1250px] left-[10px] h-auto w-[250px] md:-left-[-65px] md:h-min md:w-min"
+              className="hidden md:contents absolute bottom-[-1250px] left-[10px] h-auto w-[250px] md:-left-[-65px] md:h-min md:w-min"
             />
           </motion.span>
           In its fourth edition, this boundary-pushing hackathon transcends
@@ -74,7 +74,7 @@ const About = () => {
               alt="Image 4"
               height={380}
               width={380}
-              className="hidden md:content absolute right-[50px] top-[500px] h-auto w-[250px] md:right-[100px] md:h-min md:w-min"
+              className="hidden md:contents absolute right-[50px] top-[500px] h-auto w-[250px] md:right-[100px] md:h-min md:w-min"
             />
           </motion.span>
           <div className="contents min-[450px]:hidden">
