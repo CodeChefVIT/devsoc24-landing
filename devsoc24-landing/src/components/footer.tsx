@@ -4,8 +4,10 @@ import pattern from "@/assets/images/pattern.svg";
 import glitch from "@/assets/images/footer_glitch.gif";
 import Link from "next/link";
 import { useLenis } from "@studio-freight/react-lenis";
+import useGlitchStore from "@/store/store";
 
 const Footer = () => {
+  const { showGlitch, setGlitch } = useGlitchStore();
   const lenis = useLenis(({ scroll }) => {
     // console.log(scroll);
   });
@@ -19,9 +21,9 @@ const Footer = () => {
         width={0}
         className="absolute -z-10 h-screen w-screen"
       />
-      <div className="glitcheffect flex h-screen items-center justify-center overflow-hidden select-none">
+      <div className="glitcheffect flex h-screen select-none items-center justify-center overflow-hidden">
         <div className="h-fit w-fit border-2 border-black bg-[#7F32DA] p-[1px]">
-          <div className=" h-fit w-[320px] min-[420px]:w-[400px] flex-row overflow-hidden border-2 border-black bg-[#7F32DA]">
+          <div className=" h-fit w-[320px] flex-row overflow-hidden border-2 border-black bg-[#7F32DA] min-[420px]:w-[400px]">
             <div className="relative flex justify-center border-b-2 border-black">
               <Image
                 src={pattern as HTMLImageElement}
@@ -40,9 +42,7 @@ const Footer = () => {
               />
               <div
                 className="font-vcr absolute right-0 flex h-[100%] w-fit items-center justify-center border-l-2 border-black bg-[#7F32DA] p-1 hover:cursor-pointer hover:bg-black hover:text-white"
-                onClick={() =>
-                  lenis?.scrollTo("#Main", { lerp: 0.1, duration: 1 })
-                }
+                onClick={() => setGlitch(false)}
               >
                 X
               </div>
@@ -75,7 +75,7 @@ const Footer = () => {
               </p>
               <Link
                 href="./terminal"
-                className="font-vcr my-2 flex h-[40px] w-[100px] items-center justify-center sm:self-start border-2 border-black bg-white hover:cursor-pointer hover:bg-black hover:text-white"
+                className="font-vcr my-2 flex h-[40px] w-[100px] items-center justify-center border-2 border-black bg-white hover:cursor-pointer hover:bg-black hover:text-white sm:self-start"
               >
                 Enter
               </Link>
@@ -83,7 +83,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 flex w-full flex-col justify-between items-center text-[10px] md:flex-row md:text-[15px]">
+      <div className="absolute bottom-0 flex w-full flex-col items-center justify-between text-[10px] md:flex-row md:text-[15px]">
         <div className="font-disket mx-10 my-5 flex flex-col gap-2 self-center text-white md:self-end">
           <div className="flex flex-row  justify-between gap-0 md:justify-start md:gap-10">
             <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
