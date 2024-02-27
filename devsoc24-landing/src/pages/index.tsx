@@ -5,6 +5,8 @@ import ActionButton from "@/components/actionButton";
 import Main from "@/components/main";
 import SmoothScrolling from "@/components/smoothscrolling";
 import TypewriterEffect from "@/components/terminal/typewriter";
+import useGlitchStore from "@/store/store";
+import Footer from "@/components/footer";
 
 const help = [
   '<span class="">Initiating quantum decryption sequence...</span>',
@@ -32,6 +34,8 @@ const help = [
 
 export default function Home() {
   const [typingCompleted, setTypingCompleted] = useState(false);
+  const { showGlitch, setGlitch } = useGlitchStore();
+
   const handleTypingComplete = () => {
     setTypingCompleted(true);
   };
@@ -46,11 +50,17 @@ export default function Home() {
         </div>
       ) : (
         <SmoothScrolling>
-          <Main />
-          <About />
-          <div className="fixed bottom-0 z-40 mb-10 flex w-full justify-center">
-            <ActionButton body="Kuch toh" link="/" />
-          </div>
+          {showGlitch ? (
+            <Footer />
+          ) : (
+            <>
+              <Main />
+              <About />
+              <div className="fixed bottom-0 z-40 mb-10 flex w-full justify-center">
+                <ActionButton body="Kuch toh" link="/" />
+              </div>
+            </>
+          )}
         </SmoothScrolling>
       )}
     </>

@@ -19,7 +19,7 @@ const Footer = () => {
         width={0}
         className="absolute -z-10 h-screen w-screen"
       />
-      <div className="glitcheffect flex h-screen items-center justify-center overflow-hidden">
+      <div className="glitcheffect flex h-screen items-center justify-center overflow-hidden select-none">
         <div className="h-fit w-fit border-2 border-black bg-[#7F32DA] p-[1px]">
           <div className=" h-fit w-[320px] min-[420px]:w-[400px] flex-row overflow-hidden border-2 border-black bg-[#7F32DA]">
             <div className="relative flex justify-center border-b-2 border-black">
