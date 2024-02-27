@@ -360,3 +360,45 @@ a:focus {
   background-repeat: no-repeat; /* Prevent image from repeating */
   background-position: bottom;
 }
+
+@keyframes rotate-glitch {
+  0% {
+    transform: rotate(10deg);
+    
+  }
+  25% {
+    transform: rotate(0deg);
+    border-color: rgb(89, 167, 255);
+  }
+  50% {
+    transform: rotate(-10deg);
+    margin-left: 4.5px;
+    scale: 90%;
+    border-color: rgb(228, 10, 10);
+  }
+  75% {
+    transform: rotate(0deg);
+    border-color: rgb(218, 218, 0);
+  }
+  100% {
+    transform: rotate(0deg);
+    margin-left: -4.5px;
+    scale: 120%;
+    border-color: rgb(89, 149, 0);
+  }
+}
+
+@keyframes glitch-move {
+  0%, 100% {
+    left: 100px;
+  }
+  25% {
+    left: 0px;
+  }
+  50% {
+    right: 100px;
+  }
+  75% {
+    right: 0px;
+  }
+}

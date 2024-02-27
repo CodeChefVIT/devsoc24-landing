@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, SetStateAction } from "react";
 import logo from "@/assets/images/logo.svg";
 import glitch from "@/assets/images/startglitch.svg";
 import title from "@/assets/images/title.svg";
@@ -20,6 +20,7 @@ import devsoc2k24 from "@/assets/images/DEVSOC24.svg";
 import LearnMoreBtn from "./LearnMoreBtn";
 import TypewriterEffect from "./terminal/typewriter";
 import { useTransform, motion, useScroll } from "framer-motion";
+import timeline from "@/assets/images/timelinebox.svg"
 
 function Main() {
   const [scrollOpacity, setScrollOpacity] = useState(1);
@@ -30,6 +31,8 @@ function Main() {
   );
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
   const titles = [title, title2, title3, title4];
+  const [showBoxes, setShowBoxes] = useState(false);
+  const [hoveredBoxIndex, setHoveredBoxIndex] = useState(-1);
 
   useEffect(() => {
     const intervals = [2000, 400, 600, 400];
@@ -51,6 +54,7 @@ function Main() {
 
   useEffect(() => {
     PowerGlitch.glitch(".glitcheffect");
+    PowerGlitch.glitch(".box");
   }, []);
   useEffect(() => {
     const handleScroll = () => {
@@ -59,6 +63,14 @@ function Main() {
       const opacity = 1 - 7 * (scrollPosition / pageHeight);
       const newOpacity = Math.min(Math.max(opacity, 0), 1);
       setScrollOpacity(newOpacity);
+
+      const timelineSection = document.getElementById("timeline-section");
+      if (timelineSection) {
+        const timelinePosition = timelineSection.getBoundingClientRect().top;
+        if (timelinePosition < window.innerHeight) {
+          setShowBoxes(true);
+        }
+      }
     };
     window.addEventListener("scroll", handleScroll);
 
@@ -66,6 +78,12 @@ function Main() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleBoxHover = (index: SetStateAction<number>) => {
+    setHoveredBoxIndex(index);
+    console.log("")
+  };
+
   return (
     <>
       <motion.div style={{ y: -y }} className="">
@@ -223,14 +241,20 @@ function Main() {
               <div className="mt-14 max-sm:mt-3 flex w-full justify-center ">
                 <LearnMoreBtn link={""} />
               </div>
-              <div className="container flex flex-wrap items-center justify-center gap-10 pt-32 max-sm:pt-3 text-center">
-                {Array.from({ length: 6 }).map((_, index) => (
-                  <div key={index} className="flex flex-col justify-start">
-                    <div className="h-24 w-[12vw] border-2 max-lg:w-[15vw] max-[850px]:w-[17vw] max-sm:w-[35vw] border-[#9CE79A]"></div>
-                    <div className="below h-6 w-[4vw] bg-[#9CE79A]">
-                      <div className="ml-2 h-6 w-[8vw] -skew-x-[30deg] bg-[#9CE79A]"></div>
-                    </div>
-                  </div>
+              <div className="container flex flex-wrap items-center justify-center gap-10 pt-32 max-sm:pt-3 text-center" id="timeline-section">
+                {showBoxes && Array.from({ length: 6 }).map((_, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.2 }}
+                    
+                    className={`flex flex-col justify-start glitcheffect `}
+                    onMouseEnter={() => handleBoxHover(index)}
+                    onMouseLeave={() => setHoveredBoxIndex(-1)}
+                  >
+                    <Image src={timeline as HTMLImageElement} alt="dsd" className="size-40 max-sm:size-28 glitcheffect"/>
+                  </motion.div>
                 ))}
               </div>
             </div>
