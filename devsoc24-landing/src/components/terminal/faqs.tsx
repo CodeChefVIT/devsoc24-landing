@@ -2,7 +2,7 @@
 
 import Window from "./window";
 
-export default function Home() {
+export default function FAQS() {
   
   return (
     <div className="justify- relative flex h-full  w-full pl-[30px] pt-[100px]  md:pl-[60px]">

@@ -11,6 +11,8 @@ import FAQs from "../components/terminal/faqs";
 import Prizepool from "../components/terminal/prizepool";
 import Tracks from "../components/terminal/tracks";
 import Timeline from "../components/terminal/timeline";
+import Sponsors from "../components/terminal/sponsors";
+import Portal from "../components/terminal/sponsors";
 import { IoMdClose } from "react-icons/io";
 import Router, { useRouter } from "next/router";
 
@@ -61,7 +63,7 @@ export default function Home() {
 
   const [typingCompleted, setTypingCompleted] = useState(false);
 
-  type CardKey = "About" | "FAQs" | "Prizepool" | "Tracks" | "Timeline";
+  type CardKey = "About" | "FAQs" | "Prizepool" | "Tracks" | "Timeline" | "Sponsors" | "Portal";
 
   const cardComponents: {
     [K in CardKey]: () => JSX.Element;
@@ -71,6 +73,8 @@ export default function Home() {
     Prizepool,
     Tracks,
     Timeline,
+    Sponsors,
+    Portal,
   };
 
   const [activeCard, setActiveCard] = React.useState<CardKey | "">("");
@@ -108,7 +112,7 @@ export default function Home() {
 
   const SelectedComponent = activeCard ? cardComponents[activeCard] : null;
   return (
-    <main className="h-[100vh] bg-[#232323] font-diatype md:text-[13.3px] md:leading-[13.5px]">
+    <main className="min-h-screen h-fit bg-[#232323] font-diatype md:text-[13.3px] md:leading-[13.5px]">
       {!typingCompleted ? (
         <div className="pl-3 font-diatype md:text-[13.3px] md:leading-[13.5px]">
           <TypewriterEffect
@@ -118,71 +122,69 @@ export default function Home() {
         </div>
       ) : (
         <>
-          <div className="content-after-typing fixed z-30 flex h-[2.4%] w-full items-center justify-center bg-[#494848] font-diatype">
+          <div className="flex flex-col">
             <div
               style={{
                 backgroundImage: `url('/Topborder.svg')`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                width: "100%",
-                height: "100%",
+                width: "100vw",
+                height: "4vh",
               }}
             >
               <button
                 onClick={() => router.push("/")}
-                className="fixed right-0 flex h-[2.4%] w-[2.4vh] items-center justify-center bg-[#757575] hover:bg-[#606060]"
+                className="absolute right-0 z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060]"
               >
                 <IoMdClose className="text-lg font-bold" />
               </button>
             </div>
-
-            {/* <Image src="/Topborder.svg"
-                  alt="Description of the image"
-                  width={2200} 
-                  height={200} 
-                  className=""
-                /> */}
-          </div>
-          <div className="flex h-[%] flex-col-reverse items-start justify-between md:flex-row ">
-            <div className="fixed bottom-0 z-10 h-[250px]  w-[100%] overflow-y-auto md:fixed md:top-0 md:h-[100%] md:w-[22%] md:pt-[1.14%]">
-              <Terminal />
-            </div>
-            <div
-              className={`${dynamicHeight} bgImg w-full overflow-y-auto md:fixed md:h-[100%] md:pl-[25%]`}
-            >
-              <div className="fixed left-[22%] top-0 z-10 mt-[1.14%] hidden h-[20px] items-center  justify-center bg-[#d2d1d1] md:flex">
-                <div className="flex h-full w-[120px] items-center justify-center border-r-2 border-[#000000] text-xs font-semibold ">
-                  DEVSOC 24
-                </div>
-                {activeCard && (
-                  <>
-                    <div className="border- flex h-full w-[120px] items-center justify-center border-[#000000] text-xs font-semibold ">
-                      {activeCard}
-                    </div>
-                    <button onClick={() => setActiveCard("")}>
-                      <IoMdClose className="text-sm font-bold" />
-                    </button>
-                  </>
-                )}
+            <div className="flex flex-row">
+              <div className=" min-h-[96vh] w-[20vw]">
+                <Terminal />
               </div>
-              <div className="flex h-[100vh] w-[100%] justify-center ">
-                {SelectedComponent ? (
-                  <SelectedComponent />
-                ) : (
-                  <div className="bg-gray grid h-full w-full grid-cols-1 place-items-center gap-x-4 gap-y-8 overflow-y-auto pb-10 pt-[65px] sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 ">
-                    {cardTypes.map((card, index) => (
-                      <Card
-                        key={card}
-                        card={card}
-                        cardImage={cardImage[index] ?? "hello"}
-                        onClick={() => handleClick(card as CardKey)}
-                      />
-                    ))}
+              <div className="flex h-min flex-col">
+                <div className="z-10 hidden h-min md:flex">
+                  <div className="flex w-[120px] items-center justify-center border-r-2 border-[#000000] bg-[#d2d1d1] py-1 text-xs font-semibold">
+                    DEVSOC 24
                   </div>
-                )}
+                  {activeCard && (
+                    <>
+                      <div className="flex flex-row items-center justify-center bg-[#d2d1d1]">
+                        <div className="flex h-full w-[120px] items-center justify-center border-[#000000]  text-xs font-semibold ">
+                          {activeCard}
+                        </div>
+                        <button onClick={() => setActiveCard("")}>
+                          <IoMdClose className="text-sm font-bold" />
+                        </button>
+                      </div>
+                    </>
+                  )}
+                </div>
+
+                <div className="mb-8 flex w-full justify-center">
+                  {" "}
+                  {/* Adjusted width to 'w-full' */}
+                  {SelectedComponent ? (
+                    <SelectedComponent />
+                  ) : (
+                    <div className="w flex flex-wrap items-stretch justify-evenly gap-6">
+                      {cardTypes.map((card, index) => (
+                        <div className="flex items-center justify-start">
+                          <Card
+                            card={card}
+                            cardImage={cardImage[index] ?? "hello"}
+                            onClick={() => handleClick(card as CardKey)}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
+
           <div className="fixed bottom-0 z-40 flex h-[2.2%] w-full justify-center bg-[#494848] font-diatype">
             <div
               style={{
@@ -192,14 +194,7 @@ export default function Home() {
                 width: "100%",
                 height: "100%",
               }}
-            ></div>
-
-            {/* <Image src="/Topborder.svg"
-        alt="Description of the image"
-        width={2200} 
-        height={200} 
-        className=""
-      /> */}
+            />
           </div>
         </>
       )}

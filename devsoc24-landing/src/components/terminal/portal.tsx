@@ -8,8 +8,9 @@ import { MdMinimize } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import { BiWindow } from "react-icons/bi";
 import Image from "next/image";
+import { useCloseStore } from "@/store/store";
 
-export default function Timeline() {
+export default function Portal() {
   const [minimized, setMinimized] = useState(false);
   const [maximized, setMaximized] = useState(false);
 
@@ -40,6 +41,8 @@ export default function Timeline() {
   ];
 
   const [activeCard, setActiveCard] = useState<string[]>(["DEVSOC 2024"]);
+  // const { activeCard, setActiveCard } = useCloseStore();
+
   const useUserModal = () => {
     const [showUserModal, setshowUserModal] = useState(false);
 
@@ -91,7 +94,7 @@ export default function Timeline() {
             >
               <div className="flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
                 <span className="flex items-center pl-4 text-xs text-white">
-                  <PiNotepadLight className="pr-2 text-2xl" /> Timeline
+                  <PiNotepadLight className="pr-2 text-2xl" /> Portal
                 </span>
                 <section className="flex ">
                   <span
