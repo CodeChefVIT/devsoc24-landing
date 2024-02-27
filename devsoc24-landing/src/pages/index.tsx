@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Timeline from "@/components/Timeline";
 import About from "@/components/about";
-import ActionButton from "@/components/actionButton";
 import Main from "@/components/main";
 import SmoothScrolling from "@/components/smoothscrolling";
 import TypewriterEffect from "@/components/terminal/typewriter";
 import useGlitchStore from "@/store/store";
 import Footer from "@/components/footer";
+import bgimage from "@/assets/images/DEVSOCLOGOBIG.svg";
+import Image from "next/image";
 
 const help = [
   '<span class="">Initiating quantum decryption sequence...</span>',
@@ -56,10 +57,14 @@ export default function Home() {
             </div>
           ) : (
             <>
-              <Main />
-              <About />
-              <div className="fixed bottom-0 z-40 mb-10 flex w-full justify-center">
-                <ActionButton body="Kuch toh" link="/" />
+              <div className="fixed z-40 flex h-screen items-center justify-center">
+                <Image src={bgimage} alt="bg" />
+              </div>
+              <div className="z-50">
+                <Main />
+              </div>
+              <div className="">
+                <About />
               </div>
             </>
           )}

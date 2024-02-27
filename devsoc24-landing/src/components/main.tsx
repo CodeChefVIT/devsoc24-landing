@@ -38,7 +38,7 @@ function Main() {
     const intervals = [2000, 400, 600, 400];
     const timer = setTimeout(() => {
       setClassName(
-        "relative min-h-screen min-w-screen overlay_hero bg-span font-disket overflow-hidden flex flex-col items-center justify-center",
+        "relative min-h-screen min-w-screen overlay_hero bg-span font-disket overflow-hidden flex flex-col items-center justify-center z-50",
       );
     }, 400);
 
@@ -98,7 +98,7 @@ function Main() {
             />
           </div>
 
-          <div className="absolute top-6 m-0 w-full p-0">
+          <div className="absolute top-6 m-0 w-full p-0 z-50">
             <div className="flex items-center justify-center">
               <div className="relative hidden w-[33%] items-center justify-evenly lg:flex">
                 <div>
@@ -197,7 +197,7 @@ function Main() {
       </motion.div>
       <motion.div className="relative z-30">
         <div className="flex h-[1000px]  items-center justify-center overflow-hidden bg-[#020202]">
-          <div className="bg-logo font-disket overflow-hidden bg-[#020202]">
+          <div className="font-disket overflow-hidden bg-[#020202]">
             <motion.span style={{ y: y }} className="relative block">
               <Image
                 className="absolute left-60 top-[1100px]"

@@ -222,12 +222,15 @@ html.lenis {
 }
 /* **************************************************************** */
 
-.bg-logo {
+/* Not Required Anymore */
+/* **************************************************************** */
+/* .bg-logo {
   background-image: url("../assets/images/DEVSOCLOGOBIG.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-}
+} */
+/* **************************************************************** */
 
 /* textarea {
   left: -1000px;
