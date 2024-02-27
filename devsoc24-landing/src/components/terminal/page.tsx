@@ -24,28 +24,28 @@ const Terminal = () => {
 
   const commandOutputs: CommandOutputs = {
     faqs: [
-      '<span class="command">whatisdevsoc</span>What is Devsoc?',
-      '<span class="command">whoisdevsoc</span>Who is devsoc?',
+      '<span class="command">whatisdevsoc</span>',
+      '<span class="command">whoisdevsoc</span>',
     ],
     sponsors: [
-      '<span class="command">whatisdevsoc</span>What is Devsoc?',
-      '<span class="command">whoisdevsoc</span>Who is devsoc?',
+      '<span class="command">????????</span>',
+      '<span class="command">404 not found</span>',
     ],
     timeline: [
-      '<span class="command">whatisdevsoc</span>What is Devsoc?',
-      '<span class="command">whoisdevsoc</span>Who is devsoc?',
+      '<span class="command">........</span>What is Devsoc?',
+      '<span class="command">.........</span>',
     ],
     tracks: [
-      '<span class="command">whatisdevsoc</span>What is Devsoc?',
-      '<span class="command">whoisdevsoc</span>Who is devsoc?',
+      '<span class="command">tracks</span>',
+      '<span class="command">tracks</span>',
     ],
     prizepool: [
-      '<span class="command">whatisdevsoc</span>What is Devsoc?',
-      '<span class="command">whoisdevsoc</span>Who is devsoc?',
+      '<span class="command">25,000</span>',
+      '<span class="command">rupaiye</span>',
     ],
     adityabhaiya: [
-      '<span class="command">whatisdevsoc</span>What is Devsoc?',
-      '<span class="command">whoisdevsoc</span>Who is devsoc?',
+      '<span class="command">mostest web dev</span>',
+      '<span class="command">to find out more use command <b>aditansh</b></span>',
     ],
     help: [
       '<span class="command">faqs (frequently asked questions)</span>',
@@ -55,8 +55,8 @@ const Terminal = () => {
       '<span class="command">tracks (tracks)</span>',
       '<span class="command">help (to view all commands)</span>',
       '<span class="command">clear (to clear the terminal)</span>',
-      '<span class="command">rolls (if you want a free role in</span>',
-      '<span class="command">codechef then use rolls</span>',
+      '<span class="command">rolls (if you want a role in codechef</span>',
+      '<span class="command">then use rolls command</span>',
       '<span class="command">to contact us)</span>',
       "<br>",
     ],
@@ -303,8 +303,8 @@ const Terminal = () => {
 
         {commands.map((cmdObj, index) => (
           <div key={index}>
-            <div className="command-line font-diatype font-semibold">
-              <span>devsoc@2024.com:~${cmdObj.command}</span>
+            <div className="command-line font-diatype ">
+              <span className="">devsoc@2024.com:~${cmdObj.command}</span>
             </div>
             {cmdObj.displayOutput.map((line, lineIndex) => (
               <div
@@ -319,7 +319,7 @@ const Terminal = () => {
 
         <div id="command" className="flex">
           <div id="liner" className="ml-[10px] flex-1">
-            <span className="font-diatype font-semibold">
+            <span className="font-diatype ">
               devsoc@2024.com:~${inputValue}
             </span>
             <b className="cursor">█</b>

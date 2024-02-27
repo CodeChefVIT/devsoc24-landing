@@ -117,7 +117,7 @@ export default function Home() {
             <div className="fixed bottom-0 z-10 h-[250px]  w-[100%] overflow-y-auto md:fixed md:top-0 md:h-[100%] md:w-[22%] md:pt-[1.14%]">
               <Terminal />
             </div>
-            <div className="h-[900px] w-full overflow-y-auto bg-[#232323]  md:fixed md:h-[100%]  md:pl-[25%]  ">
+            <div className="h-[900px] w-full overflow-y-auto bgImg  md:fixed md:h-[100%]  md:pl-[25%]  ">
               <div className="fixed left-[22%] top-0 z-10 mt-[1.14%] hidden h-[20px] items-center  justify-center bg-[#d2d1d1] md:flex">
                 <div className="flex h-full w-[120px] items-center justify-center border-r-2 border-[#000000] text-xs font-semibold ">
                   DEVSOC 24
