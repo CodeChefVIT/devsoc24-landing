@@ -27,7 +27,7 @@ const About = () => {
       const atBottom =
         window.innerHeight + window.scrollY >= document.body.offsetHeight;
       setIsBottom(atBottom);
-      if (atBottom || currentScrollY < prevScrollY.current) {
+      if (window.innerWidth >= 450 && (atBottom || currentScrollY < prevScrollY.current)) {
         setShowOriginal(!atBottom);
         setShowGlitchImage(true);
         setTimeout(() => {
@@ -40,6 +40,8 @@ const About = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  
+
   return (
     <>
       {showOriginal && (
@@ -84,7 +86,7 @@ const About = () => {
             <span>revolution.</span>
           </span>
           Join the fray as we smash your mom and redefine what&apos;s possible.
-          <div className="block min-[450px]:hidden">
+          <div className="contents min-[450px]:hidden">
             <Footer />
           </div>
         </div>

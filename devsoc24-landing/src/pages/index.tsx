@@ -51,7 +51,9 @@ export default function Home() {
       ) : (
         <SmoothScrolling>
           {showGlitch ? (
-            <Footer />
+            <div className="hidden min-[450px]:contents">
+              <Footer />
+            </div>
           ) : (
             <>
               <Main />
