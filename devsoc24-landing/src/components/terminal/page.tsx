@@ -48,13 +48,16 @@ const Terminal = () => {
       '<span class="command">whoisdevsoc</span>Who is devsoc?',
     ],
     help: [
-      '<span class="command">faqs</span>',
-      '<span class="command">sponsors</span>',
-      '<span class="command">prizepool</span>',
-      '<span class="command">timeline</span>',
-      '<span class="command">tracks</span>',
-      '<span class="command">help</span>',
-      '<span class="command">clear</span>',
+      '<span class="command">faqs (frequently asked questions)</span>',
+      '<span class="command">sponsors (404 notfound)</span>',
+      '<span class="command">prizepool (20,000)</span>',
+      '<span class="command">timeline (???)</span>',
+      '<span class="command">tracks (tracks)</span>',
+      '<span class="command">help (to view all commands)</span>',
+      '<span class="command">clear (to clear the terminal)</span>',
+      '<span class="command">rolls (if you want a free role in</span>',
+      '<span class="command">codechef then use rolls</span>',
+      '<span class="command">to contact us)</span>',
       "<br>",
     ],
     clear: [],
@@ -68,7 +71,7 @@ const Terminal = () => {
       "| $$$$$$$/| $$$$$$$$   \\  $/   |  $$$$$$/|  $$$$$$/| | $$$$$$/",
       "|_______/ |________/    \\_/     \\______/ \\ ______/ \\ ______/",
     ],
-    roll: [],
+    rolls: [],
     initial: [
       '<span class="">$User id set to 8y14e9f8</span>',
       '<span class="">User vakidated and online...</span>',
@@ -86,6 +89,15 @@ const Terminal = () => {
       '<span class="">to start with, type <b>help</b> to get all commands</span>',
       // "<br>",
     ],
+    aaditya:[
+      '<span class="">Mostest frontend dev</span>',
+    ],
+    designTeam:[
+      '<span class="">Calculating.....</span>',
+      '<span class="">Calculating.....</span>',
+      '<span class="">Calculating.....</span>',
+      '<span class="">Calculating.....</span>',
+    ]
   };
 
   const sleep = (ms: number) =>
@@ -97,7 +109,7 @@ const Terminal = () => {
       const trimmedInput = inputValue.trim();
       if (trimmedInput === "clear") {
         setCommands([]);
-      } else if (trimmedInput === "roll") {
+      } else if (trimmedInput === "rolls") {
         setTimeout(() => {
           window.open("https://www.youtube.com/watch?v=xvFZjo5PgG0", "_blank");
         }, 500);
@@ -244,8 +256,8 @@ const Terminal = () => {
 
   return (
     <div className="h-[400px] bg-[#757575] font-diatype text-sm md:h-[100%] md:text-[13.3px] md:leading-[13.5px] ">
-      <div id="terminal" className="overflow-y-auto bg-[#757575] pt-0 md:pt-2">
-        <div className="flex  md:h-[110px] h-[140px] flex-col items-start border-b-[1px] border-black md:text-[13px] md:leading-[13.5px] ">
+      <div id="terminal" className=" bg-[#757575] pt-0 md:pt-2">
+        <div className="flex md:h-[110px] h-[140px] flex-col items-start border-b-[1px] border-black md:text-[13px] md:leading-[13.5px] ">
           <div
             style={{
               backgroundImage: `url('/Topborder.svg')`,
@@ -253,6 +265,7 @@ const Terminal = () => {
               backgroundPosition: "center",
               width: "100%",
               height: "13px",
+              position:"fixed"
             }}
             className="fixed flex md:hidden"
           ></div>
@@ -277,7 +290,7 @@ const Terminal = () => {
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds()}</span> */}
         </div>
-        <div className="ml-3 mt-2 max-w-[60%]">
+        <div className="ml-3 mt-2 max-w-[60%] overflow-y-auto">
           <ProgressBar
             redProgress={redProgress}
             greenProgress={greenProgress}
@@ -298,6 +311,7 @@ const Terminal = () => {
                 key={lineIndex}
                 className="command-output"
                 dangerouslySetInnerHTML={{ __html: line }}
+                 ref={endRef}
               ></div>
             ))}
           </div>
@@ -309,7 +323,7 @@ const Terminal = () => {
               devsoc@2024.com:~${inputValue}
             </span>
             <b className="cursor">█</b>
-            <div style={{ marginBottom: 100 }} ref={endRef} />
+            <div style={{ marginBottom: 100 }}  />
           </div>
         </div>
         <textarea

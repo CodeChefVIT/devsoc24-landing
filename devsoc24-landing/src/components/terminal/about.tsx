@@ -39,7 +39,7 @@ export default function Home() {
               </span> */}
             </section>
           </div>
-          <p className=" w-[90%] pl-6 pt-8">
+          <p className=" w-[90%] pl-6 md:pt-8 pt-2">
             DEVSOC is CodeChef-VIT’s annual flagship event hoping to empower
             young minds by bringing enthusiastic technocrats and thinkers under
             one roof. This year, the second iteration of the hackathon is being
@@ -49,11 +49,11 @@ export default function Home() {
             days, with the hackathon lasting 48 hours consisting of amazing
             swags, prizes, food and drinks!
           </p>
-          <p className=" w-[90%] pl-6 pt-4">
+          <p className=" w-[90%] pl-6 md:pt-4 pt-1">
             Devsoc Is going to be held at Anna Auditorium, Vellore Institute of
             Technology, Vellore
           </p>
-          <p className=" w-[90%] pl-6 pt-4">
+          <p className=" w-[90%] pl-6 md:pt-4 pt-1">
             Devsoc is going to be held on the 15th and 16th of March 2024
           </p>
         </div>
