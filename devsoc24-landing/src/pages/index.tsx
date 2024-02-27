@@ -37,7 +37,7 @@ export default function Home() {
   };
   return (
     <>
-      {typeof window === 'undefined' || !typingCompleted ? (
+      {typeof window === "undefined" || !typingCompleted ? (
         <div className="pl-3 ">
           <TypewriterEffect
             textLines={help}
@@ -46,10 +46,7 @@ export default function Home() {
         </div>
       ) : (
         <SmoothScrolling>
-          <section id="Main">
-            <Main />
-          </section>
-
+          <Main />
           <About />
           <div className="fixed bottom-0 z-40 mb-10 flex w-full justify-center">
             <ActionButton body="Kuch toh" link="/" />

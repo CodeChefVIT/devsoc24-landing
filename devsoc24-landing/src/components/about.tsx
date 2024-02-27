@@ -48,7 +48,7 @@ const About = () => {
   return (
     <>
       {showOriginal && (
-          <div className=" font-disket min-w-screen relative h-fit overflow-hidden bg-[#020202] px-2 text-center text-[35px] font-black text-[#9CE79ACC] md:px-10 md:text-[100px]">
+          <div className="font-disket min-w-screen relative h-fit overflow-hidden bg-[#020202] px-2 text-center text-[30px] font-black text-[#9CE79ACC] md:px-10 md:text-[100px]">
             <span className="relative block">DEVSOC’24</span>
             &nbsp; ignites the tech scene with a blaze of innovation, where
             yesterday
@@ -58,7 +58,7 @@ const About = () => {
                 alt="Image 2"
                 height={400}
                 width={400}
-                className="absolute -right-[-55px] bottom-[-400px] h-[400px] w-[400px] md:h-min md:w-min"
+                className="absolute right-[10px] md:-right-[55px] bottom-[-400px] h-auto w-[250px] md:h-min md:w-min"
               />
             </motion.span>{" "}
             hurdles are today playground.
@@ -68,7 +68,7 @@ const About = () => {
                 alt="Image 3"
                 height={400}
                 width={400}
-                className="absolute -left-[-35px] bottom-[-1000px] h-[400px] w-[400px] md:h-min md:w-min"
+                className="absolute left-[10px] md:-left-[-35px] bottom-[-1000px] h-auto w-[250px] md:h-min md:w-min"
               />
             </motion.span>{" "}
             In its fourth edition, this boundary-pushing hackathon transcends
@@ -79,7 +79,7 @@ const About = () => {
                 alt="Image 4"
                 height={400}
                 width={400}
-                className="absolute right-[50px] top-[950px] h-[400px] w-[200px] md:h-min md:w-min"
+                className="absolute right-[50px] md:right-[50px] top-[950px] h-auto w-[250px] md:h-min md:w-min"
               />
             </motion.span>{" "}
             to confront real-world chaos head-on. With diverse minds colliding,
