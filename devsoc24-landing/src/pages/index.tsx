@@ -61,7 +61,7 @@ export default function Home() {
                 <Image src={bgimage as HTMLImageElement} alt="bg" />
               </div>
               <div className="z-50">
-                <section id="Main">
+                <section id="Main" className="">
                   <Main />
                 </section>
               </div>
