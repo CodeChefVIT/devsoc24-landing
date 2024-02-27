@@ -1,10 +1,10 @@
+import React, { useState, useEffect } from "react";
 import Timeline from "@/components/Timeline";
 import About from "@/components/about";
 import ActionButton from "@/components/actionButton";
 import Main from "@/components/main";
 import SmoothScrolling from "@/components/smoothscrolling";
 import TypewriterEffect from "@/components/terminal/typewriter";
-import { useState } from "react";
 
 const help = [
   '<span class="">Initiating quantum decryption sequence...</span>',
@@ -37,7 +37,7 @@ export default function Home() {
   };
   return (
     <>
-      {!typingCompleted ? (
+      {typeof window === 'undefined' || !typingCompleted ? (
         <div className="pl-3 ">
           <TypewriterEffect
             textLines={help}
