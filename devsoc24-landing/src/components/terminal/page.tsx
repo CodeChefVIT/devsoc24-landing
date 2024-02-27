@@ -14,7 +14,7 @@ const Terminal = () => {
   const [redProgress, setRedProgress] = useState(0);
   const [greenProgress, setGreenProgress] = useState(0);
   const [blueProgress, setBlueProgress] = useState(0);
-  const endRef = useRef<HTMLDivElement>(null)
+  const endRef = useRef<HTMLDivElement>(null);
 
   // const endOfMessagesRef = useRef(null);
 
@@ -66,74 +66,84 @@ const Terminal = () => {
       "| $$$$$$$/| $$$$$$$$   \\  $/   |  $$$$$$/|  $$$$$$/| | $$$$$$/",
       "|_______/ |________/    \\_/     \\______/ \\ ______/ \\ ______/",
     ],
+    roll: [],
   };
 
-  const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
-
+  const sleep = (ms: number) =>
+    new Promise((resolve) => setTimeout(resolve, ms));
 
   const handleKeyPress = (event: React.KeyboardEvent) => {
     if (event.key === "Enter") {
       event.preventDefault();
       const trimmedInput = inputValue.trim();
       if (trimmedInput === "clear") {
-  setCommands([]);
-} else {
-  const output = commandOutputs[trimmedInput] ?? [`Command not found: ${trimmedInput}`];
-  const displayOutput = output.map(() => ""); 
-  setCommands((prevCommands) => [...prevCommands, { command: trimmedInput, output, displayOutput }]);
-}
+        setCommands([]);
+      } else if (trimmedInput === "roll") {
+        setTimeout(() => {
+          window.open("https://www.youtube.com/watch?v=xvFZjo5PgG0", "_blank");
+        }, 500);
+      } else {
+        const output = commandOutputs[trimmedInput] ?? [
+          `Command not found: ${trimmedInput}`,
+        ];
+        const displayOutput = output.map(() => "");
+        setCommands((prevCommands) => [
+          ...prevCommands,
+          { command: trimmedInput, output, displayOutput },
+        ]);
+      }
 
       setInputValue("");
     }
   };
 
   useEffect(() => {
-  if (commands.length > 0) {
-    triggerTypewriterEffect(commands.length - 1);
-  }
-}, [commands]);
+    if (commands.length > 0) {
+      triggerTypewriterEffect(commands.length - 1);
+    }
+  }, [commands]);
 
-const triggerTypewriterEffect = (commandIndex: number) => {
-  let currentLineIndex = 0;
-  
-  if (commandIndex >= 0 && commandIndex < commands.length) {
-    const command = commands[commandIndex];
-    if (!command) return; 
-    const outputLines = command.output;
+  const triggerTypewriterEffect = (commandIndex: number) => {
+    let currentLineIndex = 0;
 
-    const typeNextChar = () => {
-      if (currentLineIndex < outputLines.length) {
-        const line = outputLines[currentLineIndex]??'';
-        const currentDisplayLine = command.displayOutput[currentLineIndex] ?? '';
-        const nextCharIndex = currentDisplayLine.length;
+    if (commandIndex >= 0 && commandIndex < commands.length) {
+      const command = commands[commandIndex];
+      if (!command) return;
+      const outputLines = command.output;
 
-        if (nextCharIndex < line.length) {
-          setCommands((prevCommands) => {
-            const newCommands = [...prevCommands];
-            if (newCommands[commandIndex]) {
-              const newDisplayOutput = [...newCommands[commandIndex]?.displayOutput ?? []];
-              newDisplayOutput[currentLineIndex] = line.substr(0, nextCharIndex + 1);
-              newCommands[commandIndex]!.displayOutput = newDisplayOutput;
-            }
-            return newCommands;
-          });
-          setTimeout(typeNextChar, 50); 
-        } else {
-          
-          currentLineIndex++;
-          setTimeout(typeNextChar, 0);
+      const typeNextChar = () => {
+        if (currentLineIndex < outputLines.length) {
+          const line = outputLines[currentLineIndex] ?? "";
+          const currentDisplayLine =
+            command.displayOutput[currentLineIndex] ?? "";
+          const nextCharIndex = currentDisplayLine.length;
+
+          if (nextCharIndex < line.length) {
+            setCommands((prevCommands) => {
+              const newCommands = [...prevCommands];
+              if (newCommands[commandIndex]) {
+                const newDisplayOutput = [
+                  ...(newCommands[commandIndex]?.displayOutput ?? []),
+                ];
+                newDisplayOutput[currentLineIndex] = line.substr(
+                  0,
+                  nextCharIndex + 1,
+                );
+                newCommands[commandIndex]!.displayOutput = newDisplayOutput;
+              }
+              return newCommands;
+            });
+            setTimeout(typeNextChar, 50);
+          } else {
+            currentLineIndex++;
+            setTimeout(typeNextChar, 0);
+          }
         }
-      }
-    };
+      };
 
-    typeNextChar();
-  }
-};
-
-
-
-
-
+      typeNextChar();
+    }
+  };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInputValue(event.target.value);
@@ -165,22 +175,44 @@ const triggerTypewriterEffect = (commandIndex: number) => {
   // var currentdate = new Date();
 
   const scrollToBottom = () => {
-endRef.current?.scrollIntoView({ behavior: "smooth" })
-}
+    endRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
-useEffect(() => {
-scrollToBottom()
-},[inputValue]);
+  useEffect(() => {
+    // Simulate entering the 'help' command as the initial command
+    const helpOutput = commandOutputs.help ?? [];
+
+    const displayOutput = helpOutput.map(() => ""); // Prepare displayOutput with empty strings for typewriter effect
+    setCommands([{ command: "help", output: helpOutput, displayOutput }]);
+  }, []); // Empty dependency array ensures this effect runs only once on mount
+
+  useEffect(() => {
+    if (commands.length > 0) {
+      triggerTypewriterEffect(commands.length - 1);
+    }
+  }, [commands]);
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [inputValue]);
   return (
-    <div className="font-diatype h-[400px] bg-[#757575] text-sm md:h-[100%] md:text-xs ">
-      <div id="terminal" className="overflow-y-auto bg-[#757575] pt-2">
-        {/* <ProgressBar
-          redProgress={redProgress}
-          greenProgress={greenProgress}
-          blueProgress={blueProgress}
-        /> */}
+    <div className="h-[400px] bg-[#757575] font-diatype text-sm md:h-[100%] md:text-xs ">
+      <div id="terminal" className="overflow-y-auto bg-[#757575] md:pt-2 pt-0">
+       
+
+           
         <div className="flex  h-[110px] flex-col items-start border-b-[1px] border-black font-semibold">
-          <span className="pb-1 pl-2 pt-1">
+           <div
+              style={{
+                backgroundImage: `url('/Topborder.svg')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                width: "100%",
+                height: "13px",
+              }}
+              className="md:hidden flex fixed"
+            ></div>
+          <span className="pb-1 pl-2 md:pt-1 pt-3">
             [Network ] DotMid://19.22.10.14
           </span>
           <span className="pb-1 pl-2 ">[ID ] #ag58aycs</span>
@@ -191,29 +223,23 @@ scrollToBottom()
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds()}</span> */}
         </div>
-        <div className="mt-3 pl-[6px]">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam
-          blanditiis temporibus voluptate ipsam repellendus doloremque. Porro
-          quidem soluta eaque reiciendis, tenetur maiores facere neque eos nihil
-          iste quis! Sequi modi fugit officiis nesciunt esse inventore magnam
-          harum provident, sed dolore explicabo! pariatur!
-        </div>
+        <div className="mt-3 pl-[6px]"></div>
         {/* <span className="color2 ml-[15px]">Welcome to Devsoc web terminal.</span> */}
         {/* <span className="color2 ml-[15px]">For a list of available commands, type</span> <span className="command">'help'</span><span className="color2">.</span> */}
         {commands.map((cmdObj, index) => (
-  <div key={index}>
-    <div className="command-line">
-      <span>devsoc@2024.com:~${cmdObj.command}</span>
-    </div>
-    {cmdObj.displayOutput.map((line, lineIndex) => (
-      <div
-        key={lineIndex}
-        className="command-output"
-        dangerouslySetInnerHTML={{ __html: line }}
-      ></div>
-    ))}
-  </div>
-))}
+          <div key={index}>
+            <div className="command-line">
+              <span>devsoc@2024.com:~${cmdObj.command}</span>
+            </div>
+            {cmdObj.displayOutput.map((line, lineIndex) => (
+              <div
+                key={lineIndex}
+                className="command-output"
+                dangerouslySetInnerHTML={{ __html: line }}
+              ></div>
+            ))}
+          </div>
+        ))}
 
         <div id="command" className="flex">
           <div id="liner" className="ml-[10px] flex-1">

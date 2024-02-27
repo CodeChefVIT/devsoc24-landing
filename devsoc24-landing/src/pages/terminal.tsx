@@ -92,7 +92,7 @@ export default function Home() {
         </div>
       ) : (
         <>
-          <div className="content-after-typing fixed z-30 flex h-[2.4%] w-full justify-center bg-[#494848] font-diatype">
+          <div className="content-after-typing fixed z-30 flex h-[2.4%] w-full justify-center items-center bg-[#494848] font-diatype">
             <div
               style={{
                 backgroundImage: `url('/Topborder.svg')`,
@@ -101,7 +101,10 @@ export default function Home() {
                 width: "100%",
                 height: "100%",
               }}
-            ></div>
+              
+            ><button onClick={() => setActiveCard("")} className="bg-[#757575]">
+                      <IoMdClose className="text-sm font-bold" />
+                    </button></div>
 
             {/* <Image src="/Topborder.svg"
         alt="Description of the image"
@@ -116,12 +119,12 @@ export default function Home() {
             </div>
             <div className="h-[900px] w-full overflow-y-auto bg-[#232323]  md:fixed md:h-[100%]  md:pl-[25%]  ">
               <div className="fixed left-[22%] top-0 z-10 mt-[1.14%] hidden h-[20px] items-center  justify-center bg-[#d2d1d1] md:flex">
-                <div className="flex h-full w-[120px] items-center justify-center border-r-2 border-[#000000] text-xs font-semibold bg-slate-400">
+                <div className="flex h-full w-[120px] items-center justify-center border-r-2 border-[#000000] text-xs font-semibold ">
                   DEVSOC 24
                 </div>
                 {activeCard && (
                   <>
-                    <div className="border- flex h-full w-[120px] items-center justify-center border-[#000000] text-xs font-semibold bg-slate-600">
+                    <div className="border- flex h-full w-[120px] items-center justify-center border-[#000000] text-xs font-semibold ">
                       {activeCard}
                     </div>
                     <button onClick={() => setActiveCard("")}>
