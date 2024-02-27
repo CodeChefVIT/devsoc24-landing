@@ -82,9 +82,9 @@ export default function Home() {
 
   const SelectedComponent = activeCard ? cardComponents[activeCard] : null;
   return (
-    <main className="h-[100vh] bg-[#232323] font-diatype">
+    <main className="h-[100vh] bg-[#232323] font-diatype md:text-[13.3px] md:leading-[13.5px]">
       {!typingCompleted ? (
-        <div className="pl-3">
+        <div className="pl-3 font-diatype md:text-[13.3px] md:leading-[13.5px]">
           <TypewriterEffect
             textLines={help}
             onTypingComplete={handleTypingComplete}

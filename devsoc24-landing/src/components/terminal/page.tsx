@@ -24,23 +24,23 @@ const Terminal = () => {
   type CommandOutputs = Record<string, string[]>;
 
   const commandOutputs: CommandOutputs = {
-    whatisdevsoc: [
+    faqs: [
       '<span class="command">whatisdevsoc</span>What is Devsoc?',
       '<span class="command">whoisdevsoc</span>Who is devsoc?',
     ],
-    whoisdevsoc: [
+    sponsors: [
       '<span class="command">whatisdevsoc</span>What is Devsoc?',
       '<span class="command">whoisdevsoc</span>Who is devsoc?',
     ],
-    whyisdevsoc: [
+    timeline: [
       '<span class="command">whatisdevsoc</span>What is Devsoc?',
       '<span class="command">whoisdevsoc</span>Who is devsoc?',
     ],
-    secret: [
+    tracks: [
       '<span class="command">whatisdevsoc</span>What is Devsoc?',
       '<span class="command">whoisdevsoc</span>Who is devsoc?',
     ],
-    aditansh: [
+    prizepool: [
       '<span class="command">whatisdevsoc</span>What is Devsoc?',
       '<span class="command">whoisdevsoc</span>Who is devsoc?',
     ],
@@ -49,13 +49,13 @@ const Terminal = () => {
       '<span class="command">whoisdevsoc</span>Who is devsoc?',
     ],
     help: [
-      '<span class="command">whatisdevsoc</span>What is Devsoc?',
-      '<span class="command">whoisdevsoc</span>Who is devsoc?',
-      '<span class="command">whyisdevsoc</span>Why is devsoc',
-      '<span class="command">aditansh</span>Aditansh',
-      '<span class="command">adityabhaiya</span>Adityabhaiya',
-      '<span class="command">help</span>Help',
-      '<span class="command">clear</span>Clear terminal',
+      '<span class="command">faqs</span>',
+      '<span class="command">sponsors</span>',
+      '<span class="command">prizepool</span>',
+      '<span class="command">timeline</span>',
+      '<span class="command">tracks</span>',
+      '<span class="command">help</span>',
+      '<span class="command">clear</span>',
       "<br>",
     ],
     clear: [],
@@ -84,6 +84,7 @@ const Terminal = () => {
       '<span class="">Ready for realtime monitoring</span>',
       '<span class="">Loading welcome...</span>',
       '<span class="">[complete]</span>',
+      '<span class="">to start with, type <b>help</b> to get all commands</span>',
       // "<br>",
     ]
   };
@@ -222,6 +223,8 @@ const Terminal = () => {
   }, [redProgress, greenProgress, blueProgress]);
   // var currentdate = new Date();
 
+  
+
   const scrollToBottom = () => {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -292,7 +295,7 @@ const Terminal = () => {
         
         {commands.map((cmdObj, index) => (
           <div key={index}>
-            <div className="command-line font-bold font-diatype">
+            <div className="command-line font-semibold font-diatype">
               <span>devsoc@2024.com:~${cmdObj.command}</span>
             </div>
             {cmdObj.displayOutput.map((line, lineIndex) => (
@@ -308,7 +311,7 @@ const Terminal = () => {
 
         <div id="command" className="flex">
           <div id="liner" className="ml-[10px] flex-1">
-            <span className="font-bold">devsoc@2024.com:~${inputValue}</span>
+            <span className="font-semibold font-diatype">devsoc@2024.com:~${inputValue}</span>
             <b className="cursor">█</b>
             <div style={{ marginBottom: 100 }} ref={endRef} />
           </div>
