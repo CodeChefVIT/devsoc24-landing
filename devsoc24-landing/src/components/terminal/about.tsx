@@ -17,16 +17,16 @@ export default function Home() {
   };
 
   return (
-    <div className="justify- flex h-full w-[80%] md:w-[100%]  pt-[100px] font-diatype text-sm md:pl-[100px]">
+    <div className="h-fit left-[33%] top-[20%] absolute">
       <div className={`${minimise ? "hidden" : ""}`}>
-        <div className="border-2   bg-[#b2b2b2]  md:h-[55%] md:w-[50vw]">
+        <div className="h-fit w-[50vw] border-2 bg-[#b2b2b2] pb-10">
           <div className="flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600 ">
             <span className="flex items-center pl-4 text-xs text-white">
               <PiNotepadLight className="pr-2 text-2xl" /> About-DEVSOC’24
             </span>
             <section className="flex">
               <span
-                className={`mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#b4b4b4]`}
+                className={`mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#b4b4b4] hover:cursor-pointer`}
                 onClick={() => handleClick()}
               >
                 <MdMinimize />
@@ -39,7 +39,7 @@ export default function Home() {
               </span> */}
             </section>
           </div>
-          <p className=" w-[90%] pl-6 md:pt-8 pt-2">
+          <p className=" w-[90%] pl-6 pt-2 md:pt-8">
             DEVSOC is CodeChef-VIT’s annual flagship event hoping to empower
             young minds by bringing enthusiastic technocrats and thinkers under
             one roof. This year, the second iteration of the hackathon is being
@@ -49,17 +49,17 @@ export default function Home() {
             days, with the hackathon lasting 48 hours consisting of amazing
             swags, prizes, food and drinks!
           </p>
-          <p className=" w-[90%] pl-6 md:pt-4 pt-1">
+          <p className=" w-[90%] pl-6 pt-1 md:pt-4">
             Devsoc Is going to be held at Anna Auditorium, Vellore Institute of
             Technology, Vellore
           </p>
-          <p className=" w-[90%] pl-6 md:pt-4 pt-1">
+          <p className=" w-[90%] pl-6 pt-1 md:pt-4">
             Devsoc is going to be held on the 15th and 16th of March 2024
           </p>
         </div>
       </div>
       <div
-        className={`absolute top-20 rounded-full bg-[#757575] h-[54px] w-[54px] border-2 border-[#a4a3a3] flex justify-center items-center ${!minimise ? "hidden" : ""} `}
+        className={`absolute top-20 flex h-[54px] w-[54px] items-center justify-center rounded-full border-2 border-[#a4a3a3] bg-[#757575] ${!minimise ? "hidden" : ""} `}
         onClick={() => handleClick()}
       >
         <Image

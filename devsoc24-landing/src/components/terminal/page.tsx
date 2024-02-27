@@ -62,14 +62,14 @@ const Terminal = () => {
     ],
     clear: [],
     banner: [
-      " /$$$$$$$  /$$$$$$$$ /$$     /$$  /$$$$$$   /$$$$$$   /$$$$$$",
-      "| $$__  $$| $$_____/|$$    | $$ /$$__  $$ /$$__  $$ /$$__  $$",
-      "| $$  \\$$| $$       |$$    | $$| $$  \\ __/|$$  \\  $$| $$ \\ __/",
-      "| $$  | $$| $$$$$   | $$   / $$/|  $$$$$$ |$$   | $$| $$      ",
-      "| $$  | $$| $$__/    \\  $$ $$/ \\ ____  $$| $$   | $$| $$      ",
-      "| $$  | $$| $$        \\  $$$/   /$$   \\ $$|$$   | $$| $$    $$",
-      "| $$$$$$$/| $$$$$$$$   \\  $/   |  $$$$$$/|  $$$$$$/| | $$$$$$/",
-      "|_______/ |________/    \\_/     \\______/ \\ ______/ \\ ______/",
+      "<p class='block-text' style='font-size:9px;'>&nbsp;*******&nbsp;&nbsp;&nbsp;********&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;&nbsp;********&nbsp;&nbsp;&nbsp;*******&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;</p>",
+      "<p class='block-text' style='font-size:9px;'>/**////**&nbsp;/**/////&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**&nbsp;**//////&nbsp;&nbsp;&nbsp;**/////**&nbsp;&nbsp;&nbsp;**////**</p>",
+      "<p class='block-text' style='font-size:9px;'>/**&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//**&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;</p>",
+      "<p class='block-text' style='font-size:9px;'>/**&nbsp;&nbsp;&nbsp;&nbsp;/**/*******&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;/*********/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>",
+      "<p class='block-text' style='font-size:9px;'>/**&nbsp;&nbsp;&nbsp;&nbsp;/**/**////&nbsp;&nbsp;&nbsp;//**&nbsp;&nbsp;**&nbsp;&nbsp;////////**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>",
+      "<p class='block-text' style='font-size:9px;'>/**&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//****&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**//**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;**</p>",
+      "<p class='block-text' style='font-size:9px;'>/*******&nbsp;&nbsp;/********&nbsp;&nbsp;&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;********&nbsp;&nbsp;//*******&nbsp;&nbsp;&nbsp;//******&nbsp;</p>",
+      "<p class='block-text' style='font-size:9px;'>///////&nbsp;&nbsp;&nbsp;////////&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;////////&nbsp;&nbsp;&nbsp;&nbsp;///////&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//////&nbsp;&nbsp;</p>",
     ],
     rolls: [],
     initial: [
@@ -89,15 +89,13 @@ const Terminal = () => {
       '<span class="">to start with, type <b>help</b> to get all commands</span>',
       // "<br>",
     ],
-    aaditya:[
-      '<span class="">Mostest frontend dev</span>',
+    aaditya: ['<span class="">Mostest frontend dev</span>'],
+    designTeam: [
+      '<span class="">Calculating.....</span>',
+      '<span class="">Calculating.....</span>',
+      '<span class="">Calculating.....</span>',
+      '<span class="">Calculating.....</span>',
     ],
-    designTeam:[
-      '<span class="">Calculating.....</span>',
-      '<span class="">Calculating.....</span>',
-      '<span class="">Calculating.....</span>',
-      '<span class="">Calculating.....</span>',
-    ]
   };
 
   const sleep = (ms: number) =>
@@ -257,7 +255,7 @@ const Terminal = () => {
   return (
     <div className="h-[400px] bg-[#757575] font-diatype text-sm md:h-[100%] md:text-[13.3px] md:leading-[13.5px] ">
       <div id="terminal" className=" bg-[#757575] pt-0 md:pt-2">
-        <div className="flex md:h-[110px] h-[140px] flex-col items-start border-b-[1px] border-black md:text-[13px] md:leading-[13.5px] ">
+        <div className="flex h-[140px] flex-col items-start border-b-[1px] border-black md:h-[110px] md:text-[13px] md:leading-[13.5px] ">
           <div
             style={{
               backgroundImage: `url('/Topborder.svg')`,
@@ -265,7 +263,7 @@ const Terminal = () => {
               backgroundPosition: "center",
               width: "100%",
               height: "13px",
-              position:"fixed"
+              position: "fixed",
             }}
             className="fixed flex md:hidden"
           ></div>
@@ -311,7 +309,7 @@ const Terminal = () => {
                 key={lineIndex}
                 className="command-output"
                 dangerouslySetInnerHTML={{ __html: line }}
-                 ref={endRef}
+                ref={endRef}
               ></div>
             ))}
           </div>
@@ -323,13 +321,13 @@ const Terminal = () => {
               devsoc@2024.com:~${inputValue}
             </span>
             <b className="cursor">█</b>
-            <div style={{ marginBottom: 100 }}  />
+            <div style={{ marginBottom: 100 }} />
           </div>
         </div>
         <textarea
           id="texter"
           autoFocus
-          className="absolute left-0 bottom-0 h-full w-full bg-transparent opacity-0"
+          className="absolute bottom-0 left-0 h-full w-full bg-transparent opacity-0"
           value={inputValue}
           onChange={handleInputChange}
           onKeyDown={handleKeyPress}
