@@ -92,7 +92,7 @@ export default function Window({
               &#8203;
             </span>
 
-            <div className="inline-block transform overflow-hidden  bg-[#acabab] text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6 sm:align-middle">
+            <div className="inline-block transform overflow-hidden  bg-[#acabab] text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6 sm:align-middle md:p-0 border-2 border-white">
               <div>
                 <div className="md:col-span-2 md:mt-0">
                   <div className="flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
@@ -111,8 +111,8 @@ export default function Window({
                         <span className="bg-[#757575] mr-1 border-r-[2px] border-b-[2px] border-[#1e1e1e]"><IoMdClose /></span> */}
                     </section>
                   </div>
-                  <li className="pl-2">Is the hackathon free to attend?</li>
-                  <div className="pl-2 block text-sm font-medium text-gray-700">
+                  <li className="pl-2 pt-2">Is the hackathon free to attend?</li>
+                  <div className="pl-2 pt-2 pb-2 block text-sm font-medium text-gray-700">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Deserunt quae et earum nostrum odit vel non temporibus
                     voluptates sequi sunt mollitia sapiente enim deleniti ad

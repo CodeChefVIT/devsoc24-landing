@@ -161,7 +161,7 @@ export default function Home() {
                 {SelectedComponent ? (
                   <SelectedComponent />
                 ) : (
-                  <div className="grid grid-cols-1 place-items-center gap-x-4 gap-y-8 pt-[65px] sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 bg-gray h-full w-full overflow-y-auto pb-10 bg-slate-300">
+                  <div className="grid grid-cols-1 place-items-center gap-x-4 gap-y-8 pt-[65px] sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 bg-gray h-full w-full overflow-y-auto pb-10 ">
                     {cardTypes.map((card, index) => (
                       <Card
                         key={card}
