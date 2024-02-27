@@ -21,7 +21,7 @@ const Footer = () => {
       />
       <div className="glitcheffect flex h-screen items-center justify-center overflow-hidden">
         <div className="h-fit w-fit border-2 border-black bg-[#7F32DA] p-[1px]">
-          <div className=" h-fit w-[400px] flex-row overflow-hidden border-2 border-black bg-[#7F32DA]">
+          <div className=" h-fit w-[320px] min-[420px]:w-[400px] flex-row overflow-hidden border-2 border-black bg-[#7F32DA]">
             <div className="relative flex justify-center border-b-2 border-black">
               <Image
                 src={pattern as HTMLImageElement}
@@ -75,7 +75,7 @@ const Footer = () => {
               </p>
               <Link
                 href="./terminal"
-                className="font-vcr my-2 flex h-[40px] w-[100px] items-center justify-center self-start border-2 border-black bg-white hover:cursor-pointer hover:bg-black hover:text-white"
+                className="font-vcr my-2 flex h-[40px] w-[100px] items-center justify-center sm:self-start border-2 border-black bg-white hover:cursor-pointer hover:bg-black hover:text-white"
               >
                 Enter
               </Link>
@@ -83,7 +83,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 flex w-full flex-col justify-between text-[10px] md:flex-row md:text-[15px]">
+      <div className="absolute bottom-0 flex w-full flex-col justify-between items-center text-[10px] md:flex-row md:text-[15px]">
         <div className="font-disket mx-10 my-5 flex flex-col gap-2 self-center text-white md:self-end">
           <div className="flex flex-row  justify-between gap-0 md:justify-start md:gap-10">
             <div className="bg-black px-1 uppercase hover:bg-[#CFCFCF] hover:text-black">
@@ -100,7 +100,7 @@ const Footer = () => {
             <div className="bg-black px-1 uppercase">All rights reserved.</div>
           </div>
         </div>
-        <div className="font-disket mx-10 my-5 flex flex-row  gap-2 self-end text-white">
+        <div className="font-disket mx-10 my-5 flex gap-2 self-center md:self-end text-white">
           <div className="bg-black px-1 uppercase hover:bg-[#CFCFCF] hover:text-black">
             privacy policy
           </div>
