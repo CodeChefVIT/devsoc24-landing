@@ -44,8 +44,8 @@ const handleClick = (cardName: string) => {
   return (
     
           <div className="flex justify- w-full h-full  md:pl-[60px] pl-[30px] pt-[100px]  relative">
-            <div className="bg-slate-700 h-[20%]">
-                <div className="w-[30vw] min-w-[500px] h-full bg-[#b2b2b2] border-2 relative">
+            <div className="bg-slate-700 md:h-[20%] h-[150px]">
+                <div className="w-[30vw] min-w-[300px] h-full bg-[#b2b2b2] border-2 relative hover:z-30">
                     <div className="w-[100%] h-[25px] bg-gradient-to-r from-blue-800 to-blue-600 border-b-2 flex justify-between items-center">
                         <span className="flex items-center pl-4 text-white text-xs"><PiNotepadLight className="text-2xl pr-2"/> About-DEVSOC’24</span>
                         <section className="flex">
@@ -93,8 +93,8 @@ const handleClick = (cardName: string) => {
                           </div>
                         </div>
                       )}
-            <div className="bg-slate-700 h-[20%] absolute top-52 right-6">
-                <div className="w-[38vw] min-w-[500px] h-full bg-[#b2b2b2] border-2 relative">
+            <div className="bg-slate-700  md:h-[20%] h-[150px] absolute top-44 right-10  md:pt-0 mt-10">
+                <div className="w-[38vw] min-w-[300px] h-full bg-[#b2b2b2] border-2 relative hover:z-30">
                     <div className="w-[100%] h-[25px] bg-gradient-to-r from-blue-800 to-blue-600 border-b-2 flex justify-between items-center">
                         <span className="flex items-center pl-4 text-white text-xs"><PiNotepadLight className="text-2xl pr-2"/> About-DEVSOC’24</span>
                         <section className="flex">
@@ -109,8 +109,9 @@ const handleClick = (cardName: string) => {
                 
                 </div>
             </div>
-            <div className="bg-slate-700 h-[20%] absolute top-72 left-28">
-                <div className="w-[38vw] min-w-[500px] h-full bg-[#b2b2b2] border-2 relative">
+            
+            <div className="bg-slate-700  md:h-[20%] h-[150px] absolute top-72 md:left-28 left-24 md:pt-0 mt-16">
+                <div className="w-[38vw] min-w-[300px] h-full bg-[#b2b2b2] border-2 relative hover:z-30">
                     <div className="w-[100%] h-[25px] bg-gradient-to-r from-blue-800 to-blue-600 border-b-2 flex justify-between items-center">
                         <span className="flex items-center pl-4 text-white text-xs"><PiNotepadLight className="text-2xl pr-2"/> About-DEVSOC’24</span>
                         <section className="flex">
@@ -125,8 +126,8 @@ const handleClick = (cardName: string) => {
                 
                 </div>
             </div>
-            <div className="bg-slate-700 h-[20%] absolute top-[420px] right-8">
-                <div className="w-[45vw] min-w-[500px] h-full bg-[#b2b2b2] border-2 relative">
+            <div className="bg-slate-700  md:h-[20%] h-[150px] absolute top-[420px] right-8 md:pt-0 mt-16">
+                <div className="w-[45vw] min-w-[300px] h-full bg-[#b2b2b2] border-2 relative hover:z-30">
                     <div className="w-[100%] h-[25px] bg-gradient-to-r from-blue-800 to-blue-600 border-b-2 flex justify-between items-center">
                         <span className="flex items-center pl-4 text-white text-xs"><PiNotepadLight className="text-2xl pr-2"/> About-DEVSOC’24</span>
                         <section className="flex">
@@ -136,7 +137,7 @@ const handleClick = (cardName: string) => {
                         <span className="bg-[#757575] mr-1 border-r-[2px] border-b-[2px] border-[#1e1e1e]"><IoMdClose /></span>
                         </section>
                     </div>
-                <p className=" w-[90%] pt-6 pl-6 ">I don’t have much experience with coding or tech events. Should I still participate?? </p>
+                <p className=" w-[90%] pt-3 pl-6 ">I don’t have much experience with coding or tech events. Should I still participate?? </p>
                 <button className={`transition hover:duration-75 ease-in-out border-r-[3px] border-b-[3px] absolute bottom-2 right-4 h-6 w-24 md:mt-[100px] bg-[#aaa9a9]  border-[#000000] text-sm hover:h-[26px] hover:w-[98px]`}>Select</button>
                 
                 </div>
