@@ -3,11 +3,7 @@ import Image from "next/image";
 import picture1 from "../assets/images/new1.png";
 import picture2 from "../assets/images/new2.png";
 import picture3 from "../assets/images/new3.png";
-import {
-  useTransform,
-  motion,
-  useScroll,
-} from "framer-motion";
+import { useTransform, motion, useScroll } from "framer-motion";
 import glitch from "@/assets/images/footer_glitch.gif";
 import Footer from "./footer";
 import useGlitchStore from "@/store/store";
@@ -27,20 +23,21 @@ const About = () => {
       const atBottom =
         window.innerHeight + window.scrollY >= document.body.offsetHeight;
       setIsBottom(atBottom);
-      if (window.innerWidth >= 450 && (atBottom || currentScrollY < prevScrollY.current)) {
+      if (
+        window.innerWidth >= 450 &&
+        (atBottom || currentScrollY < prevScrollY.current)
+      ) {
         setShowOriginal(!atBottom);
         setShowGlitchImage(true);
-        setTimeout(() => {
-          setGlitch(atBottom);
-          setShowGlitchImage(false);
-        }, 1000);
+
+        setGlitch(atBottom);
+        setShowGlitchImage(false);
       }
       prevScrollY.current = currentScrollY;
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
 
   return (
     <>
@@ -90,7 +87,6 @@ const About = () => {
             <Footer />
           </div>
         </div>
-        
       )}
       {/* {showGlitchImage && (
         <Image

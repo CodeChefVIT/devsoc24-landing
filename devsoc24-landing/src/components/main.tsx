@@ -195,7 +195,7 @@ function Main() {
           </div>
         </div>
       </motion.div>
-      <motion.div style={{ y: y }} className="relative z-30">
+      <motion.div className="relative z-30">
         <div className="flex h-[1000px]  items-center justify-center overflow-hidden bg-[#020202]">
           <div className="bg-logo font-disket overflow-hidden bg-[#020202]">
             <motion.span style={{ y: y }} className="relative block">
