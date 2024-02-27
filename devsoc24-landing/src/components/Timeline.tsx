@@ -47,21 +47,19 @@ const Timeline: React.FC = () => {
               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
               reprehenderit in voluptate velit esse cillum dolore eu fugiat
               nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              sunt in culpa qui officia deserunt mollit anim id est laborum.asdfsadf
             </div>
           </div>
           <div className="mt-14 flex w-full justify-center ">
             <LearnMoreBtn link={""} />
           </div>
           <div className="container flex flex-wrap items-center justify-center gap-10 pt-32 text-center">
-            {Array.from({ length: 6 }).map((_, index) => (
-              <div key={index} className="flex flex-col justify-start">
-                <div className="h-24 w-[12vw] border-2 border-[#9CE79A]"></div>
-                <div className="below h-6 w-[4vw] bg-[#9CE79A]">
-                  <div className="ml-2 h-6 w-[8vw] -skew-x-[30deg] bg-[#9CE79A]"></div>
-                </div>
+            <div className="flex flex-col justify-start">
+              <div className="h-24 w-[12vw] border-2 border-[#9CE79A]"></div>
+              <div className="below h-6 w-[4vw] bg-[#9CE79A]">
+                <div className="ml-2 h-6 w-[8vw] -skew-x-[30deg] bg-[#9CE79A]">sdf</div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>
