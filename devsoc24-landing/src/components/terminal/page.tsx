@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import ProgressBar from "../progressbar";
+import { useTerminalStore } from "@/store/store";
+import { IoMdClose } from "react-icons/io";
 // import ProgressBar from "../_components/progressbar";
 
 interface Command {
@@ -17,6 +19,12 @@ const Terminal = () => {
   const [blueProgress, setBlueProgress] = useState(0);
   const endRef = useRef<HTMLDivElement>(null);
   const [currentTime, setCurrentTime] = useState(new Date());
+
+  const { showTerminal, setShowTerminal } = useTerminalStore();
+
+  const toggleTerminal = () => {
+    setShowTerminal(!showTerminal);
+  };
 
   // const endOfMessagesRef = useRef(null);
 
@@ -103,7 +111,8 @@ const Terminal = () => {
 
   const handleKeyPress = (event: React.KeyboardEvent) => {
     if (event.key === "Enter") {
-      event.preventDefault();
+      event.preventDefault(); // Prevent the default behavior of the Enter key
+
       const trimmedInput = inputValue.trim();
       if (trimmedInput === "clear") {
         setCommands([]);
@@ -253,20 +262,15 @@ const Terminal = () => {
   }, [inputValue]);
 
   return (
-    <div className="h-[400px] bg-[#757575] font-diatype text-sm md:h-[100%] md:text-[13.3px] md:leading-[13.5px] ">
+    <div className="relative h-[400px] overflow-auto bg-[#757575] font-diatype text-sm md:h-[100%] md:text-[13.3px] md:leading-[13.5px]">
+      <button
+        onClick={() => toggleTerminal()}
+        className="fixed right-[2px] z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#666565] hover:cursor-pointer hover:bg-[#606060]"
+      >
+        <IoMdClose className="text-lg font-bold" />
+      </button>
       <div id="terminal" className=" bg-[#757575] pt-0 md:pt-2">
         <div className="flex h-[140px] flex-col items-start border-b-[1px] border-black md:h-[110px] md:text-[13px] md:leading-[13.5px] ">
-          <div
-            style={{
-              backgroundImage: `url('/Topborder.svg')`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              width: "100%",
-              height: "13px",
-              position: "fixed",
-            }}
-            className="fixed flex md:hidden"
-          ></div>
           <span className="pb-1 pl-2 pt-3 md:pt-1">
             [Network&nbsp;&nbsp;&nbsp;] DotMid://19.22.10.14
           </span>
@@ -327,10 +331,11 @@ const Terminal = () => {
         <textarea
           id="texter"
           autoFocus
-          className="absolute bottom-0 left-0 h-full w-full bg-transparent opacity-0"
+          className="fixed bottom-0 left-0 h-full w-[20vw] text-wrap bg-transparent opacity-0"
           value={inputValue}
           onChange={handleInputChange}
           onKeyDown={handleKeyPress}
+          onFocus={(e) => e.preventDefault()}
         ></textarea>
       </div>
 

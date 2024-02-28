@@ -36,7 +36,7 @@ const Card = ({ card, cardImage, onClick }: CardProps) => {
   }, [redProgress, greenProgress, blueProgress]);
   return (
     <div
-      className={`font-diatype md:h-[401px]  md:w-[240px] ${bg} mb-5 flex h-[240px] w-[90%] max-w-[400px] items-center justify-center border-2 border-[#0d0d0d] md:flex-col`}
+      className={`h-fit p-2 font-diatype ${bg} mb-5 mt-5 flex items-stretch justify-center border-2 border-[#0d0d0d] md:flex-col`}
       onMouseEnter={() => {
         setBg("bg-[#0C00FF]"), setBtBg("bg-black  text-white");
       }}
@@ -44,33 +44,34 @@ const Card = ({ card, cardImage, onClick }: CardProps) => {
         setBg("bg-[#757575]"), setBtBg("bg-white");
       }}
     >
-      <div className="font-diatype flex h-[90%] w-[53%] items-center justify-center border-2 border-[#0d0d0d] bg-[#1c1c1c] md:h-[56%] md:w-[92%]">
+      <div className="flex items-center justify-center border-2 border-[#0d0d0d] font-diatype mx-1 ">
         <Image
           src={`/${cardImage}`}
           alt="Description of the image"
           width={500}
           height={100}
+          className="h-[100%] w-[100%] bg-[#000000] object-cover"
         />
       </div>
-      <div className="font-diatype relative ml-2 flex h-[89%] w-[38%] flex-col border-2 border-[#1c1c1c] text-sm md:ml-0 md:mt-2 md:h-[38%] md:w-[93%]">
-        <div className={`absolute left-1 top-[-9px] ${bg} text-xs`}>
-          [{card}]
-        </div>
-        <span className="ml-2 mt-1 text-[#000000]">scanning...</span>
-        <div className="ml-3 max-w-[80%]">
-          <ProgressBar
-            redProgress={redProgress}
-            greenProgress={greenProgress}
-            blueProgress={blueProgress}
-          />
-          <span>...</span>
-        </div>
-        <button
-          onClick={onClick}
-          className={`butt absolute bottom-2 ml-[10px] h-10 w-24 md:mt-[100px] ${butBg} border-[1px] border-[#000000]`}
-        >
-          Select
-        </button>
+      <div className=" flex h-full w-full flex-col font-diatype text-sm ">
+        <fieldset className="mt-2 h-full border-2 border-[#0d0d0d] px-5 py-2">
+          <legend className={`${bg} text-xs`}>[{card}]</legend>
+          <span className="text-[#000000]">scanning...</span>
+          <div className="max-w-[80%]">
+            <ProgressBar
+              redProgress={redProgress}
+              greenProgress={greenProgress}
+              blueProgress={blueProgress}
+            />
+            <span>...</span>
+          </div>
+          <button
+            onClick={onClick}
+            className={`mt-10 ${butBg} md:h-[40px] md:w-[80px] h-[25px] w-[60px] text-[12px] border-[1px] border-[#000000]`}
+          >
+            Select
+          </button>
+        </fieldset>
       </div>
     </div>
   );

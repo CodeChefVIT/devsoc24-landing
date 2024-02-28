@@ -15,7 +15,8 @@ import Sponsors from "../components/terminal/sponsors";
 import Portal from "../components/terminal/portal";
 import { IoMdClose } from "react-icons/io";
 import Router, { useRouter } from "next/router";
-import { useCloseStore } from "@/store/store";
+import { useCloseStore, useTerminalStore } from "@/store/store";
+import { IoTerminal } from "react-icons/io5";
 
 const help = [
   '<span class="">Initiating quantum decryption sequence...</span>',
@@ -44,7 +45,11 @@ const help = [
 export default function Home() {
   const router = useRouter();
   const { activeCard, setActiveCard } = useCloseStore();
+  const { showTerminal, setShowTerminal } = useTerminalStore();
 
+  const toggleTerminal = () => {
+    setShowTerminal(!showTerminal);
+  };
   const cardTypes = [
     "About",
     "Timeline",
@@ -144,6 +149,17 @@ export default function Home() {
                 height: "4vh",
               }}
             >
+              {!showTerminal ? (
+                <button
+                  onClick={() => toggleTerminal()}
+                  className="absolute left-0 z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060]"
+                >
+                  <IoTerminal className="text-lg font-bold" />
+                </button>
+              ) : (
+                <></>
+              )}
+
               <button
                 onClick={() => router.push("/")}
                 className="absolute right-0 z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060]"
@@ -151,11 +167,16 @@ export default function Home() {
                 <IoMdClose className="text-lg font-bold" />
               </button>
             </div>
-            <div className="flex flex-row">
-              <div className=" min-h-[96vh] min-w-[20vw]">
-                <Terminal />
-              </div>
-              <div className="flex h-min flex-col">
+            <div className="flex flex-col-reverse md:flex-row ">
+              {showTerminal ? (
+                <div className="fixed bottom-0 bg-white z-50 md:min-h-[96vh] md:min-w-[20vw] md:relative">
+                  <Terminal />
+                </div>
+              ) : (
+                <></>
+              )}
+
+              <div className="flex  flex-col">
                 <div className="z-10 hidden h-min md:flex">
                   <div className="flex w-[120px] items-center justify-center border-r-2 border-[#000000] bg-[#d2d1d1] py-1 text-xs font-semibold">
                     DEVSOC 24
@@ -174,16 +195,14 @@ export default function Home() {
                   )}
                 </div>
 
-                <div className="mb-8 flex w-full justify-center">
-                  {" "}
-                  {/* Adjusted width to 'w-full' */}
+                <div className={`mb-8  ${showTerminal ? "" : "w-full"} gap-6`}>
                   {SelectedComponent ? (
                     <SelectedComponent />
                   ) : (
-                    <div className="w flex flex-wrap items-stretch justify-evenly gap-6">
+                    <div className="flex flex-wrap items-stretch md:justify-start">
                       {cardTypes.map((card, index) => (
                         <div
-                          className="flex items-center justify-start"
+                          className="mx-4 flex items-center justify-center md:justify-start"
                           key={index}
                         >
                           <Card
