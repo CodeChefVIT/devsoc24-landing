@@ -83,6 +83,10 @@ export default function About() {
                       setActiveCard(activeCard.filter((c) => c !== "About"));
                       setSelectedComponent(null);
                     }}
+                    onTouchStart={() => {
+                      setActiveCard(activeCard.filter((c) => c !== "About"));
+                      setSelectedComponent(null);
+                    }}
                   >
                     <IoMdClose />
                   </span>
