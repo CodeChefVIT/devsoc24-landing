@@ -265,9 +265,9 @@ const Terminal = () => {
     <div className="relative h-[400px] overflow-auto bg-[#757575] font-diatype text-sm md:h-[100%] md:text-[13.3px] md:leading-[13.5px]">
       <button
         onClick={() => toggleTerminal()}
-        className="fixed right-[2px] z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#666565] hover:cursor-pointer hover:bg-[#606060]"
+        className="absolute right-[2px] z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#666565] hover:cursor-pointer hover:bg-[#606060]"
       >
-        <IoMdClose className="text-lg font-bold" />
+        <IoMdClose className="text-lg font-bold " />
       </button>
       <div id="terminal" className=" bg-[#757575] pt-0 md:pt-2">
         <div className="flex h-[140px] flex-col items-start border-b-[1px] border-black md:h-[110px] md:text-[13px] md:leading-[13.5px] ">
