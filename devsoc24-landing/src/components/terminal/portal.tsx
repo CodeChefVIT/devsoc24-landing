@@ -5,12 +5,13 @@ import { MdMinimize } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import { BiWindow } from "react-icons/bi";
 import Draggable from "react-draggable";
-import { useCloseStore } from "@/store/store";
+import { useCloseStore, useSelectedStore } from "@/store/store";
 
 export default function Portal() {
   const [minimized, setMinimized] = useState(false);
   const [maximized, setMaximized] = useState(false);
   const { activeCard, setActiveCard } = useCloseStore();
+  const {selectedComponent, setSelectedComponent} = useSelectedStore();
 
   const handleMinimize = () => {
     setMinimized(!minimized);
@@ -78,9 +79,10 @@ export default function Portal() {
                   </span>
                   <span
                     className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575] hover:cursor-pointer"
-                    onClick={() =>
+                    onClick={() =>{
                       setActiveCard(activeCard.filter((c) => c !== "Portal"))
-                    }
+                      setSelectedComponent(null)
+                    }}
                   >
                     <IoMdClose />
                   </span>

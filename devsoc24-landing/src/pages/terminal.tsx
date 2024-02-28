@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import TypewriterEffect from "../components/terminal/typewriter";
-
+import Link from "next/link";
 // import Image from "next/image";
 import Card from "../components/card";
 import Terminal from "../components/terminal/page";
@@ -15,7 +15,12 @@ import Sponsors from "../components/terminal/sponsors";
 import Portal from "../components/terminal/portal";
 import { IoMdClose } from "react-icons/io";
 import Router, { useRouter } from "next/router";
-import { useCloseStore, useTerminalStore } from "@/store/store";
+import useGlitchStore ,{
+  useCloseStore,
+  useTerminalStore,
+  useSelectedStore,
+  
+} from "@/store/store";
 import { IoTerminal } from "react-icons/io5";
 import { string } from "zod";
 
@@ -47,6 +52,8 @@ export default function Home() {
   const router = useRouter();
   const { activeCard, setActiveCard } = useCloseStore();
   const { showTerminal, setShowTerminal } = useTerminalStore();
+  const { selectedComponent, setSelectedComponent } = useSelectedStore();
+  const { showGlitch, setGlitch } = useGlitchStore();
 
   const toggleTerminal = () => {
     setShowTerminal(!showTerminal);
@@ -95,16 +102,13 @@ export default function Home() {
 
   // const [activeCard, setActiveCard] = React.useState<CardKey | "">("");
 
-  const handleClick = (cardName: CardKey) => {
-    // Ensure the selected card is moved to the beginning of the activeCard array
-    const index = activeCard.indexOf(cardName);
-    if (index === -1) {
-      setActiveCard([cardName, ...activeCard]);
-    } else if (index !== 0) {
-      const updatedActiveCard = [...activeCard];
-      updatedActiveCard.splice(index, 1);
-      updatedActiveCard.unshift(cardName);
+  const handleClick = (cardName: string) => {
+    if (activeCard.includes(cardName)) {
+      setSelectedComponent(cardName);
+    } else {
+      const updatedActiveCard: string[] = [...activeCard, cardName];
       setActiveCard(updatedActiveCard);
+      setSelectedComponent(cardName);
     }
   };
 
@@ -116,6 +120,7 @@ export default function Home() {
 
   // Effect hook to update height on mount and window resize
   useEffect(() => {
+    setGlitch(false);
     function updateHeight() {
       if (window.innerHeight < 800) {
         setDynamicHeight("h-[600px]");
@@ -136,8 +141,8 @@ export default function Home() {
     return () => window.removeEventListener("resize", updateHeight);
   }, []);
 
-  const SelectedComponent = activeCard
-    ? cardComponents[activeCard[0] as CardKey]
+  const SelectedComponent = selectedComponent
+    ? cardComponents[selectedComponent as CardKey]
     : null;
   return (
     <main className="h-fit min-h-screen bg-[#232323] font-diatype md:text-[13.3px] md:leading-[13.5px]">
@@ -170,13 +175,11 @@ export default function Home() {
               ) : (
                 <></>
               )}
-
-              <button
-                onClick={() => router.push("/")}
-                className="absolute right-0 z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060]"
-              >
-                <IoMdClose className="text-lg font-bold" />
-              </button>
+              <Link href="/">
+                <button className="absolute right-0 z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060]">
+                  <IoMdClose className="text-lg font-bold" />
+                </button>
+              </Link>
             </div>
             <div className="flex flex-col-reverse md:flex-row ">
               {showTerminal ? (
@@ -213,19 +216,18 @@ export default function Home() {
                         <div
                           className={`flex h-full w-[120px] cursor-default items-center justify-center border-[#000000] text-xs font-semibold`}
                           onClick={() => {
-                            const updatedActiveCard = activeCard.filter(
-                              (c) => c !== card,
-                            );
-                            updatedActiveCard.unshift(card);
-                            setActiveCard(updatedActiveCard);
+                            setSelectedComponent(card);
+                            card === "DEVSOC 2024" &&
+                              setSelectedComponent(null);
                           }}
                         >
                           {card}
                         </div>
                         <button
-                          onClick={() =>
-                            setActiveCard(activeCard.filter((c) => c !== card))
-                          }
+                          onClick={() => {
+                            setActiveCard(activeCard.filter((c) => c !== card));
+                            setSelectedComponent(null);
+                          }}
                         >
                           {card !== "DEVSOC 2024" && (
                             <IoMdClose className="text-sm font-bold" />

@@ -219,7 +219,7 @@ function Main() {
             <div className="h-[1080px] w-full flex-wrap overflow-x-auto">
               <div className="mt-48 max-sm:mt-10 flex w-full justify-center">
                 <Image
-                  className="mx-20 w-[300px] md:w-[35%]"
+                  className="mx-20"
                   src={devsoc2k24 as HTMLImageElement}
                   alt="devsoc"
                   quality={100}

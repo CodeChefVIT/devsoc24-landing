@@ -2,12 +2,13 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import pattern from "@/assets/images/pattern.svg";
 import glitch from "@/assets/images/footer_glitch.gif";
-import Link from "next/link";
 import { useLenis } from "@studio-freight/react-lenis";
 import useGlitchStore from "@/store/store";
+import { useRouter } from "next/navigation";
 
 const Footer = () => {
   const { showGlitch, setGlitch } = useGlitchStore();
+  const router = useRouter();
   const lenis = useLenis(({ scroll }) => {
     // console.log(scroll);
   });
@@ -32,7 +33,7 @@ const Footer = () => {
                 width={0}
                 className="w-[100%]"
               />
-              <div className="font-vcr mx-2">Message</div>
+              <div className="font-vcr mx-2 text-black">Message</div>
               <Image
                 src={pattern as HTMLImageElement}
                 alt="pattern"
@@ -41,7 +42,7 @@ const Footer = () => {
                 className="w-[100%]"
               />
               <div
-                className="font-vcr absolute right-0 flex h-[100%] w-fit items-center justify-center border-l-2 border-black bg-[#7F32DA] p-1 hover:cursor-pointer hover:bg-black hover:text-white"
+                className="font-vcr absolute right-0 flex h-[100%] w-fit items-center justify-center border-l-2 border-black bg-[#7F32DA] p-1 text-black hover:cursor-pointer hover:bg-black hover:text-white"
                 onClick={() => {
                   lenis?.scrollTo("#Main", { lerp: 0.1, duration: 1 });
                   setGlitch(false);
@@ -50,7 +51,7 @@ const Footer = () => {
                 X
               </div>
             </div>
-            <div className="flex flex-col items-center justify-center p-2">
+            <div className="flex flex-col items-center justify-center p-2 text-black">
               <div className="block-text my-2">
                 <p>
                   ██████╗&nbsp;███████╗██╗&nbsp;&nbsp;&nbsp;██╗███████╗&nbsp;██████╗&nbsp;&nbsp;██████╗
@@ -76,12 +77,14 @@ const Footer = () => {
                 Trying to Learn More? We can help you. Top Secret Information is
                 right at your finger tips. To take the leap is what you choose.
               </p>
-              <Link
-                href="./terminal"
-                className="font-vcr my-2 flex h-[40px] w-[100px] items-center justify-center border-2 border-black bg-white hover:cursor-pointer hover:bg-black hover:text-white sm:self-start"
+              <button
+                onClick={() => {
+                  void router.push("/terminal");
+                }}
+                className="font-vcr my-2 flex h-[40px] w-[100px] items-center justify-center border-2 border-black bg-white text-black hover:cursor-pointer hover:bg-black hover:text-white sm:self-start z-[100]"
               >
                 Enter
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -103,7 +106,7 @@ const Footer = () => {
             <div className="bg-black px-1 uppercase">All rights reserved.</div>
           </div>
         </div>
-        <div className="font-disket mx-10 my-5 flex flex-row gap-2 sm:self-end text-white">
+        <div className="font-disket mx-10 my-5 flex flex-row gap-2 text-white sm:self-end">
           <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
             privacy policy
           </div>
