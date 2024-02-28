@@ -42,7 +42,7 @@ const About = () => {
   return (
     <>
       {showOriginal && (
-        <div className="font-disket min-w-screen relative h-fit select-none overflow-hidden bg-[#020202] px-2 text-center text-[30px] font-black leading-none tracking-tighter text-[#9CE79ACC] md:px-10 md:text-[100px] overlay_about">
+        <div className="font-disket min-w-screen overlay_about relative h-fit select-none overflow-hidden bg-[#020202] px-2 text-center text-[26px] font-black leading-none tracking-tighter text-[#9CE79ACC] md:px-10 md:text-[100px]">
           DEVSOC&apos;24 ignites the tech scene with a blaze of innovation,
           where yesterday hurdles are today playground.
           <motion.span style={{ y: y }} className="relative block">
@@ -51,7 +51,7 @@ const About = () => {
               alt="Image 2"
               height={380}
               width={380}
-              className="hidden md:block absolute bottom-[-400px] right-[10px] h-auto w-[250px] right-[65px] md:h-min md:w-min"
+              className="absolute bottom-[-400px] right-[65px] hidden h-auto w-[250px] md:block md:h-min md:w-min"
             />
           </motion.span>
           <motion.span style={{ y: y }} className="relative block">
@@ -60,7 +60,7 @@ const About = () => {
               alt="Image 3"
               height={380}
               width={380}
-              className="hidden md:block absolute bottom-[-1250px] left-[10px] h-auto w-[250px] md:-left-[-65px] md:h-min md:w-min"
+              className="absolute bottom-[-1250px] left-[10px] hidden h-auto w-[250px] md:-left-[-65px] md:block md:h-min md:w-min"
             />
           </motion.span>
           In its fourth edition, this boundary-pushing hackathon transcends
@@ -74,12 +74,9 @@ const About = () => {
               alt="Image 4"
               height={380}
               width={380}
-              className="hidden md:block absolute right-[50px] top-[500px] h-auto w-[250px] md:right-[100px] md:h-min md:w-min"
+              className="absolute right-[50px] top-[500px] hidden h-auto w-[250px] md:right-[100px] md:block md:h-min md:w-min"
             />
           </motion.span>
-          <div className="contents min-[450px]:hidden">
-            <Footer />
-          </div>
         </div>
       )}
       {/* {showGlitchImage && (
@@ -96,6 +93,9 @@ const About = () => {
           <Footer />
         </div>
       )} */}
+      <div className="contents min-[450px]:hidden">
+        <Footer />
+      </div>
     </>
   );
 };
