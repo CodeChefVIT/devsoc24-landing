@@ -15,10 +15,11 @@ import Sponsors from "../components/terminal/sponsors";
 import Portal from "../components/terminal/portal";
 import { IoMdClose } from "react-icons/io";
 import Router, { useRouter } from "next/router";
-import {
+import useGlitchStore ,{
   useCloseStore,
   useTerminalStore,
   useSelectedStore,
+  
 } from "@/store/store";
 import { IoTerminal } from "react-icons/io5";
 import { string } from "zod";
@@ -52,6 +53,7 @@ export default function Home() {
   const { activeCard, setActiveCard } = useCloseStore();
   const { showTerminal, setShowTerminal } = useTerminalStore();
   const { selectedComponent, setSelectedComponent } = useSelectedStore();
+  const { showGlitch, setGlitch } = useGlitchStore();
 
   const toggleTerminal = () => {
     setShowTerminal(!showTerminal);
@@ -118,6 +120,7 @@ export default function Home() {
 
   // Effect hook to update height on mount and window resize
   useEffect(() => {
+    setGlitch(false);
     function updateHeight() {
       if (window.innerHeight < 800) {
         setDynamicHeight("h-[600px]");
