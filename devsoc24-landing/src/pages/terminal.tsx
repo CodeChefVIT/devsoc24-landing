@@ -17,6 +17,7 @@ import { IoMdClose } from "react-icons/io";
 import Router, { useRouter } from "next/router";
 import { useCloseStore, useTerminalStore } from "@/store/store";
 import { IoTerminal } from "react-icons/io5";
+import { string } from "zod";
 
 const help = [
   '<span class="">Initiating quantum decryption sequence...</span>',
@@ -95,8 +96,18 @@ export default function Home() {
   // const [activeCard, setActiveCard] = React.useState<CardKey | "">("");
 
   const handleClick = (cardName: CardKey) => {
-    setActiveCard(cardName);
+    // Ensure the selected card is moved to the beginning of the activeCard array
+    const index = activeCard.indexOf(cardName);
+    if (index === -1) {
+      setActiveCard([cardName, ...activeCard]);
+    } else if (index !== 0) {
+      const updatedActiveCard = [...activeCard];
+      updatedActiveCard.splice(index, 1);
+      updatedActiveCard.unshift(cardName);
+      setActiveCard(updatedActiveCard);
+    }
   };
+
   const handleTypingComplete = () => {
     setTypingCompleted(true);
   };
@@ -126,7 +137,7 @@ export default function Home() {
   }, []);
 
   const SelectedComponent = activeCard
-    ? cardComponents[activeCard as CardKey]
+    ? cardComponents[activeCard[0] as CardKey]
     : null;
   return (
     <main className="h-fit min-h-screen bg-[#232323] font-diatype md:text-[13.3px] md:leading-[13.5px]">
@@ -178,21 +189,51 @@ export default function Home() {
 
               <div className="flex  flex-col">
                 <div className="z-10 hidden h-min md:flex">
-                  <div className="flex w-[120px] items-center justify-center border-r-2 border-[#000000] bg-[#d2d1d1] py-1 text-xs font-semibold">
+                  {/* <div
+                    className="flex w-[120px] cursor-pointer items-center justify-center border-r-2 border-[#000000] bg-[#d2d1d1] py-1 text-xs font-semibold"
+                    onClick={() => {
+                      const index = activeCard.indexOf("DEVSOC 24");
+                      if (index !== -1) {
+                        const updatedActiveCard = [...activeCard];
+                        updatedActiveCard.splice(index, 1);
+                        setActiveCard(updatedActiveCard);
+                      } else {
+                        setActiveCard(["DEVSOC 24", ...activeCard]);
+                      }
+                    }}
+                  >
                     DEVSOC 24
-                  </div>
-                  {activeCard && (
-                    <>
-                      <div className="flex flex-row items-center justify-center bg-[#d2d1d1]">
-                        <div className="flex h-full w-[120px] items-center justify-center border-[#000000]  text-xs font-semibold ">
-                          {activeCard}
+                  </div> */}
+                  <div className="flex flex-wrap">
+                    {activeCard.map((card, index) => (
+                      <div
+                        className="flex flex-row items-center justify-center border-r-2 border-[#000000] bg-[#d2d1d1]"
+                        key={index}
+                      >
+                        <div
+                          className={`flex h-full w-[120px] cursor-default items-center justify-center border-[#000000] text-xs font-semibold`}
+                          onClick={() => {
+                            const updatedActiveCard = activeCard.filter(
+                              (c) => c !== card,
+                            );
+                            updatedActiveCard.unshift(card);
+                            setActiveCard(updatedActiveCard);
+                          }}
+                        >
+                          {card}
                         </div>
-                        <button onClick={() => setActiveCard("")}>
-                          <IoMdClose className="text-sm font-bold" />
+                        <button
+                          onClick={() =>
+                            setActiveCard(activeCard.filter((c) => c !== card))
+                          }
+                        >
+                          {card !== "DEVSOC 2024" && (
+                            <IoMdClose className="text-sm font-bold" />
+                          )}
                         </button>
                       </div>
-                    </>
-                  )}
+                    ))}
+                  </div>
                 </div>
 
                 <div className={`mb-8  ${showTerminal ? "" : "w-full"} gap-6`}>

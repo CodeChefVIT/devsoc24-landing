@@ -262,7 +262,7 @@ const Terminal = () => {
   }, [inputValue]);
 
   return (
-    <div className="relative h-[400px] overflow-auto bg-[#757575] font-diatype text-sm md:h-[100%] md:text-[13.3px] md:leading-[13.5px]">
+    <div className="relative h-[400px] overflow-auto bg-[#757575] font-diatype text-sm md:h-[100%] md:text-[13.3px] md:leading-[13.5px] w-screen sm:w-full">
       <button
         onClick={() => toggleTerminal()}
         className="absolute right-[2px] z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#666565] hover:cursor-pointer hover:bg-[#606060]"

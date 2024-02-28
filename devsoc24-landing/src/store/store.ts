@@ -13,13 +13,13 @@ const useGlitchStore = create<TaskStore>((set) => ({
 export default useGlitchStore;
 
 interface CloseStore {
-  activeCard: string;
-  setActiveCard: (setClose: string) => void;
+  activeCard: string[];
+  setActiveCard: (setClose: string[]) => void;
 }
 
 export const useCloseStore = create<CloseStore>((set) => ({
-  activeCard: "DEVSOC 2024",
-  setActiveCard: (activeCard: string) => set({ activeCard }),
+  activeCard: ["DEVSOC 2024"],
+  setActiveCard: (activeCard: string[]) => set({ activeCard }),
 }));
 
 interface TerminalStore {
