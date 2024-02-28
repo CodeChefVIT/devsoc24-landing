@@ -65,7 +65,7 @@ export default function Home() {
                   <Main />
                 </section>
               </div>
-              <section id="About">
+              <section id="About" className="">
                 <About />
               </section>
             </>

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { PiNotepadLight } from "react-icons/pi";
+import { GiPortal } from "react-icons/gi";
 // import Image from "next/image";
 // import Card from "../../components/card";
 // import Terminal from "../../components/terminal/page";
@@ -13,6 +13,7 @@ import { useCloseStore } from "@/store/store";
 export default function Portal() {
   const [minimized, setMinimized] = useState(false);
   const [maximized, setMaximized] = useState(false);
+  const { activeCard, setActiveCard } = useCloseStore();
 
   const handleMinimize = () => {
     setMinimized(!minimized);
@@ -40,7 +41,7 @@ export default function Portal() {
     "Frame 13 6.svg",
   ];
 
-  const [activeCard, setActiveCard] = useState<string[]>(["DEVSOC 2024"]);
+  // const [activeCard, setActiveCard] = useState<string[]>(["DEVSOC 2024"]);
   // const { activeCard, setActiveCard } = useCloseStore();
 
   const useUserModal = () => {
@@ -58,17 +59,17 @@ export default function Portal() {
   };
 
   const { showUserModal, openUserModal, closeUserModal } = useUserModal();
-  const handleClick = (cardName: string) => {
-    setActiveCard((currentActiveCard) => {
-      if (currentActiveCard.includes(cardName)) {
-        console.log("activecard", activeCard);
-        return currentActiveCard.filter((card) => card !== cardName);
-      } else {
-        console.log(activeCard);
-        return [...currentActiveCard, cardName];
-      }
-    });
-  };
+  // const handleClick = (cardName: string) => {
+  //   setActiveCard((currentActiveCard) => {
+  //     if (currentActiveCard.includes(cardName)) {
+  //       console.log("activecard", activeCard);
+  //       return currentActiveCard.filter((card) => card !== cardName);
+  //     } else {
+  //       console.log(activeCard);
+  //       return [...currentActiveCard, cardName];
+  //     }
+  //   });
+  // };
   return (
     <div
       className={`relative flex h-full w-full ${maximized ? "" : "pl-[30px] pt-[100px]  md:pl-[60px]"}`}
@@ -94,7 +95,7 @@ export default function Portal() {
             >
               <div className="flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
                 <span className="flex items-center pl-4 text-xs text-white">
-                  <PiNotepadLight className="pr-2 text-2xl" /> Portal
+                  <GiPortal className="pr-2 text-2xl" /> Portal
                 </span>
                 <section className="flex ">
                   <span
@@ -109,7 +110,10 @@ export default function Portal() {
                   >
                     <BiWindow />
                   </span>
-                  <span className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575]">
+                  <span
+                    className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575] hover:cursor-pointer"
+                    onClick={() => setActiveCard("")}
+                  >
                     <IoMdClose />
                   </span>
                 </section>

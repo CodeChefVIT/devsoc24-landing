@@ -5,8 +5,8 @@ interface TaskStore {
   setGlitch: (showGlitch: boolean) => void;
 }
 interface CloseStore {
-  activeCard: string[];
-  setActiveCard: (setClose: string[]) => void;
+  activeCard: string;
+  setActiveCard: (setClose: string) => void;
 }
 
 const useGlitchStore = create<TaskStore>((set) => ({
@@ -17,6 +17,6 @@ const useGlitchStore = create<TaskStore>((set) => ({
 export default useGlitchStore;
 
 export const useCloseStore = create<CloseStore>((set) => ({
-  activeCard: ["DEVSOC 2024"],
-  setActiveCard: (activeCard: string[]) => set({ activeCard }),
+  activeCard: "DEVSOC 2024",
+  setActiveCard: (activeCard: string) => set({ activeCard }),
 }));
