@@ -185,6 +185,8 @@ const Terminal = () => {
 
   const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInputValue(event.target.value);
+
+    event.target.scrollTop = 0;
   };
 
   useEffect(() => {
@@ -265,7 +267,7 @@ const Terminal = () => {
     <div className="relative h-[400px] overflow-auto bg-[#757575] font-diatype text-sm md:h-[100%] md:text-[13.3px] md:leading-[13.5px] w-screen sm:w-full">
       <button
         onClick={() => toggleTerminal()}
-        className="absolute right-[2px] z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#666565] hover:cursor-pointer hover:bg-[#606060]"
+        className="sm:hidden absolute right-[2px] z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#666565] hover:cursor-pointer hover:bg-[#606060]"
       >
         <IoMdClose className="text-lg font-bold " />
       </button>
@@ -324,18 +326,19 @@ const Terminal = () => {
             <span className="font-diatype ">
               devsoc@2024.com:~${inputValue}
             </span>
-            <b className="cursor">█</b>
-            <div style={{ marginBottom: 100 }} />
+            <b className="cursor">█</b> 
           </div>
         </div>
         <textarea
           id="texter"
-          autoFocus
+          autoFocus={false}
           className="fixed bottom-0 left-0 h-full w-[20vw] text-wrap bg-transparent opacity-0"
           value={inputValue}
           onChange={handleInputChange}
           onKeyDown={handleKeyPress}
-          onFocus={(e) => e.preventDefault()}
+          onFocus={
+            (e) => {e.preventDefault()}
+          }
         ></textarea>
       </div>
 
