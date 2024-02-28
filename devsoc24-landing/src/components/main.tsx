@@ -188,7 +188,7 @@ function Main() {
                   src={face as HTMLImageElement}
                   alt="computer face"
                   width={300}
-                  className="glitcheffect rotate-[315deg]"
+                  className="glitcheffect rotate-[315deg] flip"
                 />
               </motion.div>
             </div>

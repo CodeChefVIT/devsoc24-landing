@@ -45,6 +45,12 @@
     font-family: courier, monospace;
   }
 }
+
+.flip
+{
+  transform: rotateY(180deg);
+}
+
 /* **************************************************************** */
 
 /* Check if Required */
