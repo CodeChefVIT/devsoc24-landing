@@ -8,7 +8,7 @@ export default function FAQS() {
       <Window
         style1={"bg-slate-700 md:h-[20%] h-[150px]"}
         style2={
-          "w-[30vw] min-w-[300px] h-full bg-[#b2b2b2] border-2 relative hover:z-30 pb-10"
+          "w-[30vw] min-w-[300px] h-fit bg-[#b2b2b2] border-2 relative hover:z-30 pb-10"
         }
         spanText="About-DEVSOC’24"
         pText="Is the hackathon free to attend? "

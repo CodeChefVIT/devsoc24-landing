@@ -16,12 +16,12 @@ const Footer = () => {
     <>
       <Image
         src={glitch}
-        alt=""
+        alt="smtg"
         height={0}
         width={0}
         className="absolute -z-10 h-screen w-screen"
       />
-      <div className=" flex h-screen select-none items-center justify-center overflow-hidden">
+      <div className="flex h-screen select-none items-center justify-center overflow-hidden">
         <div className="h-fit w-fit border-2 border-black bg-[#7F32DA] p-[1px]">
           <div className=" h-fit w-[320px] flex-row overflow-hidden border-2 border-black bg-[#7F32DA] min-[420px]:w-[400px]">
             <div className="relative flex justify-center border-b-2 border-black">
@@ -103,7 +103,7 @@ const Footer = () => {
             <div className="bg-black px-1 uppercase">All rights reserved.</div>
           </div>
         </div>
-        <div className="font-disket mx-10 my-5 flex flex-row  gap-2 self-end text-white">
+        <div className="font-disket mx-10 my-5 flex flex-row gap-2 sm:self-end text-white">
           <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
             privacy policy
           </div>

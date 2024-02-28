@@ -10,7 +10,7 @@ import { useCloseStore } from "@/store/store";
 export default function About() {
   const [minimized, setMinimized] = useState(false);
   const [maximized, setMaximized] = useState(false);
-  const { setActiveCard } = useCloseStore();
+  const { activeCard, setActiveCard } = useCloseStore();
 
   const handleMinimize = () => {
     setMinimized(!minimized);
@@ -57,7 +57,7 @@ export default function About() {
         ) : (
           <Draggable handle=".drag-handle">
             <div
-              className={`min-w-[300px] flex-grow ${maximized ? "h-[90vh]" : "h-fit w-[30vw] pb-10"} border-2 bg-[#b2b2b2]`}
+              className={`flex min-w-[300px] flex-grow flex-col ${maximized ? "h-[90vh]" : "h-fit w-[30vw] pb-10"} border-2 bg-[#b2b2b2]`}
             >
               <div className="drag-handle flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
                 <span className="flex items-center pl-4 text-xs text-white">
@@ -78,7 +78,9 @@ export default function About() {
                   </span>
                   <span
                     className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575] hover:cursor-pointer"
-                    onClick={() => setActiveCard("")}
+                    onClick={() =>
+                      setActiveCard(activeCard.filter((c) => c !== "About"))
+                    }
                   >
                     <IoMdClose />
                   </span>
@@ -104,7 +106,7 @@ export default function About() {
               </p>
               <button
                 className={`absolute bottom-2 right-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition ease-in-out  hover:h-[26px] hover:w-[98px] hover:duration-75 md:mt-[100px]`}
-                onClick={openUserModal}
+                // onClick={openUserModal}
               >
                 Select
               </button>
