@@ -31,3 +31,14 @@ export const useTerminalStore = create<TerminalStore>((set) => ({
   showTerminal: true,
   setShowTerminal: (showTerminal: boolean) => set({ showTerminal }),
 }));
+
+interface selectedStore {
+  selectedComponent: string | null;
+  setSelectedComponent: (setClose: string | null) => void;
+}
+
+
+export const useSelectedStore = create<selectedStore>((set) => ({
+  selectedComponent: "DEVSOC 2024",
+  setSelectedComponent: (selectedComponent: string | null) => set({ selectedComponent }),
+}));
