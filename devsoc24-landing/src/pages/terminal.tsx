@@ -12,9 +12,10 @@ import Prizepool from "../components/terminal/prizepool";
 import Tracks from "../components/terminal/tracks";
 import Timeline from "../components/terminal/timeline";
 import Sponsors from "../components/terminal/sponsors";
-import Portal from "../components/terminal/sponsors";
+import Portal from "../components/terminal/portal";
 import { IoMdClose } from "react-icons/io";
 import Router, { useRouter } from "next/router";
+import { useCloseStore } from "@/store/store";
 
 const help = [
   '<span class="">Initiating quantum decryption sequence...</span>',
@@ -42,6 +43,8 @@ const help = [
 
 export default function Home() {
   const router = useRouter();
+  const { activeCard, setActiveCard } = useCloseStore();
+
   const cardTypes = [
     "About",
     "Timeline",
@@ -63,7 +66,14 @@ export default function Home() {
 
   const [typingCompleted, setTypingCompleted] = useState(false);
 
-  type CardKey = "About" | "FAQs" | "Prizepool" | "Tracks" | "Timeline" | "Sponsors" | "Portal";
+  type CardKey =
+    | "About"
+    | "FAQs"
+    | "Prizepool"
+    | "Tracks"
+    | "Timeline"
+    | "Sponsors"
+    | "Portal";
 
   const cardComponents: {
     [K in CardKey]: () => JSX.Element;
@@ -77,7 +87,7 @@ export default function Home() {
     Portal,
   };
 
-  const [activeCard, setActiveCard] = React.useState<CardKey | "">("");
+  // const [activeCard, setActiveCard] = React.useState<CardKey | "">("");
 
   const handleClick = (cardName: CardKey) => {
     setActiveCard(cardName);
@@ -110,9 +120,11 @@ export default function Home() {
     return () => window.removeEventListener("resize", updateHeight);
   }, []);
 
-  const SelectedComponent = activeCard ? cardComponents[activeCard] : null;
+  const SelectedComponent = activeCard
+    ? cardComponents[activeCard as CardKey]
+    : null;
   return (
-    <main className="min-h-screen h-fit bg-[#232323] font-diatype md:text-[13.3px] md:leading-[13.5px]">
+    <main className="h-fit min-h-screen bg-[#232323] font-diatype md:text-[13.3px] md:leading-[13.5px]">
       {!typingCompleted ? (
         <div className="pl-3 font-diatype md:text-[13.3px] md:leading-[13.5px]">
           <TypewriterEffect
@@ -140,7 +152,7 @@ export default function Home() {
               </button>
             </div>
             <div className="flex flex-row">
-              <div className=" min-h-[96vh] w-[20vw]">
+              <div className=" min-h-[96vh] min-w-[20vw]">
                 <Terminal />
               </div>
               <div className="flex h-min flex-col">
@@ -170,7 +182,10 @@ export default function Home() {
                   ) : (
                     <div className="w flex flex-wrap items-stretch justify-evenly gap-6">
                       {cardTypes.map((card, index) => (
-                        <div className="flex items-center justify-start">
+                        <div
+                          className="flex items-center justify-start"
+                          key={index}
+                        >
                           <Card
                             card={card}
                             cardImage={cardImage[index] ?? "hello"}

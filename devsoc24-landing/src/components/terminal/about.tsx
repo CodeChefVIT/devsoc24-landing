@@ -1,14 +1,16 @@
 "use client";
 import { useState } from "react";
-import { PiNotepadLight } from "react-icons/pi";
+import { CiCircleInfo } from "react-icons/ci";
 import { MdMinimize } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import { BiWindow } from "react-icons/bi";
 import Image from "next/image";
+import { useCloseStore } from "@/store/store";
 
 export default function About() {
   const [minimized, setMinimized] = useState(false);
   const [maximized, setMaximized] = useState(false);
+  const { activeCard, setActiveCard } = useCloseStore();
 
   const handleMinimize = () => {
     setMinimized(!minimized);
@@ -36,7 +38,7 @@ export default function About() {
     "Frame 13 6.svg",
   ];
 
-  const [activeCard, setActiveCard] = useState<string[]>(["DEVSOC 2024"]);
+  // const [activeCard, setActiveCard] = useState<string[]>(["DEVSOC 2024"]);
   const useUserModal = () => {
     const [showUserModal, setshowUserModal] = useState(false);
 
@@ -51,18 +53,18 @@ export default function About() {
     return { showUserModal, openUserModal, closeUserModal };
   };
 
-  const { showUserModal, openUserModal, closeUserModal } = useUserModal();
-  const handleClick = (cardName: string) => {
-    setActiveCard((currentActiveCard) => {
-      if (currentActiveCard.includes(cardName)) {
-        console.log("activecard", activeCard);
-        return currentActiveCard.filter((card) => card !== cardName);
-      } else {
-        console.log(activeCard);
-        return [...currentActiveCard, cardName];
-      }
-    });
-  };
+  // const { showUserModal, openUserModal, closeUserModal } = useUserModal();
+  // const handleClick = (cardName: string) => {
+  //   setActiveCard((currentActiveCard) => {
+  //     if (currentActiveCard.includes(cardName)) {
+  //       console.log("activecard", activeCard);
+  //       return currentActiveCard.filter((card) => card !== cardName);
+  //     } else {
+  //       console.log(activeCard);
+  //       return [...currentActiveCard, cardName];
+  //     }
+  //   });
+  // };
   return (
     <div
       className={`relative flex h-full w-full ${maximized ? "" : "pl-[30px] pt-[100px]  md:pl-[60px]"}`}
@@ -88,7 +90,7 @@ export default function About() {
             >
               <div className="flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
                 <span className="flex items-center pl-4 text-xs text-white">
-                  <PiNotepadLight className="pr-2 text-2xl" /> About
+                  <CiCircleInfo className="pr-2 text-2xl" /> About
                   Devsoc&apos;24
                 </span>
                 <section className="flex ">
@@ -104,7 +106,10 @@ export default function About() {
                   >
                     <BiWindow />
                   </span>
-                  <span className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575]">
+                  <span
+                    className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575] hover:cursor-pointer"
+                    onClick={() => setActiveCard("")}
+                  >
                     <IoMdClose />
                   </span>
                 </section>
@@ -128,7 +133,7 @@ export default function About() {
               </p>
               <button
                 className={`absolute bottom-2 right-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition ease-in-out  hover:h-[26px] hover:w-[98px] hover:duration-75 md:mt-[100px]`}
-                onClick={openUserModal}
+                // onClick={openUserModal}
               >
                 Select
               </button>

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { PiNotepadLight } from "react-icons/pi";
+import { TbTimeline } from "react-icons/tb";
 // import Image from "next/image";
 // import Card from "../../components/card";
 // import Terminal from "../../components/terminal/page";
@@ -8,10 +8,12 @@ import { MdMinimize } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import { BiWindow } from "react-icons/bi";
 import Image from "next/image";
+import { useCloseStore } from "@/store/store";
 
 export default function Timeline() {
   const [minimized, setMinimized] = useState(false);
   const [maximized, setMaximized] = useState(false);
+  const { activeCard, setActiveCard } = useCloseStore();
 
   const handleMinimize = () => {
     setMinimized(!minimized);
@@ -39,7 +41,7 @@ export default function Timeline() {
     "Frame 13 6.svg",
   ];
 
-  const [activeCard, setActiveCard] = useState<string[]>(["DEVSOC 2024"]);
+  // const [activeCard, setActiveCard] = useState<string[]>(["DEVSOC 2024"]);
   const useUserModal = () => {
     const [showUserModal, setshowUserModal] = useState(false);
 
@@ -55,17 +57,17 @@ export default function Timeline() {
   };
 
   const { showUserModal, openUserModal, closeUserModal } = useUserModal();
-  const handleClick = (cardName: string) => {
-    setActiveCard((currentActiveCard) => {
-      if (currentActiveCard.includes(cardName)) {
-        console.log("activecard", activeCard);
-        return currentActiveCard.filter((card) => card !== cardName);
-      } else {
-        console.log(activeCard);
-        return [...currentActiveCard, cardName];
-      }
-    });
-  };
+  // const handleClick = (cardName: string) => {
+  //   setActiveCard((currentActiveCard) => {
+  //     if (currentActiveCard.includes(cardName)) {
+  //       console.log("activecard", activeCard);
+  //       return currentActiveCard.filter((card) => card !== cardName);
+  //     } else {
+  //       console.log(activeCard);
+  //       return [...currentActiveCard, cardName];
+  //     }
+  //   });
+  // };
   return (
     <div
       className={`relative flex h-full w-full ${maximized ? "" : "pl-[30px] pt-[100px]  md:pl-[60px]"}`}
@@ -91,7 +93,7 @@ export default function Timeline() {
             >
               <div className="flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
                 <span className="flex items-center pl-4 text-xs text-white">
-                  <PiNotepadLight className="pr-2 text-2xl" /> Timeline
+                  <TbTimeline className="pr-2 text-2xl" /> Timeline
                 </span>
                 <section className="flex ">
                   <span
@@ -106,7 +108,10 @@ export default function Timeline() {
                   >
                     <BiWindow />
                   </span>
-                  <span className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575]">
+                  <span
+                    className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575] hover:cursor-pointer"
+                    onClick={() => setActiveCard("")}
+                  >
                     <IoMdClose />
                   </span>
                 </section>

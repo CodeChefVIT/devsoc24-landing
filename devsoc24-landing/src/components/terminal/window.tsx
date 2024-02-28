@@ -1,11 +1,11 @@
 "use client";
 import { useState } from "react";
-import { PiNotepadLight } from "react-icons/pi";
 
 import { MdMinimize } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import { BiWindow } from "react-icons/bi";
 import Image from "next/image";
+import { FaQ } from "react-icons/fa6";
 
 interface WindowProps {
   style1: string;
@@ -46,16 +46,16 @@ export default function Window({
 
   return (
     <>
-      <div className={`${style1} ${minimise ? "hidden" : ""}`}>
+      <div className={`${style1} ${minimise ? "hidden" : ""} `}>
         <div className={style2}>
           <div className="flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
-            <span className="flex items-center pl-4 text-xs text-white">
-              <PiNotepadLight className="pr-2 text-2xl" />
+            <span className="flex items-center  pl-4 text-xs text-white">
+              <FaQ className="pr-2 text-xl" />
               {spanText}
             </span>
             <section className="flex">
               <span
-                className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575]"
+                className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575] hover:cursor-pointer"
                 onClick={() => handleClick()}
               >
                 <MdMinimize />
@@ -92,17 +92,17 @@ export default function Window({
               &#8203;
             </span>
 
-            <div className="inline-block transform overflow-hidden  bg-[#acabab] text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6 sm:align-middle md:p-0 border-2 border-white">
+            <div className="inline-block transform overflow-hidden  border-2 border-white bg-[#acabab] text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6 sm:align-middle md:p-0">
               <div>
                 <div className="md:col-span-2 md:mt-0">
                   <div className="flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
                     <span className="flex items-center pl-4 text-xs text-white">
-                      <PiNotepadLight className="pr-2 text-2xl" />
+                      <FaQ className="pr-2 text-xl" />
                       {spanText}
                     </span>
                     <section className="flex">
                       <span
-                        className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575]"
+                        className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575] hover:cursor-pointer"
                         onClick={closeUserModal}
                       >
                         <MdMinimize />
@@ -111,8 +111,10 @@ export default function Window({
                         <span className="bg-[#757575] mr-1 border-r-[2px] border-b-[2px] border-[#1e1e1e]"><IoMdClose /></span> */}
                     </section>
                   </div>
-                  <li className="pl-2 pt-2">Is the hackathon free to attend?</li>
-                  <div className="pl-2 pt-2 pb-2 block text-sm font-medium text-gray-700">
+                  <li className="pl-2 pt-2">
+                    Is the hackathon free to attend?
+                  </li>
+                  <div className="block pb-2 pl-2 pt-2 text-sm font-medium text-gray-700">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                     Deserunt quae et earum nostrum odit vel non temporibus
                     voluptates sequi sunt mollitia sapiente enim deleniti ad
