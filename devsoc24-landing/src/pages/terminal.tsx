@@ -168,7 +168,7 @@ export default function Home() {
               {!showTerminal ? (
                 <button
                   onClick={() => toggleTerminal()}
-                  className="absolute left-0 z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060]"
+                  className="absolute left-0 z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060] sm:hidden"
                 >
                   <IoTerminal className="text-lg font-bold" />
                 </button>
@@ -183,7 +183,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col-reverse md:flex-row ">
               {showTerminal ? (
-                <div className="fixed bottom-0 z-50 bg-white md:relative md:min-h-[96vh] md:min-w-[20vw]">
+                <div className="fixed bottom-0 z-50 bg-white md:relative md:min-w-[20vw]">
                   <Terminal />
                 </div>
               ) : (
