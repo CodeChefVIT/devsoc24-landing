@@ -183,7 +183,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col-reverse md:flex-row ">
               {showTerminal ? (
-                <div className="fixed bottom-0 z-50 bg-white md:relative md:min-w-[20vw]">
+                <div className="fixed bottom-0 z-50 bg-white md:relative md:min-h-[96vh] md:min-w-[20vw]">
                   <Terminal />
                 </div>
               ) : (

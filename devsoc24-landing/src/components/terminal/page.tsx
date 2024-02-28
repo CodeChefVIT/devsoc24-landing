@@ -327,7 +327,7 @@ const Terminal = () => {
         </div>
         <textarea
           id="texter"
-          autoFocus={false}
+          autoFocus={true}
           className="fixed bottom-0 left-0 h-full w-[20vw] text-wrap bg-transparent opacity-0"
           value={inputValue}
           onChange={handleInputChange}
