@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Timeline from "@/components/Timeline";
+import glitch from "@/assets/images/footer_glitch.gif";
 import About from "@/components/about";
 import Main from "@/components/main";
 import SmoothScrolling from "@/components/smoothscrolling";
@@ -8,6 +8,7 @@ import useGlitchStore from "@/store/store";
 import Footer from "@/components/footer";
 import bgimage from "@/assets/images/DEVSOCLOGOBIG.svg";
 import Image from "next/image";
+import { useFooterStore } from "@/store/store";
 
 const help = [
   '<span class="">Initiating quantum decryption sequence...</span>',
@@ -35,15 +36,26 @@ const help = [
 
 export default function Home() {
   const [typingCompleted, setTypingCompleted] = useState(false);
+  const {showFooter, setShowFooter} = useFooterStore();
   const { showGlitch, setGlitch } = useGlitchStore();
+
+  useEffect(() => {
+    if (showGlitch) {
+      const glitchTimeout = setTimeout(() => {
+        setShowFooter(true);
+      }, 1000); // Display footer after 1 second if glitch is shown
+      return () => clearTimeout(glitchTimeout);
+    }
+  }, [showGlitch]); // Run effect whenever showGlitch changes
 
   const handleTypingComplete = () => {
     setTypingCompleted(true);
   };
+
   return (
     <>
       {typeof window === "undefined" || !typingCompleted ? (
-        <div className="pl-3 ">
+        <div className="pl-3">
           <TypewriterEffect
             textLines={help}
             onTypingComplete={handleTypingComplete}
@@ -51,21 +63,25 @@ export default function Home() {
         </div>
       ) : (
         <SmoothScrolling>
-          {showGlitch ? (
-            <div className="hidden min-[450px]:contents">
-              <Footer />
-            </div>
-          ) : (
+          {showGlitch && !showFooter && (
+            <Image
+              src={glitch}
+              alt="Glitch"
+              className="absolute -z-10 h-[125vh] w-screen min-[450px]:h-screen"
+            />
+          )}
+          {showGlitch && showFooter && <Footer />}
+          {!showGlitch && (
             <>
               <div className="fixed z-40 flex h-screen items-center justify-center">
                 <Image src={bgimage as HTMLImageElement} alt="bg" />
               </div>
               <div className="z-50">
-                <section id="Main" className="">
+                <section id="Main">
                   <Main />
                 </section>
               </div>
-              <section id="About" className="">
+              <section id="About">
                 <About />
               </section>
             </>

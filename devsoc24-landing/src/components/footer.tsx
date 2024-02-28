@@ -3,11 +3,12 @@ import Image from "next/image";
 import pattern from "@/assets/images/pattern.svg";
 import glitch from "@/assets/images/footer_glitch.gif";
 import { useLenis } from "@studio-freight/react-lenis";
-import useGlitchStore from "@/store/store";
+import useGlitchStore,{useFooterStore} from "@/store/store";
 import { useRouter } from "next/navigation";
 
 const Footer = () => {
   const { showGlitch, setGlitch } = useGlitchStore();
+  const {showFooter, setShowFooter} = useFooterStore();
   const router = useRouter();
   const lenis = useLenis(({ scroll }) => {
     // console.log(scroll);
@@ -20,7 +21,7 @@ const Footer = () => {
         alt="smtg"
         height={0}
         width={0}
-        className="absolute -z-10 h-screen w-screen"
+        className="absolute -z-10 h-[125vh] min-[450px]:h-screen w-screen"
       />
       <div className="flex h-screen select-none items-center justify-center overflow-hidden">
         <div className="h-fit w-fit border-2 border-black bg-[#7F32DA] p-[1px]">
@@ -46,6 +47,7 @@ const Footer = () => {
                 onClick={() => {
                   lenis?.scrollTo("#Main", { lerp: 0.1, duration: 1 });
                   setGlitch(false);
+                  setShowFooter(false);
                 }}
               >
                 X
@@ -81,7 +83,7 @@ const Footer = () => {
                 onClick={() => {
                   void router.push("/terminal");
                 }}
-                className="font-vcr my-2 flex h-[40px] w-[100px] items-center justify-center border-2 border-black bg-white text-black hover:cursor-pointer hover:bg-black hover:text-white sm:self-start z-[100]"
+                className="font-vcr z-[100] my-2 flex h-[40px] w-[100px] items-center justify-center border-2 border-black bg-white text-black hover:cursor-pointer hover:bg-black hover:text-white sm:self-start"
               >
                 Enter
               </button>
@@ -89,7 +91,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 flex w-full flex-col items-center justify-between text-[10px] md:flex-row md:text-[15px]">
+      <div className="min-[450px]:absolute min-[450px]:bottom-0 flex w-full flex-col items-center justify-between text-[10px] md:flex-row md:text-[15px]">
         <div className="font-disket mx-10 my-5 flex flex-col gap-2 self-center text-white md:self-end">
           <div className="flex flex-row  justify-between gap-0 md:justify-start md:gap-10">
             <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
@@ -106,7 +108,7 @@ const Footer = () => {
             <div className="bg-black px-1 uppercase">All rights reserved.</div>
           </div>
         </div>
-        <div className="font-disket mx-10 my-5 flex flex-row gap-2 text-white sm:self-end">
+        <div className="font-disket mx-10 my-5 flex flex-row text-center gap-2 sm:self-end text-white">
           <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
             privacy policy
           </div>
