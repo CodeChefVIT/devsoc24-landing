@@ -83,7 +83,7 @@ export default function About() {
                       setActiveCard(activeCard.filter((c) => c !== "About"));
                       setSelectedComponent(null);
                     }}
-                    onTouchStart={() => {
+                    onTouchEnd={() => {
                       setActiveCard(activeCard.filter((c) => c !== "About"));
                       setSelectedComponent(null);
                     }}
