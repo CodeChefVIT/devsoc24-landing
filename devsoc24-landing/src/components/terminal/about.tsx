@@ -42,6 +42,7 @@ export default function About() {
       className={`relative flex h-full w-full ${maximized ? "" : "pl-[30px] pt-[100px]  md:pl-[60px]"}`}
     >
       <div>
+
         {minimized ? (
           <div
             className="absolute flex h-[54px] w-[54px] items-center justify-center rounded-full border-2 border-[#a4a3a3] bg-[#757575]  hover:cursor-pointer"
@@ -58,7 +59,7 @@ export default function About() {
         ) : (
           <Draggable handle=".drag-handle" bounds=".boundarybox">
             <div
-              className={`flex min-w-[300px] flex-grow flex-col ${maximized ? "h-[90vh]" : "h-fit w-[30vw] pb-10"} border-2 bg-[#b2b2b2]`}
+              className={`absolute z-50 flex min-w-[300px] flex-grow flex-col ${maximized ? "h-[90vh]" : "h-fit w-[30vw]"} border-2 bg-[#b2b2b2] pb-10`}
             >
               <div className="drag-handle flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
                 <span className="flex items-center pl-4 text-xs text-white">

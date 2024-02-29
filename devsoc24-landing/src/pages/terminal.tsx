@@ -15,11 +15,12 @@ import Sponsors from "../components/terminal/sponsors";
 import Portal from "../components/terminal/portal";
 import { IoMdClose } from "react-icons/io";
 import Router, { useRouter } from "next/router";
-import useGlitchStore ,{
+import dotted from "@/assets/images/dottedpattern.svg";
+import Image from "next/image";
+import useGlitchStore, {
   useCloseStore,
   useTerminalStore,
   useSelectedStore,
-  
 } from "@/store/store";
 import { IoTerminal } from "react-icons/io5";
 import { string } from "zod";
@@ -36,23 +37,21 @@ const help = [
   '<span class="">Hacking into the mainframe matrix...</span>',
   '<span class="">$User id set to 8y14e9f8</span>',
   '<span class="" font-weight: bold;>----------------------------------------</span>',
-      
-      "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>&nbsp;*******&nbsp;&nbsp;&nbsp;********&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;&nbsp;********&nbsp;&nbsp;&nbsp;*******&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;</p>",
-      "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>/**////**&nbsp;/**/////&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**&nbsp;**//////&nbsp;&nbsp;&nbsp;**/////**&nbsp;&nbsp;&nbsp;**////**</p>",
-      "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>/**&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//**&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;</p>",
-      "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>/**&nbsp;&nbsp;&nbsp;&nbsp;/**/*******&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;/*********/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>",
-      "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>/**&nbsp;&nbsp;&nbsp;&nbsp;/**/**////&nbsp;&nbsp;&nbsp;//**&nbsp;&nbsp;**&nbsp;&nbsp;////////**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>",
-      "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>/**&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//****&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**//**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;**</p>",
-      "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>/*******&nbsp;&nbsp;/********&nbsp;&nbsp;&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;********&nbsp;&nbsp;//*******&nbsp;&nbsp;&nbsp;//******&nbsp;</p>",
-      "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>///////&nbsp;&nbsp;&nbsp;////////&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;////////&nbsp;&nbsp;&nbsp;&nbsp;///////&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//////&nbsp;&nbsp;</p>",
-    
-      '<span class="" font-weight: bold;>----------------------------------------</span>',
+
+  "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>&nbsp;*******&nbsp;&nbsp;&nbsp;********&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;&nbsp;********&nbsp;&nbsp;&nbsp;*******&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;</p>",
+  "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>/**////**&nbsp;/**/////&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**&nbsp;**//////&nbsp;&nbsp;&nbsp;**/////**&nbsp;&nbsp;&nbsp;**////**</p>",
+  "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>/**&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//**&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;</p>",
+  "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>/**&nbsp;&nbsp;&nbsp;&nbsp;/**/*******&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;/*********/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>",
+  "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>/**&nbsp;&nbsp;&nbsp;&nbsp;/**/**////&nbsp;&nbsp;&nbsp;//**&nbsp;&nbsp;**&nbsp;&nbsp;////////**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>",
+  "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>/**&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//****&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**//**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;**</p>",
+  "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>/*******&nbsp;&nbsp;/********&nbsp;&nbsp;&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;********&nbsp;&nbsp;//*******&nbsp;&nbsp;&nbsp;//******&nbsp;</p>",
+  "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>///////&nbsp;&nbsp;&nbsp;////////&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;////////&nbsp;&nbsp;&nbsp;&nbsp;///////&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//////&nbsp;&nbsp;</p>",
+
+  '<span class="" font-weight: bold;>----------------------------------------</span>',
   '<span class="">Disrupting network protocols with raw socket manipulation...</span>',
   '<span class="">Executing stealth maneuvers with bitwise masking...</span>',
   '<span class="">Loading Welcome............</span>',
-  
-      
-    
+
   "<br>",
 ];
 
@@ -198,8 +197,8 @@ export default function Home() {
                 <></>
               )}
 
-              <div className="flex  flex-col boundarybox w-full">
-                <div className="z-10 hidden h-min md:flex">
+              <div className="flex  w-full flex-col  ">
+                <div className="z-10 hidden h-min md:flex ">
                   {/* <div
                     className="flex w-[120px] cursor-pointer items-center justify-center border-r-2 border-[#000000] bg-[#d2d1d1] py-1 text-xs font-semibold"
                     onClick={() => {
@@ -218,7 +217,7 @@ export default function Home() {
                   <div className="flex flex-wrap">
                     {activeCard.map((card, index) => (
                       <div
-                        className="flex flex-row py-2 items-center justify-center border-r-2 border-[#000000] bg-[#d2d1d1]"
+                        className="flex flex-row items-center justify-center border-r-2 border-[#000000] bg-[#d2d1d1] py-2"
                         key={index}
                       >
                         <div
@@ -246,7 +245,9 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className={`mb-8  ${showTerminal ? "" : "w-full"} gap-6`}>
+                <div
+                  className={`boundarybox h-full ${showTerminal ? "" : "w-full"} gap-6`}
+                >
                   {SelectedComponent ? (
                     <SelectedComponent />
                   ) : (
@@ -266,20 +267,19 @@ export default function Home() {
                     </div>
                   )}
                 </div>
+                <div className="bottom-0 z-40 flex h-[2.2%] w-full justify-center bg-[#494848] font-diatype">
+                  <div
+                    style={{
+                      backgroundImage: `url('/Frame 7.svg')`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-
-          <div className="fixed bottom-0 z-40 flex h-[2.2%] w-full justify-center bg-[#494848] font-diatype">
-            <div
-              style={{
-                backgroundImage: `url('/Frame 7.svg')`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                width: "100%",
-                height: "100%",
-              }}
-            />
           </div>
         </>
       )}

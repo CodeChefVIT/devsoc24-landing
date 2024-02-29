@@ -2,7 +2,11 @@
 
 import { useState, useEffect, useRef } from "react";
 import ProgressBar from "../progressbar";
-import { useTerminalStore } from "@/store/store";
+import {
+  useCloseStore,
+  useSelectedStore,
+  useTerminalStore,
+} from "@/store/store";
 import { IoMdClose } from "react-icons/io";
 // import ProgressBar from "../_components/progressbar";
 
@@ -19,8 +23,9 @@ const Terminal = () => {
   const [blueProgress, setBlueProgress] = useState(0);
   const endRef = useRef<HTMLDivElement>(null);
   const [currentTime, setCurrentTime] = useState(new Date());
-
+  const { activeCard, setActiveCard } = useCloseStore();
   const { showTerminal, setShowTerminal } = useTerminalStore();
+  const { selectedComponent, setSelectedComponent } = useSelectedStore();
 
   const toggleTerminal = () => {
     setShowTerminal(!showTerminal);
@@ -202,6 +207,8 @@ const Terminal = () => {
   };
 
   useEffect(() => {
+    setActiveCard(["DEVSOC 2024"]);
+    setSelectedComponent("DEVSOC 2024");
     const tick = () => {
       setCurrentTime(new Date()); // This updates the state every second
     };
@@ -276,7 +283,7 @@ const Terminal = () => {
         <IoMdClose className="text-lg font-bold " />
       </button>
       <div id="terminal" className=" w-[20vw] bg-[#757575] pt-0 md:pt-2">
-        <div className="flex gap-[5px] ml-[10px] h-fit flex-col items-start border-b-[1px] border-black pb-5 md:text-[13px] md:leading-[13.5px] ">
+        <div className="ml-[10px] flex h-fit flex-col items-start gap-[5px] border-b-[1px] border-black pb-5 md:text-[13px] md:leading-[13.5px] ">
           <div className="">
             [Network&nbsp;&nbsp;&nbsp;] DotMid://19.22.10.14
           </div>
