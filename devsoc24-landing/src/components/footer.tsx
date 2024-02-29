@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import pattern from "@/assets/images/pattern.svg";
-import glitch from "@/assets/images/footer_glitch.gif";
+import glitch from "@/assets/images/footer-glitch.gif";
 import { useLenis } from "@studio-freight/react-lenis";
 import useGlitchStore,{useFooterStore} from "@/store/store";
 import { useRouter } from "next/navigation";
