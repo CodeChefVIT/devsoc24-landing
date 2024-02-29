@@ -54,10 +54,10 @@ export default function Home() {
     if (showGlitch) {
       const glitchTimeout = setTimeout(() => {
         setShowFooter(true);
-      }, 1500); // Display footer after 1 second if glitch is shown
+      }, 1000);
       return () => clearTimeout(glitchTimeout);
     }
-  }, [showGlitch]); // Run effect whenever showGlitch changes
+  }, [showGlitch]);
 
   const handleTypingComplete = () => {
     setTypingCompleted(true);
@@ -67,6 +67,7 @@ export default function Home() {
     <>
       <Head>
         <title>DEVSOC&apos;24</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
       </Head>
 
       {typeof window === "undefined" || !typingCompleted ? (

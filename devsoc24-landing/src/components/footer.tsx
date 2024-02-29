@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import pattern from "@/assets/images/pattern.svg";
 import glitch from "@/assets/images/footer_glitch.gif";
 import { useLenis } from "@studio-freight/react-lenis";
-import useGlitchStore,{useFooterStore} from "@/store/store";
+import useGlitchStore, { useFooterStore } from "@/store/store";
 import { useRouter } from "next/navigation";
 
 const Footer = () => {
   const { showGlitch, setGlitch } = useGlitchStore();
-  const {showFooter, setShowFooter} = useFooterStore();
+  const { showFooter, setShowFooter } = useFooterStore();
   const router = useRouter();
   const lenis = useLenis(({ scroll }) => {
     // console.log(scroll);
@@ -21,9 +22,11 @@ const Footer = () => {
         alt="smtg"
         height={0}
         width={0}
-        className="absolute -z-10 h-[125vh] min-[450px]:h-screen w-screen"
+        className="absolute -z-10 h-[125vh] w-screen min-[450px]:h-screen"
       />
-      <div className={`flex h-screen select-none items-center justify-center overflow-hidden`}>
+      <div
+        className={`flex h-screen select-none items-center justify-center overflow-hidden`}
+      >
         <div className="h-fit w-fit border-2 border-black bg-[#7F32DA] p-[1px]">
           <div className=" h-fit w-[320px] flex-row overflow-hidden border-2 border-black bg-[#7F32DA] min-[420px]:w-[400px]">
             <div className="relative flex justify-center border-b-2 border-black">
@@ -91,15 +94,21 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className={`flex min-[450px]:absolute min-[450px]:bottom-0 w-full flex-col items-center justify-between text-[10px] md:flex-row md:text-[15px]`}>
+      <div
+        className={`flex w-full flex-col items-center justify-between text-[10px] min-[450px]:absolute min-[450px]:bottom-0 md:flex-row md:text-[15px]`}
+      >
         <div className="font-disket mx-10 my-5 flex flex-col gap-2 self-center text-white md:self-end">
           <div className="flex flex-row  justify-between gap-0 md:justify-start md:gap-10">
-            <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
-              instagram
-            </div>
-            <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
-              linkedin
-            </div>
+            <Link href="https://www.instagram.com/codechefvit?igsh=Z3ZzeGQwcndmNXUy">
+              <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
+                instagram
+              </div>
+            </Link>
+            <Link href="https://www.linkedin.com/company/codechef-vit-chapter/">
+              <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
+                linkedin
+              </div>
+            </Link>
           </div>
           <div className="flex flex-col">
             <div className="bg-black px-1 uppercase">
@@ -108,7 +117,7 @@ const Footer = () => {
             <div className="bg-black px-1 uppercase">All rights reserved.</div>
           </div>
         </div>
-        <div className="font-disket mx-10 my-5 flex flex-row text-center gap-2 sm:self-end text-white">
+        <div className="font-disket mx-10 my-5 flex flex-row gap-2 text-center text-white sm:self-end">
           <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
             privacy policy
           </div>
