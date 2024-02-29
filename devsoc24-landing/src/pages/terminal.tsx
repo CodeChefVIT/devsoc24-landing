@@ -154,7 +154,7 @@ export default function Home() {
     : null;
   return (
     <main className="h-fit min-h-screen bg-[#232323] font-diatype md:text-[13.3px] md:leading-[13.5px]">
-      {!typingCompleted ? (
+      {typeof window === "undefined" || !typingCompleted ? (
         <div className="pl-3 font-diatype md:text-[13.3px] md:leading-[13.5px]">
           <TypewriterEffect
             textLines={help}
