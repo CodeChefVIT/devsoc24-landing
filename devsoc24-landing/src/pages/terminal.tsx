@@ -189,16 +189,16 @@ export default function Home() {
                 </button>
               </Link>
             </div>
-            <div className="flex flex-col-reverse md:flex-row ">
+            <div className="flex flex-col-reverse md:flex-row">
               {showTerminal ? (
-                <div className="fixed bottom-0 z-50 bg-white md:relative md:min-h-[96vh] md:w-[20vw]">
+                <div className="fixed bottom-0 z-50 md:relative md:min-h-[96vh] md:w-[20vw]">
                   <Terminal />
                 </div>
               ) : (
                 <></>
               )}
 
-              <div className="flex  flex-col">
+              <div className="flex  flex-col boundarybox w-full">
                 <div className="z-10 hidden h-min md:flex">
                   {/* <div
                     className="flex w-[120px] cursor-pointer items-center justify-center border-r-2 border-[#000000] bg-[#d2d1d1] py-1 text-xs font-semibold"

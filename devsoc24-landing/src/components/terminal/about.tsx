@@ -56,7 +56,7 @@ export default function About() {
             />
           </div>
         ) : (
-          <Draggable handle=".drag-handle" bounds="body">
+          <Draggable handle=".drag-handle" bounds=".boundarybox">
             <div
               className={`flex min-w-[300px] flex-grow flex-col ${maximized ? "h-[90vh]" : "h-fit w-[30vw] pb-10"} border-2 bg-[#b2b2b2]`}
             >
