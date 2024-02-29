@@ -28,7 +28,9 @@ const timelineTexts = [
   "Coming Soon!",
   "Coming Soon!",
   "Coming Soon!",
-  "Coming Soon!"
+  "Coming Soon!",
+  "Coming Soon!",
+  "Coming Soon!",
 ];
 
 function Main() {
@@ -225,8 +227,8 @@ function Main() {
         </div>
       </motion.div>
       <motion.div className="relative">
-        <div className="flex h-[1000px] items-center justify-center overflow-hidden bg-[#020202]">
-          <div className="font-disket min-w-screen min-w-screen overflow-hidden bg-[#020202]">
+        <div className="flex h-fit items-center justify-center bg-[#020202]">
+          <div className="font-disket min-w-screen overflow-hidden bg-[#020202]">
             <motion.span style={{ y: y }} className="relative block">
               <Image
                 className="absolute left-60 top-[1100px]"
@@ -245,7 +247,7 @@ function Main() {
                 width={100}
               />
             </motion.span>
-            <div className="h-[1080px] w-full flex-wrap overflow-x-auto">
+            <div className="h-fit w-full flex-wrap overflow-hidden">
               <div className="mt-48 flex w-full justify-center max-sm:mt-10">
                 <Image
                   className="mx-20"
@@ -272,9 +274,9 @@ function Main() {
               <div className="mt-14 flex w-full justify-center max-sm:mt-3">
                 <LearnMoreBtn link={""} />
               </div>
-              <div className="container flex h-fit flex-wrap items-center justify-center gap-10 max-sm:pt-32 max-xl:pt-16 max-md:pt-4 text-center max-[415px]:pt-4 xl:pt-32" id="timeline-section">
+              <div className="container flex h-fit flex-wrap items-center justify-center gap-10 max-sm:pt-32 max-xl:pt-16 max-md:pt-4 text-center max-[415px]:pt-4 xl:pt-32 mb-32" id="timeline-section">
                 {showBoxes &&
-                  Array.from({ length: 6 }).map((_, index) => (
+                  Array.from({ length: 8 }).map((_, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, y: 20 }}
