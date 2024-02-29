@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Head from "next/head";
 import React from "react";
 import TypewriterEffect from "../components/terminal/typewriter";
-import Link from "next/link";
 // import Image from "next/image";
 import Card from "../components/card";
 import Terminal from "../components/terminal/page";
@@ -149,6 +148,15 @@ export default function Home() {
     return () => window.removeEventListener("resize", updateHeight);
   }, []);
 
+  function handleClose(){
+    if (selectedComponent){
+      setActiveCard(activeCard.filter((c) => c !== selectedComponent))
+      setSelectedComponent(null)
+    } else {
+      void router.push("/")
+    }
+  }
+
   const SelectedComponent = selectedComponent
     ? cardComponents[selectedComponent as CardKey]
     : null;
@@ -188,22 +196,22 @@ export default function Home() {
                 ) : (
                   <></>
                 )}
-                <Link href="/">
-                  <button className="absolute right-0 z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060]">
+                
+                  <button className="absolute right-0 z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060]" onClick={handleClose}>
                     <IoMdClose className="text-lg font-bold" />
                   </button>
-                </Link>
+                
               </div>
               <div className="flex flex-col-reverse md:flex-row">
                 {showTerminal ? (
-                  <div className="fixed bottom-0 z-50 md:relative md:min-h-[96vh] md:w-[20vw]">
+                  <div className="bottom-0 z-50 md:relative md:min-h-[96vh] w-[95vw] md:w-[20vw]">
                     <Terminal />
                   </div>
                 ) : (
                   <></>
                 )}
 
-                <div className="flex  w-full flex-col  ">
+                <div className="flex  w-full flex-col">
                   <div className="z-10 hidden h-min md:flex ">
                     {/* <div
                     className="flex w-[120px] cursor-pointer items-center justify-center border-r-2 border-[#000000] bg-[#d2d1d1] py-1 text-xs font-semibold"
