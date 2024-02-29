@@ -13,6 +13,7 @@ interface WindowProps {
   spanText: string;
   pText: string;
   isButton: boolean;
+  modalText: string;
 }
 
 export default function Window({
@@ -21,6 +22,7 @@ export default function Window({
   spanText,
   pText,
   isButton,
+  modalText,
 }: WindowProps) {
   const useUserModal = () => {
     const [showUserModal, setshowUserModal] = useState(false);
@@ -112,16 +114,10 @@ export default function Window({
                     </section>
                   </div>
                   <li className="pl-2 pt-2">
-                    Is the hackathon free to attend?
+                    {pText}
                   </li>
                   <div className="block pb-2 pl-2 pt-2 text-sm font-medium text-gray-700">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Deserunt quae et earum nostrum odit vel non temporibus
-                    voluptates sequi sunt mollitia sapiente enim deleniti ad
-                    sint, excepturi iusto asperiores obcaecati dolore! Ullam
-                    asperiores reiciendis fugit autem tempora, consectetur a!
-                    Repudiandae soluta quia veritatis accusamus qui doloribus id
-                    explicabo enim aspernatur!
+                    {modalText}
                   </div>
                 </div>
               </div>

@@ -67,7 +67,7 @@ const Card = ({ card, cardImage, onClick }: CardProps) => {
           </div>
           <button
             onClick={onClick}
-            className={`mt- ${butBg} md:h-[40px] md:w-[80px] h-[25px] w-[60px] text-[12px] border-[1px] border-[#000000]`}
+            className={`${butBg} md:h-[40px] md:w-[80px] h-[25px] w-[60px] text-[12px] border-[1px] border-[#000000]`}
           >
             Select
           </button>
