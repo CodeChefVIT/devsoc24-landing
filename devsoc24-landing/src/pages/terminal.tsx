@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Head from "next/head";
 import React from "react";
 import TypewriterEffect from "../components/terminal/typewriter";
 import Link from "next/link";
@@ -21,9 +22,9 @@ import useGlitchStore, {
   useCloseStore,
   useTerminalStore,
   useSelectedStore,
+  useType2Store,
 } from "@/store/store";
 import { IoTerminal } from "react-icons/io5";
-import { string } from "zod";
 
 const help = [
   '<span class="">User validated and online...</span>',
@@ -84,7 +85,7 @@ export default function Home() {
     "Frame 13 6.svg",
   ];
 
-  const [typingCompleted, setTypingCompleted] = useState(false);
+  const { typingCompleted, setTypingCompleted } = useType2Store();
 
   type CardKey =
     | "About"
@@ -152,54 +153,58 @@ export default function Home() {
     ? cardComponents[selectedComponent as CardKey]
     : null;
   return (
-    <main className="h-fit min-h-screen bg-[#232323] font-diatype md:text-[13.3px] md:leading-[13.5px]">
-      {typeof window === "undefined" || !typingCompleted ? (
-        <div className="pl-3 font-diatype md:text-[13.3px] md:leading-[13.5px]">
-          <TypewriterEffect
-            textLines={help}
-            onTypingComplete={handleTypingComplete}
-          />
-        </div>
-      ) : (
-        <>
-          <div className="flex flex-col">
-            <div
-              style={{
-                backgroundImage: `url('/Topborder.svg')`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                width: "100vw",
-                height: "4vh",
-              }}
-            >
-              {!showTerminal ? (
-                <button
-                  onClick={() => toggleTerminal()}
-                  className="absolute left-0 z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060] sm:hidden"
-                >
-                  <IoTerminal className="text-lg font-bold" />
-                </button>
-              ) : (
-                <></>
-              )}
-              <Link href="/">
-                <button className="absolute right-0 z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060]">
-                  <IoMdClose className="text-lg font-bold" />
-                </button>
-              </Link>
-            </div>
-            <div className="flex flex-col-reverse md:flex-row">
-              {showTerminal ? (
-                <div className="fixed bottom-0 z-50 md:relative md:min-h-[96vh] md:w-[20vw]">
-                  <Terminal />
-                </div>
-              ) : (
-                <></>
-              )}
+    <>
+      <Head>
+        <title>DEVSOC&apos;24</title>
+      </Head>
+      <main className="h-fit min-h-screen bg-[#232323] font-diatype md:text-[13.3px] md:leading-[13.5px]">
+        {typeof window === "undefined" || !typingCompleted ? (
+          <div className="pl-3 font-diatype md:text-[13.3px] md:leading-[13.5px]">
+            <TypewriterEffect
+              textLines={help}
+              onTypingComplete={handleTypingComplete}
+            />
+          </div>
+        ) : (
+          <>
+            <div className="flex flex-col">
+              <div
+                style={{
+                  backgroundImage: `url('/Topborder.svg')`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  width: "100vw",
+                  height: "4vh",
+                }}
+              >
+                {!showTerminal ? (
+                  <button
+                    onClick={() => toggleTerminal()}
+                    className="absolute left-0 z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060] sm:hidden"
+                  >
+                    <IoTerminal className="text-lg font-bold" />
+                  </button>
+                ) : (
+                  <></>
+                )}
+                <Link href="/">
+                  <button className="absolute right-0 z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060]">
+                    <IoMdClose className="text-lg font-bold" />
+                  </button>
+                </Link>
+              </div>
+              <div className="flex flex-col-reverse md:flex-row">
+                {showTerminal ? (
+                  <div className="fixed bottom-0 z-50 md:relative md:min-h-[96vh] md:w-[20vw]">
+                    <Terminal />
+                  </div>
+                ) : (
+                  <></>
+                )}
 
-              <div className="flex  w-full flex-col  ">
-                <div className="z-10 hidden h-min md:flex ">
-                  {/* <div
+                <div className="flex  w-full flex-col  ">
+                  <div className="z-10 hidden h-min md:flex ">
+                    {/* <div
                     className="flex w-[120px] cursor-pointer items-center justify-center border-r-2 border-[#000000] bg-[#d2d1d1] py-1 text-xs font-semibold"
                     onClick={() => {
                       const index = activeCard.indexOf("DEVSOC 24");
@@ -214,75 +219,78 @@ export default function Home() {
                   >
                     DEVSOC 24
                   </div> */}
-                  <div className="flex flex-wrap">
-                    {activeCard.map((card, index) => (
-                      <div
-                        className="flex flex-row items-center justify-center border-r-2 border-[#000000] bg-[#d2d1d1] py-2"
-                        key={index}
-                      >
+                    <div className="flex flex-wrap">
+                      {activeCard.map((card, index) => (
                         <div
-                          className={`flex h-full w-[120px] cursor-default items-center justify-center border-[#000000] text-xs font-semibold`}
-                          onClick={() => {
-                            setSelectedComponent(card);
-                            card === "DEVSOC 2024" &&
-                              setSelectedComponent(null);
-                          }}
-                        >
-                          {card}
-                        </div>
-                        <button
-                          onClick={() => {
-                            setActiveCard(activeCard.filter((c) => c !== card));
-                            setSelectedComponent(null);
-                          }}
-                        >
-                          {card !== "DEVSOC 2024" && (
-                            <IoMdClose className="text-sm font-bold" />
-                          )}
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div
-                  className={`boundarybox h-full ${showTerminal ? "" : "w-full"} gap-6`}
-                >
-                  {SelectedComponent ? (
-                    <SelectedComponent />
-                  ) : (
-                    <div className="flex flex-wrap items-stretch md:justify-start ">
-                      {cardTypes.map((card, index) => (
-                        <div
-                          className="mx-4 flex items-center justify-center md:justify-start"
+                          className="flex flex-row items-center justify-center border-r-2 border-[#000000] bg-[#d2d1d1] py-2"
                           key={index}
                         >
-                          <Card
-                            card={card}
-                            cardImage={cardImage[index] ?? "hello"}
-                            onClick={() => handleClick(card as CardKey)}
-                          />
+                          <div
+                            className={`flex h-full w-[120px] cursor-default items-center justify-center border-[#000000] text-xs font-semibold`}
+                            onClick={() => {
+                              setSelectedComponent(card);
+                              card === "DEVSOC 2024" &&
+                                setSelectedComponent(null);
+                            }}
+                          >
+                            {card}
+                          </div>
+                          <button
+                            onClick={() => {
+                              setActiveCard(
+                                activeCard.filter((c) => c !== card),
+                              );
+                              setSelectedComponent(null);
+                            }}
+                          >
+                            {card !== "DEVSOC 2024" && (
+                              <IoMdClose className="text-sm font-bold" />
+                            )}
+                          </button>
                         </div>
                       ))}
                     </div>
-                  )}
-                </div>
-                <div className="bottom-0 z-40 flex h-[2.2%] w-full justify-center bg-[#494848] font-diatype">
+                  </div>
+
                   <div
-                    style={{
-                      backgroundImage: `url('/Frame 7.svg')`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      width: "100%",
-                      height: "100%",
-                    }}
-                  />
+                    className={`boundarybox h-full ${showTerminal ? "" : "w-full"} gap-6`}
+                  >
+                    {SelectedComponent ? (
+                      <SelectedComponent />
+                    ) : (
+                      <div className="flex flex-wrap items-stretch md:justify-start ">
+                        {cardTypes.map((card, index) => (
+                          <div
+                            className="mx-4 flex items-center justify-center md:justify-start"
+                            key={index}
+                          >
+                            <Card
+                              card={card}
+                              cardImage={cardImage[index] ?? "hello"}
+                              onClick={() => handleClick(card as CardKey)}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  <div className="bottom-0 z-40 flex h-[2.2%] w-full justify-center bg-[#494848] font-diatype">
+                    <div
+                      style={{
+                        backgroundImage: `url('/Frame 7.svg')`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </>
-      )}
-    </main>
+          </>
+        )}
+      </main>
+    </>
   );
 }
