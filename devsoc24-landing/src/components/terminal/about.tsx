@@ -62,8 +62,8 @@ export default function About() {
               className={`absolute z-50 flex min-w-[300px] flex-grow flex-col ${maximized ? "h-[90vh]" : "h-fit w-[30vw]"} border-2 bg-[#b2b2b2] pb-10`}
             >
               <div className="drag-handle flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
-                <span className="flex items-center pl-2 font-nokia text-[10px] text-white">
-                  <Image src={notepad as HTMLImageElement} alt="Notepad" className="inline mr-1"/>
+                <span className="flex justify-center items-center pl-2 font-nokia text-[10px] text-white">
+                  <Image src={notepad as HTMLImageElement} alt="Notepad" className="inline-block w-6 pr-3"/>
                   About
                 </span>
                 <section className="flex">
