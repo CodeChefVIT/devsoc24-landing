@@ -33,9 +33,6 @@ const Terminal = () => {
 
   type CommandOutputs = Record<string, string[]>;
 
-  useEffect(()=>{
-    
-  })
   const commandOutputs: CommandOutputs = {
     about: [
       '<span class="command">DEVSOC is CodeChef-VIT’s annual flagship event where participants create, hack, and innovate to solve problems while adhering to the spirit of creativity and teamwork. Rub shoulders with some of the brightest minds in tech and boost your tech journey!</span>',
