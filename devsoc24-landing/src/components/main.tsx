@@ -27,7 +27,7 @@ function Main() {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -2000]);
   const [className, setClassName] = useState(
-    "relative min-h-screen overlaymain font-disket overflow-hidden flex flex-col items-center justify-center",
+    "overlaymain",
   );
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
   const titles = [title, title2, title3, title4];
@@ -38,7 +38,7 @@ function Main() {
     const intervals = [2000, 400, 600, 400];
     const timer = setTimeout(() => {
       setClassName(
-        "relative min-h-screen min-w-screen overlay_hero bg-span font-disket overflow-hidden flex flex-col items-center justify-center z-50",
+        "min-w-screen overlay_hero bg-span z-50",
       );
     }, 400);
 
@@ -88,7 +88,7 @@ function Main() {
     <>
       <motion.div style={{ y: -y }} className="">
         <div style={{ opacity: scrollOpacity }}>
-          <div className={className}>
+          <div className={`${className} relative min-h-screen font-disket overflow-hidden flex flex-col items-center justify-center`}>
             <Image src={glitch as StaticImageData} alt="glitch" fill />
             <Image
               src={logo as StaticImport}
