@@ -11,7 +11,7 @@ export default function Portal() {
   const [minimized, setMinimized] = useState(false);
   const [maximized, setMaximized] = useState(false);
   const { activeCard, setActiveCard } = useCloseStore();
-  const {selectedComponent, setSelectedComponent} = useSelectedStore();
+  const { selectedComponent, setSelectedComponent } = useSelectedStore();
 
   const handleMinimize = () => {
     setMinimized(!minimized);
@@ -56,9 +56,9 @@ export default function Portal() {
             />
           </div>
         ) : (
-          <Draggable handle=".drag-handle" bounds=".boundarybox">
+          <Draggable bounds=".boundarybox">
             <div
-              className={`flex flex-col min-w-[300px] flex-grow ${maximized ? "h-[90vh]" : "h-[100px] w-[30vw] pb-10"} border-2 bg-[#b2b2b2]`}
+              className={`flex min-w-[300px] flex-grow flex-col ${maximized ? "h-[100vh] sm:h-full w-[390px] sm:w-[80vw]" : "h-[100px] w-[30vw] pb-10"} border-2 bg-[#b2b2b2]`}
             >
               <div className="drag-handle flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
                 <span className="flex items-center pl-4 text-xs text-white">
@@ -81,27 +81,28 @@ export default function Portal() {
                   </span>
                   <span
                     className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575] hover:cursor-pointer"
-                    onClick={() =>{
-                      setActiveCard(activeCard.filter((c) => c !== "Portal"))
-                      setSelectedComponent(null)
+                    onClick={() => {
+                      setActiveCard(activeCard.filter((c) => c !== "Portal"));
+                      setSelectedComponent(null);
                     }}
-                    onTouchEnd={() =>{
-                      setActiveCard(activeCard.filter((c) => c !== "Portal"))
-                      setSelectedComponent(null)
+                    onTouchEnd={() => {
+                      setActiveCard(activeCard.filter((c) => c !== "Portal"));
+                      setSelectedComponent(null);
                     }}
                   >
                     <IoMdClose />
                   </span>
                 </section>
               </div>
-
-              <p className="w-[90%] pl-6 pt-6 ">Coming soon</p>
-              <button
-                className={`self-end h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition ease-in-out  hover:h-[26px] hover:w-[98px] hover:duration-75 md:mt-[4px] mr-2`}
-                onClick={openUserModal}
-              >
-                Select
-              </button>
+              <div className="h-full flex flex-col">
+                <p className="w-[90%] pl-6 pt-6 ">Coming soon</p>
+                <button
+                  className={`mr-2 h-6 w-24 self-end border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition  ease-in-out hover:h-[26px] hover:w-[98px] hover:duration-75 md:mt-[4px]`}
+                  onClick={openUserModal}
+                >
+                  Select
+                </button>
+              </div>
             </div>
           </Draggable>
         )}
