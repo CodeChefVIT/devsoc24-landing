@@ -168,7 +168,7 @@ export default function Home() {
               {!showTerminal ? (
                 <button
                   onClick={() => toggleTerminal()}
-                  className="absolute left-0 z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060]"
+                  className="absolute left-0 z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060] sm:hidden"
                 >
                   <IoTerminal className="text-lg font-bold" />
                 </button>

@@ -56,7 +56,7 @@ export default function About() {
             />
           </div>
         ) : (
-          <Draggable handle=".drag-handle">
+          <Draggable handle=".drag-handle" bounds="body">
             <div
               className={`flex min-w-[300px] flex-grow flex-col ${maximized ? "h-[90vh]" : "h-fit w-[30vw] pb-10"} border-2 bg-[#b2b2b2]`}
             >
@@ -68,18 +68,24 @@ export default function About() {
                   <span
                     className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575] hover:cursor-pointer"
                     onClick={() => handleMinimize()}
+                    onTouchEnd={() => handleMinimize()}
                   >
                     <MdMinimize />
                   </span>
                   <span
                     className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575] hover:cursor-pointer"
                     onClick={() => handleMaximize()}
+                    onTouchEnd={() => handleMaximize()}
                   >
                     <BiWindow />
                   </span>
                   <span
                     className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575] hover:cursor-pointer"
                     onClick={() => {
+                      setActiveCard(activeCard.filter((c) => c !== "About"));
+                      setSelectedComponent(null);
+                    }}
+                    onTouchEnd={() => {
                       setActiveCard(activeCard.filter((c) => c !== "About"));
                       setSelectedComponent(null);
                     }}
