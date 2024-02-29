@@ -18,6 +18,8 @@ export default function About() {
   };
 
   const handleMaximize = () => {
+    document.getElementById("ok")!.style.top = '0'
+    document.getElementById("ok")!.style.left = '0'
     setMaximized(!maximized);
   };
 
@@ -39,7 +41,7 @@ export default function About() {
 
   return (
     <div
-      className={`relative flex h-full w-full ${maximized ? "" : "pl-[30px] pt-[100px]  md:pl-[60px]"}`}
+      className={`relative flex h-full w-full pl-[30px] pt-[100px] md:pl-[60px]`}
     >
       <div>
 
@@ -57,9 +59,9 @@ export default function About() {
             />
           </div>
         ) : (
-          <Draggable handle=".drag-handle" bounds=".boundarybox">
+          <Draggable bounds=".boundarybox">
             <div
-              className={`absolute z-50 flex min-w-[300px] flex-grow flex-col ${maximized ? "h-[100vh]" : "h-fit w-[30vw]"} border-2 bg-[#b2b2b2] pb-10`}
+              className={`absolute z-50 flex min-w-[300px] flex-grow flex-col ${maximized ? "w-full h-full" : "h-fit w-[30vw]"} border-2 bg-[#b2b2b2] pb-10`}
             >
               <div className="drag-handle flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
                 <span className="flex justify-center items-center pl-2 font-nokia text-[10px] text-white">
