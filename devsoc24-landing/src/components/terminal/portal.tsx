@@ -56,7 +56,7 @@ export default function Portal() {
             />
           </div>
         ) : (
-          <Draggable handle=".drag-handle" bounds="body">
+          <Draggable handle=".drag-handle" bounds=".boundarybox">
             <div
               className={`flex flex-col min-w-[300px] flex-grow ${maximized ? "h-[90vh]" : "h-[100px] w-[30vw] pb-10"} border-2 bg-[#b2b2b2]`}
             >
