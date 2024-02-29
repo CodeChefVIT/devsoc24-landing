@@ -4,6 +4,7 @@ import { GiMoneyStack } from "react-icons/gi";
 import { MdMinimize } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import { BiWindow } from "react-icons/bi";
+import book from "@/assets/images/book.svg"
 import Draggable from "react-draggable";
 
 const questions = [
@@ -22,20 +23,21 @@ const questions = [
       "This hackathon is a team competition where you can have 2-4 members in your team. Most teams aim to have a mix of people with both design and developer skills.",
   },
   {
-    question: "Have any more queries?",
-    answer:
-      "If you have any further doubts, feel free to ask your doubts on our Discord server",
-  },
-  {
     question:
       "I don't have much experience with coding or tech events. Should I still participate?",
     answer:
       "We will be evaluating everyone based on different metrics. We'll take into account if you're a fresher and where you stand amongst your peers. If you don't have anything technical to add to your resume, this event is a great opportunity to lay a solid foundation for your tech journey. This hackathon will give you an opportunity to inteact with your seniors and gain valuable guidance. Basically, if you're interested in coding or tech events, you're more than welcome to participate!",
   },
+  {
+    question: "Have any more queries?",
+    answer:
+      "If you have any further doubts, feel free to ask your doubts on our Discord server",
+  },
 ];
 
 export default function FAQs() {
   const [showModal, setShowModal] = useState(false);
+  const [modalQuestion, setModalQuestion] = useState(questions[0]?.question);
   const [modalContent, setModalContent] = useState(questions[0]?.answer);
   // const { activeCard, setActiveCard } = useCloseStore();
   // const { selectedComponent, setSelectedComponent } = useSelectedStore();
@@ -56,7 +58,7 @@ export default function FAQs() {
               id={`${index}`}
             >
               <div className="drag-handle flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
-                <span className="flex items-center pl-4 text-xs text-white">
+                <span className="flex items-center pl-4 text-[10px] text-white font-nokia">
                   <GiMoneyStack className="pr-2 text-2xl" /> DEVSOC&apos;24
                 </span>
                 <section className="flex">
@@ -71,11 +73,14 @@ export default function FAQs() {
                   </span>
                 </section>
               </div>
-
-              <p className="w-[90%] pl-6 pt-6 ">{items.question}</p>
+              <div className="flex">
+                <Image src={book as HTMLImageElement} alt="book" className="w-14 p-2 pr-0" />
+                <p className="w-[90%] pl-4 pt-6 inline font-vcr">{items.question}</p>
+              </div>
               <button
-                className={`absolute bottom-2 right-2 self-end border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition  ease-in-out hover:scale-[1.05] hover:duration-75 px-2`}
+                className={`font-vcr absolute bottom-2 right-2 self-end border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition ease-in-out hover:scale-[1.05] hover:duration-75 px-2`}
                 onClick={() => {
+                  setModalQuestion(questions[index]?.question);
                   setModalContent(questions[index]?.answer);
                   toggleModal();
                 }}
@@ -91,8 +96,8 @@ export default function FAQs() {
           <div className="fixed left-0 top-0 z-50 flex h-screen  w-screen items-center justify-center bg-black/60 ">
             <div className=" relative left-0 top-0 z-50 flex h-fit min-h-[20vh] w-fit  min-w-[40vw] max-w-[90vw] flex-col border-2 border-white bg-[#b2b2b2] md:max-w-[50vw]">
               <div className="flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
-                <span className="flex items-center pl-4 text-xs text-white">
-                  <GiMoneyStack className="pr-2 text-2xl" /> Answer
+                <span className="flex items-center pl-4 text-[10px] text-white font-nokia">
+                  <GiMoneyStack className="pr-2 text-2xl" />{modalQuestion}
                 </span>
                 <section className="flex">
                   <span
@@ -103,7 +108,7 @@ export default function FAQs() {
                   </span>
                 </section>
               </div>
-              <p className="m-5">{modalContent}</p>
+              <p className="m-5 font-vcr">{modalContent}</p>
             </div>
           </div>
         </>

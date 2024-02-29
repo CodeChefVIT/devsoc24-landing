@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Head from "next/head";
-import glitch from "@/assets/images/footer_glitch.gif";
+import glitch from "@/assets/images/footer-glitch.gif";
 import About from "@/components/about";
 import Main from "@/components/main";
 import SmoothScrolling from "@/components/smoothscrolling";
