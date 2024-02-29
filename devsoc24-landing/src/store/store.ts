@@ -52,3 +52,17 @@ export const useFooterStore = create<FooterStore>((set) => ({
   showFooter: false,
   setShowFooter: (showFooter: boolean) => set({ showFooter }),
 }));
+
+interface TypeStore {
+  typingCompleted: boolean;
+  setTypingCompleted: (typingCompleted: boolean) => void;
+}
+
+export const useTypeStore = create<TypeStore>((set) => ({
+  typingCompleted: false,
+  setTypingCompleted: (typingCompleted: boolean) => set({ typingCompleted }),
+}));
+export const useType2Store = create<TypeStore>((set) => ({
+  typingCompleted: false,
+  setTypingCompleted: (typingCompleted: boolean) => set({ typingCompleted }),
+}));
