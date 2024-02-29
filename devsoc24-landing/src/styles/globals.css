@@ -54,8 +54,7 @@
   }
 }
 
-.flip
-{
+.flip {
   transform: scaleX(-1);
 }
 
@@ -382,4 +381,12 @@ a:focus {
 
 .bgImg {
   background-image: url("../../public/Rectangle\ 2.svg");
+}
+
+.custom-cursor {
+  cursor: url("/cursor.png"), auto;
+}
+
+.command {
+  margin-bottom: 100px;
 }

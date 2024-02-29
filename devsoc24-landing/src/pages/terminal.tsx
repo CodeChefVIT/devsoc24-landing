@@ -5,7 +5,7 @@ import React from "react";
 import TypewriterEffect from "../components/terminal/typewriter";
 // import Image from "next/image";
 import Card from "../components/card";
-import Terminal from "../components/terminal/page";
+import Terminal from "@/components/terminal/page";
 import About from "../components/terminal/about";
 import FAQs from "../components/terminal/faqs";
 import Prizepool from "../components/terminal/prizepool";
@@ -148,12 +148,12 @@ export default function Home() {
     return () => window.removeEventListener("resize", updateHeight);
   }, []);
 
-  function handleClose(){
-    if (selectedComponent){
-      setActiveCard(activeCard.filter((c) => c !== selectedComponent))
-      setSelectedComponent(null)
+  function handleClose() {
+    if (selectedComponent) {
+      setActiveCard(activeCard.filter((c) => c !== selectedComponent));
+      setSelectedComponent(null);
     } else {
-      void router.push("/")
+      void router.push("/");
     }
   }
 
@@ -196,15 +196,17 @@ export default function Home() {
                 ) : (
                   <></>
                 )}
-                
-                  <button className="absolute right-0 z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060]" onClick={handleClose}>
-                    <IoMdClose className="text-lg font-bold" />
-                  </button>
-                
+
+                <button
+                  className="absolute right-0 z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060]"
+                  onClick={handleClose}
+                >
+                  <IoMdClose className="text-lg font-bold" />
+                </button>
               </div>
               <div className="flex flex-col-reverse md:flex-row">
                 {showTerminal ? (
-                  <div className="bottom-0 z-50 md:relative min-h-[96vh] w-[20vw]">
+                  <div className="bottom-0 z-50 min-h-[96vh] w-[20vw] md:relative">
                     <Terminal />
                   </div>
                 ) : (
@@ -239,7 +241,7 @@ export default function Home() {
                             onClick={() => {
                               setSelectedComponent(card);
                               card === "DEVSOC 2024" &&
-                                setSelectedComponent(null);
+                                setSelectedComponent("DEVSOC 2024");
                             }}
                           >
                             {card}
