@@ -33,9 +33,6 @@ const Terminal = () => {
 
   type CommandOutputs = Record<string, string[]>;
 
-  useEffect(()=>{
-    
-  })
   const commandOutputs: CommandOutputs = {
     about: [
       '<span class="command">DEVSOC is CodeChef-VIT’s annual flagship event where participants create, hack, and innovate to solve problems while adhering to the spirit of creativity and teamwork. Rub shoulders with some of the brightest minds in tech and boost your tech journey!</span>',
@@ -381,7 +378,6 @@ const Terminal = () => {
 
   useEffect(() => {
     const helpOutput = commandOutputs.initial ?? [];
-
     const displayOutput = helpOutput.map(() => "");
     setCommands([{ command: "initial", output: helpOutput, displayOutput }]);
   }, []);
@@ -442,7 +438,7 @@ const Terminal = () => {
             <div className="command-line font-diatype ">
               <span className="font-diatype ">
                 devsoc@2024.com
-                {selectedComponent === "DEVSOC 2024"
+                {selectedComponent === "DEVSOC 2024" || !selectedComponent
                   ? ""
                   : "/" + selectedComponent?.toString().toLowerCase()}
                 &nbsp;~ %&nbsp;
@@ -464,7 +460,7 @@ const Terminal = () => {
           <div id="liner" className="ml-[10px] flex-1">
             <span className="font-diatype ">
               devsoc@2024.com
-              {selectedComponent === "DEVSOC 2024"
+              {selectedComponent === "DEVSOC 2024" || !selectedComponent
                 ? ""
                 : "/" + selectedComponent?.toString().toLowerCase()}
               &nbsp;~ %&nbsp;

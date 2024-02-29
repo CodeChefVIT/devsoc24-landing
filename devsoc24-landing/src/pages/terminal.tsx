@@ -204,7 +204,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col-reverse md:flex-row">
                 {showTerminal ? (
-                  <div className="bottom-0 z-50 md:relative md:min-h-[96vh] w-[95vw] md:w-[20vw]">
+                  <div className="bottom-0 z-50 md:relative min-h-[96vh] w-[20vw]">
                     <Terminal />
                   </div>
                 ) : (
