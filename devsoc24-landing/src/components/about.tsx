@@ -21,7 +21,7 @@ const About = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       const atBottom =
-        window.innerHeight + window.scrollY >= document.body.offsetHeight;
+        window.innerHeight + window.scrollY >= (document.body.offsetHeight - 250);
       setIsBottom(atBottom);
       if (
         window.innerWidth >= 450 &&
