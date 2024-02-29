@@ -58,7 +58,7 @@ export default function Timeline() {
         ) : (
           <Draggable handle=".drag-handle" bounds=".boundarybox">
             <div
-              className={`flex flex-col min-w-[300px] flex-grow ${maximized ? "h-[90vh]" : "h-[100px] w-[30vw] pb-10"} border-2 bg-[#b2b2b2]`}
+              className={`flex flex-col min-w-[300px] flex-grow ${maximized ? "h-[100vh] sm:h-full w-[390px] sm:w-[80vw]" : "h-[100px] w-[30vw] pb-10"} border-2 bg-[#b2b2b2]`}
             >
               <div className="drag-handle flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
                 <span className="flex items-center pl-4 text-xs text-white">
@@ -95,7 +95,7 @@ export default function Timeline() {
                 </section>
               </div>
 
-              <p className="w-[90%] pl-6 pt-6 ">Coming soon</p>
+              <p className="w-[90%] pl-6 pt-6 ">March 18th - 20th (More details coming soon)</p>
               <button
                 className={`self-end h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition ease-in-out  hover:h-[26px] hover:w-[98px] hover:duration-75 md:mt-[4px] mr-2`}
                 onClick={openUserModal}

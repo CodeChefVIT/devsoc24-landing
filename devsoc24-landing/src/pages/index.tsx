@@ -10,6 +10,7 @@ import Footer from "@/components/footer";
 import bgimage from "@/assets/images/DEVSOCLOGOBIG.svg";
 import Image from "next/image";
 import { useFooterStore, useTypeStore } from "@/store/store";
+import { Console } from "console";
 
 const help = [
   '<span class="">User validated and online...</span>',
@@ -51,13 +52,14 @@ export default function Home() {
   const { showGlitch, setGlitch } = useGlitchStore();
 
   useEffect(() => {
-    if (showGlitch) {
+    if (showGlitch && !showFooter) {
       const glitchTimeout = setTimeout(() => {
         setShowFooter(true);
       }, 1000);
       return () => clearTimeout(glitchTimeout);
     }
-  }, [showGlitch]);
+  }, [showGlitch, showFooter, setShowFooter]);
+  
 
   const handleTypingComplete = () => {
     setTypingCompleted(true);

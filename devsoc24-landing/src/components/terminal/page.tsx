@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect, useRef } from "react";
 import ProgressBar from "../progressbar";
 import {
@@ -36,41 +34,41 @@ const Terminal = () => {
   type CommandOutputs = Record<string, string[]>;
 
   const commandOutputs: CommandOutputs = {
+    about: [
+      '<span class="command">DEVSOC is CodeChef-VIT’s annual flagship event where participants create, hack, and innovate to solve problems while adhering to the spirit of creativity and teamwork. Rub shoulders with some of the brightest minds in tech and boost your tech journey!</span>',
+    ],
     faqs: [
-      '<span class="command">whatisdevsoc</span>',
-      '<span class="command">whoisdevsoc</span>',
+      '<span class="command">hackathon cost</span>',
+      '<span class="command">application process</span>',
+      '<span class="command">inexperienced</span>',
+      '<span class="command">team size</span>',
     ],
-    sponsors: [
-      '<span class="command">????????</span>',
-      '<span class="command">404 not found</span>',
-    ],
-    timeline: [
-      '<span class="command">........</span>What is Devsoc?',
-      '<span class="command">.........</span>',
-    ],
+    sponsors: ['<span class="command">Coming Soon</span>'],
+    timeline: ['<span class="command">Coming Soon</span>'],
     tracks: [
-      '<span class="command">tracks</span>',
-      '<span class="command">tracks</span>',
+      '<span class="command">1. AR/VR</span>',
+      '<span class="command">2. Blockchain</span>',
+      '<span class="command">3. Automation Tools</span>',
+      '<span class="command">4. Social Good</span>',
+      '<span class="command">5. Health and Wellness</span>',
+      '<span class="command">6. Open Innovation</span>',
     ],
     prizepool: [
-      '<span class="command">25,000</span>',
-      '<span class="command">rupaiye</span>',
-    ],
-    adityabhaiya: [
-      '<span class="command">mostest web dev</span>',
-      '<span class="command">to find out more use command <b>aditansh</b></span>',
+      '<span class="command">Printing the Moneyyy!!</span>',
+      '<span class="command">More details coming soon...</span>',
     ],
     help: [
-      '<span class="command">faqs (frequently asked questions)</span>',
-      '<span class="command">sponsors (404 notfound)</span>',
-      '<span class="command">prizepool (20,000)</span>',
-      '<span class="command">timeline (???)</span>',
-      '<span class="command">tracks (tracks)</span>',
-      '<span class="command">help (to view all commands)</span>',
-      '<span class="command">clear (to clear the terminal)</span>',
-      '<span class="command">rolls (if you want a role in codechef</span>',
-      '<span class="command">then use rolls command</span>',
-      '<span class="command">to contact us)</span>',
+      '<span class="command">about</span>',
+      '<span class="command">sponsors</span>',
+      '<span class="command">prizepool</span>',
+      '<span class="command">timeline</span>',
+      '<span class="command">tracks</span>',
+      '<span class="command">clear: clear the terminal</span>',
+      '<span class="command">roles: get role in codechefvit</span>',
+      '<span class="command">ls: see directories</span>',
+      '<span class="command">cd <directory>: to open the directory</span>',
+      '<span class="command">banner: to print DEVSOC</span>',
+
       "<br>",
     ],
     clear: [],
@@ -84,7 +82,6 @@ const Terminal = () => {
       "<p class='block-text' style='font-size:8px;'>/*******&nbsp;&nbsp;/********&nbsp;&nbsp;&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;********&nbsp;&nbsp;//*******&nbsp;&nbsp;&nbsp;//******&nbsp;</p>",
       "<p class='block-text' style='font-size:8px;'>///////&nbsp;&nbsp;&nbsp;////////&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;////////&nbsp;&nbsp;&nbsp;&nbsp;///////&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//////&nbsp;&nbsp;</p>",
     ],
-    rolls: [],
     initial: [
       '<span class="" style="margin-bottom:10px">$User id set to 8y14e9f8</span>',
       '<span class="" style="margin-bottom:10px">User validated and online...</span>',
@@ -93,7 +90,7 @@ const Terminal = () => {
       '<span class="" style="margin-bottom:10px">[complete]</span>',
       '<span class="" style="margin-bottom:10px">User ip found and indexed:</span>',
       '<span class="" font-weight: bold;>----------------------------------------</span>',
-      
+
       "<p class='block-text' style='font-size:6.5px;font-weight: bold;'>&nbsp;*******&nbsp;&nbsp;&nbsp;********&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;&nbsp;********&nbsp;&nbsp;&nbsp;*******&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;</p>",
       "<p class='block-text' style='font-size:6.5px;font-weight: bold;'>/**////**&nbsp;/**/////&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**&nbsp;**//////&nbsp;&nbsp;&nbsp;**/////**&nbsp;&nbsp;&nbsp;**////**</p>",
       "<p class='block-text' style='font-size:6.5px;font-weight: bold;'>/**&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//**&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;</p>",
@@ -102,7 +99,7 @@ const Terminal = () => {
       "<p class='block-text' style='font-size:6.5px;font-weight: bold;'>/**&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//****&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**//**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;**</p>",
       "<p class='block-text' style='font-size:6.5px;font-weight: bold;'>/*******&nbsp;&nbsp;/********&nbsp;&nbsp;&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;********&nbsp;&nbsp;//*******&nbsp;&nbsp;&nbsp;//******&nbsp;</p>",
       "<p class='block-text' style='font-size:6.5px;font-weight: bold;'>///////&nbsp;&nbsp;&nbsp;////////&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;////////&nbsp;&nbsp;&nbsp;&nbsp;///////&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//////&nbsp;&nbsp;</p>",
-    
+
       '<span class="" font-weight: bold;>----------------------------------------</span>',
       '<span class="" style="margin-bottom:10px">[found] == 1 online & accessible</span>',
       '<span class="" style="margin-bottom:10px">[anomalies] == 3 detected</span>',
@@ -114,13 +111,6 @@ const Terminal = () => {
       '<span class="" style="margin-bottom:10px">to start with, type <b>help</b> to get all commands</span>',
       // "<br>",
     ],
-    aaditya: ['<span class="">Mostest frontend dev</span>'],
-    designTeam: [
-      '<span class="">Calculating.....</span>',
-      '<span class="">Calculating.....</span>',
-      '<span class="">Calculating.....</span>',
-      '<span class="">Calculating.....</span>',
-    ],
   };
 
   const sleep = (ms: number) =>
@@ -129,25 +119,150 @@ const Terminal = () => {
   const handleKeyPress = (event: React.KeyboardEvent) => {
     if (event.key === "Enter") {
       event.preventDefault(); // Prevent the default behavior of the Enter key
-
       const trimmedInput = inputValue.trim();
-      if (trimmedInput === "clear") {
-        setCommands([]);
-      } else if (trimmedInput === "rolls") {
-        setTimeout(() => {
-          window.open("https://www.youtube.com/watch?v=xvFZjo5PgG0", "_blank");
-        }, 500);
-      } else {
-        const output = commandOutputs[trimmedInput] ?? [
-          `Command not found: ${trimmedInput}`,
-        ];
-        const displayOutput = output.map(() => "");
-        setCommands((prevCommands) => [
-          ...prevCommands,
-          { command: trimmedInput, output, displayOutput },
-        ]);
+      switch (trimmedInput) {
+        case "clear":
+          setCommands([]);
+          break;
+        case "cd ..":
+          if (selectedComponent === "DEVSOC 2024") {
+            const output = ["in root directory"];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          } else {
+            setSelectedComponent("DEVSOC 2024");
+          }
+          break;
+        case "cd about":
+          if (selectedComponent != "DEVSOC 2024") {
+            const output = ["directory not found"];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          } else {
+            setSelectedComponent("About");
+          }
+          break;
+        case "cd timeline":
+          if (selectedComponent != "DEVSOC 2024") {
+            const output = ["directory not found"];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          } else {
+            setSelectedComponent("Timeline");
+          }
+          break;
+        case "cd tracks":
+          if (selectedComponent != "DEVSOC 2024") {
+            const output = ["directory not found"];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          } else {
+            setSelectedComponent("Tracks");
+          }
+          break;
+        case "cd prizepool":
+          if (selectedComponent != "DEVSOC 2024") {
+            const output = ["directory not found"];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          } else {
+            setSelectedComponent("Prizepool");
+          }
+          break;
+        case "cd sponsors":
+          if (selectedComponent != "DEVSOC 2024") {
+            const output = ["directory not found"];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          } else {
+            setSelectedComponent("Sponsors");
+          }
+          break;
+        case "cd portal":
+          if (selectedComponent != "DEVSOC 2024") {
+            const output = ["directory not found"];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          } else {
+            setSelectedComponent("Portal");
+          }
+          break;
+        case "cd faq":
+          if (selectedComponent != "DEVSOC 2024") {
+            const output = ["directory not found"];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          } else {
+            setSelectedComponent("FAQs");
+          }
+        case "ls":
+          if (selectedComponent != "DEVSOC 2024") {
+            const output = [""];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          } else {
+            const output = [
+              '<span class="command">about</span>',
+              '<span class="command">timeline</span>',
+              '<span class="command">tracks</span>',
+              '<span class="command">prizepool</span>',
+              '<span class="command">sponsors</span>',
+              '<span class="command">portal</span>',
+              '<span class="command">faq</span>',
+            ];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          }
+          break;
+        case "roles":
+          setTimeout(() => {
+            window.open(
+              "https://www.youtube.com/watch?v=xvFZjo5PgG0",
+              "_blank",
+            );
+          }, 500);
+          break;
+        default:
+          const output = commandOutputs[trimmedInput] ?? [
+            `Command not found: ${trimmedInput}`,
+          ];
+          const displayOutput = output.map(() => "");
+          setCommands((prevCommands) => [
+            ...prevCommands,
+            { command: trimmedInput, output, displayOutput },
+          ]);
+          break;
       }
-
       setInputValue("");
     }
   };
@@ -275,14 +390,17 @@ const Terminal = () => {
   }, [commands]);
 
   return (
-    <div className="relative h-[400px] w-screen overflow-auto bg-[#757575] font-diatype text-sm sm:w-full md:h-[100%] md:text-[13.3px] md:leading-[13.5px]">
+    <div className="relative h-[400px] w-screen overflow-y-auto bg-[#757575] font-diatype text-sm sm:w-full md:h-[100%] md:text-[13.3px] md:leading-[13.5px]">
       <button
         onClick={() => toggleTerminal()}
         className="absolute right-[2px] z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#666565] hover:cursor-pointer hover:bg-[#606060] sm:hidden"
       >
         <IoMdClose className="text-lg font-bold " />
       </button>
-      <div id="terminal" className=" w-[20vw] bg-[#757575] pt-0 md:pt-2">
+      <div
+        id="terminal"
+        className=" w-[20vw] overflow-y-auto bg-[#757575] pt-0 md:pt-2"
+      >
         <div className="ml-[10px] flex h-fit flex-col items-start gap-[5px] border-b-[1px] border-black pb-5 md:text-[13px] md:leading-[13.5px] ">
           <div className="">
             [Network&nbsp;&nbsp;&nbsp;] DotMid://19.22.10.14
