@@ -7,7 +7,7 @@ const LearnMoreBtn = (props: { link: string }) => {
     <>
       <motion.a
         href={props.link}
-        className={`${styles.btn} font-disket px-3 py-1 text-xl tracking-tighter`}
+        className={`${styles.btn} font-disket px-3 py-1 text-xl tracking-tighter z-50`}
         whileHover={{ backgroundPosition: "-100%,100%" }}
       >
         Learn More

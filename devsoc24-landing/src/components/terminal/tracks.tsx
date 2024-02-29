@@ -58,7 +58,7 @@ export default function Tracks() {
         ) : (
           <Draggable handle=".drag-handle" bounds=".boundarybox">
             <div
-              className={`flex flex-col min-w-[300px] flex-grow ${maximized ? "h-full sm:h-[90vh] w-[390px] sm:w-[80vw]" : "h-[100px] w-[30vw] pb-10"} border-2 bg-[#b2b2b2]`}
+              className={`flex flex-col min-w-[300px] flex-grow ${maximized ? "h-[100vh] sm:h-full w-[390px] sm:w-[80vw]" : "h-[100px] w-[30vw] pb-10"} border-2 bg-[#b2b2b2]`}
             >
               <div className="drag-handle flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
                 <span className="flex items-center pl-4 text-xs text-white">
