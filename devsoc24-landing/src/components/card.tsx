@@ -50,7 +50,7 @@ const Card = ({ card, cardImage, onClick }: CardProps) => {
           alt="Description of the image"
           width={500}
           height={100}
-          className="h-[100%] w-[100%] bg-[#000000] object-cover"
+          className="h-[20vh] w-[100%] bg-[#000000] object-cover"
         />
       </div>
       <div className=" flex h-full w-full flex-col font-diatype text-sm ">
@@ -67,7 +67,7 @@ const Card = ({ card, cardImage, onClick }: CardProps) => {
           </div>
           <button
             onClick={onClick}
-            className={`${butBg} md:h-[40px] md:w-[80px] h-[25px] w-[60px] text-[12px] border-[1px] border-[#000000]`}
+            className={`${butBg} md:h-[30px] md:w-[80px] h-[25px] w-[60px] text-[12px] border-[1px] border-[#000000] mt-3`}
           >
             Select
           </button>

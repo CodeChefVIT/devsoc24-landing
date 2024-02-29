@@ -33,6 +33,9 @@ const Terminal = () => {
 
   type CommandOutputs = Record<string, string[]>;
 
+  useEffect(()=>{
+    
+  })
   const commandOutputs: CommandOutputs = {
     about: [
       '<span class="command">DEVSOC is CodeChef-VIT’s annual flagship event where participants create, hack, and innovate to solve problems while adhering to the spirit of creativity and teamwork. Rub shoulders with some of the brightest minds in tech and boost your tech journey!</span>',
@@ -437,7 +440,15 @@ const Terminal = () => {
         {commands.map((cmdObj, index) => (
           <div key={index}>
             <div className="command-line font-diatype ">
-              <span className="">devsoc@2024.com:~${cmdObj.command}</span>
+              <span className="font-diatype ">
+                devsoc@2024.com
+                {selectedComponent === "DEVSOC 2024"
+                  ? ""
+                  : "/" + selectedComponent?.toString().toLowerCase()}
+                &nbsp;~ %&nbsp;
+                {cmdObj.command}
+              </span>
+              {/* <span className="">devsoc@2024.com:~$</span> */}
             </div>
             {cmdObj.displayOutput.map((line, lineIndex) => (
               <div
@@ -452,7 +463,12 @@ const Terminal = () => {
         <div id="command" className="flex gap-1">
           <div id="liner" className="ml-[10px] flex-1">
             <span className="font-diatype ">
-              devsoc@2024.com:~${inputValue}
+              devsoc@2024.com
+              {selectedComponent === "DEVSOC 2024"
+                ? ""
+                : "/" + selectedComponent?.toString().toLowerCase()}
+              &nbsp;~ %&nbsp;
+              {inputValue}
             </span>
             <b className="cursor">█</b>
           </div>
