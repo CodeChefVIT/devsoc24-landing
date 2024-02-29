@@ -25,26 +25,34 @@ import { IoTerminal } from "react-icons/io5";
 import { string } from "zod";
 
 const help = [
-  '<span class="">Initiating quantum decryption sequence...</span>',
-  '<span class="">Syncing neural network interfaces...</span>',
-  '<span class="">Overriding mainframe security protocols...</span>',
+  '<span class="">User validated and online...</span>',
+  '<span class="">[[init]]</span>',
+  '<span class="">Retriving command data...</span>',
+  '<span class="">[complete]</span>',
+  '<span class="">User ip found and indexed:</span>',
+  '<span class="">Initiating quantum decryption sequence</span>',
+  '<span class="">Syncing neural network interfaces.........</span>',
+  '<span class="">Overriding mainframe security protocols</span>',
   '<span class="">Hacking into the mainframe matrix...</span>',
-  '<span class="">Crunching binary data for analysis...</span>',
-  '<span class="">Escaping digital mazes through recursive algorithms...</span>',
-  '<span class="">Manipulating data streams with bitwise operations...</span>',
-  '<span class="">Generating cryptographic keys with prime number algorithms...</span>',
-  '<span class="">Unleashing virtual chaos through recursive function calls...</span>',
-  '<span class="">Navigating encrypted tunnels with pointer arithmetic...</span>',
-  '<span class="">Triggering backdoor access with exploit vectors...</span>',
-  '<span class="">Conducting remote exploits using buffer overflow techniques...</span>',
-  '<span class="">Compiling rogue scripts with embedded assembly code...</span>',
+  '<span class="">$User id set to 8y14e9f8</span>',
+  '<span class="" font-weight: bold;>----------------------------------------</span>',
+      
+      "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>&nbsp;*******&nbsp;&nbsp;&nbsp;********&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;&nbsp;********&nbsp;&nbsp;&nbsp;*******&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;</p>",
+      "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>/**////**&nbsp;/**/////&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**&nbsp;**//////&nbsp;&nbsp;&nbsp;**/////**&nbsp;&nbsp;&nbsp;**////**</p>",
+      "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>/**&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//**&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;</p>",
+      "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>/**&nbsp;&nbsp;&nbsp;&nbsp;/**/*******&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;/*********/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>",
+      "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>/**&nbsp;&nbsp;&nbsp;&nbsp;/**/**////&nbsp;&nbsp;&nbsp;//**&nbsp;&nbsp;**&nbsp;&nbsp;////////**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>",
+      "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>/**&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//****&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**//**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;**</p>",
+      "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>/*******&nbsp;&nbsp;/********&nbsp;&nbsp;&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;********&nbsp;&nbsp;//*******&nbsp;&nbsp;&nbsp;//******&nbsp;</p>",
+      "<p class='block-text' style='font-size:7.4px;font-weight: bold;'>///////&nbsp;&nbsp;&nbsp;////////&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;////////&nbsp;&nbsp;&nbsp;&nbsp;///////&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//////&nbsp;&nbsp;</p>",
+    
+      '<span class="" font-weight: bold;>----------------------------------------</span>',
   '<span class="">Disrupting network protocols with raw socket manipulation...</span>',
   '<span class="">Executing stealth maneuvers with bitwise masking...</span>',
-  '<span class="">Initiating cybernetic transcendence through kernel-level exploits...</span>',
-  '<span class="">Unraveling encrypted matrices with custom decryption algorithms...</span>',
-  '<span class="">Cracking cryptographic puzzles using brute-force techniques...</span>',
-  '<span class="">Bypassing biometric authentication through spoofing techniques...</span>',
-  '<span class="">Unleashing algorithmic havoc with optimized sorting algorithms...</span>',
+  '<span class="">Loading Welcome............</span>',
+  
+      
+    
   "<br>",
 ];
 

@@ -54,7 +54,7 @@ const Card = ({ card, cardImage, onClick }: CardProps) => {
         />
       </div>
       <div className=" flex h-full w-full flex-col font-diatype text-sm ">
-        <fieldset className="mt-2 h-full border-2 border-[#0d0d0d] px-5 py-2">
+        <fieldset className="md:mt-2 mt-0 h-full border-2 border-[#0d0d0d] px-5 md:py-2 py-4">
           <legend className={`${bg} text-xs`}>[{card}]</legend>
           <span className="text-[#000000]">scanning...</span>
           <div className="max-w-[80%]">
