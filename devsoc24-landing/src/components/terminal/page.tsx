@@ -70,31 +70,31 @@ const Terminal = () => {
     ],
     clear: [],
     banner: [
-      "<p class='block-text' style='font-size:9px;'>&nbsp;*******&nbsp;&nbsp;&nbsp;********&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;&nbsp;********&nbsp;&nbsp;&nbsp;*******&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;</p>",
-      "<p class='block-text' style='font-size:9px;'>/**////**&nbsp;/**/////&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**&nbsp;**//////&nbsp;&nbsp;&nbsp;**/////**&nbsp;&nbsp;&nbsp;**////**</p>",
-      "<p class='block-text' style='font-size:9px;'>/**&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//**&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;</p>",
-      "<p class='block-text' style='font-size:9px;'>/**&nbsp;&nbsp;&nbsp;&nbsp;/**/*******&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;/*********/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>",
-      "<p class='block-text' style='font-size:9px;'>/**&nbsp;&nbsp;&nbsp;&nbsp;/**/**////&nbsp;&nbsp;&nbsp;//**&nbsp;&nbsp;**&nbsp;&nbsp;////////**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>",
-      "<p class='block-text' style='font-size:9px;'>/**&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//****&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**//**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;**</p>",
-      "<p class='block-text' style='font-size:9px;'>/*******&nbsp;&nbsp;/********&nbsp;&nbsp;&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;********&nbsp;&nbsp;//*******&nbsp;&nbsp;&nbsp;//******&nbsp;</p>",
-      "<p class='block-text' style='font-size:9px;'>///////&nbsp;&nbsp;&nbsp;////////&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;////////&nbsp;&nbsp;&nbsp;&nbsp;///////&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//////&nbsp;&nbsp;</p>",
+      "<p class='block-text' style='font-size:8px;'>&nbsp;*******&nbsp;&nbsp;&nbsp;********&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;&nbsp;********&nbsp;&nbsp;&nbsp;*******&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;******&nbsp;</p>",
+      "<p class='block-text' style='font-size:8px;'>/**////**&nbsp;/**/////&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**&nbsp;**//////&nbsp;&nbsp;&nbsp;**/////**&nbsp;&nbsp;&nbsp;**////**</p>",
+      "<p class='block-text' style='font-size:8px;'>/**&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//**&nbsp;**&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;</p>",
+      "<p class='block-text' style='font-size:8px;'>/**&nbsp;&nbsp;&nbsp;&nbsp;/**/*******&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;/*********/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>",
+      "<p class='block-text' style='font-size:8px;'>/**&nbsp;&nbsp;&nbsp;&nbsp;/**/**////&nbsp;&nbsp;&nbsp;//**&nbsp;&nbsp;**&nbsp;&nbsp;////////**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>",
+      "<p class='block-text' style='font-size:8px;'>/**&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;/**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//****&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**//**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;**</p>",
+      "<p class='block-text' style='font-size:8px;'>/*******&nbsp;&nbsp;/********&nbsp;&nbsp;&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;********&nbsp;&nbsp;//*******&nbsp;&nbsp;&nbsp;//******&nbsp;</p>",
+      "<p class='block-text' style='font-size:8px;'>///////&nbsp;&nbsp;&nbsp;////////&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;////////&nbsp;&nbsp;&nbsp;&nbsp;///////&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//////&nbsp;&nbsp;</p>",
     ],
     rolls: [],
     initial: [
-      '<span class="">$User id set to 8y14e9f8</span>',
-      '<span class="">User validated and online...</span>',
-      '<span class="">[[init]]</span>',
-      '<span class="">Retriving command data...</span>',
-      '<span class="">[complete]</span>',
-      '<span class="">User ip found and indexed:</span>',
-      '<span class="">[found] == 1 online & accessible</span>',
-      '<span class="">[anomalies] == 3 detected</span>',
-      '<span class="">Approximated commands reloaded with </span>',
-      '<span class="">enhanced network analysis and indexed ip.</span>',
-      '<span class="">Ready for realtime monitoring</span>',
-      '<span class="">Loading welcome...</span>',
-      '<span class="">[complete]</span>',
-      '<span class="">to start with, type <b>help</b> to get all commands</span>',
+      '<span class="" style="margin-bottom:10px">$User id set to 8y14e9f8</span>',
+      '<span class="" style="margin-bottom:10px">User validated and online...</span>',
+      '<span class="" style="margin-bottom:10px">[[init]]</span>',
+      '<span class="" style="margin-bottom:10px">Retriving command data...</span>',
+      '<span class="" style="margin-bottom:10px">[complete]</span>',
+      '<span class="" style="margin-bottom:10px">User ip found and indexed:</span>',
+      '<span class="" style="margin-bottom:10px">[found] == 1 online & accessible</span>',
+      '<span class="" style="margin-bottom:10px">[anomalies] == 3 detected</span>',
+      '<span class="" style="margin-bottom:10px">Approximated commands reloaded with </span>',
+      '<span class="" style="margin-bottom:10px">enhanced network analysis and indexed ip.</span>',
+      '<span class="" style="margin-bottom:10px">Ready for realtime monitoring</span>',
+      '<span class="" style="margin-bottom:10px">Loading welcome...</span>',
+      '<span class="" style="margin-bottom:10px">[complete]</span>',
+      '<span class="" style="margin-bottom:10px">to start with, type <b>help</b> to get all commands</span>',
       // "<br>",
     ],
     aaditya: ['<span class="">Mostest frontend dev</span>'],
@@ -242,8 +242,6 @@ const Terminal = () => {
   }, [redProgress, greenProgress, blueProgress]);
   // var currentdate = new Date();
 
-  
-
   useEffect(() => {
     const helpOutput = commandOutputs.initial ?? [];
 
@@ -257,33 +255,31 @@ const Terminal = () => {
     }
   }, [commands]);
 
-  
-
   return (
-    <div className="relative h-[400px] overflow-auto bg-[#757575] font-diatype text-sm md:h-[100%] md:text-[13.3px] md:leading-[13.5px] w-screen sm:w-full">
+    <div className="relative h-[400px] w-screen overflow-auto bg-[#757575] font-diatype text-sm sm:w-full md:h-[100%] md:text-[13.3px] md:leading-[13.5px]">
       <button
         onClick={() => toggleTerminal()}
-        className="sm:hidden absolute right-[2px] z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#666565] hover:cursor-pointer hover:bg-[#606060]"
+        className="absolute right-[2px] z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#666565] hover:cursor-pointer hover:bg-[#606060] sm:hidden"
       >
         <IoMdClose className="text-lg font-bold " />
       </button>
-      <div id="terminal" className=" bg-[#757575] pt-0 md:pt-2">
-        <div className="flex h-[140px] flex-col items-start border-b-[1px] border-black md:h-[110px] md:text-[13px] md:leading-[13.5px] ">
-          <span className="pb-1 pl-2 pt-3 md:pt-1">
+      <div id="terminal" className=" w-[20vw] bg-[#757575] pt-0 md:pt-2">
+        <div className="flex gap-[5px] ml-[10px] h-fit flex-col items-start border-b-[1px] border-black pb-5 md:text-[13px] md:leading-[13.5px] ">
+          <div className="">
             [Network&nbsp;&nbsp;&nbsp;] DotMid://19.22.10.14
-          </span>
+          </div>
 
-          <span className="pb-1 pl-2 ">[ID&nbsp;&nbsp;&nbsp;] #ag58aycs</span>
-          <span className="mt-2 pb-1 pl-2">NEXT XRØ UPGRADE: 100%</span>
+          <div className="">[ID&nbsp;&nbsp;&nbsp;] #ag58aycs</div>
+          <div className="">NEXT XRØ UPGRADE: 100%</div>
 
-          <span className="pb-1 pl-2 ">
+          <div className="">
             [DATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] {date} {time}
-          </span>
-          {/* <span className="pb-1 pl-2 ">{formatDate(currentTime)}</span>
-          <span className="pb-1 pl-2 ">{formatTime(currentTime)}</span> */}
-          <span className="pb-1 pl-2 ">DotMid ALERT LEVEL: 0%</span>
+          </div>
+          {/* <span className=" ">{formatDate(currentTime)}</span>
+          <span className=" ">{formatTime(currentTime)}</span> */}
+          <div className="">DotMid ALERT LEVEL: 0%</div>
 
-          {/* <span className="pb-1 pl-2 ">{"[Date     ] " + currentdate.getDate() + "/"
+          {/* <span className=" ">{"[Date     ] " + currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
                 + currentdate.getFullYear() + " @ "  
                 + currentdate.getHours() + ":"  
@@ -309,20 +305,19 @@ const Terminal = () => {
             {cmdObj.displayOutput.map((line, lineIndex) => (
               <div
                 key={lineIndex}
-                className="command-output"
+                className="command-output mb-[5px]"
                 dangerouslySetInnerHTML={{ __html: line }}
-                
               ></div>
             ))}
           </div>
         ))}
 
-        <div id="command" className="flex">
+        <div id="command" className="flex gap-1">
           <div id="liner" className="ml-[10px] flex-1">
             <span className="font-diatype ">
               devsoc@2024.com:~${inputValue}
             </span>
-            <b className="cursor">█</b> 
+            <b className="cursor">█</b>
           </div>
         </div>
         <textarea
@@ -332,9 +327,9 @@ const Terminal = () => {
           value={inputValue}
           onChange={handleInputChange}
           onKeyDown={handleKeyPress}
-          onFocus={
-            (e) => {e.preventDefault()}
-          }
+          onFocus={(e) => {
+            e.preventDefault();
+          }}
         ></textarea>
       </div>
 
