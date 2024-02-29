@@ -64,6 +64,7 @@ export default function Home() {
 
   return (
     <>
+    <title>DEVSOC'24</title>
       {typeof window === "undefined" || !typingCompleted ? (
         <div className="pl-3">
           <TypewriterEffect
