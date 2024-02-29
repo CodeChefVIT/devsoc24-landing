@@ -191,7 +191,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col-reverse md:flex-row ">
               {showTerminal ? (
-                <div className="fixed bottom-0 z-50 bg-white md:relative md:min-h-[96vh] md:min-w-[20vw]">
+                <div className="fixed bottom-0 z-50 bg-white md:relative md:min-h-[96vh] md:w-[20vw]">
                   <Terminal />
                 </div>
               ) : (
@@ -218,7 +218,7 @@ export default function Home() {
                   <div className="flex flex-wrap">
                     {activeCard.map((card, index) => (
                       <div
-                        className="flex flex-row items-center justify-center border-r-2 border-[#000000] bg-[#d2d1d1]"
+                        className="flex flex-row py-2 items-center justify-center border-r-2 border-[#000000] bg-[#d2d1d1]"
                         key={index}
                       >
                         <div
@@ -250,7 +250,7 @@ export default function Home() {
                   {SelectedComponent ? (
                     <SelectedComponent />
                   ) : (
-                    <div className="flex flex-wrap items-stretch md:justify-start">
+                    <div className="flex flex-wrap items-stretch md:justify-start ">
                       {cardTypes.map((card, index) => (
                         <div
                           className="mx-4 flex items-center justify-center md:justify-start"
