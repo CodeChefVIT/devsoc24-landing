@@ -20,15 +20,13 @@ import devsoc2k24 from "@/assets/images/DEVSOC24.svg";
 import LearnMoreBtn from "./LearnMoreBtn";
 import TypewriterEffect from "./terminal/typewriter";
 import { useTransform, motion, useScroll } from "framer-motion";
-import timeline from "@/assets/images/timelinebox.svg"
+import timeline from "@/assets/images/timelinebox.svg";
 
 function Main() {
   const [scrollOpacity, setScrollOpacity] = useState(1);
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -2000]);
-  const [className, setClassName] = useState(
-    "overlaymain",
-  );
+  const [className, setClassName] = useState("overlaymain");
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
   const titles = [title, title2, title3, title4];
   const [showBoxes, setShowBoxes] = useState(false);
@@ -37,9 +35,7 @@ function Main() {
   useEffect(() => {
     const intervals = [2000, 400, 600, 400];
     const timer = setTimeout(() => {
-      setClassName(
-        "min-w-screen overlay_hero bg-span z-50",
-      );
+      setClassName("min-w-screen overlay_hero bg-span z-50");
     }, 400);
 
     const interval = setInterval(() => {
@@ -81,14 +77,16 @@ function Main() {
 
   const handleBoxHover = (index: SetStateAction<number>) => {
     setHoveredBoxIndex(index);
-    console.log("")
+    console.log("");
   };
 
   return (
     <>
       <motion.div style={{ y: -y }} className="">
         <div style={{ opacity: scrollOpacity }}>
-          <div className={`${className} relative min-h-screen font-disket overflow-hidden flex flex-col items-center justify-center`}>
+          <div
+            className={`${className} font-disket relative flex min-h-screen flex-col items-center justify-center overflow-hidden`}
+          >
             <Image src={glitch as StaticImageData} alt="glitch" fill />
             <Image
               src={logo as StaticImport}
@@ -98,7 +96,7 @@ function Main() {
             />
           </div>
 
-          <div className="absolute top-6 m-0 w-full p-0 z-50">
+          <div className="absolute top-6 z-50 m-0 w-full p-0">
             <div className="flex items-center justify-center">
               <div className="relative hidden w-[33%] items-center justify-evenly lg:flex">
                 <div>
@@ -185,12 +183,12 @@ function Main() {
                 }}
               >
                 <div className="flip">
-                <Image
-                  src={face as HTMLImageElement}
-                  alt="computer face"
-                  width={300}
-                  className="glitcheffect"
-                />
+                  <Image
+                    src={face as HTMLImageElement}
+                    alt="computer face"
+                    width={300}
+                    className="glitcheffect"
+                  />
                 </div>
               </motion.div>
             </div>
@@ -199,7 +197,7 @@ function Main() {
       </motion.div>
       <motion.div className="relative">
         <div className="flex h-[1000px] items-center justify-center overflow-hidden bg-[#020202]">
-          <div className="font-disket overflow-hidden bg-[#020202] min-w-screen min-w-screen">
+          <div className="font-disket min-w-screen min-w-screen overflow-hidden bg-[#020202]">
             <motion.span style={{ y: y }} className="relative block">
               <Image
                 className="absolute left-60 top-[1100px]"
@@ -219,7 +217,7 @@ function Main() {
               />
             </motion.span>
             <div className="h-[1080px] w-full flex-wrap overflow-x-auto">
-              <div className="mt-48 max-sm:mt-10 flex w-full justify-center">
+              <div className="mt-48 flex w-full justify-center max-sm:mt-10">
                 <Image
                   className="mx-20"
                   src={devsoc2k24 as HTMLImageElement}
@@ -229,35 +227,44 @@ function Main() {
               </div>
               <div className="flex w-full justify-center">
                 {" "}
-                <div className="mx-10 mt-10 w-[500px] text-center text-xs text-[#bbbbbb] md:text-[12px] lg:w-[600px] max-sm:text-justify">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.d
+                <div className="mx-10 mt-10 w-[500px] text-center text-xs text-[#bbbbbb] max-sm:text-justify md:text-[12px] lg:w-[600px]">
+                  DEVSOC is CodeChef-VIT&apos;s annual flagship event hoping to
+                  empower young minds by bringing tech-enthusiasts and thinkers
+                  under one roof. This year, the fourth iteration of the
+                  hackathon is being held with the goal of creating a
+                  sprint-like event, where participants create, hack, and
+                  innovate to solve problems while adhering to the spirit of
+                  creativity and teamwork. The event is spread over three days,
+                  with the hackathon lasting 48 hours. Devsoc is going to be
+                  held from 18th-20th of March 2024 at the Anna Auditorium,
+                  Vellore Institute of Technology, Vellore
                 </div>
               </div>
-              <div className="mt-14 max-sm:mt-3 flex w-full justify-center ">
+              <div className="mt-14 flex w-full justify-center max-sm:mt-3">
                 <LearnMoreBtn link={""} />
               </div>
-              <div className="container h-fit flex flex-wrap items-center justify-center gap-10 pt-32 max-sm:pt-3 text-center" id="timeline-section">
-                {showBoxes && Array.from({ length: 6 }).map((_, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.2 }}
-                    
-                    className={`flex flex-col justify-start glitcheffect `}
-                    onMouseEnter={() => handleBoxHover(index)}
-                    onMouseLeave={() => setHoveredBoxIndex(-1)}
-                  >
-                    <Image src={timeline as HTMLImageElement} alt="dsd" className="size-40 max-sm:size-28 glitcheffect"/>
-                  </motion.div>
-                ))}
+              <div
+                className="container flex h-fit flex-wrap items-center justify-center gap-10 pt-32 text-center max-sm:pt-3"
+                id="timeline-section"
+              >
+                {showBoxes &&
+                  Array.from({ length: 6 }).map((_, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.2 }}
+                      className={`glitcheffect flex flex-col justify-start `}
+                      onMouseEnter={() => handleBoxHover(index)}
+                      onMouseLeave={() => setHoveredBoxIndex(-1)}
+                    >
+                      <Image
+                        src={timeline as HTMLImageElement}
+                        alt="dsd"
+                        className="glitcheffect size-40 max-sm:size-28"
+                      />
+                    </motion.div>
+                  ))}
               </div>
             </div>
           </div>

@@ -95,7 +95,7 @@ export default function Timeline() {
                 </section>
               </div>
 
-              <p className="w-[90%] pl-6 pt-6 ">Coming soon</p>
+              <p className="w-[90%] pl-6 pt-6 ">March 18th - 20th (More details coming soon)</p>
               <button
                 className={`self-end h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition ease-in-out  hover:h-[26px] hover:w-[98px] hover:duration-75 md:mt-[4px] mr-2`}
                 onClick={openUserModal}
