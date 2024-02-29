@@ -156,6 +156,7 @@ export default function Home() {
     <>
       <Head>
         <title>DEVSOC&apos;24</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
       </Head>
       <main className="h-fit min-h-screen bg-[#232323] font-diatype md:text-[13.3px] md:leading-[13.5px]">
         {typeof window === "undefined" || !typingCompleted ? (
