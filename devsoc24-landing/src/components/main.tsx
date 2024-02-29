@@ -48,10 +48,10 @@ function Main() {
     };
   }, [currentTitleIndex, titles.length]);
 
-  useEffect(() => {
-    PowerGlitch.glitch(".glitcheffect");
-    PowerGlitch.glitch(".box");
-  }, []);
+  // useEffect(() => {
+  //   PowerGlitch.glitch(".glitcheffect");
+  //   PowerGlitch.glitch(".box");
+  // }, []);
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -75,6 +75,26 @@ function Main() {
     };
   }, []);
 
+  useEffect(() => {
+    PowerGlitch.glitch(".glitcheffect");
+    PowerGlitch.glitch(".box");
+
+    const handleScroll = () => {
+      const timelineSection = document.getElementById("timeline-section");
+      if (timelineSection) {
+        const timelinePosition = timelineSection.getBoundingClientRect().top;
+        if (timelinePosition < window.innerHeight) {
+          setShowBoxes(true);
+          window.removeEventListener("scroll", handleScroll);
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const handleBoxHover = (index: SetStateAction<number>) => {
     setHoveredBoxIndex(index);
     console.log("");
