@@ -1,8 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 import styles from "@/styles/LearnMoreBtn.module.css";
+import useGlitchStore from "@/store/store";
 
 const LearnMoreBtn = (props: { link: string }) => {
+  const { showGlitch, setGlitch } = useGlitchStore();
   return (
     <>
       <motion.a
