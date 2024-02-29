@@ -19,7 +19,7 @@ const Footer = () => {
   useEffect(()=>{
     const time1 = setTimeout(() => {
       setClassName("flex")
-    },550)
+    },250)
   })
 
   return (
