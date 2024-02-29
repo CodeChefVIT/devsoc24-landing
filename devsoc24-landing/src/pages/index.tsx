@@ -59,7 +59,6 @@ export default function Home() {
       return () => clearTimeout(glitchTimeout);
     }
   }, [showGlitch, showFooter, setShowFooter]);
-  
 
   const handleTypingComplete = () => {
     setTypingCompleted(true);
@@ -81,29 +80,31 @@ export default function Home() {
         </div>
       ) : (
         <SmoothScrolling>
-          {showGlitch && !showFooter && (
-            <Image
-              src={glitch}
-              alt="Glitch"
-              className="absolute -z-10 h-[125vh] w-screen min-[450px]:h-screen"
-            />
-          )}
-          {showGlitch && showFooter && <Footer />}
-          {!showGlitch && (
-            <>
-              <div className="fixed z-40 flex h-screen items-center justify-center">
-                <Image src={bgimage as HTMLImageElement} alt="bg" />
-              </div>
-              <div className="z-50">
-                <section id="Main">
-                  <Main />
+
+            {showGlitch && !showFooter && (
+              <Image
+                src={glitch}
+                alt="Glitch"
+                className="absolute -z-10 h-[125vh] w-screen min-[450px]:h-screen"
+              />
+            )}
+            {showGlitch && showFooter && <Footer />}
+            {!showGlitch && (
+              <>
+                <div className="fixed z-40 flex h-screen items-center justify-center">
+                  <Image src={bgimage as HTMLImageElement} alt="bg" />
+                </div>
+                <div className="z-50">
+                  <section id="Main">
+                    <Main />
+                  </section>
+                </div>
+                <section id="About">
+                  <About />
                 </section>
-              </div>
-              <section id="About">
-                <About />
-              </section>
-            </>
-          )}
+              </>
+            )}
+
         </SmoothScrolling>
       )}
     </>
