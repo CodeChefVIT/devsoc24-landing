@@ -53,7 +53,7 @@ export default function Home() {
     if (showGlitch) {
       const glitchTimeout = setTimeout(() => {
         setShowFooter(true);
-      }, 1000); // Display footer after 1 second if glitch is shown
+      }, 1500); // Display footer after 1 second if glitch is shown
       return () => clearTimeout(glitchTimeout);
     }
   }, [showGlitch]); // Run effect whenever showGlitch changes

@@ -14,14 +14,6 @@ const Footer = () => {
     // console.log(scroll);
   });
 
-  const [className,setClassName] = useState("hidden");
-
-  useEffect(()=>{
-    const time1 = setTimeout(() => {
-      setClassName("flex")
-    },250)
-  })
-
   return (
     <>
       <Image
@@ -31,7 +23,7 @@ const Footer = () => {
         width={0}
         className="absolute -z-10 h-[125vh] min-[450px]:h-screen w-screen"
       />
-      <div className={`${className} h-screen select-none items-center justify-center overflow-hidden`}>
+      <div className={`flex h-screen select-none items-center justify-center overflow-hidden`}>
         <div className="h-fit w-fit border-2 border-black bg-[#7F32DA] p-[1px]">
           <div className=" h-fit w-[320px] flex-row overflow-hidden border-2 border-black bg-[#7F32DA] min-[420px]:w-[400px]">
             <div className="relative flex justify-center border-b-2 border-black">
@@ -99,7 +91,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className={`${className} min-[450px]:absolute min-[450px]:bottom-0 flex w-full flex-col items-center justify-between text-[10px] md:flex-row md:text-[15px]`}>
+      <div className={`flex min-[450px]:absolute min-[450px]:bottom-0 w-full flex-col items-center justify-between text-[10px] md:flex-row md:text-[15px]`}>
         <div className="font-disket mx-10 my-5 flex flex-col gap-2 self-center text-white md:self-end">
           <div className="flex flex-row  justify-between gap-0 md:justify-start md:gap-10">
             <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">

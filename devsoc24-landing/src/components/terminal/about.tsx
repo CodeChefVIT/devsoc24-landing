@@ -68,18 +68,24 @@ export default function About() {
                   <span
                     className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575] hover:cursor-pointer"
                     onClick={() => handleMinimize()}
+                    onTouchEnd={() => handleMinimize()}
                   >
                     <MdMinimize />
                   </span>
                   <span
                     className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575] hover:cursor-pointer"
                     onClick={() => handleMaximize()}
+                    onTouchEnd={() => handleMaximize()}
                   >
                     <BiWindow />
                   </span>
                   <span
                     className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575] hover:cursor-pointer"
                     onClick={() => {
+                      setActiveCard(activeCard.filter((c) => c !== "About"));
+                      setSelectedComponent(null);
+                    }}
+                    onTouchEnd={() => {
                       setActiveCard(activeCard.filter((c) => c !== "About"));
                       setSelectedComponent(null);
                     }}
