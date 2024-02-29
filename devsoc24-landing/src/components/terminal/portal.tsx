@@ -95,7 +95,7 @@ export default function Portal() {
                 </section>
               </div>
               <div className="h-full flex flex-col">
-                <p className="w-[90%] pl-6 pt-6 ">Coming soon</p>
+                <p className="w-[90%] pl-6 pt-6 ">We&apos;re cooking!</p>
                 <button
                   className={`mr-2 h-6 w-24 self-end border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition  ease-in-out hover:h-[26px] hover:w-[98px] hover:duration-75 md:mt-[4px]`}
                   onClick={openUserModal}
