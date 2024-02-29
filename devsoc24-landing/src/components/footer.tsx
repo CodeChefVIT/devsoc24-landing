@@ -16,9 +16,11 @@ const Footer = () => {
 
   const [className,setClassName] = useState("hidden");
 
-  const timeout = setTimeout(() => {
-    setClassName("flex")
-  },750)
+  useEffect(()=>{
+    const time1 = setTimeout(() => {
+      setClassName("flex")
+    },550)
+  })
 
   return (
     <>
