@@ -29,6 +29,14 @@
 }
 
 @font-face {
+  font-family: nokia;
+  src: url("../../public/font/nokia.ttf");
+}
+.font-nokia {
+  font-family: nokia;
+}
+
+@font-face {
   font-family: courier;
   src: url("../../public/font/cour.ttf");
 }
