@@ -22,6 +22,15 @@ import TypewriterEffect from "./terminal/typewriter";
 import { useTransform, motion, useScroll } from "framer-motion";
 import timeline from "@/assets/images/timelinebox.svg";
 
+const timelineTexts = [
+  "Coming Soon!",
+  "Coming Soon!",
+  "Coming Soon!",
+  "Coming Soon!",
+  "Coming Soon!",
+  "Coming Soon!"
+];
+
 function Main() {
   const [scrollOpacity, setScrollOpacity] = useState(1);
   const { scrollYProgress } = useScroll();
@@ -263,10 +272,7 @@ function Main() {
               <div className="mt-14 flex w-full justify-center max-sm:mt-3">
                 <LearnMoreBtn link={""} />
               </div>
-              <div
-                className="container flex h-fit flex-wrap items-center justify-center gap-10 pt-32 text-center max-sm:pt-3"
-                id="timeline-section"
-              >
+              <div className="container flex h-fit flex-wrap items-center justify-center gap-10 max-sm:pt-32 max-xl:pt-16 max-md:pt-4 text-center max-[415px]:pt-4 xl:pt-32" id="timeline-section">
                 {showBoxes &&
                   Array.from({ length: 6 }).map((_, index) => (
                     <motion.div
@@ -274,7 +280,7 @@ function Main() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.2 }}
-                      className={`glitcheffect flex flex-col justify-start `}
+                      className={`glitcheffect flex flex-col justify-start relative`}
                       onMouseEnter={() => handleBoxHover(index)}
                       onMouseLeave={() => setHoveredBoxIndex(-1)}
                     >
@@ -283,9 +289,13 @@ function Main() {
                         alt="dsd"
                         className="glitcheffect size-40 max-sm:size-28"
                       />
+                      <div className="absolute top-0 left-0 w-full h-full  flex justify-center items-center text-[#bbbbbb]">
+                        <p className="pb-4">{timelineTexts[index]}</p>
+                      </div>
                     </motion.div>
                   ))}
               </div>
+
             </div>
           </div>
         </div>
