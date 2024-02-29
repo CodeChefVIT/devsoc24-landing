@@ -78,7 +78,7 @@ export default function FAQs() {
                 <p className="w-[90%] pl-4 pt-6 inline font-vcr">{items.question}</p>
               </div>
               <button
-                className={`absolute bottom-2 right-2 self-end border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition  ease-in-out hover:scale-[1.05] hover:duration-75 px-2`}
+                className={`font-vcr absolute bottom-2 right-2 self-end border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition ease-in-out hover:scale-[1.05] hover:duration-75 px-2`}
                 onClick={() => {
                   setModalQuestion(questions[index]?.question);
                   setModalContent(questions[index]?.answer);
