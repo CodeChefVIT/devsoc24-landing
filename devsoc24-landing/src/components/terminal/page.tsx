@@ -242,9 +242,7 @@ const Terminal = () => {
   }, [redProgress, greenProgress, blueProgress]);
   // var currentdate = new Date();
 
-  const scrollToBottom = () => {
-    endRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
+  
 
   useEffect(() => {
     const helpOutput = commandOutputs.initial ?? [];
@@ -259,9 +257,7 @@ const Terminal = () => {
     }
   }, [commands]);
 
-  useEffect(() => {
-    scrollToBottom();
-  }, [inputValue]);
+  
 
   return (
     <div className="relative h-[400px] overflow-auto bg-[#757575] font-diatype text-sm md:h-[100%] md:text-[13.3px] md:leading-[13.5px] w-screen sm:w-full">
@@ -315,7 +311,7 @@ const Terminal = () => {
                 key={lineIndex}
                 className="command-output"
                 dangerouslySetInnerHTML={{ __html: line }}
-                ref={endRef}
+                
               ></div>
             ))}
           </div>
@@ -331,7 +327,7 @@ const Terminal = () => {
         </div>
         <textarea
           id="texter"
-          autoFocus={false}
+          autoFocus={true}
           className="fixed bottom-0 left-0 h-full w-[20vw] text-wrap bg-transparent opacity-0"
           value={inputValue}
           onChange={handleInputChange}

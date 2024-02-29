@@ -42,3 +42,13 @@ export const useSelectedStore = create<selectedStore>((set) => ({
   selectedComponent: "DEVSOC 2024",
   setSelectedComponent: (selectedComponent: string | null) => set({ selectedComponent }),
 }));
+
+interface FooterStore {
+  showFooter: boolean;
+  setShowFooter: (showFooter: boolean) => void;
+}
+
+export const useFooterStore = create<FooterStore>((set) => ({
+  showFooter: false,
+  setShowFooter: (showFooter: boolean) => set({ showFooter }),
+}));
