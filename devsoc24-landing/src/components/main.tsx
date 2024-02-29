@@ -279,7 +279,7 @@ function Main() {
                       onMouseLeave={() => setHoveredBoxIndex(-1)}
                     >
                       <Image
-                        src={timeline}
+                        src={timeline as HTMLImageElement}
                         alt="dsd"
                         className="glitcheffect size-40 max-sm:size-28"
                       />
