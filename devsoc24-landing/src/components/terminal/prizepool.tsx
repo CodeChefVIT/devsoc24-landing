@@ -67,8 +67,8 @@ export default function Prizepool() {
                 <section className="flex">
                   <span
                     className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575] hover:cursor-pointer"
-                    onClick={() => handleMinimize()}
-                    onTouchEnd={() => handleMinimize()}
+                    onClick={() => setSelectedComponent(null)}
+                    onTouchEnd={() => setSelectedComponent(null)}
                   >
                     <MdMinimize />
                   </span>

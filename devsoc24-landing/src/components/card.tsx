@@ -45,7 +45,7 @@ const Card = ({ card, cardImage, onClick }: CardProps) => {
       }}
     >
       <div className="flex items-center justify-center border-2 border-[#0d0d0d] font-diatype mx-1 ">
-        <Image
+        <img
           src={`/${cardImage}`}
           alt="Description of the image"
           width={500}
