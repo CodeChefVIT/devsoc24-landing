@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect, useRef } from "react";
 import ProgressBar from "../progressbar";
 import {
@@ -36,15 +34,6 @@ const Terminal = () => {
   type CommandOutputs = Record<string, string[]>;
 
   const commandOutputs: CommandOutputs = {
-    ls: [
-      '<span class="command">about</span>',
-      '<span class="command">timeline</span>',
-      '<span class="command">tracks</span>',
-      '<span class="command">prizepool</span>',
-      '<span class="command">sponsors</span>',
-      '<span class="command">portal</span>',
-      '<span class="command">faq</span>',
-    ],
     about: [
       '<span class="command">DEVSOC is CodeChef-VIT’s annual flagship event where participants create, hack, and innovate to solve problems while adhering to the spirit of creativity and teamwork. Rub shoulders with some of the brightest minds in tech and boost your tech journey!</span>',
     ],
@@ -69,16 +58,17 @@ const Terminal = () => {
       '<span class="command">More details coming soon...</span>',
     ],
     help: [
-      '<span class="command">faqs (frequently asked questions)</span>',
-      '<span class="command">sponsors (404 notfound)</span>',
-      '<span class="command">prizepool (20,000)</span>',
-      '<span class="command">timeline (???)</span>',
-      '<span class="command">tracks (tracks)</span>',
-      '<span class="command">help (to view all commands)</span>',
-      '<span class="command">clear (to clear the terminal)</span>',
-      '<span class="command">rolls (if you want a role in codechef</span>',
-      '<span class="command">then use rolls command</span>',
-      '<span class="command">to contact us)</span>',
+      '<span class="command">about</span>',
+      '<span class="command">sponsors</span>',
+      '<span class="command">prizepool</span>',
+      '<span class="command">timeline</span>',
+      '<span class="command">tracks</span>',
+      '<span class="command">clear: clear the terminal</span>',
+      '<span class="command">roles: get role in codechefvit</span>',
+      '<span class="command">ls: see directories</span>',
+      '<span class="command">cd <directory>: to open the directory</span>',
+      '<span class="command">banner: to print DEVSOC</span>',
+
       "<br>",
     ],
     clear: [],
@@ -92,7 +82,6 @@ const Terminal = () => {
       "<p class='block-text' style='font-size:8px;'>/*******&nbsp;&nbsp;/********&nbsp;&nbsp;&nbsp;//**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;********&nbsp;&nbsp;//*******&nbsp;&nbsp;&nbsp;//******&nbsp;</p>",
       "<p class='block-text' style='font-size:8px;'>///////&nbsp;&nbsp;&nbsp;////////&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;////////&nbsp;&nbsp;&nbsp;&nbsp;///////&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//////&nbsp;&nbsp;</p>",
     ],
-    rolls: [],
     initial: [
       '<span class="" style="margin-bottom:10px">$User id set to 8y14e9f8</span>',
       '<span class="" style="margin-bottom:10px">User validated and online...</span>',
@@ -130,35 +119,130 @@ const Terminal = () => {
   const handleKeyPress = (event: React.KeyboardEvent) => {
     if (event.key === "Enter") {
       event.preventDefault(); // Prevent the default behavior of the Enter key
-
       const trimmedInput = inputValue.trim();
       switch (trimmedInput) {
         case "clear":
           setCommands([]);
           break;
         case "cd ..":
-          setSelectedComponent("DEVSOC 2024")
+          if (selectedComponent === "DEVSOC 2024") {
+            const output = ["in root directory"];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          } else {
+            setSelectedComponent("DEVSOC 2024");
+          }
           break;
         case "cd about":
-          setSelectedComponent("About")
+          if (selectedComponent != "DEVSOC 2024") {
+            const output = ["directory not found"];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          } else {
+            setSelectedComponent("About");
+          }
           break;
         case "cd timeline":
-          setSelectedComponent("Timeline")
+          if (selectedComponent != "DEVSOC 2024") {
+            const output = ["directory not found"];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          } else {
+            setSelectedComponent("Timeline");
+          }
           break;
         case "cd tracks":
-          setSelectedComponent("Tracks")
+          if (selectedComponent != "DEVSOC 2024") {
+            const output = ["directory not found"];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          } else {
+            setSelectedComponent("Tracks");
+          }
           break;
         case "cd prizepool":
-          setSelectedComponent("Prizepool")
+          if (selectedComponent != "DEVSOC 2024") {
+            const output = ["directory not found"];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          } else {
+            setSelectedComponent("Prizepool");
+          }
           break;
         case "cd sponsors":
-          setSelectedComponent("Sponsors")
+          if (selectedComponent != "DEVSOC 2024") {
+            const output = ["directory not found"];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          } else {
+            setSelectedComponent("Sponsors");
+          }
           break;
         case "cd portal":
-          setSelectedComponent("Portal")
+          if (selectedComponent != "DEVSOC 2024") {
+            const output = ["directory not found"];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          } else {
+            setSelectedComponent("Portal");
+          }
           break;
         case "cd faq":
-          setSelectedComponent("FAQs")
+          if (selectedComponent != "DEVSOC 2024") {
+            const output = ["directory not found"];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          } else {
+            setSelectedComponent("FAQs");
+          }
+        case "ls":
+          if (selectedComponent != "DEVSOC 2024") {
+            const output = [""];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          } else {
+            const output = [
+              '<span class="command">about</span>',
+              '<span class="command">timeline</span>',
+              '<span class="command">tracks</span>',
+              '<span class="command">prizepool</span>',
+              '<span class="command">sponsors</span>',
+              '<span class="command">portal</span>',
+              '<span class="command">faq</span>',
+            ];
+            const displayOutput = output.map(() => "");
+            setCommands((prevCommands) => [
+              ...prevCommands,
+              { command: trimmedInput, output, displayOutput },
+            ]);
+          }
           break;
         case "roles":
           setTimeout(() => {
@@ -179,21 +263,6 @@ const Terminal = () => {
           ]);
           break;
       }
-      // if (trimmedInput === "clear") {
-
-      // } else if (trimmedInput === "rolls") {
-
-      // } else {
-      //   const output = commandOutputs[trimmedInput] ?? [
-      //     `Command not found: ${trimmedInput}`,
-      //   ];
-      //   const displayOutput = output.map(() => "");
-      //   setCommands((prevCommands) => [
-      //     ...prevCommands,
-      //     { command: trimmedInput, output, displayOutput },
-      //   ]);
-      // }
-
       setInputValue("");
     }
   };
