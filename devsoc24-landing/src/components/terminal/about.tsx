@@ -59,7 +59,7 @@ export default function About() {
         ) : (
           <Draggable handle=".drag-handle" bounds=".boundarybox">
             <div
-              className={`absolute z-50 flex min-w-[300px] flex-grow flex-col ${maximized ? "h-[100vh] sm:h-[90vh]" : "h-fit w-[30vw]"} border-2 bg-[#b2b2b2] pb-10`}
+              className={`absolute z-50 flex min-w-[300px] flex-grow flex-col ${maximized ? "h-[80vh] sm:h-[90vh]" : "h-fit w-[30vw]"} border-2 bg-[#b2b2b2] pb-10`}
             >
               <div className="drag-handle flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
                 <span className="flex justify-center items-center pl-2 font-nokia text-[10px] text-white">
