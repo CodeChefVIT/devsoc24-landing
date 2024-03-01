@@ -397,7 +397,7 @@ const Terminal_old = () => {
       </button>
       <div
         id="terminal"
-        className=" w-[20vw] overflow-y-auto bg-[#757575] pt-0 md:pt-2"
+        className=" w-[20]5vw] overflow-y-auto bg-[#757575] pt-0 md:pt-2"
       >
         <div className="ml-[10px] flex h-fit flex-col items-start gap-[5px] border-b-[1px] border-black pb-5 md:text-[13px] md:leading-[13.5px] ">
           <div className="">

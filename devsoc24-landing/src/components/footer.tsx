@@ -79,57 +79,60 @@ const Footer = () => {
                   </p>
                 </div>
 
-                <p className="font-vcr my-2 whitespace-pre-wrap text-sm font-light">
-                  Trying to Learn More? We can help you. Top Secret Information
-                  is right at your finger tips. To take the leap is what you
-                  choose.
-                </p>
-                <button
-                  onClick={() => {
-                    void router.push("/terminal");
-                  }}
-                  className="font-vcr z-[100] my-2 flex h-[40px] w-[100px] items-center justify-center border-2 border-black bg-white text-black hover:cursor-pointer hover:bg-black hover:text-white sm:self-start"
-                >
-                  Enter
-                </button>
-              </div>
+              <p className="font-vcr my-2 whitespace-pre-wrap text-sm font-light">
+                Trying to Learn More? We can help you. Top Secret Information is
+                right at your finger tips. To take the leap is what you choose.
+              </p>
+              <button
+                onClick={() => {
+                  void router.push("/terminal");
+                }}
+                className="font-vcr z-[100] my-2 flex h-[40px] w-[100px] items-center justify-center border-2 border-black bg-white text-black hover:cursor-pointer hover:bg-black hover:text-white sm:self-start"
+              >
+                Enter
+              </button>
             </div>
           </div>
         </div>
-        <div
-          className={`flex w-full flex-col items-center justify-between text-[10px] min-[450px]:absolute min-[450px]:bottom-0 md:flex-row md:text-[15px]`}
-        >
-          <div className="font-disket mx-10 my-5 flex flex-col gap-2 self-center text-white md:self-end">
-            <div className="flex flex-row  justify-between gap-0 md:justify-start md:gap-10">
-              <Link href="https://www.instagram.com/codechefvit?igsh=Z3ZzeGQwcndmNXUy">
-                <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
-                  instagram
-                </div>
-              </Link>
-              <Link href="https://www.linkedin.com/company/codechef-vit-chapter/">
-                <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
-                  linkedin
-                </div>
-              </Link>
-            </div>
-            <div className="flex flex-col">
-              <div className="bg-black px-1 uppercase">
-                © Copyright 2024 codechef-vit
-              </div>
-              <div className="bg-black px-1 uppercase">
-                All rights reserved.
-              </div>
-            </div>
-          </div>
-          <div className="font-disket mx-10 my-5 flex flex-row gap-2 text-center text-white sm:self-end">
+      </div>
+      <div
+        className={`flex w-full flex-col items-center justify-between text-[10px] min-[450px]:absolute min-[450px]:bottom-0 md:flex-row md:text-[15px]`}
+      >
+        <div className="font-disket mx-10 my-5 flex flex-col gap-2 self-center text-white md:self-end">
+          <div className="flex flex-row  justify-between gap-0 md:justify-start md:gap-10">
             <a
-              href="https://www.youtube.com/watch?v=s-NfumQCiVE"
+              href="https://www.instagram.com/codechefvit?igsh=Z3ZzeGQwcndmNXUy"
               target="_blank"
               rel="noreferrer noopener"
               className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black"
             >
-              privacy policy
+              instagram
             </a>
+            <a
+              href="https://www.linkedin.com/company/codechef-vit-chapter/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black"
+            >
+              linkedin
+            </a>
+          </div>
+          <div className="flex flex-col">
+            <div className="bg-black px-1 uppercase">
+              © Copyright 2024 codechef-vit
+            </div>
+            <div className="bg-black px-1 uppercase">All rights reserved.</div>
+          </div>
+        </div>
+        <div className="font-disket mx-10 my-5 flex flex-row gap-2 text-center text-white sm:self-end">
+          <a
+            href="https://www.youtube.com/watch?v=s-NfumQCiVE"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black"
+          >
+            privacy policy
+          </a>
 
             <a
               href="https://haveibeenpwned.com/"
