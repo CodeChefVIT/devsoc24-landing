@@ -21,10 +21,9 @@ const About = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       const atBottom =
-        window.innerHeight + window.scrollY >= (document.body.offsetHeight - 75);
+        window.innerHeight + window.scrollY >= (document.body.offsetHeight - 2);
       setIsBottom(atBottom);
       if (
-        window.innerWidth >= 450 &&
         (atBottom || currentScrollY < prevScrollY.current)
       ) {
         setShowOriginal(!atBottom);
@@ -67,7 +66,7 @@ const About = () => {
           limits, merging AI and the metaverse to confront real-world chaos
           head-on. With diverse minds colliding, we&apos;re not just coding;
           we&apos;re crafting solutions that scream revolution. Join the fray as
-          we smash your mom and redefine what&apos;s possible.
+          we smash boundaries and redefine what&apos;s possible.
           <motion.span style={{ y: y }} className="relative block">
             <Image
               src={picture3}
@@ -93,9 +92,6 @@ const About = () => {
           <Footer />
         </div>
       )} */}
-      <div className="contents min-[450px]:hidden">
-        <Footer />
-      </div>
     </>
   );
 };

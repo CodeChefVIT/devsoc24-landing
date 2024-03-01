@@ -24,7 +24,7 @@ const Footer = () => {
         width={0}
         className="absolute -z-10 h-[100vh] w-screen min-[450px]:h-screen"
       />
-      <div className="flex flex-col items-center justify-center my-auto h-screen">
+      <div className="flex flex-col items-center justify-center my-auto h-[90vh] sm:h-screen">
         <div
           className={`flex select-none items-center justify-center overflow-hidden`}
         >
