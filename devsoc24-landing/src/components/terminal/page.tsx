@@ -283,7 +283,7 @@ const Terminal = () => {
   }, []);
 
   return (
-    <div className="max-h-[96vh] min-h-[96vh] min-w-[95vw] overflow-y-auto overflow-x-hidden bg-[#757575] px-2 md:min-w-[20vw]">
+    <div className="max-h-[96vh] min-h-[96vh] xl:min-h-[104vh] 2xl:max-h-[94vh] 2xl:min-h-[94vh] min-w-[95vw] overflow-y-auto overflow-x-hidden bg-[#757575] px-2 md:min-w-[20vw]">
       <div className="mt-2 flex flex-col gap-2">
         <div>[Network&nbsp;&nbsp;&nbsp;] DotMid://127.0.0.1</div>
         <div>[ID&nbsp;&nbsp;&nbsp;] #ag58aycs</div>
