@@ -118,20 +118,37 @@ const Footer = () => {
           </div>
         </div>
         <div className="font-disket mx-10 my-5 flex flex-row gap-2 text-center text-white sm:self-end">
-          <Link href="https://www.youtube.com/watch?v=s-NfumQCiVE">
-            <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
+          <Link href="https://www.youtube.com/watch?v=s-NfumQCiVE" passHref>
+            <a
+              target="_blank"
+              rel="noreferrer noopener"
+              className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black"
+            >
               privacy policy
-            </div>
+            </a>
           </Link>
-          <Link href="https://haveibeenpwned.com/">
-            <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
+
+          <Link href="https://haveibeenpwned.com/" passHref>
+            <a
+              target="_blank"
+              rel="noreferrer noopener"
+              className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black"
+            >
               cookie policy
-            </div>
+            </a>
           </Link>
-          <Link href="https://medium.com/humanid/why-not-reading-terms-of-service-is-okay-b47cc271c4f4">
-            <div className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black">
+
+          <Link
+            href="https://medium.com/humanid/why-not-reading-terms-of-service-is-okay-b47cc271c4f4"
+            passHref
+          >
+            <a
+              target="_blank"
+              rel="noreferrer noopener"
+              className="bg-black px-1 uppercase hover:cursor-pointer hover:bg-[#CFCFCF] hover:text-black"
+            >
               terms of service
-            </div>
+            </a>
           </Link>
         </div>
       </div>

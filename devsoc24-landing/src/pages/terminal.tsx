@@ -151,7 +151,7 @@ export default function Home() {
   function handleClose() {
     if (selectedComponent) {
       setActiveCard(activeCard.filter((c) => c !== selectedComponent));
-      setSelectedComponent(null);
+      setSelectedComponent("DEVSOC 2024");
     } else {
       void router.push("/");
     }
@@ -251,7 +251,7 @@ export default function Home() {
                               setActiveCard(
                                 activeCard.filter((c) => c !== card),
                               );
-                              setSelectedComponent(null);
+                              setSelectedComponent("DEVSOC 2024");
                             }}
                           >
                             {card !== "DEVSOC 2024" && (
