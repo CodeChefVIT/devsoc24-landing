@@ -160,7 +160,12 @@ const Terminal = () => {
       let commandOutput = ""; // Variable to hold the output for the typed command
       switch (inputValue) {
         case "initial":
-          commandOutput = initial.join("<br>") + "<br>";
+          if (window.innerWidth >= 768) {
+            console.log("hello");
+            commandOutput = initial.join("<br>") + "<br>";
+          } else {
+            commandOutput = "";
+          }
           break;
         case "help":
           commandOutput = help.join("<br>");
@@ -283,47 +288,49 @@ const Terminal = () => {
   }, []);
 
   return (
-    <div className="max-h-[96vh] min-h-[96vh] min-w-[95vw] overflow-y-auto overflow-x-hidden bg-[#757575] px-2 md:min-w-[20vw]">
-      <div className="mt-2 flex flex-col gap-2">
-        <div>[Network&nbsp;&nbsp;&nbsp;] DotMid://127.0.0.1</div>
-        <div>[ID&nbsp;&nbsp;&nbsp;] #ag58aycs</div>
-        <div>NEXT XRØ UPGRADE: 100%</div>
-        <div>
-          [DATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ${date} ${time}
+    <div className="h-[92%] min-w-[95vw] overflow-y-auto overflow-x-hidden bg-[#757575] px-2 md:min-w-[20vw] xl:min-h-[104vh] 2xl:max-h-[94vh] 2xl:min-h-[94vh]">
+      
+        <div className="mt-2 flex flex-col gap-2">
+          <div>[Network&nbsp;&nbsp;&nbsp;] DotMid://127.0.0.1</div>
+          <div>[ID&nbsp;&nbsp;&nbsp;] #ag58aycs</div>
+          <div>NEXT XRØ UPGRADE: 100%</div>
+          <div>
+            [DATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;] ${date} ${time}
+          </div>
+          <div>DotMid ALERT LEVEL: 0%</div>
+          <div className="w-full border-b-[2.5px] border-dashed border-black" />
         </div>
-        <div>DotMid ALERT LEVEL: 0%</div>
-        <div className="w-full border-b-[2.5px] border-dashed border-black" />
-      </div>
-      <div className="my-4">
-        <p className="mb-2">Loading Brain</p>
-        <ProgressBar
-          redProgress={redProgress}
-          greenProgress={greenProgress}
-          blueProgress={blueProgress}
-        />
-      </div>
-      <div className="mb-4 w-full border-b-[2.5px] border-dashed border-black" />
-      <div
-        id="contentBox"
-        className={`w-full`}
-        dangerouslySetInnerHTML={{ __html: outputValue }}
-      ></div>
-      <div className="flex items-center gap-1 ">
-        <p className="flex-shrink-0">
-          devsoc@2024
-          {selectedComponent === "DEVSOC 2024"
-            ? ""
-            : "/" + selectedComponent?.toString().toLowerCase()}{" "}
-          ~ %
-        </p>
-        <input
-          type="text"
-          id="userInput"
-          className="custom-cursor h-5 flex-grow border-0 border-transparent bg-transparent outline-none"
-          onKeyDown={handleEnter}
-          autoComplete="off"
-        />
-      </div>
+        <div className="my-4">
+          <p className="mb-2">Loading Brain</p>
+          <ProgressBar
+            redProgress={redProgress}
+            greenProgress={greenProgress}
+            blueProgress={blueProgress}
+          />
+        </div>
+        <div className="mb-4 w-full border-b-[2.5px] border-dashed border-black" />
+        <div
+          id="contentBox"
+          className={`w-full`}
+          dangerouslySetInnerHTML={{ __html: outputValue }}
+        ></div>
+        <div className="flex items-center gap-1 overflow-y-auto">
+          <p className="flex-shrink-0">
+            devsoc@2024
+            {selectedComponent === "DEVSOC 2024"
+              ? ""
+              : "/" + selectedComponent?.toString().toLowerCase()}{" "}
+            ~ %
+          </p>
+          <input
+            type="text"
+            id="userInput"
+            className="custom-cursor h-5 flex-grow border-0 border-transparent bg-transparent outline-none"
+            onKeyDown={handleEnter}
+            autoComplete="off"
+          />
+        </div>
+      
     </div>
   );
 };
