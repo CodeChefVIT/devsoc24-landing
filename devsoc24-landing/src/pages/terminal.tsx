@@ -22,6 +22,7 @@ import useGlitchStore, {
   useTerminalStore,
   useSelectedStore,
   useType2Store,
+  useMobileTerminalStore,
 } from "@/store/store";
 import { IoTerminal } from "react-icons/io5";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
@@ -62,7 +63,7 @@ export default function Home() {
   const { showTerminal, setShowTerminal } = useTerminalStore();
   const { selectedComponent, setSelectedComponent } = useSelectedStore();
   const { showGlitch, setGlitch } = useGlitchStore();
-  const [size, setSize] = useState(false);
+  const { size, setSize } = useMobileTerminalStore();
 
   const toggleTerminal = () => {
     setShowTerminal(!showTerminal);
@@ -212,7 +213,7 @@ export default function Home() {
               <div className="flex flex-col-reverse lg:flex-row ">
                 {showTerminal ? (
                   <div
-                    className={`fixed bottom-0 z-50 w-full lg:relative lg:min-h-[96vh] lg:h-full lg:w-[20vw]`}
+                    className={`fixed bottom-0 z-50 w-full lg:relative lg:h-full lg:min-h-[96vh] lg:w-[20vw]`}
                   >
                     <div className="flex min-h-[4.2vh] min-w-full items-center justify-between gap-2 overflow-y-auto bg-[#4d4d4d] pl-2">
                       <p className="overflow-x-hidden text-sm">
@@ -238,8 +239,7 @@ export default function Home() {
                       </div>
                     </div>
 
-                      <Terminal size={size} />
-
+                    <Terminal size={size} />
                   </div>
                 ) : (
                   <></>

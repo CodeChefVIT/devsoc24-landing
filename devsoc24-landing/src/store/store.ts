@@ -37,10 +37,10 @@ interface selectedStore {
   setSelectedComponent: (setClose: string | null) => void;
 }
 
-
 export const useSelectedStore = create<selectedStore>((set) => ({
   selectedComponent: "DEVSOC 2024",
-  setSelectedComponent: (selectedComponent: string | null) => set({ selectedComponent }),
+  setSelectedComponent: (selectedComponent: string | null) =>
+    set({ selectedComponent }),
 }));
 
 interface FooterStore {
@@ -51,6 +51,15 @@ interface FooterStore {
 export const useFooterStore = create<FooterStore>((set) => ({
   showFooter: false,
   setShowFooter: (showFooter: boolean) => set({ showFooter }),
+}));
+interface mobileTerminalSizeStore {
+  size: boolean;
+  setSize: (showFooter: boolean) => void;
+}
+
+export const useMobileTerminalStore = create<mobileTerminalSizeStore>((set) => ({
+  size: false,
+  setSize: (size: boolean) => set({ size }),
 }));
 
 interface TypeStore {
