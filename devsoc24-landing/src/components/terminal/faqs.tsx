@@ -61,17 +61,17 @@ export default function FAQs() {
                 <span className="flex items-center pl-4 text-[10px] text-white font-nokia">
                   <GiMoneyStack className="pr-2 text-2xl" /> DEVSOC&apos;24
                 </span>
-                <section className="flex">
-                  <span className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575]">
-                    <MdMinimize />
-                  </span>
-                  <span className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575]">
-                    <BiWindow />
-                  </span>
-                  <span className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575]">
-                    <IoMdClose />
-                  </span>
-                </section>
+                  {/* <section className="flex">
+                    <span className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575]">
+                      <MdMinimize />
+                    </span>
+                    <span className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575]">
+                      <BiWindow />
+                    </span>
+                    <span className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#757575]">
+                      <IoMdClose />
+                    </span>
+                  </section> */}
               </div>
               <div className="flex">
                 <Image src={book as HTMLImageElement} alt="book" className="w-14 p-2 pr-0" />

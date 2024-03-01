@@ -24,6 +24,7 @@ import useGlitchStore, {
   useType2Store,
 } from "@/store/store";
 import { IoTerminal } from "react-icons/io5";
+import { FaArrowDown, FaArrowUp } from "react-icons/fa6";
 
 const help = [
   '<span class="">User validated and online...</span>',
@@ -61,9 +62,13 @@ export default function Home() {
   const { showTerminal, setShowTerminal } = useTerminalStore();
   const { selectedComponent, setSelectedComponent } = useSelectedStore();
   const { showGlitch, setGlitch } = useGlitchStore();
+  const [size, setSize] = useState(false);
 
   const toggleTerminal = () => {
     setShowTerminal(!showTerminal);
+  };
+  const toggleSize = () => {
+    setSize(!size);
   };
   const cardTypes = [
     "About",
@@ -204,9 +209,32 @@ export default function Home() {
                   <IoMdClose className="text-lg font-bold" />
                 </button>
               </div>
-              <div className="flex flex-col-reverse md:flex-row">
+              <div className="flex flex-col-reverse lg:flex-row ">
                 {showTerminal ? (
-                  <div className="bottom-0 z-50 min-h-[96vh] w-[20vw] md:relative">
+                  <div
+                    className={`fixed bottom-0 z-50 ${size ? "h-[35vh]" : "h-[20vh]"} lg:relative lg:min-h-[96vh] w-full lg:w-[20vw]`}
+                  >
+                    <div className="flex min-h-[4.2vh] min-w-full items-center justify-between gap-2 bg-[#4d4d4d] pl-2 overflow-y-auto">
+                      <p className="text-sm">devsoc2024@terminal</p>
+                      <div className="flex flex-row">
+                        <button
+                          className=" right-0 z-50 mx-1 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060]"
+                          onClick={() => toggleTerminal()}
+                        >
+                          <IoMdClose className="text-lg font-bold" />
+                        </button>
+                        <button
+                          className="right-0 z-50 mx-1 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060]"
+                          onClick={() => toggleSize()}
+                        >
+                          {!size ? (
+                            <FaArrowUp className="text-sm font-bold" />
+                          ) : (
+                            <FaArrowDown className="text-sm font-bold" />
+                          )}
+                        </button>
+                      </div>
+                    </div>
                     <Terminal />
                   </div>
                 ) : (
