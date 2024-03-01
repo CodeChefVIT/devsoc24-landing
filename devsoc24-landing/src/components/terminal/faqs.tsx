@@ -54,7 +54,7 @@ export default function FAQs() {
         {questions.map((items, index) => (
           <Draggable handle=".drag-handle" bounds=".boundarybox" key={index}>
             <div
-              className={` flex items-stretch flex-col max-h-[500px] h-fit pb-10 mb-10 border-2 bg-[#b2b2b2] md:w-[30vw] w-[90vw]`}
+              className={` flex items-stretch flex-col max-h-[500px] h-fit pb-10 mb-10 border-2 bg-[#b2b2b2] md:w-[30vw] w-[80vw]`}
               id={`${index}`}
             >
               <div className="drag-handle flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">

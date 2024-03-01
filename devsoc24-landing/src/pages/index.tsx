@@ -92,7 +92,7 @@ export default function Home() {
             {!showGlitch && (
               <>
                 <div className="fixed z-40 flex h-screen items-center justify-center">
-                  <Image src={bgimage as HTMLImageElement} alt="bg" />
+                  <Image src={bgimage as HTMLImageElement} alt="bg" className="w-screen" />
                 </div>
                 <div className="z-50">
                   <section id="Main">
