@@ -194,7 +194,7 @@ export default function Home() {
                 {!showTerminal ? (
                   <button
                     onClick={() => toggleTerminal()}
-                    className="absolute left-0 z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060] sm:hidden"
+                    className="absolute left-0 z-50 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060]"
                   >
                     <IoTerminal className="text-lg font-bold" />
                   </button>
@@ -212,19 +212,21 @@ export default function Home() {
               <div className="flex flex-col-reverse lg:flex-row ">
                 {showTerminal ? (
                   <div
-                    className={`fixed bottom-0 z-50 ${size ? "h-[55vh]" : "h-[20vh]"} lg:relative lg:min-h-[96vh] w-full lg:w-[20vw]`}
+                    className={`fixed bottom-0 z-50 w-full lg:relative lg:min-h-[96vh] lg:h-full lg:w-[20vw]`}
                   >
-                    <div className="flex min-h-[4.2vh] min-w-full items-center justify-between gap-2 bg-[#4d4d4d] pl-2 overflow-y-auto">
-                      <p className="text-sm overflow-x-hidden">devsoc2024@terminal</p>
+                    <div className="flex min-h-[4.2vh] min-w-full items-center justify-between gap-2 overflow-y-auto bg-[#4d4d4d] pl-2">
+                      <p className="overflow-x-hidden text-sm">
+                        devsoc2024@terminal
+                      </p>
                       <div className="flex flex-row">
                         <button
-                          className=" right-0 z-50 mx-1 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060] md:hidden"
+                          className=" right-0 z-50 mx-[1px] my-[2px] flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060]"
                           onClick={() => toggleTerminal()}
                         >
                           <IoMdClose className="text-lg font-bold" />
                         </button>
                         <button
-                          className="right-0 z-50 mx-0.5 flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060]"
+                          className="right-0 z-50 mx-[1px] my-[2px] flex h-[4vh] w-[4vh] items-center justify-center bg-[#757575] hover:cursor-pointer hover:bg-[#606060] md:hidden"
                           onClick={() => toggleSize()}
                         >
                           {!size ? (
@@ -235,7 +237,9 @@ export default function Home() {
                         </button>
                       </div>
                     </div>
-                    <Terminal />
+
+                      <Terminal size={size} />
+
                   </div>
                 ) : (
                   <></>
@@ -265,7 +269,7 @@ export default function Home() {
                           key={index}
                         >
                           <div
-                            className={`flex h-full w-[120px] cursor-default items-center justify-center border-[#000000] text-xs font-semibold`}
+                            className={`flex h-[2.45vh] w-[120px] cursor-default items-center justify-center border-[#000000] text-xs font-semibold`}
                             onClick={() => {
                               setSelectedComponent(card);
                               card === "DEVSOC 2024" &&
