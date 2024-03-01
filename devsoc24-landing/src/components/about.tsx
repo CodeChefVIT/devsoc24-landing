@@ -21,10 +21,9 @@ const About = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       const atBottom =
-        window.innerHeight + window.scrollY >= (document.body.offsetHeight - 75);
+        window.innerHeight + window.scrollY >= (document.body.offsetHeight - 2);
       setIsBottom(atBottom);
       if (
-        window.innerWidth >= 450 &&
         (atBottom || currentScrollY < prevScrollY.current)
       ) {
         setShowOriginal(!atBottom);
@@ -93,9 +92,6 @@ const About = () => {
           <Footer />
         </div>
       )} */}
-      <div className="contents min-[450px]:hidden">
-        <Footer />
-      </div>
     </>
   );
 };
