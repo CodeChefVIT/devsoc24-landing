@@ -69,8 +69,8 @@ export default function About() {
                 <section className="flex">
                   <span
                     className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#b0b0b0] hover:bg-[#757575] hover:cursor-pointer"
-                    onClick={() => setSelectedComponent(null)}
-                    onTouchEnd={() => setSelectedComponent(null)}
+                    onClick={() => setSelectedComponent("DEVSOC 2024")}
+                    onTouchEnd={() => setSelectedComponent("DEVSOC 2024")}
                   >
                     <MdMinimize />
                   </span>
@@ -85,11 +85,11 @@ export default function About() {
                     className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#b0b0b0] hover:bg-[#757575] hover:cursor-pointer"
                     onClick={() => {
                       setActiveCard(activeCard.filter((c) => c !== "About"));
-                      setSelectedComponent(null);
+                      setSelectedComponent("DEVSOC 2024");
                     }}
                     onTouchEnd={() => {
                       setActiveCard(activeCard.filter((c) => c !== "About"));
-                      setSelectedComponent(null);
+                      setSelectedComponent("DEVSOC 2024");
                     }}
                   >
                     <IoMdClose />

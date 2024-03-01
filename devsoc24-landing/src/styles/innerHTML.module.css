@@ -1,0 +1,5 @@
+#hello {
+  border-top: 2.5px dotted #000000; /* Define the dotted line */
+  width: 100%; /* Take the full width */
+  margin: 20px 0; /* Adjust margin as needed */
+}
