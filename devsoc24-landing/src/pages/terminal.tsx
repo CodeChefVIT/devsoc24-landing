@@ -212,7 +212,7 @@ export default function Home() {
               <div className="flex flex-col-reverse lg:flex-row ">
                 {showTerminal ? (
                   <div
-                    className={`fixed bottom-0 z-50 ${size ? "h-[45vh]" : "h-[20vh]"} lg:relative lg:min-h-[96vh] w-full lg:w-[20vw]`}
+                    className={`fixed bottom-0 z-50 ${size ? "h-[55vh]" : "h-[20vh]"} lg:relative lg:min-h-[96vh] w-full lg:w-[20vw]`}
                   >
                     <div className="flex min-h-[4.2vh] min-w-full items-center justify-between gap-2 bg-[#4d4d4d] pl-2 overflow-y-auto">
                       <p className="text-sm overflow-x-hidden">devsoc2024@terminal</p>
