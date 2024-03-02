@@ -7,7 +7,7 @@ import { BiWindow } from "react-icons/bi";
 import Draggable from "react-draggable";
 import { useCloseStore, useSelectedStore } from "@/store/store";
 
-export default function Timeline() {
+export default function Prizepool() {
   const [minimized, setMinimized] = useState(false);
   const [maximized, setMaximized] = useState(false);
   const { activeCard, setActiveCard } = useCloseStore();
@@ -23,7 +23,7 @@ export default function Timeline() {
 
   return (
     <div
-      className={`relative flex h-full w-full ${maximized ? "" : "pl-[30px] pt-[100px]  md:pl-[60px]"}`}
+      className={`relative flex h-full w-full ${maximized ? "" : "pl-[30px] pt-[100px]  md:pl-[60px]"} bgImg`}
     >
       <div>
         {minimized ? (
@@ -51,7 +51,7 @@ export default function Timeline() {
                     alt="Notepad"
                     className="inline-block w-6 pr-3"
                   />
-                  Timeline
+                  Prizepool
                 </span>
                 <section className="flex">
                   <span
@@ -71,11 +71,11 @@ export default function Timeline() {
                   <span
                     className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#b0b0b0] hover:cursor-pointer hover:bg-[#757575]"
                     onClick={() => {
-                      setActiveCard(activeCard.filter((c) => c !== "Timeline"));
+                      setActiveCard(activeCard.filter((c) => c !== "Prizepool"));
                       setSelectedComponent("DEVSOC 2024");
                     }}
                     onTouchEnd={() => {
-                      setActiveCard(activeCard.filter((c) => c !== "Timeline"));
+                      setActiveCard(activeCard.filter((c) => c !== "Prizepool"));
                       setSelectedComponent("DEVSOC 2024");
                     }}
                   >
@@ -104,7 +104,7 @@ export default function Timeline() {
                   alt="Notepad"
                   className="inline-block w-6 pr-3"
                 />
-                Timeline
+                Prizepool
               </span>
               <section className="flex">
                 <span
@@ -124,11 +124,11 @@ export default function Timeline() {
                 <span
                   className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#b0b0b0] hover:cursor-pointer hover:bg-[#757575]"
                   onClick={() => {
-                    setActiveCard(activeCard.filter((c) => c !== "Timeline"));
+                    setActiveCard(activeCard.filter((c) => c !== "Prizepool"));
                     setSelectedComponent("DEVSOC 2024");
                   }}
                   onTouchEnd={() => {
-                    setActiveCard(activeCard.filter((c) => c !== "Timeline"));
+                    setActiveCard(activeCard.filter((c) => c !== "Prizepool"));
                     setSelectedComponent("DEVSOC 2024");
                   }}
                 >
@@ -136,7 +136,7 @@ export default function Timeline() {
                 </span>
               </section>
             </div>
-            <p className="w-[90%] pl-6 pt-6 ">18th March - 20th March</p>
+            <p className="w-[90%] pl-6 pt-6 ">Coming soon...</p>
             <button
               //hover: className={`absolute self-end h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition ease-in-out  hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2 bottom-0`}
               disabled={true}
