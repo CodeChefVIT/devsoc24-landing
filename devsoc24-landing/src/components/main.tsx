@@ -22,6 +22,7 @@ import TypewriterEffect from "./terminal/typewriter";
 import { useTransform, motion, useScroll } from "framer-motion";
 import timeline from "@/assets/images/timelinebox.svg";
 import { useLenis } from "@studio-freight/react-lenis";
+import { IoMdClose } from "react-icons/io";
 
 const timelineTexts = [
   "Coming Soon!",
@@ -43,6 +44,11 @@ function Main() {
   const titles = [title, title2, title3, title4];
   const [showBoxes, setShowBoxes] = useState(false);
   const [hoveredBoxIndex, setHoveredBoxIndex] = useState(-1);
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
 
   useEffect(() => {
     const intervals = [2000, 400, 600, 400];
@@ -118,6 +124,37 @@ function Main() {
 
   return (
     <>
+      {showModal ? (
+        <>
+          <div className="fixed z-[100] flex h-screen w-screen items-center justify-center bg-black/60">
+            <div className="relative flex h-fit w-fit flex-col items-center justify-between bg-white p-5">
+              <div
+                className="absolute right-0 top-0 flex min-h-[25px] min-w-[25px] items-center justify-center bg-black/80 hover:bg-black/60"
+                onClick={() => toggleModal()}
+              >
+                <IoMdClose color="white" />
+              </div>
+              <div>
+                <p className="font-disket text-lg">
+                  Discord Link Might not work correctly on VIT WIFI.
+                </p>
+                <p className="font-disket text-lg">
+                  Proceed if you are not on VIT WIFI
+                </p>
+              </div>
+              <div className="mt-5">
+                <BtnToPortal
+                  link="https://discord.gg/AUHFPXEhjC"
+                  data="Join Discord"
+                  portal={false}
+                />
+              </div>
+            </div>
+          </div>
+        </>
+      ) : (
+        <></>
+      )}
       <motion.div style={{ y: -y }} className="">
         <div style={{ opacity: scrollOpacity }}>
           <div
@@ -157,7 +194,9 @@ function Main() {
                     width={100}
                     className="absolute right-[1%] h-auto w-[50px] opacity-70 md:h-min md:w-min"
                   />
-                  <NavButton link="/" name="Discord" />
+                  <div onClick={() => toggleModal()}>
+                    <NavButton link="/" name="Discord" />
+                  </div>
                 </div>
               </div>
               <div className="flex flex-col lg:block">
@@ -170,7 +209,9 @@ function Main() {
                   >
                     <NavButton link="/" name="About" />
                   </div>
-                  <NavButton link="/" name="Discord" />
+                  <div onClick={() => toggleModal()}>
+                    <NavButton link="/" name="Discord" />
+                  </div>
                 </div>
               </div>
 
@@ -183,7 +224,7 @@ function Main() {
                     width={100}
                     className="absolute bottom-0 left-[65%] top-[2%] h-auto w-[50px] opacity-70 md:h-min md:w-min"
                   />
-                  <BtnToPortal link="/" />
+                  <BtnToPortal link="/" data="Go To Portal" portal={true} />
                 </div>
               </div>
             </div>
