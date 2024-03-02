@@ -11,6 +11,7 @@ const Footer = () => {
   const { showGlitch, setGlitch } = useGlitchStore();
   const { showFooter, setShowFooter } = useFooterStore();
   const router = useRouter();
+
   const lenis = useLenis(({ scroll }) => {
     // console.log(scroll);
   });

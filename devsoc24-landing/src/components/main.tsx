@@ -21,6 +21,7 @@ import LearnMoreBtn from "./LearnMoreBtn";
 import TypewriterEffect from "./terminal/typewriter";
 import { useTransform, motion, useScroll } from "framer-motion";
 import timeline from "@/assets/images/timelinebox.svg";
+import { useLenis } from "@studio-freight/react-lenis";
 
 const timelineTexts = [
   "Coming Soon!",
@@ -108,8 +109,12 @@ function Main() {
   }, []);
   const handleBoxHover = (index: SetStateAction<number>) => {
     setHoveredBoxIndex(index);
-    console.log("");
+    // console.log("");
   };
+
+  const lenis = useLenis(({ scroll }) => {
+    // console.log(scroll);
+  });
 
   return (
     <>
@@ -130,7 +135,11 @@ function Main() {
           <div className="absolute top-6 z-50 m-0 w-full p-0">
             <div className="flex items-center justify-center">
               <div className="relative hidden w-[33%] items-center justify-evenly lg:flex">
-                <div>
+                <div
+                  onClick={() => {
+                    lenis?.scrollTo("#about", { lerp: 0.1, duration: 0.5 });
+                  }}
+                >
                   <Image
                     src={dotgrid as HTMLImageElement}
                     alt="dotgrid"
@@ -154,7 +163,13 @@ function Main() {
               <div className="flex flex-col lg:block">
                 <Image src={titles[currentTitleIndex] as string} alt="title" />
                 <div className="mx-auto mt-6 flex justify-evenly lg:hidden">
-                  <NavButton link="/" name="About" />
+                  <div
+                    onClick={() => {
+                      lenis?.scrollTo("#about", { lerp: 0.1, duration: 0.5 });
+                    }}
+                  >
+                    <NavButton link="/" name="About" />
+                  </div>
                   <NavButton link="/" name="Discord" />
                 </div>
               </div>
@@ -226,7 +241,7 @@ function Main() {
           </div>
         </div>
       </motion.div>
-      <motion.div className="relative">
+      <motion.div className="relative" id="about">
         <div className="flex h-fit items-center justify-center bg-[#020202]">
           <div className="font-disket min-w-screen overflow-hidden bg-[#020202]">
             <motion.span style={{ y: y }} className="relative block">
@@ -274,7 +289,10 @@ function Main() {
               <div className="mt-14 flex w-full justify-center max-sm:mt-3">
                 <LearnMoreBtn link={""} />
               </div>
-              <div className="container flex h-fit flex-wrap items-center justify-center gap-10 max-sm:pt-32 max-xl:pt-16 max-md:pt-4 text-center max-[415px]:pt-4 xl:pt-32 mb-32" id="timeline-section">
+              <div
+                className="container mb-32 flex h-fit flex-wrap items-center justify-center gap-10 text-center max-xl:pt-16 max-md:pt-4 max-sm:pt-32 max-[415px]:pt-4 xl:pt-32"
+                id="timeline-section"
+              >
                 {showBoxes &&
                   Array.from({ length: 8 }).map((_, index) => (
                     <motion.div
@@ -282,7 +300,7 @@ function Main() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.2 }}
-                      className={`glitcheffect flex flex-col justify-start relative`}
+                      className={`glitcheffect relative flex flex-col justify-start`}
                       onMouseEnter={() => handleBoxHover(index)}
                       onMouseLeave={() => setHoveredBoxIndex(-1)}
                     >
@@ -291,13 +309,12 @@ function Main() {
                         alt="dsd"
                         className="glitcheffect size-40 max-sm:size-28"
                       />
-                      <div className="absolute top-0 left-0 w-full h-full  flex justify-center items-center text-[#bbbbbb]">
+                      <div className="absolute left-0 top-0 flex h-full  w-full items-center justify-center text-[#bbbbbb]">
                         <p className="pb-4">{timelineTexts[index]}</p>
                       </div>
                     </motion.div>
                   ))}
               </div>
-
             </div>
           </div>
         </div>
