@@ -7,7 +7,7 @@ import { BiWindow } from "react-icons/bi";
 import Draggable from "react-draggable";
 import { useCloseStore, useSelectedStore } from "@/store/store";
 
-export default function Prizepool() {
+export default function Portal() {
   const [minimized, setMinimized] = useState(false);
   const [maximized, setMaximized] = useState(false);
   const { activeCard, setActiveCard } = useCloseStore();
@@ -23,7 +23,7 @@ export default function Prizepool() {
 
   return (
     <div
-      className={`relative flex h-full w-full ${maximized ? "" : "pl-[30px] pt-[100px]  md:pl-[60px]"}`}
+      className={`relative flex h-full w-full ${maximized ? "" : "pl-[30px] pt-[100px]  md:pl-[60px]"} bgImg`}
     >
       <div>
         {minimized ? (
@@ -51,7 +51,7 @@ export default function Prizepool() {
                     alt="Notepad"
                     className="inline-block w-6 pr-3"
                   />
-                  Prizepool
+                  Portal
                 </span>
                 <section className="flex">
                   <span
@@ -71,11 +71,15 @@ export default function Prizepool() {
                   <span
                     className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#b0b0b0] hover:cursor-pointer hover:bg-[#757575]"
                     onClick={() => {
-                      setActiveCard(activeCard.filter((c) => c !== "Prizepool"));
+                      setActiveCard(
+                        activeCard.filter((c) => c !== "Portal"),
+                      );
                       setSelectedComponent("DEVSOC 2024");
                     }}
                     onTouchEnd={() => {
-                      setActiveCard(activeCard.filter((c) => c !== "Prizepool"));
+                      setActiveCard(
+                        activeCard.filter((c) => c !== "Portal"),
+                      );
                       setSelectedComponent("DEVSOC 2024");
                     }}
                   >
@@ -104,7 +108,7 @@ export default function Prizepool() {
                   alt="Notepad"
                   className="inline-block w-6 pr-3"
                 />
-                Prizepool
+                Portal
               </span>
               <section className="flex">
                 <span
@@ -124,11 +128,11 @@ export default function Prizepool() {
                 <span
                   className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#b0b0b0] hover:cursor-pointer hover:bg-[#757575]"
                   onClick={() => {
-                    setActiveCard(activeCard.filter((c) => c !== "Prizepool"));
+                    setActiveCard(activeCard.filter((c) => c !== "Portal"));
                     setSelectedComponent("DEVSOC 2024");
                   }}
                   onTouchEnd={() => {
-                    setActiveCard(activeCard.filter((c) => c !== "Prizepool"));
+                    setActiveCard(activeCard.filter((c) => c !== "Portal"));
                     setSelectedComponent("DEVSOC 2024");
                   }}
                 >

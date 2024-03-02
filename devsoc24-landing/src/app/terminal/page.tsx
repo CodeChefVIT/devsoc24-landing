@@ -3,14 +3,14 @@ import { useEffect } from "react";
 import Head from "next/head";
 import React from "react";
 import Card from "@/components/Card";
-import Terminal from "@/components/terminal/Terminal";
-import About from "@/components/terminal/About";
-import FAQs from "@/components/terminal/FAQs";
-import Prizepool from "@/components/terminal/Prizepool";
-import Tracks from "@/components/terminal/Tracks";
-import Timeline from "@/components/terminal/Timeline";
-import Sponsors from "@/components/terminal/Sponsors";
-import Portal from "@/components/terminal/Portal";
+import Terminal from "@/components/Terminal/Pages/Terminal";
+import About from "@/components/Terminal/Pages/About";
+import FAQs from "@/components/Terminal/Pages/FAQs";
+import Prizepool from "@/components/Terminal/Pages/Prizepool";
+import Tracks from "@/components/Terminal/Pages/Tracks";
+import Timeline from "@/components/Terminal/Pages/Timeline";
+import Sponsors from "@/components/Terminal/Pages/Sponsors";
+import Portal from "@/components/Terminal/Pages/Portal";
 import { IoMdClose } from "react-icons/io";
 import useGlitchStore, {
   useCloseStore,

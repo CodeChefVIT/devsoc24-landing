@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ProgressBar from "./terminal/ProgressBar";
+import ProgressBar from "./ProgressBar";
 import Image from "next/image";
 
 interface CardProps {

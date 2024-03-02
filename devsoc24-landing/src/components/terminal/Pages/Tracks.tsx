@@ -13,7 +13,7 @@ export default function Tracks() {
   ];
 
   return (
-    <div className={`flex h-full w-full`}>
+    <div className={`flex h-full w-full bgImg`}>
       <div className="flex flex-wrap justify-center items-center text-white my-auto">
         {tracks.map((track, index) => (
           <div key={index} className="flex flex-col items-center m-4 w-[300px] text-center self-start">
