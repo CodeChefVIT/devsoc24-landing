@@ -1,15 +1,22 @@
 import { motion } from "framer-motion";
 import styles from "@/styles/LearnMoreBtn.module.css";
 import useGlitchStore, { useFooterStore } from "@/store/store";
+import { useLenis } from "@studio-freight/react-lenis";
+import { useEffect } from "react";
 
 const LearnMoreBtn = (props: { link: string }) => {
+  const lenis = useLenis(({ scroll }) => {
+    // console.log(scroll);
+  });
+
   const { showFooter, setShowFooter } = useFooterStore();
   const { showGlitch, setGlitch } = useGlitchStore();
 
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
-    setShowFooter(true);
-    setGlitch(true);
+    lenis?.scrollTo(3800, { lerp: 0.1, duration: 0.5 });
+    // setShowFooter(true);
+    // setGlitch(true);
   };
 
   return (
