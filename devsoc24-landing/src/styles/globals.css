@@ -1,3 +1,61 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Font Setup */
+/* **************************************************************** */
+@font-face {
+    font-family: disket-bold;
+    src: url("../../public/assets/font/Disket-Mono-Bold.ttf");
+  }
+  .font-disket {
+    font-family: disket-bold;
+  }
+  
+  @font-face {
+    font-family: wreckside;
+    src: url("../../public/assets/font/Wreckside.otf");
+  }
+  .font-wreckside {
+    font-family: wreckside;
+  }
+  
+  @font-face {
+    font-family: vcr;
+    src: url("../../public/assets/font/vcr.ttf");
+  }
+  .font-vcr {
+    font-family: vcr;
+  }
+  
+  @font-face {
+    font-family: nokia;
+    src: url("../../public/assets/font/nokia.ttf");
+  }
+  .font-nokia {
+    font-family: nokia;
+  }
+  
+  @font-face {
+    font-family: courier;
+    src: url("../../public/assets/font/cour.ttf");
+  }
+  .block-text {
+    font-family: courier, monospace;
+    font-size: 12px;
+    line-height: 1.2; /* Adjust as needed */
+  }
+  
+  @media (max-width: 420px) {
+    .block-text {
+      font-size: 8px;
+      line-height: 1.2;
+      font-family: courier, monospace;
+    }
+  }
+  /* **************************************************************** */
+
+  .flip {
+    transform: scaleX(-1);
+  }
+  
