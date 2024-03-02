@@ -290,7 +290,7 @@ const Terminal = (props: { size: boolean }) => {
   return (
     <div
       // className={`h-[91.5vh] min-w-[95vw] overflow-y-auto overflow-x-hidden bg-[#757575] px-2 md:min-w-[20vw]`}
-      className={`lg:h-[91.5vh] ${size ? "h-[50vh]" : "h-[30vh]"} min-w-[95vw] overflow-y-auto overflow-x-hidden bg-[#757575] px-2 md:min-w-[20vw]`}
+      className={`lg:h-[103.5vh] 2xl:h-[94.5vh] ${size ? "h-[50vh]" : "h-[30vh]"} min-w-[95vw] overflow-y-auto overflow-x-hidden bg-[#757575] px-2 md:min-w-[20vw]`}
       onClick={() => document.getElementById("userInput")?.focus()}
     >
       <div className="mt-2 flex flex-col gap-2">
