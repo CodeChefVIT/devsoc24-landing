@@ -25,10 +25,11 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();
   const { activeCard, setActiveCard } = useCloseStore();
-  const { showTerminal, setShowTerminal } = useTerminalStore();
   const { selectedComponent, setSelectedComponent } = useSelectedStore();
   const { setGlitch } = useGlitchStore();
   const { size, setSize } = useMobileTerminalStore();
+  const { showTerminal, setShowTerminal } = useTerminalStore();
+  
 
   const toggleTerminal = () => {
     setShowTerminal(!showTerminal);
@@ -110,7 +111,7 @@ export default function Home() {
         <title>DEVSOC&apos;24</title>
         <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
       </Head>
-      <main className="font-diatype relative flex h-screen w-screen flex-col overflow-hidden bg-[#232323] md:text-[13.3px] md:leading-[13.5px]">
+      <main className="font-diatype relative flex h-screen w-screen flex-col overflow-x-hidden overflow-y-auto bg-[#232323] md:text-[13.3px] md:leading-[13.5px]">
         {!showTerminal ? (
           <button
             onClick={() => toggleTerminal()}
@@ -219,7 +220,7 @@ export default function Home() {
           </div>
         </div>
         <div
-          className="min-h-[2vh] w-screen bg-cover bg-center"
+          className="min-h-[2vh] w-screen bg-cover bg-center bottom-0 fixed"
           style={{ backgroundImage: `url('/BottomBorder.svg')` }}
         />
       </main>
