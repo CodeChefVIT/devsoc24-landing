@@ -109,11 +109,11 @@ function Main() {
   }, []);
   const handleBoxHover = (index: SetStateAction<number>) => {
     setHoveredBoxIndex(index);
-    console.log("");
+    // console.log("");
   };
 
   const lenis = useLenis(({ scroll }) => {
-    console.log(scroll);
+    // console.log(scroll);
   });
 
   return (
