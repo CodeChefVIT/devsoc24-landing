@@ -4,6 +4,7 @@ import {
   useCloseStore,
   useMobileTerminalStore,
   useSelectedStore,
+  useTerminalStore,
 } from "@/store/store";
 
 //Commands
@@ -17,7 +18,7 @@ const help = [
   '<span id="command">roles: get role in codechefvit</span>',
   '<span id="command">ls: see directories</span>',
   '<span id="command">cd <directory>: to open the directory</span>',
-  '<span id="command">banner: to print DEVSOC</span>',
+  '<span id="command">exit: to exit terminal</span>',
 
   "<br>",
 ];
@@ -94,8 +95,12 @@ const Terminal = () => {
   const { selectedComponent, setSelectedComponent } = useSelectedStore();
   const { setActiveCard } = useCloseStore();
   const { size } = useMobileTerminalStore();
+  const { showTerminal, setShowTerminal } = useTerminalStore();
 
-  
+  const toggleTerminal = () => {
+    setShowTerminal(!showTerminal);
+  };
+
   // Use States
   const [redProgress, setRedProgress] = useState(0);
   const [greenProgress, setGreenProgress] = useState(0);
@@ -263,6 +268,12 @@ const Terminal = () => {
           setOutputValue("");
           setInputValue("");
           return;
+        case "exit":
+          setOutputValue("");
+          setInputValue("");
+          toggleTerminal();
+
+          return;
         default:
           commandOutput = "<div>Command not found</div><br>";
           break;
@@ -283,7 +294,7 @@ const Terminal = () => {
   return (
     <div
       // className={`h-[91.5vh] min-w-[95vw] overflow-y-auto overflow-x-hidden bg-[#757575] px-2 md:min-w-[20vw]`}
-      className={`lg:h-full ${size ? "h-[50vh]" : "h-[30vh]"} min-w-[95vw] overflow-y-auto overflow-x-hidden bg-[#757575] px-2 md:min-w-[20vw]`}
+      className={`lg:h-full ${size ? "h-[50vh]" : "h-[30vh]"} font-diatype min-w-[95vw] overflow-y-auto overflow-x-hidden bg-[#757575] px-2 md:min-w-[20vw]`}
       onClick={() => document.getElementById("userInput")?.focus()}
     >
       <div className="mt-2 flex flex-col gap-2">

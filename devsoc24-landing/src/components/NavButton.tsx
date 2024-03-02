@@ -1,4 +1,4 @@
-import styles from "@/styles/navButton.module.css"
+import styles from "@/styles/NavButton.module.css"
 import Link from "next/link";
 
 const NavButton = (props: {link: string; name: string}) => {

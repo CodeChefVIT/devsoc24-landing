@@ -3,14 +3,14 @@ import { useEffect } from "react";
 import Head from "next/head";
 import React from "react";
 import Card from "@/components/Card";
-import Terminal from "@/components/Terminal/Pages/Terminal";
-import About from "@/components/Terminal/Pages/About";
-import FAQs from "@/components/Terminal/Pages/FAQs";
-import Prizepool from "@/components/Terminal/Pages/Prizepool";
-import Tracks from "@/components/Terminal/Pages/Tracks";
-import Timeline from "@/components/Terminal/Pages/Timeline";
-import Sponsors from "@/components/Terminal/Pages/Sponsors";
-import Portal from "@/components/Terminal/Pages/Portal";
+import Terminal from "@/components/terminal/Pages/Terminal";
+import About from "@/components/terminal/Pages/About";
+import FAQs from "@/components/terminal/Pages/FAQs";
+import Prizepool from "@/components/terminal/Pages/Prizepool";
+import Tracks from "@/components/terminal/Pages/Tracks";
+import Timeline from "@/components/terminal/Pages/Timeline";
+import Sponsors from "@/components/terminal/Pages/Sponsors";
+import Portal from "@/components/terminal/Pages/Portal";
 import { IoMdClose } from "react-icons/io";
 import useGlitchStore, {
   useCloseStore,
@@ -25,10 +25,11 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const router = useRouter();
   const { activeCard, setActiveCard } = useCloseStore();
-  const { showTerminal, setShowTerminal } = useTerminalStore();
   const { selectedComponent, setSelectedComponent } = useSelectedStore();
   const { setGlitch } = useGlitchStore();
   const { size, setSize } = useMobileTerminalStore();
+  const { showTerminal, setShowTerminal } = useTerminalStore();
+  
 
   const toggleTerminal = () => {
     setShowTerminal(!showTerminal);
@@ -110,7 +111,7 @@ export default function Home() {
         <title>DEVSOC&apos;24</title>
         <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
       </Head>
-      <main className="font-diatype relative flex h-screen w-screen flex-col overflow-hidden bg-[#232323] md:text-[13.3px] md:leading-[13.5px]">
+      <main className="font-diatype relative flex h-screen w-screen flex-col overflow-x-hidden overflow-y-auto bg-[#232323] md:text-[13.3px] md:leading-[13.5px]">
         {!showTerminal ? (
           <button
             onClick={() => toggleTerminal()}
@@ -219,7 +220,7 @@ export default function Home() {
           </div>
         </div>
         <div
-          className="min-h-[2vh] w-screen bg-cover bg-center"
+          className="min-h-[2vh] w-screen bg-cover bg-center bottom-0 fixed"
           style={{ backgroundImage: `url('/BottomBorder.svg')` }}
         />
       </main>
