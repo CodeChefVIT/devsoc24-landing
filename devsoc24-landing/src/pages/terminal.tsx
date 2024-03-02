@@ -155,7 +155,7 @@ export default function Home() {
   }, []);
 
   function handleClose() {
-    if (selectedComponent) {
+    if (selectedComponent !== "DEVSOC 2024") {
       setActiveCard(activeCard.filter((c) => c !== selectedComponent));
       setSelectedComponent("DEVSOC 2024");
     } else {
