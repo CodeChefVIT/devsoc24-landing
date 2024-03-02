@@ -48,7 +48,7 @@ export default function FAQs() {
 
   return (
     <div
-      className={`relative flex h-full w-full px-[50px] pt-[10px]  md:pl-[60px] mt-10`}
+      className={`relative flex h-full lg:h-[93vh] 2xl:h-[89vh] w-full px-[50px] pt-[10px]  md:pl-[60px] mt-10`}
     >
       <div className="flex flex-row flex-wrap gap-6">
         {questions.map((items, index) => (
