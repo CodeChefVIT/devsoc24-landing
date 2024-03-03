@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import Head from "next/head";
 import glitch from "@/assets/images/footer-glitch.gif";
 import Details from "@/components/Screens/Details";
@@ -10,7 +10,7 @@ import Footer from "@/components/Screens/Footer";
 import bgimage from "@/assets/images/DEVSOCLOGOBIG.svg";
 import Image from "next/image";
 import { useFooterStore } from "@/store/store";
-
+import HomeLoader from "./loading";
 
 export default function HomePage() {
   const { showFooter, setShowFooter } = useFooterStore();
@@ -31,36 +31,37 @@ export default function HomePage() {
         <title>DEVSOC&apos;24</title>
         <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
       </Head>
-
-      <SmoothScrolling>
-        {showGlitch && !showFooter && (
-          <Image
-            src={glitch}
-            alt="Glitch"
-            className="absolute -z-10 h-[125vh] w-screen min-[450px]:h-screen"
-          />
-        )}
-        {showGlitch && showFooter && <Footer />}
-        {!showGlitch && (
-          <>
-            <div className="fixed z-40 flex h-screen items-center justify-center">
-              <Image
-                src={bgimage as HTMLImageElement}
-                alt="bg"
-                className="w-screen"
-              />
-            </div>
-            <div className="z-50">
-              <section id="Main">
-                <Main />
+      <Suspense fallback={<HomeLoader />}>
+        <SmoothScrolling>
+          {showGlitch && !showFooter && (
+            <Image
+              src={glitch}
+              alt="Glitch"
+              className="absolute -z-10 h-[125vh] w-screen min-[450px]:h-screen"
+            />
+          )}
+          {showGlitch && showFooter && <Footer />}
+          {!showGlitch && (
+            <>
+              <div className="fixed z-40 flex h-screen items-center justify-center">
+                <Image
+                  src={bgimage as HTMLImageElement}
+                  alt="bg"
+                  className="w-screen"
+                />
+              </div>
+              <div className="z-50">
+                <section id="Main">
+                  <Main />
+                </section>
+              </div>
+              <section id="About">
+                <Details />
               </section>
-            </div>
-            <section id="About">
-              <Details />
-            </section>
-          </>
-        )}
-      </SmoothScrolling>
+            </>
+          )}
+        </SmoothScrolling>
+      </Suspense>
     </>
   );
 }
