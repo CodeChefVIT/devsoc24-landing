@@ -21,6 +21,7 @@ import { useTransform, motion, useScroll } from "framer-motion";
 import timeline from "@/assets/images/timelinebox.svg";
 import { useLenis } from "@studio-freight/react-lenis";
 import { IoMdClose } from "react-icons/io";
+import Monitor from "../Monitor";
 
 const timelineTexts = [
   "Coming Soon!",
@@ -251,8 +252,9 @@ function Main() {
                   className="glitcheffect"
                 />
               </motion.div>
-              <div className="my-12 sm:my-0">
-                <Screen text="Hack Time" />
+              <div className="my-12 sm:my-0 absolute z-40">
+                {/* <Screen text="Hack Time" /> */}
+                <Monitor/>
               </div>
               <motion.div
                 className="hidden lg:block"
