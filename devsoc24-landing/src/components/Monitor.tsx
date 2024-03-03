@@ -13,7 +13,7 @@ const ThreeComputer = () => {
 
   return (
     <div className=" h-[100vh] w-[100vw]">
-      <Suspense fallback={<p className="">loading</p>}>
+      <Suspense fallback={<p className="">loading</p>} >
         <Canvas camera={{ position: [70, 20, -50], fov: 60 }} ref={ref}>
           <ambientLight intensity={5} />
           {/* <OrbitControls /> */}
