@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { Suspense, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Environment, OrbitControls } from "@react-three/drei";
@@ -13,14 +13,14 @@ const ThreeComputer = () => {
 
   return (
     <div className=" h-[100vh] w-[100vw]">
-      <Canvas camera={{ position: [70, 20, -50], fov: 60 }} ref={ref}>
-        <ambientLight intensity={5} />
-        {/* <OrbitControls /> */}
-        <OrbitControls autoRotate={true} autoRotateSpeed={5} />
-        <Suspense fallback={null}>
+      <Suspense fallback={<p className="">loading</p>}>
+        <Canvas camera={{ position: [70, 20, -50], fov: 60 }} ref={ref}>
+          <ambientLight intensity={5} />
+          {/* <OrbitControls /> */}
+          <OrbitControls autoRotate={true} autoRotateSpeed={5} enableZoom={false}/>
           <Monitor />
-        </Suspense>
-      </Canvas>
+        </Canvas>
+      </Suspense>
     </div>
   );
 };
