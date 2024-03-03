@@ -252,9 +252,9 @@ function Main() {
                   className="glitcheffect"
                 />
               </motion.div>
-              <div className="my-12 sm:my-0 absolute z-40">
-                {/* <Screen text="Hack Time" /> */}
-                <Monitor/>
+              <div className="my-12 sm:my-0">
+                <Screen text="Hack Time" />
+                {/* <Monitor/> */}
               </div>
               <motion.div
                 className="hidden lg:block"
