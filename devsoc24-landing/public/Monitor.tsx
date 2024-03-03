@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-interface */
 import React from 'react';
 import { useGLTF } from '@react-three/drei';
 import { Mesh, Material } from 'three';
@@ -15,12 +16,12 @@ export default function Model(props: ModelProps) {
   return (
     <group {...props} dispose={null}>
       {nodes.Cube && (
-        <mesh geometry={(nodes.Cube as Mesh).geometry} material={(materials.Material as Material)} />
+        <mesh geometry={(nodes.Cube as Mesh).geometry} material={(materials.Material!)} />
       )}
       {nodes.retro_computer_setup_retro_computer_setup_Mat_0 && (
         <mesh
           geometry={(nodes.retro_computer_setup_retro_computer_setup_Mat_0 as Mesh).geometry}
-          material={(materials['retro_computer_setup_Mat.001'] as Material)}
+          material={(materials['retro_computer_setup_Mat.001']!)}
           rotation={[-Math.PI / 2, 0, 0]}
         />
       )}
