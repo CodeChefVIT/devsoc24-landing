@@ -71,6 +71,7 @@ export const useTypeStore = create<TypeStore>((set) => ({
   typingCompleted: false,
   setTypingCompleted: (typingCompleted: boolean) => set({ typingCompleted }),
 }));
+
 export const useType2Store = create<TypeStore>((set) => ({
   typingCompleted: false,
   setTypingCompleted: (typingCompleted: boolean) => set({ typingCompleted }),
