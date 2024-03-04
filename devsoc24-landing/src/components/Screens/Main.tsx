@@ -252,7 +252,8 @@ function Main() {
                   className="glitcheffect"
                 />
               </motion.div>
-              <div className="my-12 sm:my-0">
+              {/* <div className="z-40 my-12 absolute sm:my-0"> */}
+              <div className="z-40 my-12 sm:my-0">
                 <Screen text="Hack Time" />
                 {/* <Monitor/> */}
               </div>
@@ -327,10 +328,11 @@ function Main() {
                   Vellore Institute of Technology, Vellore
                 </div>
               </div>
-              <div className="mt-14 flex w-full justify-center max-sm:mt-3"
-              onClick={()=>{
-                lenis?.scrollTo(3800, {lerp: 0.1, duration: 1})
-              }}
+              <div
+                className="mt-14 flex w-full justify-center max-sm:mt-3"
+                onClick={() => {
+                  lenis?.scrollTo(3800, { lerp: 0.1, duration: 1 });
+                }}
               >
                 <Button data="Learn More" portal={false} />
               </div>

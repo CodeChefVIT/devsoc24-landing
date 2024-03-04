@@ -43,13 +43,13 @@ export default function About() {
 
   return (
     <div
-      className={`relative flex h-full w-full ${maximized ? "" : " bgImg  lg:pl-[60px] lg:pt-[100px]"} `}
+      className={`relative flex h-full w-full ${maximized ? "" : "bgImg  lg:pl-[60px] lg:pt-[100px] "} `}
     >
       <div>
         {!maximized ? (
           <Draggable bounds=".boundarybox" disabled={isSmaller}>
             <div
-              className={`absolute z-50 flex h-fit w-[100vw] lg:w-fit flex-grow flex-col ${maximized ? "h-[100vh] w-[100vw] sm:h-full sm:w-full" : "lg:w-[30vw]"} border-2 bg-[#b2b2b2] pb-10 overflow-y-auto overflow-x-hidden`}
+              className={`absolute z-50 flex h-fit w-[100vw]  flex-grow flex-col ${maximized ? "h-[100vh] w-[100vw] sm:h-full sm:w-full" : "lg:w-[30vw]"} border-2 bg-[#b2b2b2] pb-10 overflow-y-auto overflow-x-hidden`}
             >
               <div className="drag-handle flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
                 <span className="font-nokia flex items-center justify-center pl-2 text-[10px] text-white">
