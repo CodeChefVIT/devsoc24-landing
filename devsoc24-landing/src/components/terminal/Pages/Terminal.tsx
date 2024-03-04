@@ -66,12 +66,16 @@ const sponsors = ['<span id="command">Coming Soon</span><br>'];
 const timeline = ['<span id="command">Coming Soon</span><br>'];
 
 const tracks = [
-  '<span id="command">1. AR/VR</span>',
-  '<span id="command">2. Blockchain</span>',
-  '<span id="command">3. Automation Tools</span>',
-  '<span id="command">4. Social Good</span>',
-  '<span id="command">5. Health and Wellness</span>',
-  '<span id="command">6. Open Innovation</span>',
+  `
+  <ol id="list">
+  <li id="list">Interactive Engagement (Gamified Solutions)</li>
+  <li id="list">Eco-Innovations (Sustainable Technology)</li>
+  <li id="list">Community Building</li>
+  <li id="list">Future of Work</li>
+  <li id="list">Ethical Technology</li>
+  <li id="list">Open Innovation</li>
+  </ol>`,
+
   "<br>",
 ];
 

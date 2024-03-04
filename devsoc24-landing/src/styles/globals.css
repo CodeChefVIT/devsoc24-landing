@@ -406,3 +406,8 @@ a:focus {
   font-size: 5px;
   font-weight: bolder;
 }
+
+#list {
+  list-style: decimal;
+  list-style-position: inside;
+}
