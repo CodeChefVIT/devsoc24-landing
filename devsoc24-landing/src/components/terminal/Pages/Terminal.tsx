@@ -51,7 +51,7 @@ const initial = [
   `<div id="dottedLine"></div>`,
 ];
 const about = [
-  '<span id="command">DEVSOC is CodeChef-VIT’s annual flagship event where participants create, hack, and innovate to solve problems while adhering to the spirit of creativity and teamwork. Rub shoulders with some of the brightest minds in tech and boost your tech journey!</span><br>',
+  '<span id="command">DEVSOC, the flagship annual event by CodeChef-VIT, aims to empower young minds by fostering collaboration between tech enthusiasts and innovators. In its fourth iteration, this hackathon is designed as a sprint-like event, encouraging participants to unleash their creativity and teamwork to solve challenges. Spanning three days, running for 48 hours straight, DEVSOC will take place from March 18th to 20th, 2024, at the Anna Auditorium, Vellore Institute of Technology, Vellore. As a free and open-source software (FOSS) event, DEVSOC adds an extra dimension to its ethos of collaboration and innovation.</span><br>',
 ];
 
 const faqs = [
@@ -59,23 +59,26 @@ const faqs = [
   '<span id="command">application process</span>',
   '<span id="command">inexperienced</span>',
   '<span id="command">team size</span>',
+  '<span id="command">type `cd faqs` for more details</span>',
+  `<br>`,
 ];
 
 const sponsors = ['<span id="command">Coming Soon</span><br>'];
 
-const timeline = ['<span id="command">Coming Soon</span><br>'];
+const timeline = [
+  '<span id="command">18th to 20th March</span><br><span id="command">More details coming soon</span><br>',
+];
 
 const tracks = [
-  `
-  <ol id="list">
-  <li id="list">Interactive Engagement (Gamified Solutions)</li>
-  <li id="list">Eco-Innovations (Sustainable Technology)</li>
-  <li id="list">Community Building</li>
-  <li id="list">Future of Work</li>
-  <li id="list">Ethical Technology</li>
-  <li id="list">Open Innovation</li>
-  </ol>`,
-
+  // <ol id="list">
+  // <li id="list">Interactive Engagement (Gamified Solutions)</li>
+  // <li id="list">Eco-Innovations (Sustainable Technology)</li>
+  // <li id="list">Community Building</li>
+  // <li id="list">Future of Work</li>
+  // <li id="list">Ethical Technology</li>
+  // <li id="list">Open Innovation</li>
+  // </ol>,
+  '<span id="command">Coming Soon</span><br>',
   "<br>",
 ];
 
@@ -187,6 +190,9 @@ const Terminal = () => {
           break;
         case "prizepool":
           commandOutput = prizepool.join("<br>");
+          break;
+        case "portal":
+          commandOutput = "<br>" + "<div>Coming Soon</div>";
           break;
         case "cd about":
           if (selectedComponent != "DEVSOC 2024") {

@@ -27,6 +27,11 @@ const questions = [
       "We will be evaluating everyone based on different metrics. We'll take into account if you're a fresher and where you stand amongst your peers. If you don't have anything technical to add to your resume, this event is a great opportunity to lay a solid foundation for your tech journey. This hackathon will give you an opportunity to inteact with your seniors and gain valuable guidance. Basically, if you're interested in coding or tech events, you're more than welcome to participate!",
   },
   {
+    question: "What is a FOSS event? Is DEVSOC a FOSS event?",
+    answer: `A FOSS event refers to an event that focuses on Free and Open Source Software, that is both freely available to use and distribute, and whose source code is openly accessible. FOSS events can take various forms, such as conferences, workshops, hackathons or seminars, and they typically bring together developers, enthusiasts, and users of open source software to collaborate.
+      DEVSOC is indeed a Free and Open Source Software (FOSS) event. Our commitment to promoting open collaboration and innovation within the software development community drives us to organize DEVSOC as a platform for tech enthusiasts and experiences innovators alike to collaborate harnessing the power of open source. Through workshops and seminars, DEVSOC fosters an inclusive environment where participants can learn, share, and contribute to the ever-expanding ecosystem of open source software.`,
+  },
+  {
     question: "Have any more queries?",
     answer:
       "If you have any further doubts, feel free to ask your doubts on our Discord server",

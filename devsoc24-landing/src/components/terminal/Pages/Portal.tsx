@@ -87,7 +87,7 @@ export default function Portal() {
                   </span>
                 </section>
               </div>
-              <p className="w-[90%] pl-6 pt-6 ">March 18th - 20th</p>
+              <p className="w-[90%] pl-6 pt-6 ">Coming soon...</p>
               <button
                 //hover: className={`absolute self-end h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition ease-in-out  hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2 bottom-0`}
                 disabled={true}

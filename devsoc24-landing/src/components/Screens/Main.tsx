@@ -252,10 +252,10 @@ function Main() {
                   className="glitcheffect"
                 />
               </motion.div>
-              {/* <div className="z-40 my-12 absolute sm:my-0"> */}
-              <div className="z-40 my-12 sm:my-0">
-                <Screen text="Hack Time" />
-                {/* <Monitor/> */}
+              <div className="absolute z-40 my-12 flex w-screen items-center justify-center sm:my-0">
+                {/* <div className="z-40 my-12 sm:my-0"> */}
+                {/* <Screen text="Hack Time" /> */}
+                <Monitor />
               </div>
               <motion.div
                 className="hidden lg:block"
@@ -314,18 +314,18 @@ function Main() {
                 />
               </div>
               <div className="flex w-full justify-center">
-                {" "}
-                <div className="mx-10 mt-10 w-[500px] text-center text-xs text-[#bbbbbb] max-sm:text-justify md:text-[12px] lg:w-[600px]">
-                  DEVSOC is CodeChef-VIT&apos;s annual flagship event hoping to
-                  empower young minds by bringing tech-enthusiasts and thinkers
-                  under one roof. This year, the fourth iteration of the
-                  hackathon is being held with the goal of creating a
-                  sprint-like event, where participants create, hack, and
-                  innovate to solve problems while adhering to the spirit of
-                  creativity and teamwork. The event is spread over three days,
-                  with the hackathon lasting 48 hours. Devsoc is going to be
-                  held from 18th-20th of March 2024 at the Anna Auditorium,
-                  Vellore Institute of Technology, Vellore
+                <div className="mx-10 mt-10  text-center  text-[#bbbbbb] max-sm:text-justify md:text-[22px] lg:w-[70vw] h-fit leading-relaxed">
+                  DEVSOC, THE FLAGSHIP ANNUAL EVENT BY CODECHEF-VIT, AIMS TO
+                  EMPOWER YOUNG MINDS BY FOSTERING COLLABORATION BETWEEN TECH
+                  ENTHUSIASTS AND INNOVATORS. IN ITS FOURTH ITERATION, THIS
+                  HACKATHON IS DESIGNED AS A SPRINT-LIKE EVENT, ENCOURAGING
+                  PARTICIPANTS TO UNLEASH THEIR CREATIVITY AND TEAMWORK TO SOLVE
+                  CHALLENGES. SPANNING THREE DAYS, RUNNING FOR 48 HOURS
+                  STRAIGHT, DEVSOC WILL TAKE PLACE FROM MARCH 18TH TO 20TH,
+                  2024, AT THE ANNA AUDITORIUM, VELLORE INSTITUTE OF TECHNOLOGY,
+                  VELLORE. AS A FREE AND OPEN SOURCE SOFTWARE (FOSS) EVENT,
+                  DEVSOC ADDS AN EXTRA DIMENSION TO ITS ETHOS OF
+                  COLLABORATION AND INNOVATION.
                 </div>
               </div>
               <div
