@@ -48,6 +48,7 @@ const Details = () => {
               alt="Image 2"
               height={380}
               width={380}
+              loading="eager"
               className="absolute bottom-[-400px] right-[65px] hidden h-auto w-[250px] md:block md:h-min md:w-min"
             />
           </motion.span>
@@ -57,6 +58,7 @@ const Details = () => {
               alt="Image 3"
               height={380}
               width={380}
+              loading="eager"
               className="absolute bottom-[-1250px] left-[10px] hidden h-auto w-[250px] md:-left-[-65px] md:block md:h-min md:w-min"
             />
           </motion.span>
@@ -71,6 +73,7 @@ const Details = () => {
               alt="Image 4"
               height={380}
               width={380}
+              loading="eager"
               className="absolute right-[50px] top-[500px] hidden h-auto w-[250px] md:right-[100px] md:block md:h-min md:w-min"
             />
           </motion.span>
