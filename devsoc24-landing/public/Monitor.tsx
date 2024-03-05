@@ -6,7 +6,7 @@ import { Mesh, Material } from 'three';
 interface ModelProps {}
 
 export default function Model(props: ModelProps) {
-  const { nodes, materials } = useGLTF('/monitor.gltf');
+  const { nodes, materials } = useGLTF('/DevsocMoniFinal1.gltf');
 
   if (!nodes || !materials) {
     // Handle case where nodes or materials are not loaded yet
