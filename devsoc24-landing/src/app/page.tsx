@@ -100,9 +100,7 @@ export default function HomePage() {
                 </div>
                 <div className="z-50">
                   <section id="Main">
-                    {/* <Suspense fallback={<Loading />}> */}
                       <Main />
-                    {/* </Suspense> */}
                   </section>
                 </div>
                 <section id="About">

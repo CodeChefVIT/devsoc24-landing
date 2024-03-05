@@ -252,10 +252,10 @@ function Main() {
                   className="glitcheffect"
                 />
               </motion.div>
-              <div className="absolute z-40 my-12 flex w-screen items-center justify-center sm:my-0">
-                {/* <div className="z-40 my-12 sm:my-0"> */}
-                {/* <Screen text="Hack Time" /> */}
-                <Monitor />
+              {/* <div className="absolute z-40 my-12 flex w-screen items-center justify-center sm:my-0"> */}
+              <div className="z-40 my-12 sm:my-0">
+                <Screen text="Hack Time" />
+                {/* <Monitor /> */}
               </div>
               <motion.div
                 className="hidden lg:block"
@@ -314,7 +314,7 @@ function Main() {
                 />
               </div>
               <div className="flex w-full justify-center">
-                <div className="mx-10 mt-10  text-center  text-[#bbbbbb] max-sm:text-justify md:text-[22px] lg:w-[70vw] h-fit leading-relaxed">
+                <div className="mx-10 mt-10  h-fit  text-center leading-relaxed text-[#bbbbbb] max-sm:text-justify md:text-[22px] lg:w-[70vw]">
                   DEVSOC, THE FLAGSHIP ANNUAL EVENT BY CODECHEF-VIT, AIMS TO
                   EMPOWER YOUNG MINDS BY FOSTERING COLLABORATION BETWEEN TECH
                   ENTHUSIASTS AND INNOVATORS. IN ITS FOURTH ITERATION, THIS
@@ -324,8 +324,8 @@ function Main() {
                   STRAIGHT, DEVSOC WILL TAKE PLACE FROM MARCH 18TH TO 20TH,
                   2024, AT THE ANNA AUDITORIUM, VELLORE INSTITUTE OF TECHNOLOGY,
                   VELLORE. AS A FREE AND OPEN SOURCE SOFTWARE (FOSS) EVENT,
-                  DEVSOC ADDS AN EXTRA DIMENSION TO ITS ETHOS OF
-                  COLLABORATION AND INNOVATION.
+                  DEVSOC ADDS AN EXTRA DIMENSION TO ITS ETHOS OF COLLABORATION
+                  AND INNOVATION.
                 </div>
               </div>
               <div
@@ -340,7 +340,7 @@ function Main() {
                 className="container mb-32 flex h-fit flex-wrap items-center justify-center gap-10 text-center max-xl:pt-16 max-md:pt-4 max-sm:pt-32 max-[415px]:pt-4 xl:pt-32"
                 id="timeline-section"
               >
-                {showBoxes &&
+                {/* {showBoxes &&
                   Array.from({ length: 8 }).map((_, index) => (
                     <motion.div
                       key={index}
@@ -360,7 +360,7 @@ function Main() {
                         <p className="pb-4">{timelineTexts[index]}</p>
                       </div>
                     </motion.div>
-                  ))}
+                  ))} */}
               </div>
             </div>
           </div>
