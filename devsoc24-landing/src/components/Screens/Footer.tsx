@@ -85,7 +85,7 @@ const Footer = () => {
               </p>
               <button
                 onClick={() => {
-                  void router.push("/terminal");
+                  void router.push("/menu");
                 }}
                 className="font-vcr z-[100] my-2 flex h-[40px] w-[100px] items-center justify-center border-2 border-black bg-white text-black hover:cursor-pointer hover:bg-black hover:text-white sm:self-start"
               >
