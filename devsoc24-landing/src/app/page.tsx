@@ -71,7 +71,7 @@ export default function HomePage() {
         <title>DEVSOC&apos;24</title>
         <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
       </Head>
-      <Suspense fallback={<Loading />} >
+      <Suspense fallback={<Loading />}>
         {typeof window === "undefined" || !typingCompleted ? (
           <div className="pl-3">
             <TypewriterEffect
@@ -100,7 +100,9 @@ export default function HomePage() {
                 </div>
                 <div className="z-50">
                   <section id="Main">
-                    <Main />
+                    {/* <Suspense fallback={<Loading />}> */}
+                      <Main />
+                    {/* </Suspense> */}
                   </section>
                 </div>
                 <section id="About">
