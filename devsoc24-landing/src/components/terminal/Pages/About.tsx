@@ -109,9 +109,9 @@ export default function About() {
                   Devsoc Is going to be held at Anna Auditorium, Vellore
                   Institute of Technology, Vellore
                 </p>
-                <p className="font-vcr w-[90%] pl-6 pt-1 md:pt-4">
+                {/* <p className="font-vcr w-[90%] pl-6 pt-1 md:pt-4">
                   Devsoc is going to be held from 18th to 20th of March 2024
-                </p>
+                </p> */}
               </div>
               {/* <button
                   className={`absolute bottom-2 right-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition ease-in-out  hover:h-[26px] hover:w-[98px] hover:duration-75 md:mt-[100px]`}
@@ -179,9 +179,7 @@ export default function About() {
               Devsoc Is going to be held at Anna Auditorium, Vellore Institute
               of Technology, Vellore
             </p>
-            <p className="font-vcr w-[90%] pl-6 pt-1 md:pt-4">
-              Devsoc is going to be held from 18th to 20th of March 2024
-            </p>
+            
             {/* <button
               className={`absolute bottom-2 right-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition ease-in-out  hover:h-[26px] hover:w-[98px] hover:duration-75 md:mt-[100px]`}
               // onClick={openUserModal}
