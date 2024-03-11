@@ -189,7 +189,7 @@ export default function Home() {
             <div className="flex h-full w-screen flex-row">
               {showTerminal ? (
                 <div
-                  className={`fixed bottom-0 z-50 flex h-fit w-full flex-col lg:relative lg:h-full lg:w-[20vw]`}
+                  className={`fixed bottom-0 z-50 flex h-fit w-full flex-col lg:relative lg:h-[105.3%] 2xl:h-full lg:w-[20vw]`}
                 >
                   <div className="flex min-h-[4vh] min-w-full items-center justify-between gap-2 bg-[#4d4d4d] pl-2">
                     <p className="overflow-x-hidden text-sm">
