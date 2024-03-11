@@ -51,7 +51,7 @@ const initial = [
   `<div id="dottedLine"></div>`,
 ];
 const about = [
-  '<span id="command">DEVSOC, the flagship annual event by CodeChef-VIT, aims to empower young minds by fostering collaboration between tech enthusiasts and innovators. In its fourth iteration, this hackathon is designed as a sprint-like event, encouraging participants to unleash their creativity and teamwork to solve challenges. Spanning three days, running for 48 hours straight, DEVSOC will take place from March 18th to 20th, 2024, at the Anna Auditorium, Vellore Institute of Technology, Vellore. As a free and open-source software (FOSS) event, DEVSOC adds an extra dimension to its ethos of collaboration and innovation.</span><br>',
+  '<span id="command">DEVSOC, the flagship annual event by CodeChef-VIT, aims to empower young minds by fostering collaboration between tech enthusiasts and innovators. In its fourth iteration, this hackathon is designed as a sprint-like event, encouraging participants to unleash their creativity and teamwork to solve challenges. Spanning three days, running for 48 hours straight, at the Anna Auditorium, Vellore Institute of Technology, Vellore. As a free and open-source software (FOSS) event, DEVSOC adds an extra dimension to its ethos of collaboration and innovation.</span><br>',
 ];
 
 const faqs = [
