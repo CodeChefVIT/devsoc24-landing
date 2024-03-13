@@ -23,11 +23,7 @@ export default function SponsorMain() {
   };
 
   return (
-    <div
-      className={`relative flex h-full w-full bgImg`}
-    >
-      <div>
-        <div className={`absolute z-50 flex h-fit min-w-[300px] flex-grow flex-col border-2 bg-[#b2b2b2] pb-10`}>
+        <div className={`absolute z-50 flex h-fit min-w-[300px] flex-grow flex-col border-2 bg-[#E9E9E9] pb-10`}>
           <div className="drag-handle flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
             <span className="font-nokia flex items-center justify-center pl-2 text-[10px] text-white">
               <Image
@@ -35,7 +31,7 @@ export default function SponsorMain() {
                 alt="Notepad"
                 className="inline-block w-6 pr-3"
               />
-              SponsorMain
+              Sponsors
             </span>
             <section className="flex">
               <span
@@ -67,9 +63,9 @@ export default function SponsorMain() {
               </span>
             </section>
           </div>
-          <div className="flex flex-row gap-x-6">
+          <div className="flex flex-row gap-x-2 items-center p-3">
             <Image src={rupee} alt="icon" height={0} width={0} className="h-fit w-fit"/>
-            <p className="w-[90%] pl-6 pt-6 font-nokia text-[22px]">SPONSORED BY</p>
+            <p className="w-[90%] font-nokia text-[22px]">SPONSORED BY</p>
           </div>
           <button
             //hover: className={`absolute self-end h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition ease-in-out  hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2 bottom-0`}
@@ -79,7 +75,5 @@ export default function SponsorMain() {
             OK
           </button>
         </div>
-      </div>
-    </div>
   );
 }
