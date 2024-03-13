@@ -7,6 +7,9 @@ import { BiWindow } from "react-icons/bi";
 import Draggable from "react-draggable";
 import { useCloseStore, useSelectedStore } from "@/store/store";
 import SponsorCard from "./SponsorCard";
+import SponsorMain from "./SponsorMain";
+
+
 
 export default function Sponsors() {
   const [minimized, setMinimized] = useState(false);
@@ -85,6 +88,7 @@ export default function Sponsors() {
                 </section>
               </div>
               <p className="w-[90%] pl-6 pt-6 ">
+                <SponsorMain/>
                 <SponsorCard imgsrc="/assets/sponsors/contentstack.svg" company="Contentstack" title="Title Sponsor"/>
               </p>
               <button
