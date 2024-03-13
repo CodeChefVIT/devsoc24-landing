@@ -5,8 +5,8 @@ const SponsorCard = (props: {
   imgsrc: string;
   company: string;
   title: string;
-  width: string;
-  height: string;
+  width: number;
+  height: number;
 }) => {
   return (
     <div className="w-fit h-fit ">
@@ -17,9 +17,9 @@ const SponsorCard = (props: {
             <Image
               src={props.imgsrc}
               alt="sponsor card"
-              height={0}
-              width={0}
-              className={`h-[${props.height}px] w-[${props.width}px] p-4 `}
+              height={props.height}
+              width={props.width}
+              className={`m-4 `}
               
             />
             <p className="mb-2">{props.company}</p>
