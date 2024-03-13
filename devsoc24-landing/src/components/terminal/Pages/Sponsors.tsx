@@ -6,6 +6,7 @@ import { IoMdClose } from "react-icons/io";
 import { BiWindow } from "react-icons/bi";
 import Draggable from "react-draggable";
 import { useCloseStore, useSelectedStore } from "@/store/store";
+import SponsorCard from "./SponsorCard";
 
 export default function Sponsors() {
   const [minimized, setMinimized] = useState(false);
@@ -71,15 +72,11 @@ export default function Sponsors() {
                   <span
                     className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#b0b0b0] hover:cursor-pointer hover:bg-[#757575]"
                     onClick={() => {
-                      setActiveCard(
-                        activeCard.filter((c) => c !== "Sponsors"),
-                      );
+                      setActiveCard(activeCard.filter((c) => c !== "Sponsors"));
                       setSelectedComponent("DEVSOC 2024");
                     }}
                     onTouchEnd={() => {
-                      setActiveCard(
-                        activeCard.filter((c) => c !== "Sponsors"),
-                      );
+                      setActiveCard(activeCard.filter((c) => c !== "Sponsors"));
                       setSelectedComponent("DEVSOC 2024");
                     }}
                   >
@@ -87,7 +84,9 @@ export default function Sponsors() {
                   </span>
                 </section>
               </div>
-              <p className="w-[90%] pl-6 pt-6 ">Coming Soon...</p>
+              <p className="w-[90%] pl-6 pt-6 ">
+                <SponsorCard imgsrc="/assets/sponsors/contentstack.svg" company="Contentstack" title="Title Sponsor"/>
+              </p>
               <button
                 //hover: className={`absolute self-end h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition ease-in-out  hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2 bottom-0`}
                 disabled={true}

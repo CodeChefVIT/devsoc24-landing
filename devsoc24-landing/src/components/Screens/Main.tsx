@@ -223,7 +223,7 @@ function Main() {
                     width={100}
                     className="absolute bottom-0 left-[65%] top-[2%] h-auto w-[50px] opacity-70 md:h-min md:w-min"
                   />
-                  <Button link="/" data="Go To Portal" portal={true} />
+                  <Button link="/" data="Register Now" portal={true} />
                 </div>
               </div>
             </div>
