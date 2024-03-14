@@ -66,7 +66,7 @@ const faqs = [
 const sponsors = ['<span id="command">Coming Soon</span><br>'];
 
 const timeline = [
-  '<span id="command">18th to 20th March</span><br><span id="command">More details coming soon</span><br>',
+  '<span id="command">17th to 19th March</span><br><span id="command">More details coming soon</span><br>',
 ];
 
 const tracks = [
