@@ -42,15 +42,15 @@ export default function Prizepool() {
             <section className="flex">
               <span
                 className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#b0b0b0] hover:cursor-pointer hover:bg-[#757575]"
-                onClick={() => setSelectedComponent("DEVSOC 2024")}
-                onTouchEnd={() => setSelectedComponent("DEVSOC 2024")}
+                // onClick={() => setSelectedComponent("DEVSOC 2024")}
+                // onTouchEnd={() => setSelectedComponent("DEVSOC 2024")}
               >
                 <MdMinimize />
               </span>
               <span
                 className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#b0b0b0] hover:cursor-pointer hover:bg-[#757575]"
-                onClick={() => handleMaximize()}
-                onTouchEnd={() => handleMaximize()}
+                // onClick={() => handleMaximize()}
+                // onTouchEnd={() => handleMaximize()}
               >
                 <BiWindow />
               </span>
