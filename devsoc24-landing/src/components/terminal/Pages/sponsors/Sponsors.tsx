@@ -28,7 +28,7 @@ export default function Prizepool() {
     >
       <Draggable bounds=".boundarybox">
         <div
-          className={`absolute left-[31%] top-20 z-50 flex h-fit min-w-[300px] flex-grow flex-col ${maximized ? "h-[100vh] w-[100vw] sm:h-full sm:w-full" : " w-[30vw]"} border-2 bg-[#b2b2b2] pb-3`}
+          className={`absolute left-[31%] top-16 z-50 flex h-fit min-w-[300px] flex-grow flex-col ${maximized ? "h-[100vh] w-[100vw] sm:h-full sm:w-full" : " w-[30vw]"} border-2 bg-[#b2b2b2] pb-3`}
         >
           <div className="drag-handle absolute top-0 flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
             <span className="font-nokia flex items-center justify-center pl-2 text-[10px] text-white">
@@ -71,7 +71,6 @@ export default function Prizepool() {
           </div>
           <div className="mt-6 flex h-fit w-full flex-col items-center justify-center">
             <SponsorCard
-              company="Contentstack"
               height={100}
               imgsrc="/assets/sponsors/contentstack.svg"
               title="Title Sponsor"
@@ -84,7 +83,7 @@ export default function Prizepool() {
               className="flex w-full items-center justify-center"
             >
               <button
-                className={`mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition ease-in-out  hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2 bottom-0`}
+                className={`bottom-0 mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition  ease-in-out hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2`}
                 disabled={false}
                 //className={`mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000]/70 bg-[#aaa9a9]/70 text-sm text-black/70 transition ease-in-out md:mb-2 md:mr-2`}
               >
@@ -96,7 +95,7 @@ export default function Prizepool() {
       </Draggable>
       <Draggable bounds=".boundarybox">
         <div
-          className={`absolute bottom-16 left-32 z-50 flex h-fit min-w-[300px] flex-grow flex-col ${maximized ? "h-[100vh] w-[100vw] sm:h-full sm:w-full" : " w-[30vw]"} border-2 bg-[#b2b2b2] pb-3`}
+          className={`absolute bottom-16 left-24 z-50 flex h-fit min-w-[300px] flex-grow flex-col ${maximized ? "h-[100vh] w-[100vw] sm:h-full sm:w-full" : " w-[30vw]"} border-2 bg-[#b2b2b2] pb-3`}
         >
           <div className="drag-handle absolute top-0 flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
             <span className="font-nokia flex items-center justify-center pl-2 text-[10px] text-white">
@@ -139,34 +138,33 @@ export default function Prizepool() {
           </div>
           <div className="mt-6 flex h-fit w-full flex-col items-center justify-center">
             <div className="flex flex-col">
-            <SponsorCard
-              company="Contentstack"
-              height={100}
-              imgsrc="/assets/sponsors/contentstack.svg"
-              title="Title Sponsor"
-              width={200}
-            />
-            <a
-              href="https://www.contentstack.com/"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="flex w-full items-center justify-center"
-            >
-              <button
-                className={`mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition ease-in-out  hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2 bottom-0`}
-                disabled={false}
-                //className={`mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000]/70 bg-[#aaa9a9]/70 text-sm text-black/70 transition ease-in-out md:mb-2 md:mr-2`}
+              <SponsorCard
+                height={100}
+                imgsrc="/assets/sponsors/armurai.svg"
+                title="Security Sponsor"
+                width={200}
+              />
+              <a
+                href="https://www.armur.ai/"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="flex w-full items-center justify-center"
               >
-                Visit
-              </button>
-            </a>
+                <button
+                  className={`bottom-0 mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition  ease-in-out hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2`}
+                  disabled={false}
+                  //className={`mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000]/70 bg-[#aaa9a9]/70 text-sm text-black/70 transition ease-in-out md:mb-2 md:mr-2`}
+                >
+                  Visit
+                </button>
+              </a>
             </div>
           </div>
         </div>
       </Draggable>
       <Draggable bounds=".boundarybox">
         <div
-          className={`absolute bottom-16 right-32 z-50 flex h-fit min-w-[300px] flex-grow flex-col ${maximized ? "h-[100vh] w-[100vw] sm:h-full sm:w-full" : " w-[30vw]"} border-2 bg-[#b2b2b2] pb-3`}
+          className={`absolute bottom-16 right-24 z-50 flex h-fit min-w-[300px] flex-grow flex-col ${maximized ? "h-[100vh] w-[100vw] sm:h-full sm:w-full" : " w-[33vw]"} border-2 bg-[#b2b2b2] pb-3`}
         >
           <div className="drag-handle absolute top-0 flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
             <span className="font-nokia flex items-center justify-center pl-2 text-[10px] text-white">
@@ -207,28 +205,73 @@ export default function Prizepool() {
               </span>
             </section>
           </div>
-          <div className="mt-6 flex h-fit w-full flex-col items-center justify-center">
-            <SponsorCard
-              company="Contentstack"
-              height={100}
-              imgsrc="/assets/sponsors/contentstack.svg"
-              title="Title Sponsor"
-              width={200}
-            />
-            <a
-              href="https://www.contentstack.com/"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="flex w-full items-center justify-center"
-            >
-              <button
-                className={`mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition ease-in-out  hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2 bottom-0`}
-                disabled={false}
-                //className={`mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000]/70 bg-[#aaa9a9]/70 text-sm text-black/70 transition ease-in-out md:mb-2 md:mr-2`}
+          <div className="mt-6 flex h-fit w-full items-stretch justify-center gap-x-4 px-3">
+          <div className="flex flex-col">
+              <SponsorCard
+                height={100}
+                imgsrc="/assets/sponsors/hallofcricket.svg"
+                title=""
+                width={200}
+              />
+              <a
+                href="https://www.hallofcricket.com/"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="flex w-full items-center justify-center"
               >
-                Visit
-              </button>
-            </a>
+                <button
+                  className={`bottom-0 mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition  ease-in-out hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2`}
+                  disabled={false}
+                  //className={`mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000]/70 bg-[#aaa9a9]/70 text-sm text-black/70 transition ease-in-out md:mb-2 md:mr-2`}
+                >
+                  Visit
+                </button>
+              </a>
+            </div>
+            <div className="flex flex-col">
+              <SponsorCard
+                height={100}
+                imgsrc="/assets/sponsors/quillbot.svg"
+                title=""
+                width={200}
+              />
+              <a
+                href="https://www.quillbot.com/"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="flex w-full items-center justify-center"
+              >
+                <button
+                  className={`bottom-0 mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition  ease-in-out hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2`}
+                  disabled={false}
+                  //className={`mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000]/70 bg-[#aaa9a9]/70 text-sm text-black/70 transition ease-in-out md:mb-2 md:mr-2`}
+                >
+                  Visit
+                </button>
+              </a>
+            </div>
+            <div className="flex flex-col">
+              <SponsorCard
+                height={100}
+                imgsrc="/assets/sponsors/scribbr.svg"
+                title=""
+                width={200}
+              />
+              <a
+                href="https://www.scribbr.com/"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="flex w-full items-center justify-center"
+              >
+                <button
+                  className={`bottom-0 mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition  ease-in-out hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2`}
+                  disabled={false}
+                  //className={`mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000]/70 bg-[#aaa9a9]/70 text-sm text-black/70 transition ease-in-out md:mb-2 md:mr-2`}
+                >
+                  Visit
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </Draggable>

@@ -3,7 +3,6 @@ import Image from "next/image";
 
 const SponsorCard = (props: {
   imgsrc: string;
-  company: string;
   title: string;
   width: number;
   height: number;
@@ -20,9 +19,7 @@ const SponsorCard = (props: {
               height={props.height}
               width={props.width}
               className={`m-4 `}
-              
             />
-            <p className="mb-2">{props.company}</p>
           </div>
         </div>
       </div>
