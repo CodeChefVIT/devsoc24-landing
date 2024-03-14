@@ -9,7 +9,7 @@ import FAQs from "@/components/terminal/Pages/FAQs";
 import Prizepool from "@/components/terminal/Pages/Prizepool";
 import Tracks from "@/components/terminal/Pages/Tracks";
 import Timeline from "@/components/terminal/Pages/Timeline";
-import Sponsors from "@/components/terminal/Pages/sponsors/Sponsors";
+import Sponsors from "@/components/terminal/Pages/Sponsors/Sponsors";
 import Portal from "@/components/terminal/Pages/Portal";
 import { IoMdClose } from "react-icons/io";
 import { IoTerminal } from "react-icons/io5";

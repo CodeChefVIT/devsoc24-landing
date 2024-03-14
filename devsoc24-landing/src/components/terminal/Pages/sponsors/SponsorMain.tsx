@@ -64,7 +64,7 @@ export default function SponsorMain() {
             </section>
           </div>
           <div className="flex flex-row gap-x-2 items-center p-3">
-            <Image src={rupee} alt="icon" height={0} width={0} className="h-fit w-fit"/>
+            <Image src={rupee as HTMLImageElement} alt="icon" height={0} width={0} className="h-fit w-fit"/>
             <p className="w-[90%] font-nokia text-[22px]">SPONSORED BY</p>
           </div>
           <button

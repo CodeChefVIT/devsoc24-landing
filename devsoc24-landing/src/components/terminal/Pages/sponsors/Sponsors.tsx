@@ -205,72 +205,75 @@ export default function Prizepool() {
               </span>
             </section>
           </div>
-          <div className="mt-6 flex h-fit w-full items-stretch justify-center gap-x-4 px-3">
-          <div className="flex flex-col">
-              <SponsorCard
-                height={100}
-                imgsrc="/assets/sponsors/hallofcricket.svg"
-                title=""
-                width={200}
-              />
-              <a
-                href="https://www.hallofcricket.com/"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="flex w-full items-center justify-center"
-              >
-                <button
-                  className={`bottom-0 mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition  ease-in-out hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2`}
-                  disabled={false}
-                  //className={`mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000]/70 bg-[#aaa9a9]/70 text-sm text-black/70 transition ease-in-out md:mb-2 md:mr-2`}
+          <div className="mt-6 flex h-fit w-full flex-col items-stretch justify-center gap-x-4 px-3">
+            <p className="mt-2 text-center text-[15px]">In-Kind Sponsors</p>
+            <div className="flex flex-row gap-x-4">
+              <div className="flex flex-col">
+                <SponsorCard
+                  height={100}
+                  imgsrc="/assets/sponsors/hallofcricket.svg"
+                  title=""
+                  width={200}
+                />
+                <a
+                  href="https://www.hallofcricket.com/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="flex w-full items-center justify-center"
                 >
-                  Visit
-                </button>
-              </a>
-            </div>
-            <div className="flex flex-col">
-              <SponsorCard
-                height={100}
-                imgsrc="/assets/sponsors/quillbot.svg"
-                title=""
-                width={200}
-              />
-              <a
-                href="https://www.quillbot.com/"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="flex w-full items-center justify-center"
-              >
-                <button
-                  className={`bottom-0 mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition  ease-in-out hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2`}
-                  disabled={false}
-                  //className={`mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000]/70 bg-[#aaa9a9]/70 text-sm text-black/70 transition ease-in-out md:mb-2 md:mr-2`}
+                  <button
+                    className={`bottom-0 mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition  ease-in-out hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2`}
+                    disabled={false}
+                    //className={`mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000]/70 bg-[#aaa9a9]/70 text-sm text-black/70 transition ease-in-out md:mb-2 md:mr-2`}
+                  >
+                    Visit
+                  </button>
+                </a>
+              </div>
+              <div className="flex flex-col">
+                <SponsorCard
+                  height={100}
+                  imgsrc="/assets/sponsors/quillbot.svg"
+                  title=""
+                  width={200}
+                />
+                <a
+                  href="https://www.quillbot.com/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="flex w-full items-center justify-center"
                 >
-                  Visit
-                </button>
-              </a>
-            </div>
-            <div className="flex flex-col">
-              <SponsorCard
-                height={100}
-                imgsrc="/assets/sponsors/scribbr.svg"
-                title=""
-                width={200}
-              />
-              <a
-                href="https://www.scribbr.com/"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="flex w-full items-center justify-center"
-              >
-                <button
-                  className={`bottom-0 mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition  ease-in-out hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2`}
-                  disabled={false}
-                  //className={`mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000]/70 bg-[#aaa9a9]/70 text-sm text-black/70 transition ease-in-out md:mb-2 md:mr-2`}
+                  <button
+                    className={`bottom-0 mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition  ease-in-out hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2`}
+                    disabled={false}
+                    //className={`mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000]/70 bg-[#aaa9a9]/70 text-sm text-black/70 transition ease-in-out md:mb-2 md:mr-2`}
+                  >
+                    Visit
+                  </button>
+                </a>
+              </div>
+              <div className="flex flex-col">
+                <SponsorCard
+                  height={100}
+                  imgsrc="/assets/sponsors/scribbr.svg"
+                  title=""
+                  width={200}
+                />
+                <a
+                  href="https://www.scribbr.com/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="flex w-full items-center justify-center"
                 >
-                  Visit
-                </button>
-              </a>
+                  <button
+                    className={`bottom-0 mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition  ease-in-out hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2`}
+                    disabled={false}
+                    //className={`mt-4 h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000]/70 bg-[#aaa9a9]/70 text-sm text-black/70 transition ease-in-out md:mb-2 md:mr-2`}
+                  >
+                    Visit
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
