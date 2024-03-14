@@ -236,7 +236,7 @@ export default function Prizepool() {
             </section>
           </div>
           <div
-            className={`mt-6 flex h-fit  w-fit ${isSmaller ? "" : "max-w-[35vw]"} flex-col justify-center gap-x-4 px-3`}
+            className={`mt-6 flex h-fit  min-w-fit ${isSmaller ? "w-fit" : " max-w-[35vw] w-fit"} flex-col justify-center gap-x-4 px-3`}
           >
             <p className="mt-2 text-center text-[15px]">In-Kind Sponsors</p>
             <div

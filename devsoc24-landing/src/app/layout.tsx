@@ -10,10 +10,10 @@ const inter = Inter({
 export const metadata = {
   title: "DEVSOC'24",
   description:
-    "DEVSOC'24 is CodeChef-VIT's annual flagship event hoping to empower young minds by bringing enthusiastic technocrats and thinkers under one roof.",
+    "Join us in the Anna Auditorium on 17th March for DEVSOC-24! Find out more at our website",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
   ogImage: {
-    url: "https://example.com/path/to/your/image.jpg",
+    url: "/assets/images/ogImage.png",
     alt: "DEVSOC'24 Image",
   },
 };
