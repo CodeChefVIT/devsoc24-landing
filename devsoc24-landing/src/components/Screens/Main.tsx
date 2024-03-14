@@ -168,63 +168,81 @@ function Main() {
             />
           </div>
 
-          <div className="absolute top-6 z-50 m-0 w-full p-0">
-            <div className="flex items-center justify-center">
-              <div className="relative hidden w-[33%] items-center justify-evenly lg:flex">
-                <div
-                  onClick={() => {
-                    lenis?.scrollTo("#about", { lerp: 0.1, duration: 0.5 });
-                  }}
-                >
-                  <Image
-                    src={dotgrid as HTMLImageElement}
-                    alt="dotgrid"
-                    height={100}
-                    width={100}
-                    className="absolute bottom-0 left-[17%] top-[40%] h-auto w-[50px] opacity-70 md:h-min md:w-min"
-                  />
-                  <NavButton link="/" name="About" />
-                </div>
-                <div>
-                  <Image
-                    src={dotgrid as HTMLImageElement}
-                    alt="dotgrid"
-                    height={100}
-                    width={100}
-                    className="absolute right-[1%] h-auto w-[50px] opacity-70 md:h-min md:w-min"
-                  />
-                  <div onClick={() => toggleModal()}>
-                    <NavButton link="/" name="Discord" />
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col lg:block">
-                <Image src={titles[currentTitleIndex] as string} alt="title" />
-                <div className="mx-auto mt-6 flex justify-evenly lg:hidden">
+          <div className="absolute top-6 z-50 m-0 w-full p-0 ">
+            <div>
+              <div className="flex items-center justify-center ">
+                <div className="relative hidden w-[33%] items-center justify-evenly lg:flex">
                   <div
                     onClick={() => {
                       lenis?.scrollTo("#about", { lerp: 0.1, duration: 0.5 });
                     }}
                   >
+                    <Image
+                      src={dotgrid as HTMLImageElement}
+                      alt="dotgrid"
+                      height={100}
+                      width={100}
+                      className="absolute bottom-0 left-[17%] top-[40%] h-auto w-[50px] opacity-70 md:h-min md:w-min"
+                    />
                     <NavButton link="/" name="About" />
                   </div>
-                  <div onClick={() => toggleModal()}>
-                    <NavButton link="/" name="Discord" />
+                  <div>
+                    <Image
+                      src={dotgrid as HTMLImageElement}
+                      alt="dotgrid"
+                      height={100}
+                      width={100}
+                      className="absolute right-[1%] h-auto w-[50px] opacity-70 md:h-min md:w-min"
+                    />
+                    <div onClick={() => toggleModal()}>
+                      <NavButton link="/" name="Discord" />
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-col lg:block ">
+                  <div className="flex h-fit w-fit flex-col items-center gap-4 ">
+                    <Image
+                      src={titles[currentTitleIndex] as string}
+                      alt="title"
+                    />
+                  </div>
+                  <div className="mx-auto mt-6 flex justify-evenly lg:hidden">
+                    <div
+                      onClick={() => {
+                        lenis?.scrollTo("#about", { lerp: 0.1, duration: 0.5 });
+                      }}
+                    >
+                      <NavButton link="/" name="About" />
+                    </div>
+                    <div onClick={() => toggleModal()}>
+                      <NavButton link="/" name="Discord" />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="hidden w-[33%] justify-center lg:flex">
+                  <div>
+                    <Image
+                      src={dotgrid as HTMLImageElement}
+                      alt="dotgrid"
+                      height={100}
+                      width={100}
+                      className="absolute bottom-0 left-[65%] top-[2%] h-auto w-[50px] opacity-70 md:h-min md:w-min"
+                    />
+
+                    <Button link="/" data="Register Now" portal={true} />
                   </div>
                 </div>
               </div>
-
-              <div className="hidden w-[33%] justify-center lg:flex">
-                <div>
-                  <Image
-                    src={dotgrid as HTMLImageElement}
-                    alt="dotgrid"
-                    height={100}
-                    width={100}
-                    className="absolute bottom-0 left-[65%] top-[2%] h-auto w-[50px] opacity-70 md:h-min md:w-min"
-                  />
-                  <Button link="/" data="Register Now" portal={true} />
-                </div>
+              <div className="mt-2 flex flex-col items-center ">
+                <p>Co-hosted by:</p>
+                <Image
+                  src="/assets/sponsors/contentstack.svg"
+                  alt="contentstack"
+                  height={0}
+                  width={0}
+                  className="h-[30px] w-auto"
+                />
               </div>
             </div>
             <div className="flex h-screen justify-center overflow-hidden lg:justify-between 2xl:mt-12">
@@ -321,7 +339,8 @@ function Main() {
                   HACKATHON IS DESIGNED AS A SPRINT-LIKE EVENT, ENCOURAGING
                   PARTICIPANTS TO UNLEASH THEIR CREATIVITY AND TEAMWORK TO SOLVE
                   CHALLENGES. SPANNING THREE DAYS, RUNNING FOR 48 HOURS
-                  STRAIGHT, AT THE ANNA AUDITORIUM, VELLORE INSTITUTE OF TECHNOLOGY,
+                  STRAIGHT, DEVSOC WILL TAKE PLACE FROM MARCH 17TH TO 19TH,
+                  2024, AT THE ANNA AUDITORIUM, VELLORE INSTITUTE OF TECHNOLOGY,
                   VELLORE. AS A FREE AND OPEN SOURCE SOFTWARE (FOSS) EVENT,
                   DEVSOC ADDS AN EXTRA DIMENSION TO ITS ETHOS OF COLLABORATION
                   AND INNOVATION.
