@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import notepad from "@/assets/images/notepad.svg";
 import { MdMinimize } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import { BiWindow } from "react-icons/bi";
 import Draggable from "react-draggable";
-import { useCloseStore, useSelectedStore } from "@/store/store";
+import {
+  useCloseStore,
+  useMobileTerminalStore,
+  useSelectedStore,
+  useTerminalStore,
+} from "@/store/store";
 import SponsorCard from "./SponsorCard";
 
 export default function Prizepool() {
@@ -13,6 +19,31 @@ export default function Prizepool() {
   const [maximized, setMaximized] = useState(false);
   const { activeCard, setActiveCard } = useCloseStore();
   const { setSelectedComponent } = useSelectedStore();
+  const [isSmaller, setIsSmaller] = useState(window.innerWidth < 1024);
+  const { showTerminal, setShowTerminal } = useTerminalStore();
+  const { size, setSize } = useMobileTerminalStore();
+
+  useEffect(() => {
+    function handleResize() {
+      setIsSmaller(window.innerWidth < 1024);
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    console.log("SIZE: ", size);
+    console.log("Terminal: ", showTerminal);
+  }, [size, showTerminal]);
+
+  const toggleSize = () => {
+    setSize(!size);
+  };
+
+  const toggleTerminal = () => {
+    setShowTerminal(!showTerminal);
+  };
 
   const handleMinimize = () => {
     setMinimized(!minimized);
@@ -24,9 +55,9 @@ export default function Prizepool() {
 
   return (
     <div
-      className={`relative flex h-full w-full ${maximized ? "" : "pl-[30px] pt-[100px]  md:pl-[60px]"} bgImg`}
+      className={`relative flex w-full ${showTerminal ? !isSmaller ? "h-full bg-white" : (size ? "h-[38vh] bg-blue-400" : "h-[58vh] bg-red-400") : "h-full bg-white"}`}
     >
-      <Draggable bounds=".boundarybox">
+      <Draggable bounds=".boundarybox" disabled={isSmaller}>
         <div
           className={`absolute left-[31%] top-16 z-50 flex h-fit min-w-[300px] flex-grow flex-col ${maximized ? "h-[100vh] w-[100vw] sm:h-full sm:w-full" : " w-[30vw]"} border-2 bg-[#b2b2b2] pb-3`}
         >
@@ -93,7 +124,7 @@ export default function Prizepool() {
           </div>
         </div>
       </Draggable>
-      <Draggable bounds=".boundarybox">
+      <Draggable bounds=".boundarybox" disabled={isSmaller}>
         <div
           className={`absolute bottom-16 left-24 z-50 flex h-fit min-w-[300px] flex-grow flex-col ${maximized ? "h-[100vh] w-[100vw] sm:h-full sm:w-full" : " w-[30vw]"} border-2 bg-[#b2b2b2] pb-3`}
         >
@@ -109,15 +140,15 @@ export default function Prizepool() {
             <section className="flex">
               <span
                 className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#b0b0b0] hover:cursor-pointer hover:bg-[#757575]"
-                onClick={() => setSelectedComponent("DEVSOC 2024")}
-                onTouchEnd={() => setSelectedComponent("DEVSOC 2024")}
+                // onClick={() => setSelectedComponent("DEVSOC 2024")}
+                // onTouchEnd={() => setSelectedComponent("DEVSOC 2024")}
               >
                 <MdMinimize />
               </span>
               <span
                 className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#b0b0b0] hover:cursor-pointer hover:bg-[#757575]"
-                onClick={() => handleMaximize()}
-                onTouchEnd={() => handleMaximize()}
+                // onClick={() => handleMaximize()}
+                // onTouchEnd={() => handleMaximize()}
               >
                 <BiWindow />
               </span>
@@ -162,7 +193,7 @@ export default function Prizepool() {
           </div>
         </div>
       </Draggable>
-      <Draggable bounds=".boundarybox">
+      <Draggable bounds=".boundarybox" disabled={isSmaller}>
         <div
           className={`absolute bottom-16 right-24 z-50 flex h-fit min-w-[300px] flex-grow flex-col ${maximized ? "h-[100vh] w-[100vw] sm:h-full sm:w-full" : " w-[33vw]"} border-2 bg-[#b2b2b2] pb-3`}
         >
@@ -178,15 +209,15 @@ export default function Prizepool() {
             <section className="flex">
               <span
                 className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#b0b0b0] hover:cursor-pointer hover:bg-[#757575]"
-                onClick={() => setSelectedComponent("DEVSOC 2024")}
-                onTouchEnd={() => setSelectedComponent("DEVSOC 2024")}
+                // onClick={() => setSelectedComponent("DEVSOC 2024")}
+                // onTouchEnd={() => setSelectedComponent("DEVSOC 2024")}
               >
                 <MdMinimize />
               </span>
               <span
                 className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#b0b0b0] hover:cursor-pointer hover:bg-[#757575]"
-                onClick={() => handleMaximize()}
-                onTouchEnd={() => handleMaximize()}
+                // onClick={() => handleMaximize()}
+                // onTouchEnd={() => handleMaximize()}
               >
                 <BiWindow />
               </span>
