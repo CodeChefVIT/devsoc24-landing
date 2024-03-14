@@ -7,17 +7,6 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
-export const metadata = {
-  title: "DEVSOC'24",
-  description:
-    "Join us in the Anna Auditorium on 17th March for DEVSOC-24! Find out more at our website",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
-  ogImage: {
-    url: "/assets/images/ogImage.png",
-    alt: "DEVSOC'24 Image",
-  },
-};
-
 export default function RootLayout({
   children,
 }: {
@@ -25,6 +14,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* Open Graph tags */}
+        <title>DEVSOC&apos;24</title>
+        <meta property="og:title" content={"DEVSOC'24"} />
+        <meta
+          property="og:description"
+          content={
+            "DEVSOC-24 is here! Join us in the Anna Auditorium on 17th March for an intense coding experience, fun activities, and insightful speaker sessions. Find out more at our website!"
+          }
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={"/thumbnail.png"} />
+        <meta property="og:url" content={""} />
+        <meta property="og:site_name" content={"DEVSOC'24"} />
+      </head>
       <body className={`font-sans ${inter.variable}`}>{children}</body>
     </html>
   );
