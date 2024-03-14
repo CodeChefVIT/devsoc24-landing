@@ -55,11 +55,11 @@ export default function Prizepool() {
 
   return (
     <div
-      className={`relative flex w-full ${showTerminal ? !isSmaller ? "h-full bg-white" : (size ? "h-[38vh] bg-blue-400" : "h-[58vh] bg-red-400") : "h-full bg-white"}`}
+      className={`bgImg relative flex w-full ${showTerminal ? (!isSmaller ? "h-full " : size ? "h-[38vh] flex-col items-center gap-6 overflow-y-auto " : "h-[58vh] flex-col items-center gap-6 overflow-y-auto") : "h-full "}`}
     >
       <Draggable bounds=".boundarybox" disabled={isSmaller}>
         <div
-          className={`absolute left-[31%] top-16 z-50 flex h-fit min-w-[300px] flex-grow flex-col ${maximized ? "h-[100vh] w-[100vw] sm:h-full sm:w-full" : " w-[30vw]"} border-2 bg-[#b2b2b2] pb-3`}
+          className={`${isSmaller ? "" : "absolute left-[31%] top-16 "} z-50 flex h-fit min-w-[300px] flex-grow flex-col ${maximized ? "h-[100vh] w-[100vw] sm:h-full sm:w-full" : " w-[30vw]"} border-2 bg-[#b2b2b2] pb-3`}
         >
           <div className="drag-handle absolute top-0 flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
             <span className="font-nokia flex items-center justify-center pl-2 text-[10px] text-white">
@@ -100,7 +100,9 @@ export default function Prizepool() {
               </span>
             </section>
           </div>
-          <div className="mt-6 flex h-fit w-full flex-col items-center justify-center">
+          <div
+            className={`mt-6 flex h-fit w-full ${isSmaller ? "" : "max-w-[35vw]"} flex-col items-center justify-center`}
+          >
             <SponsorCard
               height={100}
               imgsrc="/assets/sponsors/contentstack.svg"
@@ -126,7 +128,7 @@ export default function Prizepool() {
       </Draggable>
       <Draggable bounds=".boundarybox" disabled={isSmaller}>
         <div
-          className={`absolute bottom-16 left-24 z-50 flex h-fit min-w-[300px] flex-grow flex-col ${maximized ? "h-[100vh] w-[100vw] sm:h-full sm:w-full" : " w-[30vw]"} border-2 bg-[#b2b2b2] pb-3`}
+          className={`${isSmaller ? "" : "absolute bottom-16 left-24"} z-50 flex h-fit min-w-[300px] flex-grow flex-col ${maximized ? "h-[100vh] w-[100vw] sm:h-full sm:w-full" : " w-[30vw]"} border-2 bg-[#b2b2b2] pb-3`}
         >
           <div className="drag-handle absolute top-0 flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
             <span className="font-nokia flex items-center justify-center pl-2 text-[10px] text-white">
@@ -167,7 +169,9 @@ export default function Prizepool() {
               </span>
             </section>
           </div>
-          <div className="mt-6 flex h-fit w-full flex-col items-center justify-center">
+          <div
+            className={`mt-6 flex h-fit w-full ${isSmaller ? "" : "max-w-[35vw]"} flex-col items-center justify-center`}
+          >
             <div className="flex flex-col">
               <SponsorCard
                 height={100}
@@ -195,7 +199,7 @@ export default function Prizepool() {
       </Draggable>
       <Draggable bounds=".boundarybox" disabled={isSmaller}>
         <div
-          className={`absolute bottom-16 right-24 z-50 flex h-fit min-w-[300px] flex-grow flex-col ${maximized ? "h-[100vh] w-[100vw] sm:h-full sm:w-full" : " w-[33vw]"} border-2 bg-[#b2b2b2] pb-3`}
+          className={`${isSmaller ? "" : "absolute bottom-16 right-11"} z-50 flex h-fit w-fit min-w-[300px] flex-grow flex-col ${maximized ? "h-[100vh] w-[100vw] sm:h-full sm:w-full" : " w-[33vw]"} border-2 bg-[#b2b2b2] pb-3`}
         >
           <div className="drag-handle absolute top-0 flex h-[25px] w-[100%] items-center justify-between border-b-2 bg-gradient-to-r from-blue-800 to-blue-600">
             <span className="font-nokia flex items-center justify-center pl-2 text-[10px] text-white">
@@ -236,10 +240,14 @@ export default function Prizepool() {
               </span>
             </section>
           </div>
-          <div className="mt-6 flex h-fit w-full flex-col items-stretch justify-center gap-x-4 px-3">
+          <div
+            className={`mt-6 flex h-fit  w-fit ${isSmaller ? "" : "max-w-[35vw]"} flex-col justify-center gap-x-4 px-3`}
+          >
             <p className="mt-2 text-center text-[15px]">In-Kind Sponsors</p>
-            <div className="flex flex-row gap-x-4">
-              <div className="flex flex-col">
+            <div
+              className={`flex w-fit ${isSmaller ? "flex-col gap-y-6" : "flex-row gap-x-4"} `}
+            >
+              <div className={`flex w-fit flex-col`}>
                 <SponsorCard
                   height={100}
                   imgsrc="/assets/sponsors/hallofcricket.svg"
@@ -261,7 +269,7 @@ export default function Prizepool() {
                   </button>
                 </a>
               </div>
-              <div className="flex flex-col">
+              <div className="flex w-fit flex-col">
                 <SponsorCard
                   height={100}
                   imgsrc="/assets/sponsors/quillbot.svg"
@@ -283,7 +291,7 @@ export default function Prizepool() {
                   </button>
                 </a>
               </div>
-              <div className="flex flex-col">
+              <div className="flex w-fit flex-col">
                 <SponsorCard
                   height={100}
                   imgsrc="/assets/sponsors/scribbr.svg"
