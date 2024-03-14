@@ -55,7 +55,7 @@ const Tracks = () => {
   );
 
   const showModal = (index: number) => {
-    console.log("Open Modal: ", index);
+    // console.log("Open Modal: ", index);
     setTrackModal((prev) => {
       const newTrackModal = [...prev];
       newTrackModal[index] = true;

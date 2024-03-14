@@ -32,11 +32,6 @@ export default function Prizepool() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    console.log("SIZE: ", size);
-    console.log("Terminal: ", showTerminal);
-  }, [size, showTerminal]);
-
   const toggleSize = () => {
     setSize(!size);
   };
