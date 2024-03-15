@@ -77,14 +77,14 @@ const timeline = [
 ];
 
 const tracks = [
-  <ol id="list">
-  <li id="list">Interactive Engagement (Gamified Solutions)</li>
-  <li id="list">Eco-Innovations (Sustainable Technology)</li>
-  <li id="list">Community Building</li>
-  <li id="list">Future of Work</li>
-  <li id="list">Ethical Technology</li>
-  <li id="list">Open Innovation</li>
-  </ol>,
+  '<ol id="list">',
+  '<li id="list">Interactive Engagement (Gamified Solutions)</li>',
+  '<li id="list">Eco-Innovations (Sustainable Technology)</li>',
+  '<li id="list">Community Building</li>',
+  '<li id="list">Future of Work</li>',
+  '<li id="list">Ethical Technology</li>',
+  '<li id="list">Open Innovation</li>',
+  "</ol>,",
   //'<span id="command">Coming Soon</span><br>',
   "<br>",
 ];
@@ -311,7 +311,7 @@ const Terminal = () => {
   return (
     <div
       // className={`h-[91.5vh] min-w-[95vw] overflow-y-auto overflow-x-hidden bg-[#757575] px-2 md:min-w-[20vw]`}
-      className={`lg:h-full ${size ? "h-[50vh]" : "h-[30vh]"} font-diatype min-w-[95vw] overflow-y-auto overflow-x-hidden bg-[#757575] px-2 md:min-w-[20vw]`}
+      className={`lg:h-full ${size ? "h-[50vh]" : "h-[30vh]"} min-w-[95vw] overflow-y-auto overflow-x-hidden bg-[#757575] px-2 font-diatype md:min-w-[20vw]`}
       onClick={() => document.getElementById("userInput")?.focus()}
     >
       <div className="mt-2 flex flex-col gap-2">
