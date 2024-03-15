@@ -51,7 +51,7 @@ const initial = [
   `<div id="dottedLine"></div>`,
 ];
 const about = [
-  '<span id="command">DEVSOC, the flagship annual event by CodeChef-VIT, aims to empower young minds by fostering collaboration between tech enthusiasts and innovators. In its fourth iteration, this hackathon is designed as a sprint-like event, encouraging participants to unleash their creativity and teamwork to solve challenges. Spanning three days, running for 48 hours straight, at the Anna Auditorium, Vellore Institute of Technology, Vellore. As a free and open-source software (FOSS) event, DEVSOC adds an extra dimension to its ethos of collaboration and innovation.</span><br>',
+  '<span id="command">DEVSOC, the flagship annual event by CodeChef-VIT, aims to empower young minds by fostering collaboration between tech enthusiasts and innovators. In its fourth iteration, this hackathon is designed as a sprint-like event, encouraging participants to unleash their creativity and teamwork to solve challenges. DEVSOC&apos;24 spans three days, running for 48 hours straight, at Anna Auditorium, Vellore Institute of Technology, Vellore. As a free and open-source software (FOSS) event, DEVSOC adds an extra dimension to its ethos of collaboration and innovation.</span><br>',
 ];
 
 const faqs = [
@@ -63,22 +63,29 @@ const faqs = [
   `<br>`,
 ];
 
-const sponsors = ['<span id="command">Coming Soon</span><br>'];
+const sponsors = [
+  '<span id="command">Title Sponsor: Contentstack</span><br>',
+  '<span id="command">Security Sponsor: Armur AI</span><br>',
+  '<span id="command">In-Kind Sponsor: Hall of Cricket</span><br>',
+  '<span id="command">In-Kind Sponsor: QuillBot</span><br>',
+  '<span id="command"> In-Kind Sponsor: Scribbr</span><br>',
+];
 
 const timeline = [
-  '<span id="command">17th to 19th March</span><br><span id="command">More details coming soon</span><br>',
+  '<span id="command">17th to 19th March</span><br><span id="command"></span><br>',
+  '<span id="command">type `cd sponsors` for more details</span><br><span id="command"></span><br>',
 ];
 
 const tracks = [
-  // <ol id="list">
-  // <li id="list">Interactive Engagement (Gamified Solutions)</li>
-  // <li id="list">Eco-Innovations (Sustainable Technology)</li>
-  // <li id="list">Community Building</li>
-  // <li id="list">Future of Work</li>
-  // <li id="list">Ethical Technology</li>
-  // <li id="list">Open Innovation</li>
-  // </ol>,
-  '<span id="command">Coming Soon</span><br>',
+  <ol id="list">
+  <li id="list">Interactive Engagement (Gamified Solutions)</li>
+  <li id="list">Eco-Innovations (Sustainable Technology)</li>
+  <li id="list">Community Building</li>
+  <li id="list">Future of Work</li>
+  <li id="list">Ethical Technology</li>
+  <li id="list">Open Innovation</li>
+  </ol>,
+  //'<span id="command">Coming Soon</span><br>',
   "<br>",
 ];
 
