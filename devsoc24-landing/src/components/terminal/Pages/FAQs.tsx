@@ -32,7 +32,7 @@ const questions = [
   {
     question: "How many team members do I need to have?",
     answer:
-      "This hackathon is a team competition where you can have 2-4 members in your team. Most teams aim to have a mix of people with both design and developer skills.",
+      "This hackathon is a team competition where you can have 2-5 members in your team. Most teams aim to have a mix of people with both design and developer skills.",
   },
   {
     question:
