@@ -51,7 +51,7 @@ export default function Prizepool() {
 
   return (
     <div
-      className={`bgImg relative flex w-full ${showTerminal ? (!isSmaller ? "h-full " : size ? "h-[38vh] flex-col items-center gap-6 overflow-y-auto " : "h-[58vh] flex-col items-center gap-6 overflow-y-auto") : "h-full "}`}
+      className={`bgImg min-h-[92vh] relative flex w-full ${showTerminal ? (!isSmaller ? "h-full " : size ? "h-[38vh] flex-col items-center gap-6 overflow-y-auto " : "h-[58vh] flex-col items-center gap-6 overflow-y-auto") : "h-full "}`}
     >
       <div className="flex flex-col w-full items-center gap-6">
         <div

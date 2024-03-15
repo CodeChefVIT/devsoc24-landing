@@ -23,7 +23,7 @@ export default function Portal() {
 
   return (
     <div
-      className={`relative flex h-full w-full ${maximized ? "" : "pl-[30px] pt-[100px]  md:pl-[60px]"} bgImg`}
+      className={`relative flex min-h-[92vh] h-full w-full ${maximized ? "" : "pl-[30px] pt-[100px]  md:pl-[60px]"} bgImg`}
     >
       <div>
         {minimized ? (

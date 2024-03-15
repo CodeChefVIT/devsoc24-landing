@@ -23,7 +23,7 @@ export default function Timeline() {
 
   return (
     <div
-      className={`relative flex h-full w-full ${maximized ? "" : "pl-[30px] pt-[100px]  md:pl-[60px] bgImg"}`}
+      className={`relative flex h-full min-h-[92vh] w-full ${maximized ? "" : "pl-[30px] pt-[100px]  md:pl-[60px] bgImg"}`}
     >
       <div>
         {minimized ? (

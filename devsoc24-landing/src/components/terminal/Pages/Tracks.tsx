@@ -80,7 +80,7 @@ const Tracks = () => {
   };
 
   return (
-    <div className={`bgImg boundarybox relative flex h-full w-full`}>
+    <div className={`bgImg min-h-[92vh] boundarybox relative flex h-full w-full`}>
       <div className="my-auto flex flex-wrap items-center justify-center text-white">
         {trackDetails.map((track, index) => (
           <div
