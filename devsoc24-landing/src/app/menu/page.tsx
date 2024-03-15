@@ -186,7 +186,7 @@ export default function Home() {
               className="min-h-[4vh] w-screen bg-cover bg-center"
               style={{ backgroundImage: `url('/TopBorder.svg')` }}
             />
-            <div className="flex h-full w-screen flex-row">
+            <div className="flex h-fit  w-screen flex-row ">
               {showTerminal ? (
                 <div
                   className={`fixed bottom-0 z-50 flex h-fit w-full flex-col lg:relative lg:h-[105.3%] 2xl:h-full lg:w-[20vw]`}
