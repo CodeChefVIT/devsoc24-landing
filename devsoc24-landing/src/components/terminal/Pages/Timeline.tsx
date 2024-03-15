@@ -6,7 +6,7 @@ const timelineData = [
     day: 1,
     title: "Entry and Registration",
     time: "18:00",
-    image: "windows.svg",
+    image: "entry.svg",
   },
   {
     day: 1,
@@ -60,13 +60,13 @@ const timelineData = [
     day: 3,
     title: "End of Hacking",
     time: "13:00",
-    image: "winner.svg",
+    image: "computer.svg",
   },
   {
     day: 3,
     title: "Final Pitches",
     time: "14:00",
-    image: "winner.svg",
+    image: "pitch.svg",
   },
   {
     day: 3,
@@ -79,7 +79,7 @@ const timelineData = [
 export default function Timeline() {
   return (
     <div
-      className={`bgImg md:pl-[60px]"} relative flex h-full min-h-[92vh] w-full flex-wrap gap-6 pl-[30px] pt-[100px]`}
+      className={`bgImg  pt-10 relative flex h-full min-h-[92vh] w-full flex-wrap gap-6 pl-[30px]`}
     >
       {timelineData.map((item, index) => (
         <TimelineCard

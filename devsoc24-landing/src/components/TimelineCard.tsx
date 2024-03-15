@@ -18,11 +18,11 @@ const TimelineCard = (props: {
             width={0}
             className="h-auto min-w-[15vw] max-w-[15vw] w-full"
           />
-          <div className="absolute h-fit w-fit bg-[#757575] p-1">
+          <div className="absolute h-fit w-fit bg-[#757575]p-1">
             Day {props.day}
           </div>
         </div>
-        <div className="flex h-[30vh] w-full flex-col bg-[#757575]">
+        <div className="flex h-[30vh] w-full flex-col bg-[#757575] border-b-2 border-black border-l-2 border-r-2">
           <div className="flex h-[60%] w-full items-center justify-center">
             <Image
               src={`/timeline/${props.image}`}
