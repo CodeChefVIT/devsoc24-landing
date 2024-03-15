@@ -8,7 +8,7 @@ const TimelineCard = (props: {
   image: string;
 }) => {
   return (
-    <div className="min-w-[15vw] max-w-[15vw]">
+    <div className="w-[200px]">
       <div className="flex flex-col">
         <div className="relative flex h-fit w-fit items-center justify-center bg-black">
           <Image
@@ -16,13 +16,13 @@ const TimelineCard = (props: {
             alt="header"
             height={0}
             width={0}
-            className="h-auto min-w-[15vw] max-w-[15vw] w-full"
+            className="h-auto w-[200px]"
           />
-          <div className="absolute h-fit w-fit bg-[#757575]p-1">
+          <div className="bg-[#757575]p-1 absolute h-fit w-fit">
             Day {props.day}
           </div>
         </div>
-        <div className="flex h-[30vh] w-full flex-col bg-[#757575] border-b-2 border-black border-l-2 border-r-2">
+        <div className="flex h-[30vh] w-full flex-col border-b-2 border-l-2 border-r-2 border-black bg-[#757575]">
           <div className="flex h-[60%] w-full items-center justify-center">
             <Image
               src={`/timeline/${props.image}`}
