@@ -208,11 +208,16 @@ function Main() {
                   </div>
                   <div className="mx-auto mt-6 flex justify-evenly lg:hidden">
                     <div
+                      className="hidden lg:block"
                       onClick={() => {
                         lenis?.scrollTo("#about", { lerp: 0.1, duration: 0.5 });
                       }}
                     >
                       <NavButton link="/" name="About" />
+                    </div>
+
+                    <div className="lg:hidden">
+                      <NavButton link="https://portal.devsoc.codechefvit.com/" name="Register" />
                     </div>
                     <div onClick={() => toggleModal()}>
                       <NavButton link="/" name="Discord" />
@@ -230,7 +235,11 @@ function Main() {
                       className="absolute bottom-0 left-[65%] top-[2%] h-auto w-[50px] opacity-70 md:h-min md:w-min"
                     />
 
-                    <Button link="/" data="Register Now" portal={true} />
+                    <Button
+                      link="https://portal.devsoc.codechefvit.com/"
+                      data="Register Now"
+                      portal={true}
+                    />
                   </div>
                 </div>
               </div>
