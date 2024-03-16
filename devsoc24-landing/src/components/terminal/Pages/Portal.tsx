@@ -23,7 +23,7 @@ export default function Portal() {
 
   return (
     <div
-      className={`relative flex min-h-[92vh] h-full w-full ${maximized ? "" : "pl-[30px] pt-[100px]  md:pl-[60px]"} bgImg`}
+      className={`relative flex h-full min-h-[92vh] w-full ${maximized ? "" : "pl-[30px] pt-[100px]  md:pl-[60px]"} bgImg`}
     >
       <div>
         {minimized ? (
@@ -71,15 +71,11 @@ export default function Portal() {
                   <span
                     className="mr-1 border-b-[2px] border-r-[2px] border-[#1e1e1e] bg-[#b0b0b0] hover:cursor-pointer hover:bg-[#757575]"
                     onClick={() => {
-                      setActiveCard(
-                        activeCard.filter((c) => c !== "Portal"),
-                      );
+                      setActiveCard(activeCard.filter((c) => c !== "Portal"));
                       setSelectedComponent("DEVSOC 2024");
                     }}
                     onTouchEnd={() => {
-                      setActiveCard(
-                        activeCard.filter((c) => c !== "Portal"),
-                      );
+                      setActiveCard(activeCard.filter((c) => c !== "Portal"));
                       setSelectedComponent("DEVSOC 2024");
                     }}
                   >
@@ -87,14 +83,20 @@ export default function Portal() {
                   </span>
                 </section>
               </div>
-              <p className="w-[90%] pl-6 pt-6 ">Coming soon...</p>
-              <button
-                //hover: className={`absolute self-end h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition ease-in-out  hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2 bottom-0`}
-                disabled={true}
-                className={`absolute bottom-0 h-6 w-24 self-end border-b-[3px] border-r-[3px] border-[#000000]/70 bg-[#aaa9a9]/70 text-sm text-black/70 transition ease-in-out md:mb-2 md:mr-2`}
+              <p className="w-[90%] pl-6 pt-6 ">
+                Register Yourself On DEVSOC'24 Portal
+              </p>
+              <a
+                href="https://www.portal.devsoc.codechefvit.com"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                Select
-              </button>
+                <button
+                  className={`absolute bottom-0 right-4 h-6 w-24 self-end border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition  ease-in-out hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2 hover:cursor-pointer`}
+                >
+                  Select
+                </button>
+              </a>
             </div>
           </Draggable>
         ) : (
@@ -140,14 +142,22 @@ export default function Portal() {
                 </span>
               </section>
             </div>
-            <p className="w-[90%] pl-6 pt-6 ">Coming soon...</p>
-            <button
-              //hover: className={`absolute self-end h-6 w-24 border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition ease-in-out  hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2 bottom-0`}
-              disabled={true}
-              className={`absolute bottom-0 h-6 w-24 self-end border-b-[3px] border-r-[3px] border-[#000000]/70 bg-[#aaa9a9]/70 text-sm text-black/70 transition ease-in-out md:mb-2 md:mr-2`}
+            <p className="w-[90%] pl-6 pt-6 ">
+              Register Yourself On DEVSOC'24 Portal
+            </p>
+            <a
+              href="https://www.portal.devsoc.codechefvit.com"
+              rel="noopener noreferrer"
+              target="_blank"
             >
-              Select
-            </button>
+              <button
+                className={`absolute bottom-0 h-6 w-24 self-end border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition  ease-in-out hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2`}
+                disabled={true}
+                // className={`absolute bottom-0 h-6 w-24 self-end border-b-[3px] border-r-[3px] border-[#000000]/70 bg-[#aaa9a9]/70 text-sm text-black/70 transition ease-in-out md:mb-2 md:mr-2`}
+              >
+                Select
+              </button>
+            </a>
           </div>
         )}
       </div>
