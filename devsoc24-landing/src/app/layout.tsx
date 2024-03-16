@@ -25,11 +25,11 @@ export default function RootLayout({
           }
         />
         <meta property="og:image:type" content="image/png" />
-        <meta property="og:image" content="https://devsoc24-landing-seven.vercel.app/thumbnail.png" />
+        <meta property="og:image" content="https://devsoc.codechefvit.com/thumbnail.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="DEVSOC'24" />
-        <meta property="og:url" content={""} />
+        <meta property="og:url" content={"https://devsoc.codechefvit.com"} />
         <meta property="og:site_name" content={"DEVSOC'24"} />
       </head>
       <body className={`font-sans ${inter.variable}`}>{children}</body>
