@@ -87,12 +87,12 @@ export default function Portal() {
                 Register Yourself On DEVSOC&apos;24 Portal
               </p>
               <a
-                href="https://www.portal.devsoc.codechefvit.com"
+                href="https://portal.devsoc.codechefvit.com"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <button
-                  className={`absolute bottom-0 right-4 h-6 w-24 self-end border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition  ease-in-out hover:scale-[1.05] hover:duration-75 md:mb-2 md:mr-2 hover:cursor-pointer`}
+                  className={`absolute bottom-0 right-4 h-6 w-24 self-end border-b-[3px] border-r-[3px] border-[#000000] bg-[#aaa9a9] text-sm transition  ease-in-out hover:scale-[1.05] hover:cursor-pointer hover:duration-75 md:mb-2 md:mr-2`}
                 >
                   Select
                 </button>
@@ -146,7 +146,7 @@ export default function Portal() {
               Register Yourself On DEVSOC&apos;24 Portal
             </p>
             <a
-              href="https://www.portal.devsoc.codechefvit.com"
+              href="https://portal.devsoc.codechefvit.com"
               rel="noopener noreferrer"
               target="_blank"
             >

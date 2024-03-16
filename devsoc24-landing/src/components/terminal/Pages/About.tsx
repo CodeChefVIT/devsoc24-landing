@@ -43,7 +43,7 @@ export default function About() {
 
   return (
     <div
-      className={`relative mt-2 min-h-[92vh] flex h-full w-full ${maximized ? "" : "bgImg  lg:pl-[60px] lg:pt-[100px] "} `}
+      className={`relative min-h-[92vh] flex h-full w-full ${maximized ? "" : "bgImg  lg:pl-[60px] lg:pt-[100px] "} `}
     >
       <div>
         {!maximized ? (
