@@ -252,7 +252,7 @@ export default function Prizepool() {
                     width={200}
                   />
                   <a
-                    href="https://www.hallofcricket.com/"
+                    href="https://hallofcricket.com/"
                     target="_blank"
                     rel="noreferrer noopener"
                     className="flex w-full items-center justify-center"
