@@ -84,7 +84,7 @@ export default function Portal() {
                 </section>
               </div>
               <p className="w-[90%] pl-6 pt-6 ">
-                Register Yourself On DEVSOC'24 Portal
+                Register Yourself On DEVSOC&apos;24 Portal
               </p>
               <a
                 href="https://www.portal.devsoc.codechefvit.com"
@@ -143,7 +143,7 @@ export default function Portal() {
               </section>
             </div>
             <p className="w-[90%] pl-6 pt-6 ">
-              Register Yourself On DEVSOC'24 Portal
+              Register Yourself On DEVSOC&apos;24 Portal
             </p>
             <a
               href="https://www.portal.devsoc.codechefvit.com"
