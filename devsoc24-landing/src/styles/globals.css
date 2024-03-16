@@ -6,7 +6,8 @@
 /* **************************************************************** */
 @font-face {
   font-family: disket-bold;
-  src: url("../../public/font/Disket-Mono-Bold.ttf");
+  /* src: url("../../public/assets/font/Disket-Mono-Bold.ttf"); */
+  src: url("../../public/assets/font/Disket-Mono-Bold.ttf");
 }
 .font-disket {
   font-family: disket-bold;
@@ -14,7 +15,7 @@
 
 @font-face {
   font-family: wreckside;
-  src: url("../../public/font/Wreckside.otf");
+  src: url("../../public/assets/font/Wreckside.otf");
 }
 .font-wreckside {
   font-family: wreckside;
@@ -22,7 +23,7 @@
 
 @font-face {
   font-family: vcr;
-  src: url("../../public/font/vcr.ttf");
+  src: url("../../public/assets/font/vcr.ttf");
 }
 .font-vcr {
   font-family: vcr;
@@ -30,7 +31,7 @@
 
 @font-face {
   font-family: nokia;
-  src: url("../../public/font/nokia.ttf");
+  src: url("../../public/assets/font/nokia.ttf");
 }
 .font-nokia {
   font-family: nokia;
@@ -38,7 +39,7 @@
 
 @font-face {
   font-family: courier;
-  src: url("../../public/font/cour.ttf");
+  src: url("../../public/assets/font/cour.ttf");
 }
 .block-text {
   font-family: courier, monospace;
@@ -53,12 +54,11 @@
     font-family: courier, monospace;
   }
 }
+/* **************************************************************** */
 
 .flip {
   transform: scaleX(-1);
 }
-
-/* **************************************************************** */
 
 /* Check if Required */
 /* **************************************************************** */
@@ -90,7 +90,7 @@
   width: calc(100% + 20rem);
   height: calc(100% + 20rem);
   opacity: 0.8;
-
+  background-image: url(/public/assets/images/glitches/hero_noise.jpeg);
   pointer-events: none;
   animation: GrainOverlay_noise__MsKWx 5s steps(4) infinite;
 }
@@ -100,7 +100,7 @@
 /* **************************************************************** */
 .overlay_about {
   width: 100%;
-  z-index: 1;
+  z-index: 100;
   position: relative;
 }
 body {
@@ -115,7 +115,7 @@ body {
   width: calc(100% + 20rem);
   height: calc(100% + 20rem);
   opacity: 0.8;
-  background-image: url(/images/noise_big.webp);
+  background-image: url(/public/assets/images/glitches/hero_noise.jpeg);
   image-rendering: pixelated;
   pointer-events: none;
   animation: GrainOverlay_noise__MsKWx 5s steps(4) infinite;
@@ -380,11 +380,7 @@ a:focus {
 }
 
 .bgImg {
-  background-image: url("../../public/Rectangle\ 2.svg");
-}
-
-.custom-cursor {
-  cursor: url("../../public/cursor.png"), auto;
+  background-image: url("../../public/assets/images/background.svg");
 }
 
 #dottedLine {
@@ -399,7 +395,19 @@ a:focus {
   margin-top: 5px;
 }
 
-#userInput{
+#userInput {
   caret-color: #323232;
   line-height: 2;
+}
+
+.ascii-art {
+  line-height: 0px;
+  letter-spacing: 2px;
+  font-size: 5px;
+  font-weight: bolder;
+}
+
+#list {
+  list-style: decimal;
+  list-style-position: inside;
 }

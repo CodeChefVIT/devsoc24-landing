@@ -10,6 +10,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@react-three/drei": "^9.99.5",
+    "@react-three/fiber": "^8.15.16",
     "@studio-freight/react-lenis": "^0.0.45",
     "@t3-oss/env-nextjs": "^0.7.1",
     "framer-motion": "^11.0.6",
@@ -19,6 +21,7 @@
     "react-dom": "^18.2.0",
     "react-draggable": "^4.4.6",
     "react-icons": "^5.0.1",
+    "three": "^0.162.0",
     "zod": "^3.22.4",
     "zustand": "^4.5.1"
   },
@@ -27,6 +30,7 @@
     "@types/node": "^18.17.0",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
+    "@types/three": "^0.162.0",
     "@typescript-eslint/eslint-plugin": "^6.11.0",
     "@typescript-eslint/parser": "^6.11.0",
     "autoprefixer": "^10.4.14",
