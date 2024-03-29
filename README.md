@@ -20,7 +20,24 @@
 
 #### Loader
 
-<img width="1440" alt="image" src="">
+<img width="1440" alt="image" src="https://github.com/CodeChefVIT/devsoc24-landing/blob/master/Landing/loading.png?raw=true">
+
+#### Home
+
+<img width="1440" alt="image" src="https://github.com/CodeChefVIT/devsoc24-landing/blob/master/Landing/home1.png?raw=true">
+<img width="1440" alt="image" src="https://github.com/CodeChefVIT/devsoc24-landing/blob/master/Landing/home2.png?raw=true">
+<img width="1440" alt="image" src="https://github.com/CodeChefVIT/devsoc24-landing/blob/master/Landing/home3.png?raw=true">
+<img width="1440" alt="image" src="https://github.com/CodeChefVIT/devsoc24-landing/blob/master/Landing/home4.png?raw=true">
+<img width="1440" alt="image" src="https://github.com/CodeChefVIT/devsoc24-landing/blob/master/Landing/home5.png?raw=true">
+
+#### Menu
+
+<img width="1440" alt="image" src="https://github.com/CodeChefVIT/devsoc24-landing/blob/master/Landing/menu1.png?raw=true">
+<img width="1440" alt="image" src="https://github.com/CodeChefVIT/devsoc24-landing/blob/master/Landing/menu2.png?raw=true">
+<img width="1440" alt="image" src="https://github.com/CodeChefVIT/devsoc24-landing/blob/master/Landing/menu3.png?raw=true">
+<img width="1440" alt="image" src="https://github.com/CodeChefVIT/devsoc24-landing/blob/master/Landing/menu4.png?raw=true">
+<img width="1440" alt="image" src="https://github.com/CodeChefVIT/devsoc24-landing/blob/master/Landing/menu5.png?raw=true">
+<img width="1440" alt="image" src="https://github.com/CodeChefVIT/devsoc24-landing/blob/master/Landing/menu6.png?raw=true">
 
 </p>
 
