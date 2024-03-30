@@ -8,9 +8,10 @@
 > <p>Welcome to Code of DEVSOC'24 Landing, your one-stop destination for all information regarding our 48-hour hackathon. From prize pools to tracks, sponsors to timelines, everything you need to know is conveniently located on this website. Plus, enjoy the added bonus of an interactive terminal where popular commands like cd, ls, help, etc., seamlessly operate.</p>
 ## 🌐 Deploy
 [https://devsoc.codechefvit.com/](https://devsoc.codechefvit.com/)
+
 ## ⚙️ Tech Stack:
 
-- T3
+- Next.js
 - TypeScript
 - Tailwind CSS
 - Framer Motion
