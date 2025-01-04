@@ -236,22 +236,22 @@ function Main() {
                     />
 
                     <Button
-                      link="https://portal.devsoc.codechefvit.com/"
-                      data="Register Now"
+                      // link="https://portal.devsoc.codechefvit.com/"
+                      data="Coming Soon..."
                       portal={true}
                     />
                   </div>
                 </div>
               </div>
               <div className="mt-2 flex flex-col items-center ">
-                <p>Co-hosted by:</p>
+                {/* <p>Co-hosted by:</p>
                 <Image
                   src="/assets/sponsors/contentstack.svg"
                   alt="contentstack"
                   height={0}
                   width={0}
                   className="h-[30px] w-auto"
-                />
+                /> */}
               </div>
             </div>
             <div className="flex h-screen justify-center overflow-hidden lg:justify-between 2xl:mt-12">
@@ -344,7 +344,7 @@ function Main() {
                 <div className="mx-10 mt-10  h-fit  text-center leading-relaxed text-[#bbbbbb] max-sm:text-justify md:text-[22px] lg:w-[70vw]">
                   DEVSOC, THE FLAGSHIP ANNUAL EVENT BY CODECHEF-VIT, AIMS TO
                   EMPOWER YOUNG MINDS BY FOSTERING COLLABORATION BETWEEN TECH
-                  ENTHUSIASTS AND INNOVATORS. IN ITS FOURTH ITERATION, THIS
+                  ENTHUSIASTS AND INNOVATORS. IN ITS SIXTH ITERATION, THIS
                   HACKATHON IS DESIGNED AS A SPRINT-LIKE EVENT, ENCOURAGING
                   PARTICIPANTS TO UNLEASH THEIR CREATIVITY AND TEAMWORK TO SOLVE
                   CHALLENGES. SPANNING THREE DAYS, RUNNING FOR 48 HOURS

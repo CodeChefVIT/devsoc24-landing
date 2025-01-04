@@ -62,7 +62,7 @@ const Details = () => {
               className="absolute bottom-[-1250px] left-[10px] hidden h-auto w-[250px] md:-left-[-65px] md:block md:h-min md:w-min"
             />
           </motion.span>
-          In its fourth edition, this boundary-pushing hackathon transcends
+          In its sixth edition, this boundary-pushing hackathon transcends
           limits, merging AI and the metaverse to confront real-world chaos
           head-on. With diverse minds colliding, we&apos;re not just coding;
           we&apos;re crafting solutions that scream revolution. Join the fray as
