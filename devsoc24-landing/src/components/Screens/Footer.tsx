@@ -84,12 +84,12 @@ const Footer = () => {
                 right at your finger tips. To take the leap is what you choose.
               </p>
               <button
-                // onClick={() => {
-                //   void router.push("/menu");
-                // }}
+                onClick={() => {
+                  void router.push("/menu");
+                }}
                 className="font-vcr z-[100] my-2 flex h-[50px] w-[100px] items-center justify-center border-2 border-black bg-white text-black hover:cursor-pointer hover:bg-black hover:text-white sm:self-start"
               >
-                Coming Soon
+                Enter
               </button>
             </div>
           </div>
